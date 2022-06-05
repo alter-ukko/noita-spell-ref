@@ -18,13 +18,13 @@
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/machinegun_bullet.xml")
- c.fire_rate_wait = c.fire_rate_wait - 3
- c.screenshake = c.screenshake + 0.2
- c.spread_degrees = c.spread_degrees + 2.0
- c.damage_critical_chance = c.damage_critical_chance + 1
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/machinegun_bullet.xml")
+      c.fire_rate_wait = c.fire_rate_wait - 3
+      c.screenshake = c.screenshake + 0.2
+      c.spread_degrees = c.spread_degrees + 2.0
+      c.damage_critical_chance = c.damage_critical_chance + 1
+    end,
 ```
 
 ## ![Accelerating shot](ACCELERATING_SHOT.png)Accelerating shot (ACCELERATING_SHOT)
@@ -47,20 +47,20 @@ function()
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait + 8
- c.speed_multiplier = c.speed_multiplier * 0.32
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 10.0
- c.extra_entities = c.extra_entities .. "data/entities/misc/accelerating_shot.xml,"
- 
- if ( c.speed_multiplier >= 20 ) then
- c.speed_multiplier = math.min( c.speed_multiplier, 20 )
- elseif ( c.speed_multiplier < 0 ) then
- c.speed_multiplier = 0
- end
- 
- draw_actions( 1, true )
- end,
+ function()
+      c.fire_rate_wait    = c.fire_rate_wait + 8
+      c.speed_multiplier = c.speed_multiplier * 0.32
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 10.0
+      c.extra_entities = c.extra_entities .. "data/entities/misc/accelerating_shot.xml,"
+      
+      if ( c.speed_multiplier >= 20 ) then
+        c.speed_multiplier = math.min( c.speed_multiplier, 20 )
+      elseif ( c.speed_multiplier < 0 ) then
+        c.speed_multiplier = 0
+      end
+      
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Accelerative Homing](HOMING_ACCELERATING.png)Accelerative Homing (HOMING_ACCELERATING)
@@ -83,10 +83,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/homing_accelerating.xml,data/entities/particles/tinyspark_white_small.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/homing_accelerating.xml,data/entities/particles/tinyspark_white_small.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Acid](MATERIAL_ACID.png)Acid (MATERIAL_ACID)
@@ -109,11 +109,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/material_acid.xml")
- c.fire_rate_wait = c.fire_rate_wait - 15
- current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the cement reload time back to 0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/material_acid.xml")
+      c.fire_rate_wait = c.fire_rate_wait - 15
+      current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the cement reload time back to 0
+    end,
 ```
 
 ## ![Acid ball](ACIDSHOT.png)Acid ball (ACIDSHOT)
@@ -136,10 +136,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/acidshot.xml")
- c.fire_rate_wait = c.fire_rate_wait + 10
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/acidshot.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 10
+    end,
 ```
 
 ## ![Acid cloud](CLOUD_ACID.png)Acid cloud (CLOUD_ACID)
@@ -162,10 +162,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/cloud_acid.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/cloud_acid.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Acid trail](ACID_TRAIL.png)Acid trail (ACID_TRAIL)
@@ -188,11 +188,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.trail_material = c.trail_material .. "acid,"
- c.trail_material_amount = c.trail_material_amount + 5
- draw_actions( 1, true )
- end,
+ function()
+      c.trail_material = c.trail_material .. "acid,"
+      c.trail_material_amount = c.trail_material_amount + 5
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Add expiration trigger](ADD_DEATH_TRIGGER.png)Add expiration trigger (ADD_DEATH_TRIGGER)
@@ -215,72 +215,72 @@ function()
 * **action**:
 
 ```lua
-function()
- local data = {}
- 
- local how_many = 1
- 
- if ( #deck > 0 ) then
- data = deck[1]
- else
- data = nil
- end
- 
- if ( data ~= nil ) then
- while ( #deck >= how_many ) and ( ( data.type == ACTION_TYPE_MODIFIER ) or ( data.type == ACTION_TYPE_PASSIVE ) or ( data.type == ACTION_TYPE_OTHER ) or ( data.type == ACTION_TYPE_DRAW_MANY ) ) do
- if ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) and ( data.id ~= "ADD_TRIGGER" ) and ( data.id ~= "ADD_TIMER" ) and ( data.id ~= "ADD_DEATH_TRIGGER" ) then
- if ( data.type == ACTION_TYPE_MODIFIER ) then
- dont_draw_actions = true
- data.action()
- dont_draw_actions = false
- end
- end
- how_many = how_many + 1
- data = deck[how_many]
- end
- 
- if ( data ~= nil ) and ( data.related_projectiles ~= nil ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
- local target = data.related_projectiles[1]
- local count = data.related_projectiles[2] or 1
- 
- for i=1,how_many do
- data = deck[1]
- table.insert( discarded, data )
- table.remove( deck, 1 )
- end
- 
- local valid = false
- 
- for i=1,#deck do
- local check = deck[i]
- 
- if ( check ~= nil ) and ( ( check.type == ACTION_TYPE_PROJECTILE ) or ( check.type == ACTION_TYPE_STATIC_PROJECTILE ) or ( check.type == ACTION_TYPE_MATERIAL ) or ( check.type == ACTION_TYPE_UTILITY ) ) then
- valid = true
- break
- end
- end
- 
- if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
- data.uses_remaining = data.uses_remaining - 1
- 
- local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
- if not reduce_uses then
- data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
- end
- end
- 
- if valid then
- for i=1,count do
- add_projectile_trigger_death(target, 1)
- end
- else
- dont_draw_actions = true
- data.action()
- dont_draw_actions = false
- end
- end
- end
- end,
+ function()
+      local data = {}
+      
+      local how_many = 1
+      
+      if ( #deck > 0 ) then
+        data = deck[1]
+      else
+        data = nil
+      end
+      
+      if ( data ~= nil ) then
+        while ( #deck >= how_many ) and ( ( data.type == ACTION_TYPE_MODIFIER ) or ( data.type == ACTION_TYPE_PASSIVE ) or ( data.type == ACTION_TYPE_OTHER ) or ( data.type == ACTION_TYPE_DRAW_MANY ) ) do
+          if ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) and ( data.id ~= "ADD_TRIGGER" ) and ( data.id ~= "ADD_TIMER" ) and ( data.id ~= "ADD_DEATH_TRIGGER" ) then
+            if ( data.type == ACTION_TYPE_MODIFIER ) then
+              dont_draw_actions = true
+              data.action()
+              dont_draw_actions = false
+            end
+          end
+          how_many = how_many + 1
+          data = deck[how_many]
+        end
+        
+        if ( data ~= nil ) and ( data.related_projectiles ~= nil ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
+          local target = data.related_projectiles[1]
+          local count = data.related_projectiles[2] or 1
+          
+          for i=1,how_many do
+            data = deck[1]
+            table.insert( discarded, data )
+            table.remove( deck, 1 )
+          end
+          
+          local valid = false
+          
+          for i=1,#deck do
+            local check = deck[i]
+            
+            if ( check ~= nil ) and ( ( check.type == ACTION_TYPE_PROJECTILE ) or ( check.type == ACTION_TYPE_STATIC_PROJECTILE ) or ( check.type == ACTION_TYPE_MATERIAL ) or ( check.type == ACTION_TYPE_UTILITY ) ) then
+              valid = true
+              break
+            end
+          end
+          
+          if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
+            data.uses_remaining = data.uses_remaining - 1
+            
+            local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
+            if not reduce_uses then
+              data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
+            end
+          end
+          
+          if valid then
+            for i=1,count do
+              add_projectile_trigger_death(target, 1)
+            end
+          else
+            dont_draw_actions = true
+            data.action()
+            dont_draw_actions = false
+          end
+        end
+      end
+    end,
 ```
 
 ## ![Add mana](MANA_REDUCE.png)Add mana (MANA_REDUCE)
@@ -303,10 +303,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait + 10
- draw_actions( 1, true )
- end,
+ function()
+      c.fire_rate_wait = c.fire_rate_wait + 10
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Add timer](ADD_TIMER.png)Add timer (ADD_TIMER)
@@ -329,72 +329,72 @@ function()
 * **action**:
 
 ```lua
-function()
- local data = {}
- 
- local how_many = 1
- 
- if ( #deck > 0 ) then
- data = deck[1]
- else
- data = nil
- end
- 
- if ( data ~= nil ) then
- while ( #deck >= how_many ) and ( ( data.type == ACTION_TYPE_MODIFIER ) or ( data.type == ACTION_TYPE_PASSIVE ) or ( data.type == ACTION_TYPE_OTHER ) or ( data.type == ACTION_TYPE_DRAW_MANY ) ) do
- if ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) and ( data.id ~= "ADD_TRIGGER" ) and ( data.id ~= "ADD_TIMER" ) and ( data.id ~= "ADD_DEATH_TRIGGER" ) then
- if ( data.type == ACTION_TYPE_MODIFIER ) then
- dont_draw_actions = true
- data.action()
- dont_draw_actions = false
- end
- end
- how_many = how_many + 1
- data = deck[how_many]
- end
- 
- if ( data ~= nil ) and ( data.related_projectiles ~= nil ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
- local target = data.related_projectiles[1]
- local count = data.related_projectiles[2] or 1
- 
- for i=1,how_many do
- data = deck[1]
- table.insert( discarded, data )
- table.remove( deck, 1 )
- end
- 
- local valid = false
- 
- for i=1,#deck do
- local check = deck[i]
- 
- if ( check ~= nil ) and ( ( check.type == ACTION_TYPE_PROJECTILE ) or ( check.type == ACTION_TYPE_STATIC_PROJECTILE ) or ( check.type == ACTION_TYPE_MATERIAL ) or ( check.type == ACTION_TYPE_UTILITY ) ) then
- valid = true
- break
- end
- end
- 
- if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
- data.uses_remaining = data.uses_remaining - 1
- 
- local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
- if not reduce_uses then
- data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
- end
- end
- 
- if valid then
- for i=1,count do
- add_projectile_trigger_timer(target, 20, 1)
- end
- else
- dont_draw_actions = true
- data.action()
- dont_draw_actions = false
- end
- end
- end
- end,
+ function()
+      local data = {}
+      
+      local how_many = 1
+      
+      if ( #deck > 0 ) then
+        data = deck[1]
+      else
+        data = nil
+      end
+      
+      if ( data ~= nil ) then
+        while ( #deck >= how_many ) and ( ( data.type == ACTION_TYPE_MODIFIER ) or ( data.type == ACTION_TYPE_PASSIVE ) or ( data.type == ACTION_TYPE_OTHER ) or ( data.type == ACTION_TYPE_DRAW_MANY ) ) do
+          if ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) and ( data.id ~= "ADD_TRIGGER" ) and ( data.id ~= "ADD_TIMER" ) and ( data.id ~= "ADD_DEATH_TRIGGER" ) then
+            if ( data.type == ACTION_TYPE_MODIFIER ) then
+              dont_draw_actions = true
+              data.action()
+              dont_draw_actions = false
+            end
+          end
+          how_many = how_many + 1
+          data = deck[how_many]
+        end
+        
+        if ( data ~= nil ) and ( data.related_projectiles ~= nil ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
+          local target = data.related_projectiles[1]
+          local count = data.related_projectiles[2] or 1
+          
+          for i=1,how_many do
+            data = deck[1]
+            table.insert( discarded, data )
+            table.remove( deck, 1 )
+          end
+          
+          local valid = false
+          
+          for i=1,#deck do
+            local check = deck[i]
+            
+            if ( check ~= nil ) and ( ( check.type == ACTION_TYPE_PROJECTILE ) or ( check.type == ACTION_TYPE_STATIC_PROJECTILE ) or ( check.type == ACTION_TYPE_MATERIAL ) or ( check.type == ACTION_TYPE_UTILITY ) ) then
+              valid = true
+              break
+            end
+          end
+          
+          if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
+            data.uses_remaining = data.uses_remaining - 1
+            
+            local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
+            if not reduce_uses then
+              data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
+            end
+          end
+          
+          if valid then
+            for i=1,count do
+              add_projectile_trigger_timer(target, 20, 1)
+            end
+          else
+            dont_draw_actions = true
+            data.action()
+            dont_draw_actions = false
+          end
+        end
+      end
+    end,
 ```
 
 ## ![Add trigger](ADD_TRIGGER.png)Add trigger (ADD_TRIGGER)
@@ -417,72 +417,72 @@ function()
 * **action**:
 
 ```lua
-function()
- local data = {}
- 
- local how_many = 1
- 
- if ( #deck > 0 ) then
- data = deck[1]
- else
- data = nil
- end
- 
- if ( data ~= nil ) then
- while ( #deck >= how_many ) and ( ( data.type == ACTION_TYPE_MODIFIER ) or ( data.type == ACTION_TYPE_PASSIVE ) or ( data.type == ACTION_TYPE_OTHER ) or ( data.type == ACTION_TYPE_DRAW_MANY ) ) do
- if ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) and ( data.id ~= "ADD_TRIGGER" ) and ( data.id ~= "ADD_TIMER" ) and ( data.id ~= "ADD_DEATH_TRIGGER" ) then
- if ( data.type == ACTION_TYPE_MODIFIER ) then
- dont_draw_actions = true
- data.action()
- dont_draw_actions = false
- end
- end
- how_many = how_many + 1
- data = deck[how_many]
- end
- 
- if ( data ~= nil ) and ( data.related_projectiles ~= nil ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
- local target = data.related_projectiles[1]
- local count = data.related_projectiles[2] or 1
- 
- for i=1,how_many do
- data = deck[1]
- table.insert( discarded, data )
- table.remove( deck, 1 )
- end
- 
- local valid = false
- 
- for i=1,#deck do
- local check = deck[i]
- 
- if ( check ~= nil ) and ( ( check.type == ACTION_TYPE_PROJECTILE ) or ( check.type == ACTION_TYPE_STATIC_PROJECTILE ) or ( check.type == ACTION_TYPE_MATERIAL ) or ( check.type == ACTION_TYPE_UTILITY ) ) then
- valid = true
- break
- end
- end
- 
- if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
- data.uses_remaining = data.uses_remaining - 1
- 
- local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
- if not reduce_uses then
- data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
- end
- end
- 
- if valid then
- for i=1,count do
- add_projectile_trigger_hit_world(target, 1)
- end
- else
- dont_draw_actions = true
- data.action()
- dont_draw_actions = false
- end
- end
- end
- end,
+ function()
+      local data = {}
+      
+      local how_many = 1
+      
+      if ( #deck > 0 ) then
+        data = deck[1]
+      else
+        data = nil
+      end
+      
+      if ( data ~= nil ) then
+        while ( #deck >= how_many ) and ( ( data.type == ACTION_TYPE_MODIFIER ) or ( data.type == ACTION_TYPE_PASSIVE ) or ( data.type == ACTION_TYPE_OTHER ) or ( data.type == ACTION_TYPE_DRAW_MANY ) ) do
+          if ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) and ( data.id ~= "ADD_TRIGGER" ) and ( data.id ~= "ADD_TIMER" ) and ( data.id ~= "ADD_DEATH_TRIGGER" ) then
+            if ( data.type == ACTION_TYPE_MODIFIER ) then
+              dont_draw_actions = true
+              data.action()
+              dont_draw_actions = false
+            end
+          end
+          how_many = how_many + 1
+          data = deck[how_many]
+        end
+        
+        if ( data ~= nil ) and ( data.related_projectiles ~= nil ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
+          local target = data.related_projectiles[1]
+          local count = data.related_projectiles[2] or 1
+          
+          for i=1,how_many do
+            data = deck[1]
+            table.insert( discarded, data )
+            table.remove( deck, 1 )
+          end
+          
+          local valid = false
+          
+          for i=1,#deck do
+            local check = deck[i]
+            
+            if ( check ~= nil ) and ( ( check.type == ACTION_TYPE_PROJECTILE ) or ( check.type == ACTION_TYPE_STATIC_PROJECTILE ) or ( check.type == ACTION_TYPE_MATERIAL ) or ( check.type == ACTION_TYPE_UTILITY ) ) then
+              valid = true
+              break
+            end
+          end
+          
+          if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
+            data.uses_remaining = data.uses_remaining - 1
+            
+            local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
+            if not reduce_uses then
+              data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
+            end
+          end
+          
+          if valid then
+            for i=1,count do
+              add_projectile_trigger_hit_world(target, 1)
+            end
+          else
+            dont_draw_actions = true
+            data.action()
+            dont_draw_actions = false
+          end
+        end
+      end
+    end,
 ```
 
 ## ![Aiming Arc](HOMING_CURSOR.png)Aiming Arc (HOMING_CURSOR)
@@ -505,10 +505,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/homing_cursor.xml,data/entities/particles/tinyspark_white.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/homing_cursor.xml,data/entities/particles/tinyspark_white.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![All-seeing eye](X_RAY.png)All-seeing eye (X_RAY)
@@ -531,9 +531,9 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/xray.xml")
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/xray.xml")
+    end,
 ```
 
 ## ![Alpha](ALPHA.png)Alpha (ALPHA)
@@ -556,28 +556,28 @@ function()
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- c.fire_rate_wait = c.fire_rate_wait + 15
- 
- local data = {}
- 
- if ( #discarded > 0 ) then
- data = discarded[1]
- elseif ( #hand > 0 ) then
- data = hand[1]
- elseif ( #deck > 0 ) then
- data = deck[1]
- else
- data = nil
- end
- 
- local rec = check_recursion( data, recursion_level )
- 
- if ( data ~= nil ) and ( rec > -1 ) then
- data.action( rec )
- end
- 
- end,
+ function( recursion_level, iteration )
+      c.fire_rate_wait = c.fire_rate_wait + 15
+      
+      local data = {}
+      
+      if ( #discarded > 0 ) then
+        data = discarded[1]
+      elseif ( #hand > 0 ) then
+        data = hand[1]
+      elseif ( #deck > 0 ) then
+        data = deck[1]
+      else
+        data = nil
+      end
+      
+      local rec = check_recursion( data, recursion_level )
+      
+      if ( data ~= nil ) and ( rec > -1 ) then
+        data.action( rec )
+      end
+      
+    end,
 ```
 
 ## ![Anti-gravity](GRAVITY_ANTI.png)Anti-gravity (GRAVITY_ANTI)
@@ -600,10 +600,10 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function()
- c.gravity = c.gravity - 600.0
- draw_actions( 1, true )
- end,
+ function()
+      c.gravity = c.gravity - 600.0
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Arrow](ARROW.png)Arrow (ARROW)
@@ -626,12 +626,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/arrow.xml")
- c.fire_rate_wait = c.fire_rate_wait + 10
- c.spread_degrees = c.spread_degrees - 20
- shot_effects.recoil_knockback = 30.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/arrow.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 10
+      c.spread_degrees = c.spread_degrees - 20
+      shot_effects.recoil_knockback = 30.0
+    end,
 ```
 
 ## ![Auto-Aim](AUTOAIM.png)Auto-Aim (AUTOAIM)
@@ -654,10 +654,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/autoaim.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/autoaim.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Avoiding arc](AVOIDING_ARC.png)Avoiding arc (AVOIDING_ARC)
@@ -680,11 +680,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/avoiding_arc.xml,"
- c.fire_rate_wait = c.fire_rate_wait + 10
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/avoiding_arc.xml,"
+      c.fire_rate_wait    = c.fire_rate_wait + 10
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Ball Lightning](BALL_LIGHTNING.png)Ball Lightning (BALL_LIGHTNING)
@@ -707,13 +707,13 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/ball_lightning.xml")
- add_projectile("data/entities/projectiles/deck/ball_lightning.xml")
- add_projectile("data/entities/projectiles/deck/ball_lightning.xml")
- c.fire_rate_wait = c.fire_rate_wait + 50
- shot_effects.recoil_knockback = 120.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/ball_lightning.xml")
+      add_projectile("data/entities/projectiles/deck/ball_lightning.xml")
+      add_projectile("data/entities/projectiles/deck/ball_lightning.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 50
+      shot_effects.recoil_knockback = 120.0
+    end,
 ```
 
 ## ![Big magic guard](BIG_MAGIC_SHIELD.png)Big magic guard (BIG_MAGIC_SHIELD)
@@ -736,10 +736,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/big_magic_shield_start.xml")
- c.fire_rate_wait = c.fire_rate_wait + 30
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/big_magic_shield_start.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 30
+    end,
 ```
 
 ## ![Black Hole with Death Trigger](BLACK_HOLE_DEATH_TRIGGER.png)Black Hole with Death Trigger (BLACK_HOLE_DEATH_TRIGGER)
@@ -762,11 +762,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile_trigger_death("data/entities/projectiles/deck/black_hole.xml", 1)
- c.fire_rate_wait = c.fire_rate_wait + 90
- c.screenshake = c.screenshake + 20
- end,
+ function()
+      add_projectile_trigger_death("data/entities/projectiles/deck/black_hole.xml", 1)
+      c.fire_rate_wait = c.fire_rate_wait + 90
+      c.screenshake = c.screenshake + 20
+    end,
 ```
 
 ## ![Black hole](BLACK_HOLE.png)Black hole (BLACK_HOLE)
@@ -789,11 +789,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/black_hole.xml")
- c.fire_rate_wait = c.fire_rate_wait + 80
- c.screenshake = c.screenshake + 20
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/black_hole.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 80
+      c.screenshake = c.screenshake + 20
+    end,
 ```
 
 ## ![Blood](MATERIAL_BLOOD.png)Blood (MATERIAL_BLOOD)
@@ -816,12 +816,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/material_blood.xml")
- c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_bloody.xml,"
- c.fire_rate_wait = c.fire_rate_wait - 15
- current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the cement reload time back to 0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/material_blood.xml")
+      c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_bloody.xml,"
+      c.fire_rate_wait = c.fire_rate_wait - 15
+      current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the cement reload time back to 0
+    end,
 ```
 
 ## ![Blood cloud](CLOUD_BLOOD.png)Blood cloud (CLOUD_BLOOD)
@@ -844,10 +844,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/cloud_blood.xml")
- c.fire_rate_wait = c.fire_rate_wait + 30
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/cloud_blood.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 30
+    end,
 ```
 
 ## ![Blood magic](BLOOD_MAGIC.png)Blood magic (BLOOD_MAGIC)
@@ -870,24 +870,24 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/particles/blood_sparks.xml,"
- c.fire_rate_wait = c.fire_rate_wait - 20
- current_reload_time = current_reload_time - 20
- draw_actions( 1, true )
- 
- local entity_id = GetUpdatedEntityID()
- 
- local dcomps = EntityGetComponent( entity_id, "DamageModelComponent" )
- 
- if ( dcomps ~= nil ) and ( #dcomps > 0 ) then
- for a,b in ipairs( dcomps ) do
- local hp = ComponentGetValue2( b, "hp" )
- hp = math.max( hp - 0.16, 0.04 )
- ComponentSetValue2( b, "hp", hp )
- end
- end
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/particles/blood_sparks.xml,"
+      c.fire_rate_wait = c.fire_rate_wait - 20
+      current_reload_time = current_reload_time - 20
+      draw_actions( 1, true )
+      
+      local entity_id = GetUpdatedEntityID()
+      
+      local dcomps = EntityGetComponent( entity_id, "DamageModelComponent" )
+      
+      if ( dcomps ~= nil ) and ( #dcomps > 0 ) then
+        for a,b in ipairs( dcomps ) do
+          local hp = ComponentGetValue2( b, "hp" )
+          hp = math.max( hp - 0.16, 0.04 )
+          ComponentSetValue2( b, "hp", hp )
+        end
+      end
+    end,
 ```
 
 ## ![Blood mist](MIST_BLOOD.png)Blood mist (MIST_BLOOD)
@@ -910,10 +910,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/mist_blood.xml")
- c.fire_rate_wait = c.fire_rate_wait + 10
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/mist_blood.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 10
+    end,
 ```
 
 ## ![Blood to Power](BLOOD_TO_POWER.png)Blood to Power (BLOOD_TO_POWER)
@@ -936,28 +936,28 @@ function()
 * **action**:
 
 ```lua
-function()
- local entity_id = GetUpdatedEntityID()
- 
- local dcomp = EntityGetFirstComponent( entity_id, "DamageModelComponent" )
- 
- if ( dcomp ~= nil ) then
- local hp = ComponentGetValue2( dcomp, "hp" )
- local damage = math.min( hp * 0.44, 960 )
- local self_damage = hp * 0.2
- 
- if ( hp >= 0.4 ) and ( self_damage > 0.2 ) then
- c.extra_entities = c.extra_entities .. "data/entities/particles/blood_sparks.xml,"
- 
- EntityInflictDamage( entity_id, self_damage, "DAMAGE_CURSE", "$action_blood_to_power", "NONE", 0, 0, entity_id )
- 
- 
- c.damage_projectile_add = c.damage_projectile_add + damage
- end
- end
- 
- draw_actions( 1, true )
- end,
+ function()
+      local entity_id = GetUpdatedEntityID()
+      
+      local dcomp = EntityGetFirstComponent( entity_id, "DamageModelComponent" )
+      
+      if ( dcomp ~= nil ) then
+        local hp = ComponentGetValue2( dcomp, "hp" )
+        local damage = math.min( hp * 0.44, 960 )
+        local self_damage = hp * 0.2
+        
+        if ( hp >= 0.4 ) and ( self_damage > 0.2 ) then
+          c.extra_entities = c.extra_entities .. "data/entities/particles/blood_sparks.xml,"
+          
+          EntityInflictDamage( entity_id, self_damage, "DAMAGE_CURSE", "$action_blood_to_power", "NONE", 0, 0, entity_id )
+          
+          
+          c.damage_projectile_add = c.damage_projectile_add + damage
+        end
+      end
+      
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Blood to acid](BLOOD_TO_ACID.png)Blood to acid (BLOOD_TO_ACID)
@@ -980,11 +980,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/blood_to_acid.xml,data/entities/particles/tinyspark_red.xml,"
- c.fire_rate_wait = c.fire_rate_wait + 10
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/blood_to_acid.xml,data/entities/particles/tinyspark_red.xml,"
+      c.fire_rate_wait = c.fire_rate_wait + 10
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Bloodlust](BLOODLUST.png)Bloodlust (BLOODLUST)
@@ -1007,16 +1007,16 @@ function()
 * **action**:
 
 ```lua
-function()
- c.damage_projectile_add = c.damage_projectile_add + 1.3
- c.gore_particles = c.gore_particles + 15
- c.fire_rate_wait = c.fire_rate_wait + 8
- c.friendly_fire = true
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
- c.spread_degrees = c.spread_degrees + 6
- c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.damage_projectile_add = c.damage_projectile_add + 1.3
+      c.gore_particles    = c.gore_particles + 15
+      c.fire_rate_wait    = c.fire_rate_wait + 8
+      c.friendly_fire    = true
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
+      c.spread_degrees = c.spread_degrees + 6
+      c.extra_entities    = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Blue Glimmer](COLOUR_BLUE.png)Blue Glimmer (COLOUR_BLUE)
@@ -1039,15 +1039,15 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,data/entities/misc/colour_blue.xml,"
- c.fire_rate_wait = c.fire_rate_wait - 8
- c.screenshake = c.screenshake - 2.5
- if ( c.screenshake < 0 ) then
- c.screenshake = 0
- end
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,data/entities/misc/colour_blue.xml,"
+      c.fire_rate_wait = c.fire_rate_wait - 8
+      c.screenshake = c.screenshake - 2.5
+      if ( c.screenshake < 0 ) then
+        c.screenshake = 0
+      end
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Bomb](BOMB.png)Bomb (BOMB)
@@ -1070,10 +1070,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/bomb.xml")
- c.fire_rate_wait = c.fire_rate_wait + 100
- end,
+ function()
+      add_projectile("data/entities/projectiles/bomb.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 100
+    end,
 ```
 
 ## ![Bomb cart](BOMB_CART.png)Bomb cart (BOMB_CART)
@@ -1096,11 +1096,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/bomb_cart.xml")
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 200.0
- c.fire_rate_wait = c.fire_rate_wait + 60
- end,
+ function()
+      add_projectile("data/entities/projectiles/bomb_cart.xml")
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 200.0
+      c.fire_rate_wait = c.fire_rate_wait + 60
+    end,
 ```
 
 ## ![Boomerang](HOMING_SHOOTER.png)Boomerang (HOMING_SHOOTER)
@@ -1123,10 +1123,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/homing_shooter.xml,data/entities/particles/tinyspark_white.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/homing_shooter.xml,data/entities/particles/tinyspark_white.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Bounce](BOUNCE.png)Bounce (BOUNCE)
@@ -1149,10 +1149,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.bounces = c.bounces + 10
- draw_actions( 1, true )
- end,
+ function()
+      c.bounces = c.bounces + 10
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Bouncing burst](RUBBER_BALL.png)Bouncing burst (RUBBER_BALL)
@@ -1175,11 +1175,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/rubber_ball.xml")
- c.fire_rate_wait = c.fire_rate_wait - 2
- c.spread_degrees = c.spread_degrees - 1.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/rubber_ball.xml")
+      c.fire_rate_wait = c.fire_rate_wait - 2
+      c.spread_degrees = c.spread_degrees - 1.0
+    end,
 ```
 
 ## ![Bubble spark](BUBBLESHOT.png)Bubble spark (BUBBLESHOT)
@@ -1202,11 +1202,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/bubbleshot.xml")
- c.fire_rate_wait = c.fire_rate_wait - 5
- c.dampening = 0.1
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/bubbleshot.xml")
+      c.fire_rate_wait = c.fire_rate_wait - 5
+      c.dampening = 0.1
+    end,
 ```
 
 ## ![Bubble spark with trigger](BUBBLESHOT_TRIGGER.png)Bubble spark with trigger (BUBBLESHOT_TRIGGER)
@@ -1229,11 +1229,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait - 5
- c.dampening = 0.1
- add_projectile_trigger_hit_world("data/entities/projectiles/deck/bubbleshot.xml", 1)
- end,
+ function()
+      c.fire_rate_wait = c.fire_rate_wait - 5
+      c.dampening = 0.1
+      add_projectile_trigger_hit_world("data/entities/projectiles/deck/bubbleshot.xml", 1)
+    end,
 ```
 
 ## ![Bubbly bounce](BOUNCE_SPARK.png)Bubbly bounce (BOUNCE_SPARK)
@@ -1256,13 +1256,13 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/bounce_spark.xml,"
- c.bounces = c.bounces + 1
- c.fire_rate_wait = c.fire_rate_wait + 8
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 5.0
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/bounce_spark.xml,"
+      c.bounces = c.bounces + 1
+      c.fire_rate_wait = c.fire_rate_wait + 8
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 5.0
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Burning trail](BURN_TRAIL.png)Burning trail (BURN_TRAIL)
@@ -1285,11 +1285,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_on_fire.xml,"
- c.extra_entities = c.extra_entities .. "data/entities/misc/burn.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_on_fire.xml,"
+      c.extra_entities = c.extra_entities .. "data/entities/misc/burn.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Burst of air](AIR_BULLET.png)Burst of air (AIR_BULLET)
@@ -1312,11 +1312,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/light_bullet_air.xml")
- c.fire_rate_wait = c.fire_rate_wait + 3
- c.spread_degrees = c.spread_degrees - 2.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/light_bullet_air.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 3
+      c.spread_degrees = c.spread_degrees - 2.0
+    end,
 ```
 
 ## ![Cement](MATERIAL_CEMENT.png)Cement (MATERIAL_CEMENT)
@@ -1339,11 +1339,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/material_cement.xml")
- c.fire_rate_wait = c.fire_rate_wait - 15
- current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the cement reload time back to 0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/material_cement.xml")
+      c.fire_rate_wait = c.fire_rate_wait - 15
+      current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the cement reload time back to 0
+    end,
 ```
 
 ## ![Chain Spell](CHAIN_SHOT.png)Chain Spell (CHAIN_SHOT)
@@ -1366,17 +1366,17 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/chain_shot.xml,"
- c.lifetime_add = c.lifetime_add - 30
- c.damage_projectile_add = c.damage_projectile_add - 0.2
- c.explosion_radius = c.explosion_radius - 5.0
- if (c.explosion_radius < 0) then
- c.explosion_radius = 0
- end
- c.spread_degrees = c.spread_degrees + 10.0
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/chain_shot.xml,"
+      c.lifetime_add = c.lifetime_add - 30
+      c.damage_projectile_add = c.damage_projectile_add - 0.2
+      c.explosion_radius = c.explosion_radius - 5.0
+      if (c.explosion_radius < 0) then
+        c.explosion_radius = 0
+      end
+      c.spread_degrees = c.spread_degrees + 10.0
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Chain bolt](CHAIN_BOLT.png)Chain bolt (CHAIN_BOLT)
@@ -1399,11 +1399,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/chain_bolt.xml")
- c.spread_degrees = c.spread_degrees + 14.0
- c.fire_rate_wait = c.fire_rate_wait + 45
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/chain_bolt.xml")
+      c.spread_degrees = c.spread_degrees + 14.0
+      c.fire_rate_wait = c.fire_rate_wait + 45
+    end,
 ```
 
 ## ![Chainsaw](CHAINSAW.png)Chainsaw (CHAINSAW)
@@ -1426,12 +1426,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/chainsaw.xml")
- c.fire_rate_wait = 0
- c.spread_degrees = c.spread_degrees + 6.0
- current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the digger reload time back to 0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/chainsaw.xml")
+      c.fire_rate_wait = 0
+      c.spread_degrees = c.spread_degrees + 6.0
+      current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the digger reload time back to 0
+    end,
 ```
 
 ## ![Chaos larpa](LARPA_CHAOS.png)Chaos larpa (LARPA_CHAOS)
@@ -1454,11 +1454,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait + 15
- c.extra_entities = c.extra_entities .. "data/entities/misc/larpa_chaos.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.fire_rate_wait = c.fire_rate_wait + 15
+      c.extra_entities = c.extra_entities .. "data/entities/misc/larpa_chaos.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Chaos magic](RANDOM_EXPLOSION.png)Chaos magic (RANDOM_EXPLOSION)
@@ -1481,11 +1481,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/random_explosion.xml,data/entities/particles/tinyspark_purple_bright.xml,"
- c.fire_rate_wait = c.fire_rate_wait + 40
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/random_explosion.xml,data/entities/particles/tinyspark_purple_bright.xml,"
+      c.fire_rate_wait = c.fire_rate_wait + 40
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Chaotic path](CHAOTIC_ARC.png)Chaotic path (CHAOTIC_ARC)
@@ -1508,18 +1508,18 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/chaotic_arc.xml,"
- c.speed_multiplier = c.speed_multiplier * 2
- 
- if ( c.speed_multiplier >= 20 ) then
- c.speed_multiplier = math.min( c.speed_multiplier, 20 )
- elseif ( c.speed_multiplier < 0 ) then
- c.speed_multiplier = 0
- end
- 
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/chaotic_arc.xml,"
+      c.speed_multiplier = c.speed_multiplier * 2
+      
+      if ( c.speed_multiplier >= 20 ) then
+        c.speed_multiplier = math.min( c.speed_multiplier, 20 )
+      elseif ( c.speed_multiplier < 0 ) then
+        c.speed_multiplier = 0
+      end
+      
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Chaotic transmutation](TRANSMUTATION.png)Chaotic transmutation (TRANSMUTATION)
@@ -1542,11 +1542,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/transmutation.xml,data/entities/particles/tinyspark_purple_bright.xml,"
- c.fire_rate_wait = c.fire_rate_wait + 20
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/transmutation.xml,data/entities/particles/tinyspark_purple_bright.xml,"
+      c.fire_rate_wait = c.fire_rate_wait + 20
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Charm on toxic sludge](HITFX_TOXIC_CHARM.png)Charm on toxic sludge (HITFX_TOXIC_CHARM)
@@ -1569,10 +1569,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_toxic_charm.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_toxic_charm.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Chunk of soil](SOILBALL.png)Chunk of soil (SOILBALL)
@@ -1595,9 +1595,9 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/chunk_of_soil.xml")
- end,
+ function()
+      add_projectile("data/entities/projectiles/chunk_of_soil.xml")
+    end,
 ```
 
 ## ![Circle of acid](CIRCLE_ACID.png)Circle of acid (CIRCLE_ACID)
@@ -1620,10 +1620,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/circle_acid.xml")
- c.fire_rate_wait = c.fire_rate_wait + 20
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/circle_acid.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 20
+    end,
 ```
 
 ## ![Circle of buoyancy](LEVITATION_FIELD.png)Circle of buoyancy (LEVITATION_FIELD)
@@ -1646,10 +1646,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/levitation_field.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/levitation_field.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Circle of displacement](TELEPORTATION_FIELD.png)Circle of displacement (TELEPORTATION_FIELD)
@@ -1672,10 +1672,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/teleportation_field.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/teleportation_field.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Circle of fervour](BERSERK_FIELD.png)Circle of fervour (BERSERK_FIELD)
@@ -1698,10 +1698,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/berserk_field.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/berserk_field.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Circle of fire](CIRCLE_FIRE.png)Circle of fire (CIRCLE_FIRE)
@@ -1724,10 +1724,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/circle_fire.xml")
- c.fire_rate_wait = c.fire_rate_wait + 20
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/circle_fire.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 20
+    end,
 ```
 
 ## ![Circle of oil](CIRCLE_OIL.png)Circle of oil (CIRCLE_OIL)
@@ -1750,10 +1750,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/circle_oil.xml")
- c.fire_rate_wait = c.fire_rate_wait + 20
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/circle_oil.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 20
+    end,
 ```
 
 ## ![Circle of shielding](SHIELD_FIELD.png)Circle of shielding (SHIELD_FIELD)
@@ -1776,10 +1776,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/shield_field.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/shield_field.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Circle of stillness](FREEZE_FIELD.png)Circle of stillness (FREEZE_FIELD)
@@ -1802,10 +1802,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/freeze_field.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/freeze_field.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Circle of thunder](ELECTROCUTION_FIELD.png)Circle of thunder (ELECTROCUTION_FIELD)
@@ -1828,10 +1828,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/electrocution_field.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/electrocution_field.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Circle of transmogrification](POLYMORPH_FIELD.png)Circle of transmogrification (POLYMORPH_FIELD)
@@ -1854,10 +1854,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/polymorph_field.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/polymorph_field.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Circle of unstable metamorphosis](CHAOS_POLYMORPH_FIELD.png)Circle of unstable metamorphosis (CHAOS_POLYMORPH_FIELD)
@@ -1880,10 +1880,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/chaos_polymorph_field.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/chaos_polymorph_field.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Circle of vigour](REGENERATION_FIELD.png)Circle of vigour (REGENERATION_FIELD)
@@ -1906,10 +1906,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/regeneration_field.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/regeneration_field.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Circle of water](CIRCLE_WATER.png)Circle of water (CIRCLE_WATER)
@@ -1932,10 +1932,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/circle_water.xml")
- c.fire_rate_wait = c.fire_rate_wait + 20
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/circle_water.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 20
+    end,
 ```
 
 ## ![Concentrated Explosion](EXPLOSION_TINY.png)Concentrated Explosion (EXPLOSION_TINY)
@@ -1958,13 +1958,13 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/explosion_tiny.xml,"
- c.fire_rate_wait = c.fire_rate_wait + 15
- c.explosion_radius = c.explosion_radius - 30.0
- c.damage_explosion_add = c.damage_explosion_add + 0.8
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/explosion_tiny.xml,"
+      c.fire_rate_wait = c.fire_rate_wait + 15
+      c.explosion_radius = c.explosion_radius - 30.0
+      c.damage_explosion_add = c.damage_explosion_add + 0.8
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Concentrated light](LASER.png)Concentrated light (LASER)
@@ -1987,12 +1987,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/laser.xml")
- c.fire_rate_wait = c.fire_rate_wait - 22
- c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_disintegrated.xml,"
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/laser.xml")
+      c.fire_rate_wait = c.fire_rate_wait - 22
+      c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_disintegrated.xml,"
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
+    end,
 ```
 
 ## ![Concentrated light bounce](BOUNCE_LASER.png)Concentrated light bounce (BOUNCE_LASER)
@@ -2015,13 +2015,13 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/bounce_laser.xml,"
- c.bounces = c.bounces + 1
- c.fire_rate_wait = c.fire_rate_wait + 12
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 5.0
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/bounce_laser.xml,"
+      c.bounces = c.bounces + 1
+      c.fire_rate_wait = c.fire_rate_wait + 12
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 5.0
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Copy random spell](DRAW_RANDOM.png)Copy random spell (DRAW_RANDOM)
@@ -2044,48 +2044,48 @@ function()
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- SetRandomSeed( GameGetFrameNum() + #deck, GameGetFrameNum() - 325 + #discarded )
- local datasize = #deck + #discarded
- local rnd = Random( 1, datasize )
- 
- local data = {}
- 
- if ( rnd <= #deck ) then
- data = deck[rnd]
- else
- data = discarded[rnd - #deck]
- end
- 
- local checks = 0
- local rec = check_recursion( data, recursion_level )
- 
- while ( data ~= nil ) and ( ( rec == -1 ) or ( ( data.uses_remaining ~= nil ) and ( data.uses_remaining == 0 ) ) ) and ( checks < datasize ) do
- rnd = ( rnd % datasize ) + 1
- checks = checks + 1
- 
- if ( rnd <= #deck ) then
- data = deck[rnd]
- else
- data = discarded[rnd - #deck]
- end
- 
- rec = check_recursion( data, recursion_level )
- end
- 
- if ( data ~= nil ) and ( rec > -1 ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
- data.action( rec )
- 
- if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
- data.uses_remaining = data.uses_remaining - 1
- 
- local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
- if not reduce_uses then
- data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
- end
- end
- end
- end,
+ function( recursion_level, iteration )
+      SetRandomSeed( GameGetFrameNum() + #deck, GameGetFrameNum() - 325 + #discarded )
+      local datasize = #deck + #discarded
+      local rnd = Random( 1, datasize )
+      
+      local data = {}
+        
+      if ( rnd <= #deck ) then
+        data = deck[rnd]
+      else
+        data = discarded[rnd - #deck]
+      end
+      
+      local checks = 0
+      local rec = check_recursion( data, recursion_level )
+      
+      while ( data ~= nil ) and ( ( rec == -1 ) or ( ( data.uses_remaining ~= nil ) and ( data.uses_remaining == 0 ) ) ) and ( checks < datasize ) do
+        rnd = ( rnd % datasize ) + 1
+        checks = checks + 1
+        
+        if ( rnd <= #deck ) then
+          data = deck[rnd]
+        else
+          data = discarded[rnd - #deck]
+        end
+        
+        rec = check_recursion( data, recursion_level )
+      end
+      
+      if ( data ~= nil ) and ( rec > -1 ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
+        data.action( rec )
+        
+        if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
+          data.uses_remaining = data.uses_remaining - 1
+          
+          local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
+          if not reduce_uses then
+            data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
+          end
+        end
+      end
+    end,
 ```
 
 ## ![Copy random spell thrice](DRAW_RANDOM_X3.png)Copy random spell thrice (DRAW_RANDOM_X3)
@@ -2108,50 +2108,50 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- SetRandomSeed( GameGetFrameNum() + #deck, GameGetFrameNum() - 325 + #discarded )
- local datasize = #deck + #discarded
- local rnd = Random( 1, datasize )
- 
- local data = {}
- 
- if ( rnd <= #deck ) then
- data = deck[rnd]
- else
- data = discarded[rnd - #deck]
- end
- 
- local checks = 0
- local rec = check_recursion( data, recursion_level )
- 
- while ( data ~= nil ) and ( ( rec == -1 ) or ( ( data.uses_remaining ~= nil ) and ( data.uses_remaining == 0 ) ) ) and ( checks < datasize ) do
- rnd = ( rnd % datasize ) + 1
- checks = checks + 1
- 
- if ( rnd <= #deck ) then
- data = deck[rnd]
- else
- data = discarded[rnd - #deck]
- end
- 
- rec = check_recursion( data, recursion_level )
- end
- 
- if ( data ~= nil ) and ( rec > -1 ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
- for i=1,3 do
- data.action( rec )
- end
- 
- if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
- data.uses_remaining = data.uses_remaining - 1
- 
- local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
- if not reduce_uses then
- data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
- end
- end
- end
- end,
+ function( recursion_level, iteration )
+      SetRandomSeed( GameGetFrameNum() + #deck, GameGetFrameNum() - 325 + #discarded )
+      local datasize = #deck + #discarded
+      local rnd = Random( 1, datasize )
+      
+      local data = {}
+        
+      if ( rnd <= #deck ) then
+        data = deck[rnd]
+      else
+        data = discarded[rnd - #deck]
+      end
+      
+      local checks = 0
+      local rec = check_recursion( data, recursion_level )
+      
+      while ( data ~= nil ) and ( ( rec == -1 ) or ( ( data.uses_remaining ~= nil ) and ( data.uses_remaining == 0 ) ) ) and ( checks < datasize ) do
+        rnd = ( rnd % datasize ) + 1
+        checks = checks + 1
+        
+        if ( rnd <= #deck ) then
+          data = deck[rnd]
+        else
+          data = discarded[rnd - #deck]
+        end
+        
+        rec = check_recursion( data, recursion_level )
+      end
+      
+      if ( data ~= nil ) and ( rec > -1 ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
+        for i=1,3 do
+          data.action( rec )
+        end
+        
+        if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
+          data.uses_remaining = data.uses_remaining - 1
+          
+          local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
+          if not reduce_uses then
+            data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
+          end
+        end
+      end
+    end,
 ```
 
 ## ![Copy three random spells](DRAW_3_RANDOM.png)Copy three random spells (DRAW_3_RANDOM)
@@ -2174,51 +2174,51 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- SetRandomSeed( GameGetFrameNum() + #deck, GameGetFrameNum() - 325 + #discarded )
- local datasize = #deck + #discarded
- 
- for i=1,3 do
- local rnd = Random( 1, datasize )
- 
- local data = {}
- 
- if ( rnd <= #deck ) then
- data = deck[rnd]
- else
- data = discarded[rnd - #deck]
- end
- 
- local checks = 0
- local rec = check_recursion( data, recursion_level )
- 
- while ( data ~= nil ) and ( ( rec == -1 ) or ( ( data.uses_remaining ~= nil ) and ( data.uses_remaining == 0 ) ) ) and ( checks < datasize ) do
- rnd = ( rnd % datasize ) + 1
- checks = checks + 1
- 
- if ( rnd <= #deck ) then
- data = deck[rnd]
- else
- data = discarded[rnd - #deck]
- end
- 
- rec = check_recursion( data, recursion_level )
- end
- 
- if ( data ~= nil ) and ( rec > -1 ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
- data.action( rec )
- 
- if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
- data.uses_remaining = data.uses_remaining - 1
- 
- local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
- if not reduce_uses then
- data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
- end
- end
- end
- end
- end,
+ function( recursion_level, iteration )
+      SetRandomSeed( GameGetFrameNum() + #deck, GameGetFrameNum() - 325 + #discarded )
+      local datasize = #deck + #discarded
+      
+      for i=1,3 do
+        local rnd = Random( 1, datasize )
+        
+        local data = {}
+        
+        if ( rnd <= #deck ) then
+          data = deck[rnd]
+        else
+          data = discarded[rnd - #deck]
+        end
+        
+        local checks = 0
+        local rec = check_recursion( data, recursion_level )
+        
+        while ( data ~= nil ) and ( ( rec == -1 ) or ( ( data.uses_remaining ~= nil ) and ( data.uses_remaining == 0 ) ) ) and ( checks < datasize ) do
+          rnd = ( rnd % datasize ) + 1
+          checks = checks + 1
+          
+          if ( rnd <= #deck ) then
+            data = deck[rnd]
+          else
+            data = discarded[rnd - #deck]
+          end
+          
+          rec = check_recursion( data, recursion_level )
+        end
+        
+        if ( data ~= nil ) and ( rec > -1 ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
+          data.action( rec )
+          
+          if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
+            data.uses_remaining = data.uses_remaining - 1
+            
+            local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
+            if not reduce_uses then
+              data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
+            end
+          end
+        end
+      end
+    end,
 ```
 
 ## ![Copy trail](LARPA_CHAOS_2.png)Copy trail (LARPA_CHAOS_2)
@@ -2241,11 +2241,11 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait + 20
- c.extra_entities = c.extra_entities .. "data/entities/misc/larpa_chaos_2.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.fire_rate_wait = c.fire_rate_wait + 20
+      c.extra_entities = c.extra_entities .. "data/entities/misc/larpa_chaos_2.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Critical Plus](CRITICAL_HIT.png)Critical Plus (CRITICAL_HIT)
@@ -2268,10 +2268,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.damage_critical_chance = c.damage_critical_chance + 15
- draw_actions( 1, true )
- end,
+ function()
+      c.damage_critical_chance = c.damage_critical_chance + 15
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Critical on bloody enemies](HITFX_CRITICAL_BLOOD.png)Critical on bloody enemies (HITFX_CRITICAL_BLOOD)
@@ -2294,10 +2294,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_critical_blood.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_critical_blood.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Critical on burning](HITFX_BURNING_CRITICAL_HIT.png)Critical on burning (HITFX_BURNING_CRITICAL_HIT)
@@ -2320,10 +2320,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_burning_critical_hit.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_burning_critical_hit.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Critical on oiled enemies](HITFX_CRITICAL_OIL.png)Critical on oiled enemies (HITFX_CRITICAL_OIL)
@@ -2346,10 +2346,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_critical_oil.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_critical_oil.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Critical on wet (water) enemies](HITFX_CRITICAL_WATER.png)Critical on wet (water) enemies (HITFX_CRITICAL_WATER)
@@ -2372,10 +2372,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_critical_water.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_critical_water.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Cursed sphere](CURSED_ORB.png)Cursed sphere (CURSED_ORB)
@@ -2398,11 +2398,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/orb_cursed.xml")
- c.fire_rate_wait = c.fire_rate_wait + 20
- shot_effects.recoil_knockback = 40.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/orb_cursed.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 20
+      shot_effects.recoil_knockback = 40.0
+    end,
 ```
 
 ## ![Damage Plus](DAMAGE.png)Damage Plus (DAMAGE)
@@ -2425,14 +2425,14 @@ function()
 * **action**:
 
 ```lua
-function()
- c.damage_projectile_add = c.damage_projectile_add + 0.4
- c.gore_particles = c.gore_particles + 5
- c.fire_rate_wait = c.fire_rate_wait + 5
- c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_yellow.xml,"
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 10.0
- draw_actions( 1, true )
- end,
+ function()
+      c.damage_projectile_add = c.damage_projectile_add + 0.4
+      c.gore_particles    = c.gore_particles + 5
+      c.fire_rate_wait    = c.fire_rate_wait + 5
+      c.extra_entities    = c.extra_entities .. "data/entities/particles/tinyspark_yellow.xml,"
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 10.0
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Damage field](AREA_DAMAGE.png)Damage field (AREA_DAMAGE)
@@ -2455,10 +2455,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/area_damage.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/area_damage.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Death cross](DEATH_CROSS.png)Death cross (DEATH_CROSS)
@@ -2481,10 +2481,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/death_cross.xml")
- c.fire_rate_wait = c.fire_rate_wait + 40
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/death_cross.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 40
+    end,
 ```
 
 ## ![Decelerating shot](DECELERATING_SHOT.png)Decelerating shot (DECELERATING_SHOT)
@@ -2507,20 +2507,20 @@ function()
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait - 8
- c.speed_multiplier = c.speed_multiplier * 1.68
- shot_effects.recoil_knockback = shot_effects.recoil_knockback - 10.0
- c.extra_entities = c.extra_entities .. "data/entities/misc/decelerating_shot.xml,"
- 
- if ( c.speed_multiplier >= 20 ) then
- c.speed_multiplier = math.min( c.speed_multiplier, 20 )
- elseif ( c.speed_multiplier < 0 ) then
- c.speed_multiplier = 0
- end
- 
- draw_actions( 1, true )
- end,
+ function()
+      c.fire_rate_wait    = c.fire_rate_wait - 8
+      c.speed_multiplier = c.speed_multiplier * 1.68
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback - 10.0
+      c.extra_entities = c.extra_entities .. "data/entities/misc/decelerating_shot.xml,"
+      
+      if ( c.speed_multiplier >= 20 ) then
+        c.speed_multiplier = math.min( c.speed_multiplier, 20 )
+      elseif ( c.speed_multiplier < 0 ) then
+        c.speed_multiplier = 0
+      end
+      
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Delayed spellcast](DELAYED_SPELL.png)Delayed spellcast (DELAYED_SPELL)
@@ -2543,10 +2543,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile_trigger_death("data/entities/projectiles/deck/delayed_spell.xml", 3)
- c.fire_rate_wait = c.fire_rate_wait + 10
- end,
+ function()
+      add_projectile_trigger_death("data/entities/projectiles/deck/delayed_spell.xml", 3)
+      c.fire_rate_wait = c.fire_rate_wait + 10
+    end,
 ```
 
 ## ![Destruction](DESTRUCTION.png)Destruction (DESTRUCTION)
@@ -2569,11 +2569,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/destruction.xml")
- c.fire_rate_wait = c.fire_rate_wait + 100
- current_reload_time = current_reload_time + 300
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/destruction.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 100
+      current_reload_time = current_reload_time + 300
+    end,
 ```
 
 ## ![Digging blast](POWERDIGGER.png)Digging blast (POWERDIGGER)
@@ -2596,11 +2596,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/powerdigger.xml")
- c.fire_rate_wait = c.fire_rate_wait + 1
- current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the digger reload time back to 0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/powerdigger.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 1
+      current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the digger reload time back to 0
+    end,
 ```
 
 ## ![Digging bolt](DIGGER.png)Digging bolt (DIGGER)
@@ -2623,11 +2623,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/digger.xml")
- c.fire_rate_wait = c.fire_rate_wait + 1
- current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the digger reload time back to 0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/digger.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 1
+      current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the digger reload time back to 0
+    end,
 ```
 
 ## ![Disc projectile](DISC_BULLET.png)Disc projectile (DISC_BULLET)
@@ -2650,12 +2650,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/disc_bullet.xml")
- c.fire_rate_wait = c.fire_rate_wait + 10
- c.spread_degrees = c.spread_degrees + 2.0
- shot_effects.recoil_knockback = 20.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/disc_bullet.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 10
+      c.spread_degrees = c.spread_degrees + 2.0
+      shot_effects.recoil_knockback = 20.0
+    end,
 ```
 
 ## ![Divide by 10](DIVIDE_10.png)Divide by 10 (DIVIDE_10)
@@ -2678,76 +2678,76 @@ function()
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- c.fire_rate_wait = c.fire_rate_wait + 80
- current_reload_time = current_reload_time + 20
- 
- local data = {}
- 
- local iter = iteration or 1
- local iter_max = iteration or 1
- 
- if ( #deck > 0 ) then
- data = deck[iter] or nil
- else
- data = nil
- end
- 
- local count = 10
- if ( iter >= 3 ) then
- count = 1
- end
- 
- local rec = check_recursion( data, recursion_level )
- 
- if ( data ~= nil ) and ( rec > -1 ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
- local firerate = c.fire_rate_wait
- local reload = current_reload_time
- 
- for i=1,count do
- if ( i == 1 ) then
- dont_draw_actions = true
- end
- local imax = data.action( rec, iter + 1 )
- dont_draw_actions = false
- if (imax ~= nil) then
- iter_max = imax
- end
- end
- 
- if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
- data.uses_remaining = data.uses_remaining - 1
- 
- local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
- if not reduce_uses then
- data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
- end
- end
- 
- if (iter == 1) then
- c.fire_rate_wait = firerate
- current_reload_time = reload
- 
- for i=1,iter_max do
- if (#deck > 0) then
- local d = deck[1]
- table.insert( discarded, d )
- table.remove( deck, 1 )
- end
- end
- end
- end
- 
- c.damage_projectile_add = c.damage_projectile_add - 1.5
- c.explosion_radius = c.explosion_radius - 40.0
- if (c.explosion_radius < 0) then
- c.explosion_radius = 0
- end
- 
- c.pattern_degrees = 5
- 
- return iter_max
- end,
+ function( recursion_level, iteration )
+      c.fire_rate_wait = c.fire_rate_wait + 80
+      current_reload_time = current_reload_time + 20
+      
+      local data = {}
+      
+      local iter = iteration or 1
+      local iter_max = iteration or 1
+      
+      if ( #deck > 0 ) then
+        data = deck[iter] or nil
+      else
+        data = nil
+      end
+      
+      local count = 10
+      if ( iter >= 3 ) then
+        count = 1
+      end
+      
+      local rec = check_recursion( data, recursion_level )
+      
+      if ( data ~= nil ) and ( rec > -1 ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
+        local firerate = c.fire_rate_wait
+        local reload = current_reload_time
+        
+        for i=1,count do
+          if ( i == 1 ) then
+            dont_draw_actions = true
+          end
+          local imax = data.action( rec, iter + 1 )
+          dont_draw_actions = false
+          if (imax ~= nil) then
+            iter_max = imax
+          end
+        end
+        
+        if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
+          data.uses_remaining = data.uses_remaining - 1
+          
+          local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
+          if not reduce_uses then
+            data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
+          end
+        end
+        
+        if (iter == 1) then
+          c.fire_rate_wait = firerate
+          current_reload_time = reload
+          
+          for i=1,iter_max do
+            if (#deck > 0) then
+              local d = deck[1]
+              table.insert( discarded, d )
+              table.remove( deck, 1 )
+            end
+          end
+        end
+      end
+      
+      c.damage_projectile_add = c.damage_projectile_add - 1.5
+      c.explosion_radius = c.explosion_radius - 40.0
+      if (c.explosion_radius < 0) then
+        c.explosion_radius = 0
+      end
+      
+      c.pattern_degrees = 5
+      
+      return iter_max
+    end,
 ```
 
 ## ![Divide by 2](DIVIDE_2.png)Divide by 2 (DIVIDE_2)
@@ -2770,75 +2770,75 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- c.fire_rate_wait = c.fire_rate_wait + 20
- 
- local data = {}
- 
- local iter = iteration or 1
- local iter_max = iteration or 1
- 
- if ( #deck > 0 ) then
- data = deck[iter] or nil
- else
- data = nil
- end
- 
- local count = 2
- if ( iter >= 5 ) then
- count = 1
- end
- 
- local rec = check_recursion( data, recursion_level )
- 
- if ( data ~= nil ) and ( rec > -1 ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
- local firerate = c.fire_rate_wait
- local reload = current_reload_time
- 
- for i=1,count do
- if ( i == 1 ) then
- dont_draw_actions = true
- end
- local imax = data.action( rec, iter + 1 )
- dont_draw_actions = false
- if (imax ~= nil) then
- iter_max = imax
- end
- end
- 
- if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
- data.uses_remaining = data.uses_remaining - 1
- 
- local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
- if not reduce_uses then
- data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
- end
- end
- 
- if (iter == 1) then
- c.fire_rate_wait = firerate
- current_reload_time = reload
- 
- for i=1,iter_max do
- if (#deck > 0) then
- local d = deck[1]
- table.insert( discarded, d )
- table.remove( deck, 1 )
- end
- end
- end
- end
- 
- c.damage_projectile_add = c.damage_projectile_add - 0.2
- c.explosion_radius = c.explosion_radius - 5.0
- if (c.explosion_radius < 0) then
- c.explosion_radius = 0
- end
- 
- c.pattern_degrees = 5
- 
- return iter_max
- end,
+ function( recursion_level, iteration )
+      c.fire_rate_wait = c.fire_rate_wait + 20
+      
+      local data = {}
+      
+      local iter = iteration or 1
+      local iter_max = iteration or 1
+      
+      if ( #deck > 0 ) then
+        data = deck[iter] or nil
+      else
+        data = nil
+      end
+      
+      local count = 2
+      if ( iter >= 5 ) then
+        count = 1
+      end
+      
+      local rec = check_recursion( data, recursion_level )
+      
+      if ( data ~= nil ) and ( rec > -1 ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
+        local firerate = c.fire_rate_wait
+        local reload = current_reload_time
+        
+        for i=1,count do
+          if ( i == 1 ) then
+            dont_draw_actions = true
+          end
+          local imax = data.action( rec, iter + 1 )
+          dont_draw_actions = false
+          if (imax ~= nil) then
+            iter_max = imax
+          end
+        end
+        
+        if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
+          data.uses_remaining = data.uses_remaining - 1
+          
+          local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
+          if not reduce_uses then
+            data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
+          end
+        end
+        
+        if (iter == 1) then
+          c.fire_rate_wait = firerate
+          current_reload_time = reload
+          
+          for i=1,iter_max do
+            if (#deck > 0) then
+              local d = deck[1]
+              table.insert( discarded, d )
+              table.remove( deck, 1 )
+            end
+          end
+        end
+      end
+      
+      c.damage_projectile_add = c.damage_projectile_add - 0.2
+      c.explosion_radius = c.explosion_radius - 5.0
+      if (c.explosion_radius < 0) then
+        c.explosion_radius = 0
+      end
+      
+      c.pattern_degrees = 5
+      
+      return iter_max
+    end,
 ```
 
 ## ![Divide by 3](DIVIDE_3.png)Divide by 3 (DIVIDE_3)
@@ -2861,75 +2861,75 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- c.fire_rate_wait = c.fire_rate_wait + 35
- 
- local data = {}
- 
- local iter = iteration or 1
- local iter_max = iteration or 1
- 
- if ( #deck > 0 ) then
- data = deck[iter] or nil
- else
- data = nil
- end
- 
- local count = 3
- if ( iter >= 4 ) then
- count = 1
- end
- 
- local rec = check_recursion( data, recursion_level )
- 
- if ( data ~= nil ) and ( rec > -1 ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
- local firerate = c.fire_rate_wait
- local reload = current_reload_time
- 
- for i=1,count do
- if ( i == 1 ) then
- dont_draw_actions = true
- end
- local imax = data.action( rec, iter + 1 )
- dont_draw_actions = false
- if (imax ~= nil) then
- iter_max = imax
- end
- end
- 
- if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
- data.uses_remaining = data.uses_remaining - 1
- 
- local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
- if not reduce_uses then
- data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
- end
- end
- 
- if (iter == 1) then
- c.fire_rate_wait = firerate
- current_reload_time = reload
- 
- for i=1,iter_max do
- if (#deck > 0) then
- local d = deck[1]
- table.insert( discarded, d )
- table.remove( deck, 1 )
- end
- end
- end
- end
- 
- c.damage_projectile_add = c.damage_projectile_add - 0.4
- c.explosion_radius = c.explosion_radius - 10.0
- if (c.explosion_radius < 0) then
- c.explosion_radius = 0
- end
- 
- c.pattern_degrees = 5
- 
- return iter_max
- end,
+ function( recursion_level, iteration )
+      c.fire_rate_wait = c.fire_rate_wait + 35
+      
+      local data = {}
+      
+      local iter = iteration or 1
+      local iter_max = iteration or 1
+      
+      if ( #deck > 0 ) then
+        data = deck[iter] or nil
+      else
+        data = nil
+      end
+      
+      local count = 3
+      if ( iter >= 4 ) then
+        count = 1
+      end
+      
+      local rec = check_recursion( data, recursion_level )
+      
+      if ( data ~= nil ) and ( rec > -1 ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
+        local firerate = c.fire_rate_wait
+        local reload = current_reload_time
+        
+        for i=1,count do
+          if ( i == 1 ) then
+            dont_draw_actions = true
+          end
+          local imax = data.action( rec, iter + 1 )
+          dont_draw_actions = false
+          if (imax ~= nil) then
+            iter_max = imax
+          end
+        end
+        
+        if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
+          data.uses_remaining = data.uses_remaining - 1
+          
+          local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
+          if not reduce_uses then
+            data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
+          end
+        end
+        
+        if (iter == 1) then
+          c.fire_rate_wait = firerate
+          current_reload_time = reload
+          
+          for i=1,iter_max do
+            if (#deck > 0) then
+              local d = deck[1]
+              table.insert( discarded, d )
+              table.remove( deck, 1 )
+            end
+          end
+        end
+      end
+      
+      c.damage_projectile_add = c.damage_projectile_add - 0.4
+      c.explosion_radius = c.explosion_radius - 10.0
+      if (c.explosion_radius < 0) then
+        c.explosion_radius = 0
+      end
+      
+      c.pattern_degrees = 5
+      
+      return iter_max
+    end,
 ```
 
 ## ![Divide by 4](DIVIDE_4.png)Divide by 4 (DIVIDE_4)
@@ -2952,75 +2952,75 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- c.fire_rate_wait = c.fire_rate_wait + 50
- 
- local data = {}
- 
- local iter = iteration or 1
- local iter_max = iteration or 1
- 
- if ( #deck > 0 ) then
- data = deck[iter] or nil
- else
- data = nil
- end
- 
- local count = 4
- if ( iter >= 4 ) then
- count = 1
- end
- 
- local rec = check_recursion( data, recursion_level )
- 
- if ( data ~= nil ) and ( rec > -1 ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
- local firerate = c.fire_rate_wait
- local reload = current_reload_time
- 
- for i=1,count do
- if ( i == 1 ) then
- dont_draw_actions = true
- end
- local imax = data.action( rec, iter + 1 )
- dont_draw_actions = false
- if (imax ~= nil) then
- iter_max = imax
- end
- end
- 
- if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
- data.uses_remaining = data.uses_remaining - 1
- 
- local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
- if not reduce_uses then
- data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
- end
- end
- 
- if (iter == 1) then
- c.fire_rate_wait = firerate
- current_reload_time = reload
- 
- for i=1,iter_max do
- if (#deck > 0) then
- local d = deck[1]
- table.insert( discarded, d )
- table.remove( deck, 1 )
- end
- end
- end
- end
- 
- c.damage_projectile_add = c.damage_projectile_add - 0.6
- c.explosion_radius = c.explosion_radius - 20.0
- if (c.explosion_radius < 0) then
- c.explosion_radius = 0
- end
- 
- c.pattern_degrees = 5
- 
- return iter_max
- end,
+ function( recursion_level, iteration )
+      c.fire_rate_wait = c.fire_rate_wait + 50
+      
+      local data = {}
+      
+      local iter = iteration or 1
+      local iter_max = iteration or 1
+      
+      if ( #deck > 0 ) then
+        data = deck[iter] or nil
+      else
+        data = nil
+      end
+      
+      local count = 4
+      if ( iter >= 4 ) then
+        count = 1
+      end
+      
+      local rec = check_recursion( data, recursion_level )
+      
+      if ( data ~= nil ) and ( rec > -1 ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
+        local firerate = c.fire_rate_wait
+        local reload = current_reload_time
+        
+        for i=1,count do
+          if ( i == 1 ) then
+            dont_draw_actions = true
+          end
+          local imax = data.action( rec, iter + 1 )
+          dont_draw_actions = false
+          if (imax ~= nil) then
+            iter_max = imax
+          end
+        end
+        
+        if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
+          data.uses_remaining = data.uses_remaining - 1
+          
+          local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
+          if not reduce_uses then
+            data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
+          end
+        end
+        
+        if (iter == 1) then
+          c.fire_rate_wait = firerate
+          current_reload_time = reload
+          
+          for i=1,iter_max do
+            if (#deck > 0) then
+              local d = deck[1]
+              table.insert( discarded, d )
+              table.remove( deck, 1 )
+            end
+          end
+        end
+      end
+      
+      c.damage_projectile_add = c.damage_projectile_add - 0.6
+      c.explosion_radius = c.explosion_radius - 20.0
+      if (c.explosion_radius < 0) then
+        c.explosion_radius = 0
+      end
+      
+      c.pattern_degrees = 5
+      
+      return iter_max
+    end,
 ```
 
 ## ![Dormant crystal](PIPE_BOMB.png)Dormant crystal (PIPE_BOMB)
@@ -3043,18 +3043,18 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/pipe_bomb.xml")
- c.fire_rate_wait = c.fire_rate_wait + 30
- c.child_speed_multiplier = c.child_speed_multiplier * 0.75
- c.speed_multiplier = c.speed_multiplier * 0.75
- 
- if ( c.speed_multiplier >= 20 ) then
- c.speed_multiplier = math.min( c.speed_multiplier, 20 )
- elseif ( c.speed_multiplier < 0 ) then
- c.speed_multiplier = 0
- end
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/pipe_bomb.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 30
+      c.child_speed_multiplier = c.child_speed_multiplier * 0.75
+      c.speed_multiplier = c.speed_multiplier * 0.75
+      
+      if ( c.speed_multiplier >= 20 ) then
+        c.speed_multiplier = math.min( c.speed_multiplier, 20 )
+      elseif ( c.speed_multiplier < 0 ) then
+        c.speed_multiplier = 0
+      end
+    end,
 ```
 
 ## ![Dormant crystal with trigger](PIPE_BOMB_DEATH_TRIGGER.png)Dormant crystal with trigger (PIPE_BOMB_DEATH_TRIGGER)
@@ -3077,19 +3077,19 @@ function()
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait + 30
- c.child_speed_multiplier = c.child_speed_multiplier * 0.75
- c.speed_multiplier = c.speed_multiplier * 0.75
- add_projectile_trigger_death("data/entities/projectiles/deck/pipe_bomb.xml", 1)
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 60.0
- 
- if ( c.speed_multiplier >= 20 ) then
- c.speed_multiplier = math.min( c.speed_multiplier, 20 )
- elseif ( c.speed_multiplier < 0 ) then
- c.speed_multiplier = 0
- end
- end,
+ function()
+      c.fire_rate_wait = c.fire_rate_wait + 30
+      c.child_speed_multiplier = c.child_speed_multiplier * 0.75
+      c.speed_multiplier = c.speed_multiplier * 0.75
+      add_projectile_trigger_death("data/entities/projectiles/deck/pipe_bomb.xml", 1)
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 60.0
+      
+      if ( c.speed_multiplier >= 20 ) then
+        c.speed_multiplier = math.min( c.speed_multiplier, 20 )
+      elseif ( c.speed_multiplier < 0 ) then
+        c.speed_multiplier = 0
+      end
+    end,
 ```
 
 ## ![Double scatter spell](SCATTER_2.png)Double scatter spell (SCATTER_2)
@@ -3112,10 +3112,10 @@ function()
 * **action**:
 
 ```lua
-function()
- draw_actions( 2, true )
- c.spread_degrees = c.spread_degrees + 10.0
- end,
+ function()
+      draw_actions( 2, true )
+      c.spread_degrees = c.spread_degrees + 10.0
+    end,
 ```
 
 ## ![Double spell](BURST_2.png)Double spell (BURST_2)
@@ -3138,9 +3138,9 @@ function()
 * **action**:
 
 ```lua
-function()
- draw_actions( 2, true )
- end,
+ function()
+      draw_actions( 2, true )
+    end,
 ```
 
 ## ![Downwards bolt bundle](ROCKET_DOWNWARDS.png)Downwards bolt bundle (ROCKET_DOWNWARDS)
@@ -3163,11 +3163,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/rocket_downwards.xml,"
- c.fire_rate_wait = c.fire_rate_wait + 25
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/rocket_downwards.xml,"
+      c.fire_rate_wait = c.fire_rate_wait + 25
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Downwards larpa](LARPA_DOWNWARDS.png)Downwards larpa (LARPA_DOWNWARDS)
@@ -3190,11 +3190,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait + 15
- c.extra_entities = c.extra_entities .. "data/entities/misc/larpa_downwards.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.fire_rate_wait = c.fire_rate_wait + 15
+      c.extra_entities = c.extra_entities .. "data/entities/misc/larpa_downwards.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Drilling shot](CLIPPING_SHOT.png)Drilling shot (CLIPPING_SHOT)
@@ -3217,12 +3217,12 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/clipping_shot.xml,"
- c.fire_rate_wait = c.fire_rate_wait + 50
- current_reload_time = current_reload_time + 40
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/clipping_shot.xml,"
+      c.fire_rate_wait = c.fire_rate_wait + 50
+      current_reload_time = current_reload_time + 40
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Dropper bolt](GRENADE_LARGE.png)Dropper bolt (GRENADE_LARGE)
@@ -3245,13 +3245,13 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/grenade_large.xml")
- c.fire_rate_wait = c.fire_rate_wait + 40
- c.screenshake = c.screenshake + 5.0
- c.child_speed_multiplier = c.child_speed_multiplier * 0.75
- shot_effects.recoil_knockback = 80.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/grenade_large.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 40
+      c.screenshake = c.screenshake + 5.0
+      c.child_speed_multiplier = c.child_speed_multiplier * 0.75
+      shot_effects.recoil_knockback = 80.0
+    end,
 ```
 
 ## ![Dynamite](DYNAMITE.png)Dynamite (DYNAMITE)
@@ -3274,11 +3274,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/tnt.xml")
- c.fire_rate_wait = c.fire_rate_wait + 50
- c.spread_degrees = c.spread_degrees + 6.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/tnt.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 50
+      c.spread_degrees = c.spread_degrees + 6.0
+    end,
 ```
 
 ## ![Earthquake](CRUMBLING_EARTH.png)Earthquake (CRUMBLING_EARTH)
@@ -3301,9 +3301,9 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/crumbling_earth.xml")
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/crumbling_earth.xml")
+    end,
 ```
 
 ## ![Earthquake shot](CRUMBLING_EARTH_PROJECTILE.png)Earthquake shot (CRUMBLING_EARTH_PROJECTILE)
@@ -3326,10 +3326,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/crumbling_earth_projectile.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/crumbling_earth_projectile.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Eldritch portal](TENTACLE_PORTAL.png)Eldritch portal (TENTACLE_PORTAL)
@@ -3352,10 +3352,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/tentacle_portal.xml")
- c.fire_rate_wait = c.fire_rate_wait + 30
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/tentacle_portal.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 30
+    end,
 ```
 
 ## ![Electric Arc](ARC_ELECTRIC.png)Electric Arc (ARC_ELECTRIC)
@@ -3378,10 +3378,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/arc_electric.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/arc_electric.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Electric Torch](TORCH_ELECTRIC.png)Electric Torch (TORCH_ELECTRIC)
@@ -3404,9 +3404,9 @@ function()
 * **action**:
 
 ```lua
-function()
- draw_actions( 1, true )
- end,
+ function()
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Electric charge](ELECTRIC_CHARGE.png)Electric charge (ELECTRIC_CHARGE)
@@ -3429,12 +3429,12 @@ function()
 * **action**:
 
 ```lua
-function()
- c.lightning_count = c.lightning_count + 1
- c.damage_electricity_add = c.damage_electricity_add + 0.1
- c.extra_entities = c.extra_entities .. "data/entities/particles/electricity.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.lightning_count = c.lightning_count + 1
+      c.damage_electricity_add = c.damage_electricity_add + 0.1
+      c.extra_entities = c.extra_entities .. "data/entities/particles/electricity.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Energy orb](SLOW_BULLET.png)Energy orb (SLOW_BULLET)
@@ -3457,13 +3457,13 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/bullet_slow.xml")
- c.fire_rate_wait = c.fire_rate_wait + 6
- c.screenshake = c.screenshake + 2
- c.spread_degrees = c.spread_degrees + 3.6
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/bullet_slow.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 6
+      c.screenshake = c.screenshake + 2
+      c.spread_degrees = c.spread_degrees + 3.6
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
+    end,
 ```
 
 ## ![Energy orb with a timer](SLOW_BULLET_TIMER.png)Energy orb with a timer (SLOW_BULLET_TIMER)
@@ -3486,13 +3486,13 @@ function()
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait + 6
- c.screenshake = c.screenshake + 2
- c.spread_degrees = c.spread_degrees + 3.6
- add_projectile_trigger_timer("data/entities/projectiles/deck/bullet_slow.xml", 100, 1)
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
- end,
+ function()
+      c.fire_rate_wait = c.fire_rate_wait + 6
+      c.screenshake = c.screenshake + 2
+      c.spread_degrees = c.spread_degrees + 3.6
+      add_projectile_trigger_timer("data/entities/projectiles/deck/bullet_slow.xml", 100, 1)
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
+    end,
 ```
 
 ## ![Energy orb with a trigger](SLOW_BULLET_TRIGGER.png)Energy orb with a trigger (SLOW_BULLET_TRIGGER)
@@ -3515,13 +3515,13 @@ function()
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait + 25
- c.screenshake = c.screenshake + 2
- c.spread_degrees = c.spread_degrees + 10
- add_projectile_trigger_hit_world("data/entities/projectiles/deck/bullet_slow.xml", 1)
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
- end,
+ function()
+      c.fire_rate_wait = c.fire_rate_wait + 25
+      c.screenshake = c.screenshake + 2
+      c.spread_degrees = c.spread_degrees + 10
+      add_projectile_trigger_hit_world("data/entities/projectiles/deck/bullet_slow.xml", 1)
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
+    end,
 ```
 
 ## ![Energy shield](ENERGY_SHIELD.png)Energy shield (ENERGY_SHIELD)
@@ -3544,9 +3544,9 @@ function()
 * **action**:
 
 ```lua
-function()
- draw_actions( 1, true )
- end,
+ function()
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Energy shield sector](ENERGY_SHIELD_SECTOR.png)Energy shield sector (ENERGY_SHIELD_SECTOR)
@@ -3569,9 +3569,9 @@ function()
 * **action**:
 
 ```lua
-function()
- draw_actions( 1, true )
- end,
+ function()
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Energy sphere](BOUNCY_ORB.png)Energy sphere (BOUNCY_ORB)
@@ -3594,11 +3594,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/bouncy_orb.xml")
- c.fire_rate_wait = c.fire_rate_wait + 10
- shot_effects.recoil_knockback = 20.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/bouncy_orb.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 10
+      shot_effects.recoil_knockback = 20.0
+    end,
 ```
 
 ## ![Energy sphere with timer](BOUNCY_ORB_TIMER.png)Energy sphere with timer (BOUNCY_ORB_TIMER)
@@ -3621,11 +3621,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile_trigger_timer("data/entities/projectiles/deck/bouncy_orb.xml",200,1)
- c.fire_rate_wait = c.fire_rate_wait + 10
- shot_effects.recoil_knockback = 20.0
- end,
+ function()
+      add_projectile_trigger_timer("data/entities/projectiles/deck/bouncy_orb.xml",200,1)
+      c.fire_rate_wait = c.fire_rate_wait + 10
+      shot_effects.recoil_knockback = 20.0
+    end,
 ```
 
 ## ![Essence to Power](ESSENCE_TO_POWER.png)Essence to Power (ESSENCE_TO_POWER)
@@ -3648,11 +3648,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/essence_to_power.xml,"
- c.fire_rate_wait = c.fire_rate_wait + 20
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/essence_to_power.xml,"
+      c.fire_rate_wait    = c.fire_rate_wait + 20
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Expanding Sphere](EXPANDING_ORB.png)Expanding Sphere (EXPANDING_ORB)
@@ -3675,11 +3675,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/orb_expanding.xml")
- c.fire_rate_wait = c.fire_rate_wait + 30
- shot_effects.recoil_knockback = 20.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/orb_expanding.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 30
+      shot_effects.recoil_knockback = 20.0
+    end,
 ```
 
 ## ![Explosion](EXPLOSION.png)Explosion (EXPLOSION)
@@ -3702,11 +3702,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/explosion.xml")
- c.fire_rate_wait = c.fire_rate_wait + 3
- c.screenshake = c.screenshake + 2.5
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/explosion.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 3
+      c.screenshake = c.screenshake + 2.5
+    end,
 ```
 
 ## ![Explosion of brimstone](FIRE_BLAST.png)Explosion of brimstone (FIRE_BLAST)
@@ -3729,11 +3729,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/fireblast.xml")
- c.fire_rate_wait = c.fire_rate_wait + 3
- c.screenshake = c.screenshake + 0.5
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/fireblast.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 3
+      c.screenshake = c.screenshake + 0.5
+    end,
 ```
 
 ## ![Explosion of poison](POISON_BLAST.png)Explosion of poison (POISON_BLAST)
@@ -3756,11 +3756,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/poison_blast.xml")
- c.fire_rate_wait = c.fire_rate_wait + 3
- c.screenshake = c.screenshake + 0.5
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/poison_blast.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 3
+      c.screenshake = c.screenshake + 0.5
+    end,
 ```
 
 ## ![Explosion of spirits](ALCOHOL_BLAST.png)Explosion of spirits (ALCOHOL_BLAST)
@@ -3783,11 +3783,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/alcohol_blast.xml")
- c.fire_rate_wait = c.fire_rate_wait + 3
- c.screenshake = c.screenshake + 0.5
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/alcohol_blast.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 3
+      c.screenshake = c.screenshake + 0.5
+    end,
 ```
 
 ## ![Explosion of thunder](THUNDER_BLAST.png)Explosion of thunder (THUNDER_BLAST)
@@ -3810,12 +3810,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/thunder_blast.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- c.screenshake = c.screenshake + 3.0
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/thunder_blast.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+      c.screenshake = c.screenshake + 3.0
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
+    end,
 ```
 
 ## ![Explosion on drunk enemies](HITFX_EXPLOSION_ALCOHOL.png)Explosion on drunk enemies (HITFX_EXPLOSION_ALCOHOL)
@@ -3838,10 +3838,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_explode_alcohol.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_explode_alcohol.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Explosion on slimy enemies](HITFX_EXPLOSION_SLIME.png)Explosion on slimy enemies (HITFX_EXPLOSION_SLIME)
@@ -3864,10 +3864,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_explode_slime.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_explode_slime.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Explosive Detonator](BOMB_DETONATOR.png)Explosive Detonator (BOMB_DETONATOR)
@@ -3890,9 +3890,9 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/bomb_detonator.xml")
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/bomb_detonator.xml")
+    end,
 ```
 
 ## ![Explosive bounce](BOUNCE_EXPLOSION.png)Explosive bounce (BOUNCE_EXPLOSION)
@@ -3915,13 +3915,13 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/bounce_explosion.xml,"
- c.bounces = c.bounces + 1
- c.fire_rate_wait = c.fire_rate_wait + 25
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/bounce_explosion.xml,"
+      c.bounces = c.bounces + 1
+      c.fire_rate_wait = c.fire_rate_wait + 25
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Explosive projectile](EXPLOSIVE_PROJECTILE.png)Explosive projectile (EXPLOSIVE_PROJECTILE)
@@ -3944,21 +3944,21 @@ function()
 * **action**:
 
 ```lua
-function()
- c.explosion_radius = c.explosion_radius + 15.0
- c.damage_explosion_add = c.damage_explosion_add + 0.2
- c.fire_rate_wait = c.fire_rate_wait + 40
- c.speed_multiplier = c.speed_multiplier * 0.75
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
- 
- if ( c.speed_multiplier >= 20 ) then
- c.speed_multiplier = math.min( c.speed_multiplier, 20 )
- elseif ( c.speed_multiplier < 0 ) then
- c.speed_multiplier = 0
- end
- 
- draw_actions( 1, true )
- end,
+ function()
+      c.explosion_radius = c.explosion_radius + 15.0
+      c.damage_explosion_add = c.damage_explosion_add + 0.2
+      c.fire_rate_wait   = c.fire_rate_wait + 40
+      c.speed_multiplier = c.speed_multiplier * 0.75
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
+      
+      if ( c.speed_multiplier >= 20 ) then
+        c.speed_multiplier = math.min( c.speed_multiplier, 20 )
+      elseif ( c.speed_multiplier < 0 ) then
+        c.speed_multiplier = 0
+      end
+      
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Fire Arc](ARC_FIRE.png)Fire Arc (ARC_FIRE)
@@ -3981,10 +3981,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/arc_fire.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/arc_fire.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Fire trail](FIRE_TRAIL.png)Fire trail (FIRE_TRAIL)
@@ -4007,12 +4007,12 @@ function()
 * **action**:
 
 ```lua
-function()
- c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_on_fire.xml,"
- c.trail_material = c.trail_material .. "fire,"
- c.trail_material_amount = c.trail_material_amount + 10
- draw_actions( 1, true )
- end,
+ function()
+      c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_on_fire.xml,"
+      c.trail_material = c.trail_material .. "fire,"
+      c.trail_material_amount = c.trail_material_amount + 10
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Fireball](FIREBALL.png)Fireball (FIREBALL)
@@ -4035,12 +4035,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/fireball.xml")
- c.spread_degrees = c.spread_degrees + 4.0
- c.fire_rate_wait = c.fire_rate_wait + 50
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/fireball.xml")
+      c.spread_degrees = c.spread_degrees + 4.0
+      c.fire_rate_wait = c.fire_rate_wait + 50
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
+    end,
 ```
 
 ## ![Fireball Orbit](ORBIT_FIREBALLS.png)Fireball Orbit (ORBIT_FIREBALLS)
@@ -4063,10 +4063,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/orbit_fireballs.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/orbit_fireballs.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Fireball thrower](FIREBALL_RAY.png)Fireball thrower (FIREBALL_RAY)
@@ -4089,10 +4089,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/fireball_ray.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/fireball_ray.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Firebolt](GRENADE.png)Firebolt (GRENADE)
@@ -4115,13 +4115,13 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/grenade.xml")
- c.fire_rate_wait = c.fire_rate_wait + 30
- c.screenshake = c.screenshake + 4.0
- c.child_speed_multiplier = c.child_speed_multiplier * 0.75
- shot_effects.recoil_knockback = 80.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/grenade.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 30
+      c.screenshake = c.screenshake + 4.0
+      c.child_speed_multiplier = c.child_speed_multiplier * 0.75
+      shot_effects.recoil_knockback = 80.0
+    end,
 ```
 
 ## ![Firebolt with trigger](GRENADE_TRIGGER.png)Firebolt with trigger (GRENADE_TRIGGER)
@@ -4144,13 +4144,13 @@ function()
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait + 30
- c.screenshake = c.screenshake + 4.0
- c.child_speed_multiplier = c.child_speed_multiplier * 0.75
- add_projectile_trigger_hit_world("data/entities/projectiles/deck/grenade.xml", 1)
- shot_effects.recoil_knockback = 80.0
- end,
+ function()
+      c.fire_rate_wait = c.fire_rate_wait + 30
+      c.screenshake = c.screenshake + 4.0
+      c.child_speed_multiplier = c.child_speed_multiplier * 0.75
+      add_projectile_trigger_hit_world("data/entities/projectiles/deck/grenade.xml", 1)
+      shot_effects.recoil_knockback = 80.0
+    end,
 ```
 
 ## ![Firebomb](FIREBOMB.png)Firebomb (FIREBOMB)
@@ -4173,9 +4173,9 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/firebomb.xml")
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/firebomb.xml")
+    end,
 ```
 
 ## ![Firecrackers](UNSTABLE_GUNPOWDER.png)Firecrackers (UNSTABLE_GUNPOWDER)
@@ -4198,11 +4198,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.material = "gunpowder_unstable"
- c.material_amount = c.material_amount + 10
- draw_actions( 1, true )
- end,
+ function()
+      c.material = "gunpowder_unstable"
+      c.material_amount = c.material_amount + 10
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Fireworks!](FIREWORK.png)Fireworks! (FIREWORK)
@@ -4225,16 +4225,16 @@ function()
 * **action**:
 
 ```lua
-function()
- SetRandomSeed( GameGetFrameNum(), GameGetFrameNum() )
- local types = {"pink","green","blue","orange"}
- local rnd = Random(1, #types)
- local firework_name = "firework_" .. tostring(types[rnd]) .. ".xml"
- add_projectile("data/entities/projectiles/deck/fireworks/" .. firework_name)
- c.fire_rate_wait = c.fire_rate_wait + 60
- c.ragdoll_fx = 2
- shot_effects.recoil_knockback = 120.0
- end,
+ function()
+      SetRandomSeed( GameGetFrameNum(), GameGetFrameNum() )
+      local types = {"pink","green","blue","orange"}
+      local rnd = Random(1, #types)
+      local firework_name = "firework_" .. tostring(types[rnd]) .. ".xml"
+      add_projectile("data/entities/projectiles/deck/fireworks/" .. firework_name)
+      c.fire_rate_wait = c.fire_rate_wait + 60
+      c.ragdoll_fx = 2
+      shot_effects.recoil_knockback = 120.0
+    end,
 ```
 
 ## ![Fizzle](FIZZLE.png)Fizzle (FIZZLE)
@@ -4257,19 +4257,19 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/fizzle.xml,"
- c.speed_multiplier = c.speed_multiplier * 1.2
- c.fire_rate_wait = c.fire_rate_wait - 10
- 
- if ( c.speed_multiplier >= 20 ) then
- c.speed_multiplier = math.min( c.speed_multiplier, 20 )
- elseif ( c.speed_multiplier < 0 ) then
- c.speed_multiplier = 0
- end
- 
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/fizzle.xml,"
+      c.speed_multiplier = c.speed_multiplier * 1.2
+      c.fire_rate_wait = c.fire_rate_wait - 10
+      
+      if ( c.speed_multiplier >= 20 ) then
+        c.speed_multiplier = math.min( c.speed_multiplier, 20 )
+      elseif ( c.speed_multiplier < 0 ) then
+        c.speed_multiplier = 0
+      end
+      
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Flamethrower](FLAMETHROWER.png)Flamethrower (FLAMETHROWER)
@@ -4292,10 +4292,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/flamethrower.xml")
- c.spread_degrees = c.spread_degrees + 4.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/flamethrower.xml")
+      c.spread_degrees = c.spread_degrees + 4.0
+    end,
 ```
 
 ## ![Floating arc](FLOATING_ARC.png)Floating arc (FLOATING_ARC)
@@ -4318,11 +4318,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/floating_arc.xml,"
- c.fire_rate_wait = c.fire_rate_wait + 10
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/floating_arc.xml,"
+      c.fire_rate_wait    = c.fire_rate_wait + 10
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Flock of Ducks](EXPLODING_DUCKS.png)Flock of Ducks (EXPLODING_DUCKS)
@@ -4345,13 +4345,13 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/duck.xml")
- add_projectile("data/entities/projectiles/deck/duck.xml")
- add_projectile("data/entities/projectiles/deck/duck.xml")
- c.fire_rate_wait = c.fire_rate_wait + 60
- current_reload_time = current_reload_time + 20
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/duck.xml")
+      add_projectile("data/entities/projectiles/deck/duck.xml")
+      add_projectile("data/entities/projectiles/deck/duck.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 60
+      current_reload_time = current_reload_time + 20
+    end,
 ```
 
 ## ![Fly downwards](FLY_DOWNWARDS.png)Fly downwards (FLY_DOWNWARDS)
@@ -4374,11 +4374,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/fly_downwards.xml,"
- draw_actions( 1, true )
- c.fire_rate_wait = c.fire_rate_wait - 3
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/fly_downwards.xml,"
+      draw_actions( 1, true )
+      c.fire_rate_wait    = c.fire_rate_wait - 3
+    end,
 ```
 
 ## ![Fly upwards](FLY_UPWARDS.png)Fly upwards (FLY_UPWARDS)
@@ -4401,11 +4401,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/fly_upwards.xml,"
- draw_actions( 1, true )
- c.fire_rate_wait = c.fire_rate_wait - 3
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/fly_upwards.xml,"
+      draw_actions( 1, true )
+      c.fire_rate_wait    = c.fire_rate_wait - 3
+    end,
 ```
 
 ## ![Formation - above and below](T_SHAPE.png)Formation - above and below (T_SHAPE)
@@ -4428,10 +4428,10 @@ function()
 * **action**:
 
 ```lua
-function()
- draw_actions(3, true)
- c.pattern_degrees = 90
- end,
+ function()
+      draw_actions(3, true)
+      c.pattern_degrees = 90
+    end,
 ```
 
 ## ![Formation - behind your back](I_SHAPE.png)Formation - behind your back (I_SHAPE)
@@ -4454,10 +4454,10 @@ function()
 * **action**:
 
 ```lua
-function()
- draw_actions(2, true)
- c.pattern_degrees = 180
- end,
+ function()
+      draw_actions(2, true)
+      c.pattern_degrees = 180
+    end,
 ```
 
 ## ![Formation - bifurcated](Y_SHAPE.png)Formation - bifurcated (Y_SHAPE)
@@ -4480,10 +4480,10 @@ function()
 * **action**:
 
 ```lua
-function()
- draw_actions(2, true)
- c.pattern_degrees = 45
- end,
+ function()
+      draw_actions(2, true)
+      c.pattern_degrees = 45
+    end,
 ```
 
 ## ![Formation - hexagon](CIRCLE_SHAPE.png)Formation - hexagon (CIRCLE_SHAPE)
@@ -4506,10 +4506,10 @@ function()
 * **action**:
 
 ```lua
-function()
- draw_actions(6, true)
- c.pattern_degrees = 180
- end,
+ function()
+      draw_actions(6, true)
+      c.pattern_degrees = 180
+    end,
 ```
 
 ## ![Formation - pentagon](PENTAGRAM_SHAPE.png)Formation - pentagon (PENTAGRAM_SHAPE)
@@ -4532,10 +4532,10 @@ function()
 * **action**:
 
 ```lua
-function()
- draw_actions(5, true)
- c.pattern_degrees = 180
- end,
+ function()
+      draw_actions(5, true)
+      c.pattern_degrees = 180
+    end,
 ```
 
 ## ![Formation - trifurcated](W_SHAPE.png)Formation - trifurcated (W_SHAPE)
@@ -4558,10 +4558,10 @@ function()
 * **action**:
 
 ```lua
-function()
- draw_actions(3, true)
- c.pattern_degrees = 20
- end,
+ function()
+      draw_actions(3, true)
+      c.pattern_degrees = 20
+    end,
 ```
 
 ## ![Freeze charge](FREEZE.png)Freeze charge (FREEZE)
@@ -4584,12 +4584,12 @@ function()
 * **action**:
 
 ```lua
-function()
- c.damage_ice_add = c.damage_ice_add + 0.2
- c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_frozen.xml,"
- c.extra_entities = c.extra_entities .. "data/entities/particles/freeze_charge.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.damage_ice_add = c.damage_ice_add + 0.2
+      c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_frozen.xml,"
+      c.extra_entities = c.extra_entities .. "data/entities/particles/freeze_charge.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Freezing gaze](FREEZING_GAZE.png)Freezing gaze (FREEZING_GAZE)
@@ -4612,22 +4612,22 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
- add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
- add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
- add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
- add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
- add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
- add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
- add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
- add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
- add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
- add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
- add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
- c.pattern_degrees = 30
- c.fire_rate_wait = c.fire_rate_wait + 20
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      c.pattern_degrees = 30
+      c.fire_rate_wait = c.fire_rate_wait + 20
+    end,
 ```
 
 ## ![Gamma](GAMMA.png)Gamma (GAMMA)
@@ -4650,26 +4650,26 @@ function()
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- c.fire_rate_wait = c.fire_rate_wait + 15
- 
- local data = {}
- 
- if ( #deck > 0 ) then
- data = deck[#deck]
- elseif ( #hand > 0 ) then
- data = hand[#hand]
- else
- data = nil
- end
- 
- local rec = check_recursion( data, recursion_level )
- 
- if ( data ~= nil ) and ( rec > -1 ) then
- data.action( rec )
- end
- 
- end,
+ function( recursion_level, iteration )
+      c.fire_rate_wait = c.fire_rate_wait + 15
+      
+      local data = {}
+      
+      if ( #deck > 0 ) then
+        data = deck[#deck]
+      elseif ( #hand > 0 ) then
+        data = hand[#hand]
+      else
+        data = nil
+      end
+      
+      local rec = check_recursion( data, recursion_level )
+      
+      if ( data ~= nil ) and ( rec > -1 ) then
+        data.action( rec )
+      end
+      
+    end,
 ```
 
 ## ![Giant explosion on drunk enemies](HITFX_EXPLOSION_ALCOHOL_GIGA.png)Giant explosion on drunk enemies (HITFX_EXPLOSION_ALCOHOL_GIGA)
@@ -4692,10 +4692,10 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_explode_alcohol_giga.xml,data/entities/particles/tinyspark_orange.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_explode_alcohol_giga.xml,data/entities/particles/tinyspark_orange.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Giant explosion on slimy enemies](HITFX_EXPLOSION_SLIME_GIGA.png)Giant explosion on slimy enemies (HITFX_EXPLOSION_SLIME_GIGA)
@@ -4718,10 +4718,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_explode_slime_giga.xml,data/entities/particles/tinyspark_purple.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_explode_slime_giga.xml,data/entities/particles/tinyspark_purple.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Giant firebolt](GRENADE_TIER_3.png)Giant firebolt (GRENADE_TIER_3)
@@ -4744,13 +4744,13 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/grenade_tier_3.xml")
- c.fire_rate_wait = c.fire_rate_wait + 80
- c.screenshake = c.screenshake + 15.0
- c.child_speed_multiplier = c.child_speed_multiplier * 0.9
- shot_effects.recoil_knockback = 140.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/grenade_tier_3.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 80
+      c.screenshake = c.screenshake + 15.0
+      c.child_speed_multiplier = c.child_speed_multiplier * 0.9
+      shot_effects.recoil_knockback = 140.0
+    end,
 ```
 
 ## ![Giant magic missile](ROCKET_TIER_3.png)Giant magic missile (ROCKET_TIER_3)
@@ -4773,12 +4773,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/rocket_tier_3.xml")
- c.fire_rate_wait = c.fire_rate_wait + 120
- c.ragdoll_fx = 2
- shot_effects.recoil_knockback = 180.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/rocket_tier_3.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 120
+      c.ragdoll_fx = 2
+      shot_effects.recoil_knockback = 180.0
+    end,
 ```
 
 ## ![Giant spitter bolt](SPITTER_TIER_3.png)Giant spitter bolt (SPITTER_TIER_3)
@@ -4801,13 +4801,13 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/spitter_tier_3.xml")
- c.fire_rate_wait = c.fire_rate_wait - 4
- c.screenshake = c.screenshake + 3.1
- c.dampening = 0.3
- c.spread_degrees = c.spread_degrees + 9.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/spitter_tier_3.xml")
+      c.fire_rate_wait = c.fire_rate_wait - 4
+      c.screenshake = c.screenshake + 3.1
+      c.dampening = 0.3
+      c.spread_degrees = c.spread_degrees + 9.0
+    end,
 ```
 
 ## ![Giant spitter bolt with timer](SPITTER_TIER_3_TIMER.png)Giant spitter bolt with timer (SPITTER_TIER_3_TIMER)
@@ -4830,13 +4830,13 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile_trigger_timer("data/entities/projectiles/deck/spitter_tier_3.xml", 40, 1)
- c.fire_rate_wait = c.fire_rate_wait - 4
- c.screenshake = c.screenshake + 3.1
- c.dampening = 0.3
- c.spread_degrees = c.spread_degrees + 9.0
- end,
+ function()
+      add_projectile_trigger_timer("data/entities/projectiles/deck/spitter_tier_3.xml", 40, 1)
+      c.fire_rate_wait = c.fire_rate_wait - 4
+      c.screenshake = c.screenshake + 3.1
+      c.dampening = 0.3
+      c.spread_degrees = c.spread_degrees + 9.0
+    end,
 ```
 
 ## ![Giga Holy Bomb](BOMB_HOLY_GIGA.png)Giga Holy Bomb (BOMB_HOLY_GIGA)
@@ -4859,12 +4859,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/bomb_holy_giga.xml")
- current_reload_time = current_reload_time + 160
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 100.0
- c.fire_rate_wait = c.fire_rate_wait + 120
- end,
+ function()
+      add_projectile("data/entities/projectiles/bomb_holy_giga.xml")
+      current_reload_time = current_reload_time + 160
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 100.0
+      c.fire_rate_wait = c.fire_rate_wait + 120
+    end,
 ```
 
 ## ![Giga Nuke](NUKE_GIGA.png)Giga Nuke (NUKE_GIGA)
@@ -4887,24 +4887,24 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/nuke_giga.xml")
- c.fire_rate_wait = 50
- c.speed_multiplier = c.speed_multiplier * 0.5
- c.material = "fire"
- c.material_amount = c.material_amount + 80
- c.ragdoll_fx = 2
- c.gore_particles = c.gore_particles + 30
- c.screenshake = c.screenshake + 30.5
- current_reload_time = current_reload_time + 800
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 300.0
- 
- if ( c.speed_multiplier >= 20 ) then
- c.speed_multiplier = math.min( c.speed_multiplier, 20 )
- elseif ( c.speed_multiplier < 0 ) then
- c.speed_multiplier = 0
- end
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/nuke_giga.xml")
+      c.fire_rate_wait = 50
+      c.speed_multiplier = c.speed_multiplier * 0.5
+      c.material = "fire"
+      c.material_amount = c.material_amount + 80
+      c.ragdoll_fx = 2
+      c.gore_particles = c.gore_particles + 30
+      c.screenshake = c.screenshake + 30.5
+      current_reload_time = current_reload_time + 800
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 300.0
+      
+      if ( c.speed_multiplier >= 20 ) then
+        c.speed_multiplier = math.min( c.speed_multiplier, 20 )
+      elseif ( c.speed_multiplier < 0 ) then
+        c.speed_multiplier = 0
+      end
+    end,
 ```
 
 ## ![Giga black hole](BLACK_HOLE_BIG.png)Giga black hole (BLACK_HOLE_BIG)
@@ -4927,11 +4927,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/black_hole_big.xml")
- c.fire_rate_wait = c.fire_rate_wait + 80
- c.screenshake = c.screenshake + 10
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/black_hole_big.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 80
+      c.screenshake = c.screenshake + 10
+    end,
 ```
 
 ## ![Giga death cross](DEATH_CROSS_BIG.png)Giga death cross (DEATH_CROSS_BIG)
@@ -4954,11 +4954,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/death_cross_big.xml")
- c.fire_rate_wait = c.fire_rate_wait + 70
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/death_cross_big.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 70
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
+    end,
 ```
 
 ## ![Giga disc projectile](DISC_BULLET_BIG.png)Giga disc projectile (DISC_BULLET_BIG)
@@ -4981,12 +4981,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/disc_bullet_big.xml")
- c.fire_rate_wait = c.fire_rate_wait + 20
- c.spread_degrees = c.spread_degrees + 3.4
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/disc_bullet_big.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 20
+      c.spread_degrees = c.spread_degrees + 3.4
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
+    end,
 ```
 
 ## ![Glitter bomb](GLITTER_BOMB.png)Glitter bomb (GLITTER_BOMB)
@@ -5009,11 +5009,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/glitter_bomb.xml")
- c.fire_rate_wait = c.fire_rate_wait + 50
- c.spread_degrees = c.spread_degrees + 12.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/glitter_bomb.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 50
+      c.spread_degrees = c.spread_degrees + 12.0
+    end,
 ```
 
 ## ![Glittering field](PURPLE_EXPLOSION_FIELD.png)Glittering field (PURPLE_EXPLOSION_FIELD)
@@ -5036,17 +5036,17 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/purple_explosion_field.xml")
- c.fire_rate_wait = c.fire_rate_wait + 10
- c.speed_multiplier = c.speed_multiplier - 2
- 
- if ( c.speed_multiplier >= 20 ) then
- c.speed_multiplier = math.min( c.speed_multiplier, 20 )
- elseif ( c.speed_multiplier < 0 ) then
- c.speed_multiplier = 0
- end
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/purple_explosion_field.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 10
+      c.speed_multiplier = c.speed_multiplier - 2
+      
+      if ( c.speed_multiplier >= 20 ) then
+        c.speed_multiplier = math.min( c.speed_multiplier, 20 )
+      elseif ( c.speed_multiplier < 0 ) then
+        c.speed_multiplier = 0
+      end
+    end,
 ```
 
 ## ![Glowing lance](LANCE.png)Glowing lance (LANCE)
@@ -5069,12 +5069,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/lance.xml")
- c.fire_rate_wait = c.fire_rate_wait + 20
- c.spread_degrees = c.spread_degrees - 20
- shot_effects.recoil_knockback = 60.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/lance.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 20
+      c.spread_degrees = c.spread_degrees - 20
+      shot_effects.recoil_knockback = 60.0
+    end,
 ```
 
 ## ![Glue Ball](GLUE_SHOT.png)Glue Ball (GLUE_SHOT)
@@ -5097,11 +5097,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/glue_shot.xml")
- c.fire_rate_wait = c.fire_rate_wait + 30
- c.spread_degrees = c.spread_degrees + 5.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/glue_shot.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 30
+      c.spread_degrees = c.spread_degrees + 5.0
+    end,
 ```
 
 ## ![Gold to Power](MONEY_MAGIC.png)Gold to Power (MONEY_MAGIC)
@@ -5124,41 +5124,41 @@ function()
 * **action**:
 
 ```lua
-function()
- local entity_id = GetUpdatedEntityID()
- 
- local dcomp = EntityGetFirstComponent( entity_id, "WalletComponent" )
- 
- if ( dcomp ~= nil ) then
- local money = ComponentGetValue2( dcomp, "money" )
- local moneyspent = ComponentGetValue2( dcomp, "money_spent" )
- local damage = math.min( math.floor( money * 0.05 ), 24000 )
- 
- if ( damage > 1 ) and ( money >= 10 ) then
- damage = math.max( damage, 10 )
- 
- c.extra_entities = c.extra_entities .. "data/entities/particles/gold_sparks.xml,"
- 
- money = money - damage
- moneyspent = moneyspent + damage
- ComponentSetValue2( dcomp, "money", money )
- ComponentSetValue2( dcomp, "money_spent", moneyspent )
- 
- 
- if ( damage < 120 ) then
- c.damage_projectile_add = c.damage_projectile_add + ( damage / 25 )
- elseif ( damage < 300 ) then
- c.damage_projectile_add = c.damage_projectile_add + ( damage / 35 )
- elseif ( damage < 500 ) then
- c.damage_projectile_add = c.damage_projectile_add + ( damage / 45 )
- else
- c.damage_projectile_add = c.damage_projectile_add + ( damage / 55 )
- end
- end
- end
- 
- draw_actions( 1, true )
- end,
+ function()
+      local entity_id = GetUpdatedEntityID()
+      
+      local dcomp = EntityGetFirstComponent( entity_id, "WalletComponent" )
+      
+      if ( dcomp ~= nil ) then
+        local money = ComponentGetValue2( dcomp, "money" )
+        local moneyspent = ComponentGetValue2( dcomp, "money_spent" )
+        local damage = math.min( math.floor( money * 0.05 ), 24000 )
+        
+        if ( damage > 1 ) and ( money >= 10 ) then
+          damage = math.max( damage, 10 )
+          
+          c.extra_entities = c.extra_entities .. "data/entities/particles/gold_sparks.xml,"
+          
+          money = money - damage
+          moneyspent = moneyspent + damage
+          ComponentSetValue2( dcomp, "money", money )
+          ComponentSetValue2( dcomp, "money_spent", moneyspent )
+          
+          
+          if ( damage < 120 ) then
+            c.damage_projectile_add = c.damage_projectile_add + ( damage / 25 )
+          elseif ( damage < 300 ) then
+            c.damage_projectile_add = c.damage_projectile_add + ( damage / 35 )
+          elseif ( damage < 500 ) then
+            c.damage_projectile_add = c.damage_projectile_add + ( damage / 45 )
+          else
+            c.damage_projectile_add = c.damage_projectile_add + ( damage / 55 )
+          end
+        end
+      end
+      
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Gravity](GRAVITY.png)Gravity (GRAVITY)
@@ -5181,10 +5181,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.gravity = c.gravity + 600.0
- draw_actions( 1, true )
- end,
+ function()
+      c.gravity = c.gravity + 600.0
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Green Glimmer](COLOUR_GREEN.png)Green Glimmer (COLOUR_GREEN)
@@ -5207,15 +5207,15 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,data/entities/misc/colour_green.xml,"
- c.fire_rate_wait = c.fire_rate_wait - 8
- c.screenshake = c.screenshake - 2.5
- if ( c.screenshake < 0 ) then
- c.screenshake = 0
- end
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,data/entities/misc/colour_green.xml,"
+      c.fire_rate_wait = c.fire_rate_wait - 8
+      c.screenshake = c.screenshake - 2.5
+      if ( c.screenshake < 0 ) then
+        c.screenshake = 0
+      end
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Ground to sand](STATIC_TO_SAND.png)Ground to sand (STATIC_TO_SAND)
@@ -5238,11 +5238,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/static_to_sand.xml,data/entities/particles/tinyspark_yellow.xml,"
- c.fire_rate_wait = c.fire_rate_wait + 60
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/static_to_sand.xml,data/entities/particles/tinyspark_yellow.xml,"
+      c.fire_rate_wait = c.fire_rate_wait + 60
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Gunpowder Arc](ARC_GUNPOWDER.png)Gunpowder Arc (ARC_GUNPOWDER)
@@ -5265,10 +5265,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/arc_gunpowder.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/arc_gunpowder.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Gunpowder trail](GUNPOWDER_TRAIL.png)Gunpowder trail (GUNPOWDER_TRAIL)
@@ -5291,11 +5291,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.trail_material = c.trail_material .. "gunpowder,"
- c.trail_material_amount = c.trail_material_amount + 20
- draw_actions( 1, true )
- end,
+ function()
+      c.trail_material = c.trail_material .. "gunpowder,"
+      c.trail_material_amount = c.trail_material_amount + 20
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Healing bolt](HEAL_BULLET.png)Healing bolt (HEAL_BULLET)
@@ -5318,11 +5318,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/heal_bullet.xml")
- c.fire_rate_wait = c.fire_rate_wait + 4
- c.spread_degrees = c.spread_degrees + 2.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/heal_bullet.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 4
+      c.spread_degrees = c.spread_degrees + 2.0
+    end,
 ```
 
 ## ![Heavy Shot](HEAVY_SHOT.png)Heavy Shot (HEAVY_SHOT)
@@ -5345,22 +5345,22 @@ function()
 * **action**:
 
 ```lua
-function()
- c.damage_projectile_add = c.damage_projectile_add + 1.75
- c.fire_rate_wait = c.fire_rate_wait + 10
- c.gore_particles = c.gore_particles + 10
- c.speed_multiplier = c.speed_multiplier * 0.3
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 50.0
- c.extra_entities = c.extra_entities .. "data/entities/particles/heavy_shot.xml,"
- 
- if ( c.speed_multiplier >= 20 ) then
- c.speed_multiplier = math.min( c.speed_multiplier, 20 )
- elseif ( c.speed_multiplier < 0 ) then
- c.speed_multiplier = 0
- end
- 
- draw_actions( 1, true )
- end,
+ function()
+      c.damage_projectile_add = c.damage_projectile_add + 1.75
+      c.fire_rate_wait    = c.fire_rate_wait + 10
+      c.gore_particles    = c.gore_particles + 10
+      c.speed_multiplier = c.speed_multiplier * 0.3
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 50.0
+      c.extra_entities = c.extra_entities .. "data/entities/particles/heavy_shot.xml,"
+      
+      if ( c.speed_multiplier >= 20 ) then
+        c.speed_multiplier = math.min( c.speed_multiplier, 20 )
+      elseif ( c.speed_multiplier < 0 ) then
+        c.speed_multiplier = 0
+      end
+      
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Heavy spread](HEAVY_SPREAD.png)Heavy spread (HEAVY_SPREAD)
@@ -5383,12 +5383,12 @@ function()
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait - 7
- current_reload_time = current_reload_time - 15
- c.spread_degrees = c.spread_degrees + 720
- draw_actions( 1, true )
- end,
+ function()
+      c.fire_rate_wait = c.fire_rate_wait - 7
+      current_reload_time = current_reload_time - 15
+      c.spread_degrees = c.spread_degrees + 720
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Holy Bomb](BOMB_HOLY.png)Holy Bomb (BOMB_HOLY)
@@ -5411,12 +5411,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/bomb_holy.xml")
- current_reload_time = current_reload_time + 80
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 100.0
- c.fire_rate_wait = c.fire_rate_wait + 40
- end,
+ function()
+      add_projectile("data/entities/projectiles/bomb_holy.xml")
+      current_reload_time = current_reload_time + 80
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 100.0
+      c.fire_rate_wait = c.fire_rate_wait + 40
+    end,
 ```
 
 ## ![Homebringer Teleport Bolt](TELEPORT_PROJECTILE_CLOSER.png)Homebringer Teleport Bolt (TELEPORT_PROJECTILE_CLOSER)
@@ -5439,10 +5439,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/teleport_projectile_closer.xml")
- c.spread_degrees = c.spread_degrees - 2.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/teleport_projectile_closer.xml")
+      c.spread_degrees = c.spread_degrees - 2.0
+    end,
 ```
 
 ## ![Homing](HOMING.png)Homing (HOMING)
@@ -5465,10 +5465,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/homing.xml,data/entities/particles/tinyspark_white.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/homing.xml,data/entities/particles/tinyspark_white.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Horizontal barrier](WALL_HORIZONTAL.png)Horizontal barrier (WALL_HORIZONTAL)
@@ -5491,10 +5491,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/wall_horizontal.xml")
- c.fire_rate_wait = c.fire_rate_wait + 5
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/wall_horizontal.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 5
+    end,
 ```
 
 ## ![Horizontal path](HORIZONTAL_ARC.png)Horizontal path (HORIZONTAL_ARC)
@@ -5517,12 +5517,12 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/horizontal_arc.xml,"
- draw_actions( 1, true )
- c.damage_projectile_add = c.damage_projectile_add + 0.3
- c.fire_rate_wait = c.fire_rate_wait - 6
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/horizontal_arc.xml,"
+      draw_actions( 1, true )
+      c.damage_projectile_add = c.damage_projectile_add + 0.3
+      c.fire_rate_wait    = c.fire_rate_wait - 6
+    end,
 ```
 
 ## ![Iceball](ICEBALL.png)Iceball (ICEBALL)
@@ -5545,12 +5545,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/iceball.xml")
- c.spread_degrees = c.spread_degrees + 8.0
- c.fire_rate_wait = c.fire_rate_wait + 80
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/iceball.xml")
+      c.spread_degrees = c.spread_degrees + 8.0
+      c.fire_rate_wait = c.fire_rate_wait + 80
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
+    end,
 ```
 
 ## ![Increase lifetime](LIFETIME.png)Increase lifetime (LIFETIME)
@@ -5573,11 +5573,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.lifetime_add = c.lifetime_add + 75
- c.fire_rate_wait = c.fire_rate_wait + 13
- draw_actions( 1, true )
- end,
+ function()
+      c.lifetime_add     = c.lifetime_add + 75
+      c.fire_rate_wait = c.fire_rate_wait + 13
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Infestation](INFESTATION.png)Infestation (INFESTATION)
@@ -5600,13 +5600,13 @@ function()
 * **action**:
 
 ```lua
-function()
- for i=1,6 do
- add_projectile("data/entities/projectiles/deck/infestation.xml")
- end
- c.fire_rate_wait = c.fire_rate_wait - 2
- c.spread_degrees = c.spread_degrees + 25
- end,
+ function()
+      for i=1,6 do
+        add_projectile("data/entities/projectiles/deck/infestation.xml")
+      end
+      c.fire_rate_wait = c.fire_rate_wait - 2
+      c.spread_degrees = c.spread_degrees + 25
+    end,
 ```
 
 ## ![Intense concentrated light](MEGALASER.png)Intense concentrated light (MEGALASER)
@@ -5629,18 +5629,18 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/megalaser_beam.xml")
- add_projectile("data/entities/projectiles/deck/megalaser_beam.xml")
- add_projectile("data/entities/projectiles/deck/megalaser_beam.xml")
- add_projectile("data/entities/projectiles/deck/megalaser_beam.xml")
- add_projectile("data/entities/projectiles/deck/megalaser_beam.xml")
- 
- add_projectile("data/entities/projectiles/deck/megalaser.xml")
- c.fire_rate_wait = c.fire_rate_wait + 90
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
- c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_disintegrated.xml,"
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/megalaser_beam.xml")
+      add_projectile("data/entities/projectiles/deck/megalaser_beam.xml")
+      add_projectile("data/entities/projectiles/deck/megalaser_beam.xml")
+      add_projectile("data/entities/projectiles/deck/megalaser_beam.xml")
+      add_projectile("data/entities/projectiles/deck/megalaser_beam.xml")
+      
+      add_projectile("data/entities/projectiles/deck/megalaser.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 90
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
+      c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_disintegrated.xml,"
+    end,
 ```
 
 ## ![Invisible Spell](COLOUR_INVIS.png)Invisible Spell (COLOUR_INVIS)
@@ -5663,15 +5663,15 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/colour_invis.xml,"
- c.fire_rate_wait = c.fire_rate_wait - 8
- c.screenshake = c.screenshake - 2.5
- if ( c.screenshake < 0 ) then
- c.screenshake = 0
- end
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/colour_invis.xml,"
+      c.fire_rate_wait = c.fire_rate_wait - 8
+      c.screenshake = c.screenshake - 2.5
+      if ( c.screenshake < 0 ) then
+        c.screenshake = 0
+      end
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Kantele - note A](KANTELE_A.png)Kantele - note A (KANTELE_A)
@@ -5694,10 +5694,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/kantele/kantele_a.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/kantele/kantele_a.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Kantele - note D](KANTELE_D.png)Kantele - note D (KANTELE_D)
@@ -5720,10 +5720,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/kantele/kantele_d.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/kantele/kantele_d.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Kantele - note D#](KANTELE_DIS.png)Kantele - note D# (KANTELE_DIS)
@@ -5746,10 +5746,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/kantele/kantele_dis.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/kantele/kantele_dis.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Kantele - note E](KANTELE_E.png)Kantele - note E (KANTELE_E)
@@ -5772,10 +5772,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/kantele/kantele_e.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/kantele/kantele_e.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Kantele - note G](KANTELE_G.png)Kantele - note G (KANTELE_G)
@@ -5798,10 +5798,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/kantele/kantele_g.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/kantele/kantele_g.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Knockback](KNOCKBACK.png)Knockback (KNOCKBACK)
@@ -5824,10 +5824,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.knockback_force = c.knockback_force + 5
- draw_actions( 1, true )
- end,
+ function()
+      c.knockback_force = c.knockback_force + 5
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Large firebolt](GRENADE_TIER_2.png)Large firebolt (GRENADE_TIER_2)
@@ -5850,13 +5850,13 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/grenade_tier_2.xml")
- c.fire_rate_wait = c.fire_rate_wait + 50
- c.screenshake = c.screenshake + 8.0
- c.child_speed_multiplier = c.child_speed_multiplier * 0.75
- shot_effects.recoil_knockback = 120.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/grenade_tier_2.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 50
+      c.screenshake = c.screenshake + 8.0
+      c.child_speed_multiplier = c.child_speed_multiplier * 0.75
+      shot_effects.recoil_knockback = 120.0
+    end,
 ```
 
 ## ![Large magic missile](ROCKET_TIER_2.png)Large magic missile (ROCKET_TIER_2)
@@ -5879,12 +5879,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/rocket_tier_2.xml")
- c.fire_rate_wait = c.fire_rate_wait + 90
- c.ragdoll_fx = 2
- shot_effects.recoil_knockback = 160.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/rocket_tier_2.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 90
+      c.ragdoll_fx = 2
+      shot_effects.recoil_knockback = 160.0
+    end,
 ```
 
 ## ![Large spitter bolt](SPITTER_TIER_2.png)Large spitter bolt (SPITTER_TIER_2)
@@ -5907,13 +5907,13 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/spitter_tier_2.xml")
- c.fire_rate_wait = c.fire_rate_wait - 2
- c.screenshake = c.screenshake + 1.1
- c.dampening = 0.2
- c.spread_degrees = c.spread_degrees + 7.5
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/spitter_tier_2.xml")
+      c.fire_rate_wait = c.fire_rate_wait - 2
+      c.screenshake = c.screenshake + 1.1
+      c.dampening = 0.2
+      c.spread_degrees = c.spread_degrees + 7.5
+    end,
 ```
 
 ## ![Large spitter bolt with timer](SPITTER_TIER_2_TIMER.png)Large spitter bolt with timer (SPITTER_TIER_2_TIMER)
@@ -5936,13 +5936,13 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile_trigger_timer("data/entities/projectiles/deck/spitter_tier_2.xml", 40, 1)
- c.fire_rate_wait = c.fire_rate_wait - 2
- c.screenshake = c.screenshake + 1.1
- c.dampening = 0.2
- c.spread_degrees = c.spread_degrees + 7.5
- end,
+ function()
+      add_projectile_trigger_timer("data/entities/projectiles/deck/spitter_tier_2.xml", 40, 1)
+      c.fire_rate_wait = c.fire_rate_wait - 2
+      c.screenshake = c.screenshake + 1.1
+      c.dampening = 0.2
+      c.spread_degrees = c.spread_degrees + 7.5
+    end,
 ```
 
 ## ![Larpa Bounce](BOUNCE_LARPA.png)Larpa Bounce (BOUNCE_LARPA)
@@ -5965,13 +5965,13 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/bounce_larpa.xml,"
- c.bounces = c.bounces + 1
- c.fire_rate_wait = c.fire_rate_wait + 32
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 10.0
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/bounce_larpa.xml,"
+      c.bounces = c.bounces + 1
+      c.fire_rate_wait = c.fire_rate_wait + 32
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 10.0
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Larpa Explosion](LARPA_DEATH.png)Larpa Explosion (LARPA_DEATH)
@@ -5994,11 +5994,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait + 15
- c.extra_entities = c.extra_entities .. "data/entities/misc/larpa_death.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.fire_rate_wait = c.fire_rate_wait + 15
+      c.extra_entities = c.extra_entities .. "data/entities/misc/larpa_death.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Lava to blood](LAVA_TO_BLOOD.png)Lava to blood (LAVA_TO_BLOOD)
@@ -6021,11 +6021,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/lava_to_blood.xml,data/entities/particles/tinyspark_orange.xml,"
- c.fire_rate_wait = c.fire_rate_wait + 10
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/lava_to_blood.xml,data/entities/particles/tinyspark_orange.xml,"
+      c.fire_rate_wait = c.fire_rate_wait + 10
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Light](LIGHT.png)Light (LIGHT)
@@ -6048,10 +6048,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/light.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/light.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Light shot](LIGHT_SHOT.png)Light shot (LIGHT_SHOT)
@@ -6074,26 +6074,26 @@ function()
 * **action**:
 
 ```lua
-function()
- c.damage_projectile_add = c.damage_projectile_add - 1.0
- c.explosion_radius = c.explosion_radius - 10.0
- if (c.explosion_radius < 0) then
- c.explosion_radius = 0
- end
- c.fire_rate_wait = c.fire_rate_wait - 3
- c.speed_multiplier = c.speed_multiplier * 7.5
- c.spread_degrees = c.spread_degrees - 6
- shot_effects.recoil_knockback = shot_effects.recoil_knockback - 10.0
- c.extra_entities = c.extra_entities .. "data/entities/particles/light_shot.xml,"
- 
- if ( c.speed_multiplier >= 20 ) then
- c.speed_multiplier = math.min( c.speed_multiplier, 20 )
- elseif ( c.speed_multiplier < 0 ) then
- c.speed_multiplier = 0
- end
- 
- draw_actions( 1, true )
- end,
+ function()
+      c.damage_projectile_add = c.damage_projectile_add - 1.0
+      c.explosion_radius = c.explosion_radius - 10.0
+      if (c.explosion_radius < 0) then
+        c.explosion_radius = 0
+      end
+      c.fire_rate_wait    = c.fire_rate_wait - 3
+      c.speed_multiplier = c.speed_multiplier * 7.5
+      c.spread_degrees = c.spread_degrees - 6
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback - 10.0
+      c.extra_entities = c.extra_entities .. "data/entities/particles/light_shot.xml,"
+      
+      if ( c.speed_multiplier >= 20 ) then
+        c.speed_multiplier = math.min( c.speed_multiplier, 20 )
+      elseif ( c.speed_multiplier < 0 ) then
+        c.speed_multiplier = 0
+      end
+      
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Lightning bolt](LIGHTNING.png)Lightning bolt (LIGHTNING)
@@ -6116,11 +6116,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/lightning.xml")
- c.fire_rate_wait = c.fire_rate_wait + 50
- shot_effects.recoil_knockback = 180.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/lightning.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 50
+      shot_effects.recoil_knockback = 180.0
+    end,
 ```
 
 ## ![Lightning thrower](LIGHTNING_RAY.png)Lightning thrower (LIGHTNING_RAY)
@@ -6143,10 +6143,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/lightning_ray.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/lightning_ray.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Linear arc](LINE_ARC.png)Linear arc (LINE_ARC)
@@ -6169,12 +6169,12 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/line_arc.xml,"
- draw_actions( 1, true )
- c.damage_projectile_add = c.damage_projectile_add + 0.2
- c.fire_rate_wait = c.fire_rate_wait - 4
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/line_arc.xml,"
+      draw_actions( 1, true )
+      c.damage_projectile_add = c.damage_projectile_add + 0.2
+      c.fire_rate_wait    = c.fire_rate_wait - 4
+    end,
 ```
 
 ## ![Liquid Detonation](LIQUID_TO_EXPLOSION.png)Liquid Detonation (LIQUID_TO_EXPLOSION)
@@ -6197,11 +6197,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/liquid_to_explosion.xml,data/entities/particles/tinyspark_red.xml,"
- c.fire_rate_wait = c.fire_rate_wait + 20
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/liquid_to_explosion.xml,data/entities/particles/tinyspark_red.xml,"
+      c.fire_rate_wait = c.fire_rate_wait + 20
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Liquid Vacuum Field](VACUUM_LIQUID.png)Liquid Vacuum Field (VACUUM_LIQUID)
@@ -6224,10 +6224,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/vacuum_liquid.xml")
- c.fire_rate_wait = c.fire_rate_wait + 10
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/vacuum_liquid.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 10
+    end,
 ```
 
 ## ![Long-distance cast](LONG_DISTANCE_CAST.png)Long-distance cast (LONG_DISTANCE_CAST)
@@ -6250,10 +6250,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile_trigger_death("data/entities/projectiles/deck/long_distance_cast.xml", 1)
- c.fire_rate_wait = c.fire_rate_wait - 5
- end,
+ function()
+      add_projectile_trigger_death("data/entities/projectiles/deck/long_distance_cast.xml", 1)
+      c.fire_rate_wait = c.fire_rate_wait - 5
+    end,
 ```
 
 ## ![Luminous drill](LUMINOUS_DRILL.png)Luminous drill (LUMINOUS_DRILL)
@@ -6276,11 +6276,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/luminous_drill.xml")
- c.fire_rate_wait = c.fire_rate_wait - 35
- current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the digger reload time back to 0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/luminous_drill.xml")
+      c.fire_rate_wait = c.fire_rate_wait - 35
+      current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the digger reload time back to 0
+    end,
 ```
 
 ## ![Luminous drill with timer](LASER_LUMINOUS_DRILL.png)Luminous drill with timer (LASER_LUMINOUS_DRILL)
@@ -6303,11 +6303,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile_trigger_timer("data/entities/projectiles/deck/luminous_drill.xml",4,1)
- c.fire_rate_wait = c.fire_rate_wait - 35
- current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the digger reload time back to 0
- end,
+ function()
+      add_projectile_trigger_timer("data/entities/projectiles/deck/luminous_drill.xml",4,1)
+      c.fire_rate_wait = c.fire_rate_wait - 35
+      current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the digger reload time back to 0
+    end,
 ```
 
 ## ![Magic arrow](BULLET.png)Magic arrow (BULLET)
@@ -6330,14 +6330,14 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/bullet.xml")
- c.fire_rate_wait = c.fire_rate_wait + 4
- c.screenshake = c.screenshake + 2
- c.spread_degrees = c.spread_degrees + 2.0
- c.damage_critical_chance = c.damage_critical_chance + 5
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 23.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/bullet.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 4
+      c.screenshake = c.screenshake + 2
+      c.spread_degrees = c.spread_degrees + 2.0
+      c.damage_critical_chance = c.damage_critical_chance + 5
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 23.0
+    end,
 ```
 
 ## ![Magic arrow with timer](BULLET_TIMER.png)Magic arrow with timer (BULLET_TIMER)
@@ -6360,14 +6360,14 @@ function()
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait + 4
- c.screenshake = c.screenshake + 2
- c.spread_degrees = c.spread_degrees + 2.0
- c.damage_critical_chance = c.damage_critical_chance + 5
- add_projectile_trigger_timer("data/entities/projectiles/deck/bullet.xml", 10, 1)
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 23.0
- end,
+ function()
+      c.fire_rate_wait = c.fire_rate_wait + 4
+      c.screenshake = c.screenshake + 2
+      c.spread_degrees = c.spread_degrees + 2.0
+      c.damage_critical_chance = c.damage_critical_chance + 5
+      add_projectile_trigger_timer("data/entities/projectiles/deck/bullet.xml", 10, 1)
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 23.0
+    end,
 ```
 
 ## ![Magic arrow with trigger](BULLET_TRIGGER.png)Magic arrow with trigger (BULLET_TRIGGER)
@@ -6390,14 +6390,14 @@ function()
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait + 4
- c.screenshake = c.screenshake + 2
- c.spread_degrees = c.spread_degrees + 2.0
- c.damage_critical_chance = c.damage_critical_chance + 5
- add_projectile_trigger_hit_world("data/entities/projectiles/deck/bullet.xml", 1)
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 23.0
- end,
+ function()
+      c.fire_rate_wait = c.fire_rate_wait + 4
+      c.screenshake = c.screenshake + 2
+      c.spread_degrees = c.spread_degrees + 2.0
+      c.damage_critical_chance = c.damage_critical_chance + 5
+      add_projectile_trigger_hit_world("data/entities/projectiles/deck/bullet.xml", 1)
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 23.0
+    end,
 ```
 
 ## ![Magic bolt](HEAVY_BULLET.png)Magic bolt (HEAVY_BULLET)
@@ -6420,14 +6420,14 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/bullet_heavy.xml")
- c.fire_rate_wait = c.fire_rate_wait + 7
- c.screenshake = c.screenshake + 2.5
- c.spread_degrees = c.spread_degrees + 5.0
- c.damage_critical_chance = c.damage_critical_chance + 5
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 50.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/bullet_heavy.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 7
+      c.screenshake = c.screenshake + 2.5
+      c.spread_degrees = c.spread_degrees + 5.0
+      c.damage_critical_chance = c.damage_critical_chance + 5
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 50.0
+    end,
 ```
 
 ## ![Magic bolt with timer](HEAVY_BULLET_TIMER.png)Magic bolt with timer (HEAVY_BULLET_TIMER)
@@ -6450,14 +6450,14 @@ function()
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait + 7
- c.screenshake = c.screenshake + 2.5
- c.spread_degrees = c.spread_degrees + 5.0
- c.damage_critical_chance = c.damage_critical_chance + 5
- add_projectile_trigger_timer("data/entities/projectiles/deck/bullet_heavy.xml", 10, 1)
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 50.0
- end,
+ function()
+      c.fire_rate_wait = c.fire_rate_wait + 7
+      c.screenshake = c.screenshake + 2.5
+      c.spread_degrees = c.spread_degrees + 5.0
+      c.damage_critical_chance = c.damage_critical_chance + 5
+      add_projectile_trigger_timer("data/entities/projectiles/deck/bullet_heavy.xml", 10, 1)
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 50.0
+    end,
 ```
 
 ## ![Magic bolt with trigger](HEAVY_BULLET_TRIGGER.png)Magic bolt with trigger (HEAVY_BULLET_TRIGGER)
@@ -6480,14 +6480,14 @@ function()
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait + 7
- c.screenshake = c.screenshake + 2.5
- c.spread_degrees = c.spread_degrees + 5.0
- c.damage_critical_chance = c.damage_critical_chance + 5
- add_projectile_trigger_hit_world("data/entities/projectiles/deck/bullet_heavy.xml", 1)
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 50.0
- end,
+ function()
+      c.fire_rate_wait = c.fire_rate_wait + 7
+      c.screenshake = c.screenshake + 2.5
+      c.spread_degrees = c.spread_degrees + 5.0
+      c.damage_critical_chance = c.damage_critical_chance + 5
+      add_projectile_trigger_hit_world("data/entities/projectiles/deck/bullet_heavy.xml", 1)
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 50.0
+    end,
 ```
 
 ## ![Magic guard](MAGIC_SHIELD.png)Magic guard (MAGIC_SHIELD)
@@ -6510,10 +6510,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/magic_shield_start.xml")
- c.fire_rate_wait = c.fire_rate_wait + 20
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/magic_shield_start.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 20
+    end,
 ```
 
 ## ![Magic missile](ROCKET.png)Magic missile (ROCKET)
@@ -6536,12 +6536,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/rocket.xml")
- c.fire_rate_wait = c.fire_rate_wait + 60
- c.ragdoll_fx = 2
- shot_effects.recoil_knockback = 120.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/rocket.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 60
+      c.ragdoll_fx = 2
+      shot_effects.recoil_knockback = 120.0
+    end,
 ```
 
 ## ![Magical Explosion](EXPLOSION_LIGHT.png)Magical Explosion (EXPLOSION_LIGHT)
@@ -6564,11 +6564,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/explosion_light.xml")
- c.fire_rate_wait = c.fire_rate_wait + 3
- c.screenshake = c.screenshake + 2.5
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/explosion_light.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 3
+      c.screenshake = c.screenshake + 2.5
+    end,
 ```
 
 ## ![Mana To Damage](DAMAGE_FOREVER.png)Mana To Damage (DAMAGE_FOREVER)
@@ -6591,20 +6591,20 @@ function()
 * **action**:
 
 ```lua
-function()
- if ( mana > 50 ) then
- local manaforspell = mana - 50
- c.damage_projectile_add = c.damage_projectile_add + 0.025 * manaforspell
- mana = 50
- end
- 
- c.gore_particles = c.gore_particles + 15
- c.fire_rate_wait = c.fire_rate_wait + 15
- current_reload_time = current_reload_time + 10
- c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,"
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 10.0
- draw_actions( 1, true )
- end,
+ function()
+      if ( mana > 50 ) then
+        local manaforspell = mana - 50
+        c.damage_projectile_add = c.damage_projectile_add + 0.025 * manaforspell
+        mana = 50
+      end
+      
+      c.gore_particles    = c.gore_particles + 15
+      c.fire_rate_wait    = c.fire_rate_wait + 15
+      current_reload_time = current_reload_time + 10
+      c.extra_entities    = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,"
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 10.0
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Matosade](WORM_RAIN.png)Matosade (WORM_RAIN)
@@ -6627,11 +6627,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/worm_rain.xml")
- c.fire_rate_wait = c.fire_rate_wait + 100
- current_reload_time = current_reload_time + 60
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/worm_rain.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 100
+      current_reload_time = current_reload_time + 60
+    end,
 ```
 
 ## ![Matter eater](MATTER_EATER.png)Matter eater (MATTER_EATER)
@@ -6654,10 +6654,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/matter_eater.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/matter_eater.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Meteor](METEOR.png)Meteor (METEOR)
@@ -6680,9 +6680,9 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/meteor.xml")
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/meteor.xml")
+    end,
 ```
 
 ## ![Meteorisade](METEOR_RAIN.png)Meteorisade (METEOR_RAIN)
@@ -6705,12 +6705,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/meteor_rain.xml")
- c.extra_entities = c.extra_entities .. "data/entities/misc/effect_meteor_rain.xml,"
- c.fire_rate_wait = c.fire_rate_wait + 100
- current_reload_time = current_reload_time + 60
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/meteor_rain.xml")
+      c.extra_entities = c.extra_entities .. "data/entities/misc/effect_meteor_rain.xml,"
+      c.fire_rate_wait = c.fire_rate_wait + 100
+      current_reload_time = current_reload_time + 60
+    end,
 ```
 
 ## ![Mu](MU.png)Mu (MU)
@@ -6733,52 +6733,52 @@ function()
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- c.fire_rate_wait = c.fire_rate_wait + 50
- 
- local firerate = c.fire_rate_wait
- local reload = current_reload_time
- local mana_ = mana
- 
- if ( discarded ~= nil ) then
- for i,data in ipairs( discarded ) do
- local rec = check_recursion( data, recursion_level )
- if ( data ~= nil ) and ( data.type == 2 ) and ( rec > -1 ) then
- dont_draw_actions = true
- data.action( rec )
- dont_draw_actions = false
- end
- end
- end
- 
- if ( hand ~= nil ) then
- for i,data in ipairs( hand ) do
- local rec = check_recursion( data, recursion_level )
- if ( data ~= nil ) and ( data.type == 2 ) and ( rec > -1 ) then
- dont_draw_actions = true
- data.action( rec )
- dont_draw_actions = false
- end
- end
- end
- 
- if ( deck ~= nil ) then
- for i,data in ipairs( deck ) do
- local rec = check_recursion( data, recursion_level )
- if ( data ~= nil ) and ( data.type == 2 ) and ( rec > -1 ) then
- dont_draw_actions = true
- data.action( rec )
- dont_draw_actions = false
- end
- end
- end
- 
- c.fire_rate_wait = firerate
- current_reload_time = reload
- mana = mana_
- 
- draw_actions( 1, true )
- end,
+ function( recursion_level, iteration )
+      c.fire_rate_wait = c.fire_rate_wait + 50
+      
+      local firerate = c.fire_rate_wait
+      local reload = current_reload_time
+      local mana_ = mana
+      
+      if ( discarded ~= nil ) then
+        for i,data in ipairs( discarded ) do
+          local rec = check_recursion( data, recursion_level )
+          if ( data ~= nil ) and ( data.type == 2 ) and ( rec > -1 ) then
+            dont_draw_actions = true
+            data.action( rec )
+            dont_draw_actions = false
+          end
+        end
+      end
+      
+      if ( hand ~= nil ) then
+        for i,data in ipairs( hand ) do
+          local rec = check_recursion( data, recursion_level )
+          if ( data ~= nil ) and ( data.type == 2 ) and ( rec > -1 ) then
+            dont_draw_actions = true
+            data.action( rec )
+            dont_draw_actions = false
+          end
+        end
+      end
+      
+      if ( deck ~= nil ) then
+        for i,data in ipairs( deck ) do
+          local rec = check_recursion( data, recursion_level )
+          if ( data ~= nil ) and ( data.type == 2 ) and ( rec > -1 ) then
+            dont_draw_actions = true
+            data.action( rec )
+            dont_draw_actions = false
+          end
+        end
+      end
+      
+      c.fire_rate_wait = firerate
+      current_reload_time = reload
+      mana = mana_
+      
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Myriad Spell](BURST_X.png)Myriad Spell (BURST_X)
@@ -6801,11 +6801,11 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function()
- if ( #deck > 0 ) then
- draw_actions( #deck, true )
- end
- end,
+ function()
+      if ( #deck > 0 ) then
+        draw_actions( #deck, true )
+      end
+    end,
 ```
 
 ## ![Necromancy](NECROMANCY.png)Necromancy (NECROMANCY)
@@ -6828,11 +6828,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_necromancy.xml,"
- c.fire_rate_wait = c.fire_rate_wait + 10
- draw_actions( 1, true )
- end,
+ function()
+      c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_necromancy.xml,"
+      c.fire_rate_wait = c.fire_rate_wait + 10
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Nolla](NOLLA.png)Nolla (NOLLA)
@@ -6855,11 +6855,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/nolla.xml,"
- c.fire_rate_wait = c.fire_rate_wait - 15
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/nolla.xml,"
+      c.fire_rate_wait = c.fire_rate_wait - 15
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Nuke](NUKE.png)Nuke (NUKE)
@@ -6882,24 +6882,24 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/nuke.xml")
- c.fire_rate_wait = 20
- c.speed_multiplier = c.speed_multiplier * 0.75
- c.material = "fire"
- c.material_amount = c.material_amount + 60
- c.ragdoll_fx = 2
- c.gore_particles = c.gore_particles + 10
- c.screenshake = c.screenshake + 10.5
- current_reload_time = current_reload_time + 600
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 300.0
- 
- if ( c.speed_multiplier >= 20 ) then
- c.speed_multiplier = math.min( c.speed_multiplier, 20 )
- elseif ( c.speed_multiplier < 0 ) then
- c.speed_multiplier = 0
- end
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/nuke.xml")
+      c.fire_rate_wait = 20
+      c.speed_multiplier = c.speed_multiplier * 0.75
+      c.material = "fire"
+      c.material_amount = c.material_amount + 60
+      c.ragdoll_fx = 2
+      c.gore_particles = c.gore_particles + 10
+      c.screenshake = c.screenshake + 10.5
+      current_reload_time = current_reload_time + 600
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 300.0
+      
+      if ( c.speed_multiplier >= 20 ) then
+        c.speed_multiplier = math.min( c.speed_multiplier, 20 )
+      elseif ( c.speed_multiplier < 0 ) then
+        c.speed_multiplier = 0
+      end
+    end,
 ```
 
 ## ![Nuke Orbit](ORBIT_NUKES.png)Nuke Orbit (ORBIT_NUKES)
@@ -6922,10 +6922,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/orbit_nukes.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/orbit_nukes.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Ocarina - note A](OCARINA_A.png)Ocarina - note A (OCARINA_A)
@@ -6948,10 +6948,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/ocarina/ocarina_a.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/ocarina/ocarina_a.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Ocarina - note A2](OCARINA_A2.png)Ocarina - note A2 (OCARINA_A2)
@@ -6974,10 +6974,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/ocarina/ocarina_a2.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/ocarina/ocarina_a2.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Ocarina - note B](OCARINA_B.png)Ocarina - note B (OCARINA_B)
@@ -7000,10 +7000,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/ocarina/ocarina_b.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/ocarina/ocarina_b.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Ocarina - note C](OCARINA_C.png)Ocarina - note C (OCARINA_C)
@@ -7026,10 +7026,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/ocarina/ocarina_c.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/ocarina/ocarina_c.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Ocarina - note D](OCARINA_D.png)Ocarina - note D (OCARINA_D)
@@ -7052,10 +7052,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/ocarina/ocarina_d.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/ocarina/ocarina_d.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Ocarina - note E](OCARINA_E.png)Ocarina - note E (OCARINA_E)
@@ -7078,10 +7078,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/ocarina/ocarina_e.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/ocarina/ocarina_e.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Ocarina - note F](OCARINA_F.png)Ocarina - note F (OCARINA_F)
@@ -7104,10 +7104,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/ocarina/ocarina_f.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/ocarina/ocarina_f.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Ocarina - note G#](OCARINA_GSHARP.png)Ocarina - note G# (OCARINA_GSHARP)
@@ -7130,10 +7130,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/ocarina/ocarina_gsharp.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/ocarina/ocarina_gsharp.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Octagonal bolt bundle](ROCKET_OCTAGON.png)Octagonal bolt bundle (ROCKET_OCTAGON)
@@ -7156,11 +7156,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/rocket_octagon.xml,"
- c.fire_rate_wait = c.fire_rate_wait + 20
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/rocket_octagon.xml,"
+      c.fire_rate_wait = c.fire_rate_wait + 20
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Octuple spell](BURST_8.png)Octuple spell (BURST_8)
@@ -7183,9 +7183,9 @@ function()
 * **action**:
 
 ```lua
-function()
- draw_actions( 8, true )
- end,
+ function()
+      draw_actions( 8, true )
+    end,
 ```
 
 ## ![Odd Firebolt](GRENADE_ANTI.png)Odd Firebolt (GRENADE_ANTI)
@@ -7208,13 +7208,13 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/grenade_anti.xml")
- c.fire_rate_wait = c.fire_rate_wait + 30
- c.screenshake = c.screenshake + 4.0
- c.child_speed_multiplier = c.child_speed_multiplier * 0.75
- shot_effects.recoil_knockback = 80.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/grenade_anti.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 30
+      c.screenshake = c.screenshake + 4.0
+      c.child_speed_multiplier = c.child_speed_multiplier * 0.75
+      shot_effects.recoil_knockback = 80.0
+    end,
 ```
 
 ## ![Oil](MATERIAL_OIL.png)Oil (MATERIAL_OIL)
@@ -7237,12 +7237,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/material_oil.xml")
- c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_oiled.xml,"
- c.fire_rate_wait = c.fire_rate_wait - 15
- current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the cement reload time back to 0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/material_oil.xml")
+      c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_oiled.xml,"
+      c.fire_rate_wait = c.fire_rate_wait - 15
+      current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the cement reload time back to 0
+    end,
 ```
 
 ## ![Oil cloud](CLOUD_OIL.png)Oil cloud (CLOUD_OIL)
@@ -7265,10 +7265,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/cloud_oil.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/cloud_oil.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Oil trail](OIL_TRAIL.png)Oil trail (OIL_TRAIL)
@@ -7291,12 +7291,12 @@ function()
 * **action**:
 
 ```lua
-function()
- c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_oiled.xml,"
- c.trail_material = c.trail_material .. "oil,"
- c.trail_material_amount = c.trail_material_amount + 20
- draw_actions( 1, true )
- end,
+ function()
+      c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_oiled.xml,"
+      c.trail_material = c.trail_material .. "oil,"
+      c.trail_material_amount = c.trail_material_amount + 20
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Omega](OMEGA.png)Omega (OMEGA)
@@ -7319,42 +7319,42 @@ function()
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- c.fire_rate_wait = c.fire_rate_wait + 50
- 
- if ( discarded ~= nil ) then
- for i,data in ipairs( discarded ) do
- local rec = check_recursion( data, recursion_level )
- if ( data ~= nil ) and ( rec > -1 ) and ( data.id ~= "RESET" ) then
- dont_draw_actions = true
- data.action( rec )
- dont_draw_actions = false
- end
- end
- end
- 
- if ( hand ~= nil ) then
- for i,data in ipairs( hand ) do
- local rec = check_recursion( data, recursion_level )
- if ( data ~= nil ) and ( ( data.recursive == nil ) or ( data.recursive == false ) ) then
- dont_draw_actions = true
- data.action( rec )
- dont_draw_actions = false
- end
- end
- end
- 
- if ( deck ~= nil ) then
- for i,data in ipairs( deck ) do
- local rec = check_recursion( data, recursion_level )
- if ( data ~= nil ) and ( rec > -1 ) and ( data.id ~= "RESET" ) then
- dont_draw_actions = true
- data.action( rec )
- dont_draw_actions = false
- end
- end
- end
- end,
+ function( recursion_level, iteration )
+      c.fire_rate_wait = c.fire_rate_wait + 50
+      
+      if ( discarded ~= nil ) then
+        for i,data in ipairs( discarded ) do
+          local rec = check_recursion( data, recursion_level )
+          if ( data ~= nil ) and ( rec > -1 ) and ( data.id ~= "RESET" ) then
+            dont_draw_actions = true
+            data.action( rec )
+            dont_draw_actions = false
+          end
+        end
+      end
+      
+      if ( hand ~= nil ) then
+        for i,data in ipairs( hand ) do
+          local rec = check_recursion( data, recursion_level )
+          if ( data ~= nil ) and ( ( data.recursive == nil ) or ( data.recursive == false ) ) then
+            dont_draw_actions = true
+            data.action( rec )
+            dont_draw_actions = false
+          end
+        end
+      end
+      
+      if ( deck ~= nil ) then
+        for i,data in ipairs( deck ) do
+          local rec = check_recursion( data, recursion_level )
+          if ( data ~= nil ) and ( rec > -1 ) and ( data.id ~= "RESET" ) then
+            dont_draw_actions = true
+            data.action( rec )
+            dont_draw_actions = false
+          end
+        end
+      end
+    end,
 ```
 
 ## ![Omega Black Hole](BLACK_HOLE_GIGA.png)Omega Black Hole (BLACK_HOLE_GIGA)
@@ -7377,16 +7377,16 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function()
- local black_holes = EntityGetWithTag( "black_hole_giga" )
- 
- if ( #black_holes < 3 ) then
- add_projectile("data/entities/projectiles/deck/black_hole_giga.xml")
- c.fire_rate_wait = c.fire_rate_wait + 120
- current_reload_time = current_reload_time + 100
- c.screenshake = c.screenshake + 40
- end
- end,
+ function()
+      local black_holes = EntityGetWithTag( "black_hole_giga" )
+      
+      if ( #black_holes < 3 ) then
+        add_projectile("data/entities/projectiles/deck/black_hole_giga.xml")
+        c.fire_rate_wait = c.fire_rate_wait + 120
+        current_reload_time = current_reload_time + 100
+        c.screenshake = c.screenshake + 40
+      end
+    end,
 ```
 
 ## ![Orange Glimmer](COLOUR_ORANGE.png)Orange Glimmer (COLOUR_ORANGE)
@@ -7409,15 +7409,15 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,data/entities/misc/colour_orange.xml,"
- c.fire_rate_wait = c.fire_rate_wait - 8
- c.screenshake = c.screenshake - 2.5
- if ( c.screenshake < 0 ) then
- c.screenshake = 0
- end
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,data/entities/misc/colour_orange.xml,"
+      c.fire_rate_wait = c.fire_rate_wait - 8
+      c.screenshake = c.screenshake - 2.5
+      if ( c.screenshake < 0 ) then
+        c.screenshake = 0
+      end
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Orbit Larpa](ORBIT_LARPA.png)Orbit Larpa (ORBIT_LARPA)
@@ -7440,10 +7440,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/orbit_larpa.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/orbit_larpa.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Orbiting Arc](ORBIT_SHOT.png)Orbiting Arc (ORBIT_SHOT)
@@ -7466,13 +7466,13 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/spiraling_shot.xml,"
- draw_actions( 1, true )
- c.damage_projectile_add = c.damage_projectile_add + 0.1
- c.fire_rate_wait = c.fire_rate_wait - 6
- c.lifetime_add = c.lifetime_add + 25
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/spiraling_shot.xml,"
+      draw_actions( 1, true )
+      c.damage_projectile_add = c.damage_projectile_add + 0.1
+      c.fire_rate_wait    = c.fire_rate_wait - 6
+      c.lifetime_add     = c.lifetime_add + 25
+    end,
 ```
 
 ## ![Path of dark flame](DARKFLAME.png)Path of dark flame (DARKFLAME)
@@ -7495,10 +7495,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/darkflame.xml")
- c.fire_rate_wait = c.fire_rate_wait + 20
- end,
+ function()
+      add_projectile("data/entities/projectiles/darkflame.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 20
+    end,
 ```
 
 ## ![Personal fireball thrower](FIREBALL_RAY_ENEMY.png)Personal fireball thrower (FIREBALL_RAY_ENEMY)
@@ -7521,10 +7521,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_fireball_ray_enemy.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_fireball_ray_enemy.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Personal gravity field](GRAVITY_FIELD_ENEMY.png)Personal gravity field (GRAVITY_FIELD_ENEMY)
@@ -7547,10 +7547,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_gravity_field_enemy.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_gravity_field_enemy.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Personal lightning caster](LIGHTNING_RAY_ENEMY.png)Personal lightning caster (LIGHTNING_RAY_ENEMY)
@@ -7573,10 +7573,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_lightning_ray_enemy.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_lightning_ray_enemy.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Personal tentacler](TENTACLE_RAY_ENEMY.png)Personal tentacler (TENTACLE_RAY_ENEMY)
@@ -7599,10 +7599,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_tentacle_ray_enemy.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_tentacle_ray_enemy.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Petrify](HITFX_PETRIFY.png)Petrify (HITFX_PETRIFY)
@@ -7625,10 +7625,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_petrify.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_petrify.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Phasing Arc](PHASING_ARC.png)Phasing Arc (PHASING_ARC)
@@ -7651,20 +7651,20 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/phasing_arc.xml,"
- draw_actions( 1, true )
- c.fire_rate_wait = c.fire_rate_wait - 12
- c.lifetime_add = c.lifetime_add + 80
- c.speed_multiplier = c.speed_multiplier * 0.33
- c.child_speed_multiplier = c.child_speed_multiplier * 0.33
- 
- if ( c.speed_multiplier >= 20 ) then
- c.speed_multiplier = math.min( c.speed_multiplier, 20 )
- elseif ( c.speed_multiplier < 0 ) then
- c.speed_multiplier = 0
- end
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/phasing_arc.xml,"
+      draw_actions( 1, true )
+      c.fire_rate_wait    = c.fire_rate_wait - 12
+      c.lifetime_add     = c.lifetime_add + 80
+      c.speed_multiplier  = c.speed_multiplier * 0.33
+      c.child_speed_multiplier  = c.child_speed_multiplier * 0.33
+      
+      if ( c.speed_multiplier >= 20 ) then
+        c.speed_multiplier = math.min( c.speed_multiplier, 20 )
+      elseif ( c.speed_multiplier < 0 ) then
+        c.speed_multiplier = 0
+      end
+    end,
 ```
 
 ## ![Phi](PHI.png)Phi (PHI)
@@ -7687,50 +7687,50 @@ function()
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- c.fire_rate_wait = c.fire_rate_wait + 50
- 
- local firerate = c.fire_rate_wait
- local reload = current_reload_time
- local mana_ = mana
- 
- if ( discarded ~= nil ) then
- for i,data in ipairs( discarded ) do
- local rec = check_recursion( data, recursion_level )
- if ( data ~= nil ) and ( data.type == 0 ) and ( rec > -1 ) then
- dont_draw_actions = true
- data.action( rec )
- dont_draw_actions = false
- end
- end
- end
- 
- if ( hand ~= nil ) then
- for i,data in ipairs( hand ) do
- local rec = check_recursion( data, recursion_level )
- if ( data ~= nil ) and ( data.type == 0 ) and ( rec > -1 ) then
- dont_draw_actions = true
- data.action( rec )
- dont_draw_actions = false
- end
- end
- end
- 
- if ( deck ~= nil ) then
- for i,data in ipairs( deck ) do
- local rec = check_recursion( data, recursion_level )
- if ( data ~= nil ) and ( data.type == 0 ) and ( rec > -1 ) then
- dont_draw_actions = true
- data.action( rec )
- dont_draw_actions = false
- end
- end
- end
- 
- c.fire_rate_wait = firerate
- current_reload_time = reload
- mana = mana_
- end,
+ function( recursion_level, iteration )
+      c.fire_rate_wait = c.fire_rate_wait + 50
+      
+      local firerate = c.fire_rate_wait
+      local reload = current_reload_time
+      local mana_ = mana
+      
+      if ( discarded ~= nil ) then
+        for i,data in ipairs( discarded ) do
+          local rec = check_recursion( data, recursion_level )
+          if ( data ~= nil ) and ( data.type == 0 ) and ( rec > -1 ) then
+            dont_draw_actions = true
+            data.action( rec )
+            dont_draw_actions = false
+          end
+        end
+      end
+      
+      if ( hand ~= nil ) then
+        for i,data in ipairs( hand ) do
+          local rec = check_recursion( data, recursion_level )
+          if ( data ~= nil ) and ( data.type == 0 ) and ( rec > -1 ) then
+            dont_draw_actions = true
+            data.action( rec )
+            dont_draw_actions = false
+          end
+        end
+      end
+      
+      if ( deck ~= nil ) then
+        for i,data in ipairs( deck ) do
+          local rec = check_recursion( data, recursion_level )
+          if ( data ~= nil ) and ( data.type == 0 ) and ( rec > -1 ) then
+            dont_draw_actions = true
+            data.action( rec )
+            dont_draw_actions = false
+          end
+        end
+      end
+      
+      c.fire_rate_wait = firerate
+      current_reload_time = reload
+      mana = mana_
+    end,
 ```
 
 ## ![Piercing shot](PIERCING_SHOT.png)Piercing shot (PIERCING_SHOT)
@@ -7753,12 +7753,12 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function()
- c.damage_projectile_add = c.damage_projectile_add - 0.6
- c.extra_entities = c.extra_entities .. "data/entities/misc/piercing_shot.xml,"
- c.friendly_fire = true
- draw_actions( 1, true )
- end,
+ function()
+      c.damage_projectile_add = c.damage_projectile_add - 0.6
+      c.extra_entities = c.extra_entities .. "data/entities/misc/piercing_shot.xml,"
+      c.friendly_fire    = true
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Ping-pong path](PINGPONG_PATH.png)Ping-pong path (PINGPONG_PATH)
@@ -7781,11 +7781,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/pingpong_path.xml,"
- c.lifetime_add = c.lifetime_add + 25
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/pingpong_path.xml,"
+      c.lifetime_add = c.lifetime_add + 25
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Pinpoint of light](GLOWING_BOLT.png)Pinpoint of light (GLOWING_BOLT)
@@ -7808,11 +7808,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/glowing_bolt.xml")
- c.fire_rate_wait = c.fire_rate_wait + 40
- c.spread_degrees = c.spread_degrees + 6.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/glowing_bolt.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 40
+      c.spread_degrees = c.spread_degrees + 6.0
+    end,
 ```
 
 ## ![Plasma Beam Bounce](BOUNCE_LASER_EMITTER.png)Plasma Beam Bounce (BOUNCE_LASER_EMITTER)
@@ -7835,13 +7835,13 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/bounce_laser_emitter.xml,"
- c.bounces = c.bounces + 1
- c.fire_rate_wait = c.fire_rate_wait + 12
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 5.0
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/bounce_laser_emitter.xml,"
+      c.bounces = c.bounces + 1
+      c.fire_rate_wait = c.fire_rate_wait + 12
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 5.0
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Plasma Beam Cross](LASER_EMITTER_FOUR.png)Plasma Beam Cross (LASER_EMITTER_FOUR)
@@ -7864,12 +7864,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/orb_laseremitter_four.xml")
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
- c.fire_rate_wait = c.fire_rate_wait + 15
- c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_disintegrated.xml,"
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/orb_laseremitter_four.xml")
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
+      c.fire_rate_wait = c.fire_rate_wait + 15
+      c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_disintegrated.xml,"
+    end,
 ```
 
 ## ![Plasma Beam Enhancer](LASER_EMITTER_WIDER.png)Plasma Beam Enhancer (LASER_EMITTER_WIDER)
@@ -7892,10 +7892,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/laser_emitter_wider.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/laser_emitter_wider.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Plasma Beam Orbit](ORBIT_LASERS.png)Plasma Beam Orbit (ORBIT_LASERS)
@@ -7918,10 +7918,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/orbit_lasers.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/orbit_lasers.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Plasma Beam Thrower](LASER_EMITTER_RAY.png)Plasma Beam Thrower (LASER_EMITTER_RAY)
@@ -7944,10 +7944,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/laser_emitter_ray.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/laser_emitter_ray.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Plasma Cutter](LASER_EMITTER_CUTTER.png)Plasma Cutter (LASER_EMITTER_CUTTER)
@@ -7970,11 +7970,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/orb_laseremitter_cutter.xml")
- current_reload_time = current_reload_time + 10
- c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_disintegrated.xml,"
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/orb_laseremitter_cutter.xml")
+      current_reload_time = current_reload_time + 10
+      c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_disintegrated.xml,"
+    end,
 ```
 
 ## ![Plasma beam](LASER_EMITTER.png)Plasma beam (LASER_EMITTER)
@@ -7997,12 +7997,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/orb_laseremitter.xml")
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
- c.fire_rate_wait = c.fire_rate_wait + 6
- c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_disintegrated.xml,"
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/orb_laseremitter.xml")
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
+      c.fire_rate_wait = c.fire_rate_wait + 6
+      c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_disintegrated.xml,"
+    end,
 ```
 
 ## ![Poison Arc](ARC_POISON.png)Poison Arc (ARC_POISON)
@@ -8025,10 +8025,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/arc_poison.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/arc_poison.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Poison trail](POISON_TRAIL.png)Poison trail (POISON_TRAIL)
@@ -8051,12 +8051,12 @@ function()
 * **action**:
 
 ```lua
-function()
- c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_poison.xml,"
- c.trail_material = c.trail_material .. "poison,"
- c.trail_material_amount = c.trail_material_amount + 9
- draw_actions( 1, true )
- end,
+ function()
+      c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_poison.xml,"
+      c.trail_material = c.trail_material .. "poison,"
+      c.trail_material_amount = c.trail_material_amount + 9
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Pollen](POLLEN.png)Pollen (POLLEN)
@@ -8079,11 +8079,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/pollen.xml")
- c.fire_rate_wait = c.fire_rate_wait + 2
- c.spread_degrees = c.spread_degrees + 20
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/pollen.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 2
+      c.spread_degrees = c.spread_degrees + 20
+    end,
 ```
 
 ## ![Powder Vacuum Field](VACUUM_POWDER.png)Powder Vacuum Field (VACUUM_POWDER)
@@ -8106,10 +8106,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/vacuum_powder.xml")
- c.fire_rate_wait = c.fire_rate_wait + 10
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/vacuum_powder.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 10
+    end,
 ```
 
 ## ![Prickly Spore Pod](SPORE_POD.png)Prickly Spore Pod (SPORE_POD)
@@ -8132,11 +8132,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/spore_pod.xml")
- c.fire_rate_wait = c.fire_rate_wait + 40
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/spore_pod.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 40
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
+    end,
 ```
 
 ## ![Projectile Area Teleport](HOMING_AREA.png)Projectile Area Teleport (HOMING_AREA)
@@ -8159,20 +8159,20 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/homing_area.xml,data/entities/particles/tinyspark_white.xml,"
- c.fire_rate_wait = c.fire_rate_wait + 8
- c.spread_degrees = c.spread_degrees + 6
- c.speed_multiplier = c.speed_multiplier * 0.75
- 
- if ( c.speed_multiplier >= 20 ) then
- c.speed_multiplier = math.min( c.speed_multiplier, 20 )
- elseif ( c.speed_multiplier < 0 ) then
- c.speed_multiplier = 0
- end
- 
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/homing_area.xml,data/entities/particles/tinyspark_white.xml,"
+      c.fire_rate_wait    = c.fire_rate_wait + 8
+      c.spread_degrees = c.spread_degrees + 6
+      c.speed_multiplier  = c.speed_multiplier * 0.75
+      
+      if ( c.speed_multiplier >= 20 ) then
+        c.speed_multiplier = math.min( c.speed_multiplier, 20 )
+      elseif ( c.speed_multiplier < 0 ) then
+        c.speed_multiplier = 0
+      end
+      
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Projectile energy shield](ENERGY_SHIELD_SHOT.png)Projectile energy shield (ENERGY_SHIELD_SHOT)
@@ -8195,18 +8195,18 @@ function()
 * **action**:
 
 ```lua
-function()
- c.speed_multiplier = c.speed_multiplier * 0.4
- c.extra_entities = c.extra_entities .. "data/entities/misc/energy_shield_shot.xml,"
- 
- if ( c.speed_multiplier >= 20 ) then
- c.speed_multiplier = math.min( c.speed_multiplier, 20 )
- elseif ( c.speed_multiplier < 0 ) then
- c.speed_multiplier = 0
- end
- 
- draw_actions( 1, true )
- end,
+ function()
+      c.speed_multiplier = c.speed_multiplier * 0.4
+      c.extra_entities = c.extra_entities .. "data/entities/misc/energy_shield_shot.xml,"
+      
+      if ( c.speed_multiplier >= 20 ) then
+        c.speed_multiplier = math.min( c.speed_multiplier, 20 )
+      elseif ( c.speed_multiplier < 0 ) then
+        c.speed_multiplier = 0
+      end
+      
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Projectile gravity field](PROJECTILE_GRAVITY_FIELD.png)Projectile gravity field (PROJECTILE_GRAVITY_FIELD)
@@ -8229,10 +8229,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/projectile_gravity_field.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/projectile_gravity_field.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Projectile thunder field](PROJECTILE_THUNDER_FIELD.png)Projectile thunder field (PROJECTILE_THUNDER_FIELD)
@@ -8255,10 +8255,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/projectile_thunder_field.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/projectile_thunder_field.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Projectile transmutation field](PROJECTILE_TRANSMUTATION_FIELD.png)Projectile transmutation field (PROJECTILE_TRANSMUTATION_FIELD)
@@ -8281,10 +8281,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/projectile_transmutation_field.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/projectile_transmutation_field.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Propane tank](PROPANE_TANK.png)Propane tank (PROPANE_TANK)
@@ -8307,10 +8307,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/propane_tank.xml")
- c.fire_rate_wait = c.fire_rate_wait + 100
- end,
+ function()
+      add_projectile("data/entities/projectiles/propane_tank.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 100
+    end,
 ```
 
 ## ![Purple Glimmer](COLOUR_PURPLE.png)Purple Glimmer (COLOUR_PURPLE)
@@ -8333,15 +8333,15 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,data/entities/misc/colour_purple.xml,"
- c.fire_rate_wait = c.fire_rate_wait - 8
- c.screenshake = c.screenshake - 2.5
- if ( c.screenshake < 0 ) then
- c.screenshake = 0
- end
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,data/entities/misc/colour_purple.xml,"
+      c.fire_rate_wait = c.fire_rate_wait - 8
+      c.screenshake = c.screenshake - 2.5
+      if ( c.screenshake < 0 ) then
+        c.screenshake = 0
+      end
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Quadruple scatter spell](SCATTER_4.png)Quadruple scatter spell (SCATTER_4)
@@ -8364,10 +8364,10 @@ function()
 * **action**:
 
 ```lua
-function()
- draw_actions( 4, true )
- c.spread_degrees = c.spread_degrees + 40.0
- end,
+ function()
+      draw_actions( 4, true )
+      c.spread_degrees = c.spread_degrees + 40.0
+    end,
 ```
 
 ## ![Quadruple spell](BURST_4.png)Quadruple spell (BURST_4)
@@ -8390,9 +8390,9 @@ function()
 * **action**:
 
 ```lua
-function()
- draw_actions( 4, true )
- end,
+ function()
+      draw_actions( 4, true )
+    end,
 ```
 
 ## ![Quantum Split](QUANTUM_SPLIT.png)Quantum Split (QUANTUM_SPLIT)
@@ -8415,11 +8415,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/quantum_split.xml,"
- c.fire_rate_wait = c.fire_rate_wait + 5
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/quantum_split.xml,"
+      c.fire_rate_wait = c.fire_rate_wait + 5
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Rain cloud](CLOUD_WATER.png)Rain cloud (CLOUD_WATER)
@@ -8442,10 +8442,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/cloud_water.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/cloud_water.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Rainbow Glimmer](COLOUR_RAINBOW.png)Rainbow Glimmer (COLOUR_RAINBOW)
@@ -8468,15 +8468,15 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,data/entities/misc/colour_rainbow.xml,"
- c.fire_rate_wait = c.fire_rate_wait - 8
- c.screenshake = c.screenshake - 2.5
- if ( c.screenshake < 0 ) then
- c.screenshake = 0
- end
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,data/entities/misc/colour_rainbow.xml,"
+      c.fire_rate_wait = c.fire_rate_wait - 8
+      c.screenshake = c.screenshake - 2.5
+      if ( c.screenshake < 0 ) then
+        c.screenshake = 0
+      end
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Rainbow trail](RAINBOW_TRAIL.png)Rainbow trail (RAINBOW_TRAIL)
@@ -8499,12 +8499,12 @@ function()
 * **action**:
 
 ```lua
-function()
- c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_rainbow_farts.xml,"
- c.trail_material = c.trail_material .. "material_rainbow,"
- c.trail_material_amount = c.trail_material_amount + 20
- draw_actions( 1, true )
- end,
+ function()
+      c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_rainbow_farts.xml,"
+      c.trail_material = c.trail_material .. "material_rainbow,"
+      c.trail_material_amount = c.trail_material_amount + 20
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Random damage](DAMAGE_RANDOM.png)Random damage (DAMAGE_RANDOM)
@@ -8527,19 +8527,19 @@ function()
 * **action**:
 
 ```lua
-function()
- SetRandomSeed( GameGetFrameNum(), GameGetFrameNum() + 253 )
- local multiplier = 0
- multiplier = Random( -3, 4 ) * Random( 0, 2 )
- local result = 0
- result = c.damage_projectile_add + 0.4 * multiplier
- c.damage_projectile_add = result
- c.gore_particles = c.gore_particles + 5 * multiplier
- c.fire_rate_wait = c.fire_rate_wait + 5
- c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_yellow.xml,"
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 10.0 * multiplier
- draw_actions( 1, true )
- end,
+ function()
+      SetRandomSeed( GameGetFrameNum(), GameGetFrameNum() + 253 )
+      local multiplier = 0
+      multiplier = Random( -3, 4 ) * Random( 0, 2 )
+      local result = 0
+      result = c.damage_projectile_add + 0.4 * multiplier
+      c.damage_projectile_add = result
+      c.gore_particles    = c.gore_particles + 5 * multiplier
+      c.fire_rate_wait    = c.fire_rate_wait + 5
+      c.extra_entities    = c.extra_entities .. "data/entities/particles/tinyspark_yellow.xml,"
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 10.0 * multiplier
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Random modifier spell](RANDOM_MODIFIER.png)Random modifier spell (RANDOM_MODIFIER)
@@ -8562,24 +8562,24 @@ function()
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- SetRandomSeed( GameGetFrameNum() + #deck, GameGetFrameNum() + 133 )
- local rnd = Random( 1, #actions )
- local data = actions[rnd]
- 
- local safety = 0
- local rec = check_recursion( data, recursion_level )
- 
- while ( safety < 100 ) and ( ( data.type ~= 2 ) or ( rec == -1 ) ) do
- rnd = Random( 1, #actions )
- data = actions[rnd]
- rec = check_recursion( data, recursion_level )
- 
- safety = safety + 1
- end
- 
- data.action( rec )
- end,
+ function( recursion_level, iteration )
+      SetRandomSeed( GameGetFrameNum() + #deck, GameGetFrameNum() + 133 )
+      local rnd = Random( 1, #actions )
+      local data = actions[rnd]
+      
+      local safety = 0
+      local rec = check_recursion( data, recursion_level )
+      
+      while ( safety < 100 ) and ( ( data.type ~= 2 ) or ( rec == -1 ) ) do
+        rnd = Random( 1, #actions )
+        data = actions[rnd]
+        rec = check_recursion( data, recursion_level )
+        
+        safety = safety + 1
+      end
+      
+      data.action( rec )
+    end,
 ```
 
 ## ![Random projectile spell](RANDOM_PROJECTILE.png)Random projectile spell (RANDOM_PROJECTILE)
@@ -8602,24 +8602,24 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- SetRandomSeed( GameGetFrameNum() + #deck, GameGetFrameNum() + 203 )
- local rnd = Random( 1, #actions )
- local data = actions[rnd]
- 
- local safety = 0
- local rec = check_recursion( data, recursion_level )
- 
- while ( safety < 100 ) and ( ( data.type ~= 0 ) or ( rec == -1 ) ) do
- rnd = Random( 1, #actions )
- data = actions[rnd]
- rec = check_recursion( data, recursion_level )
- 
- safety = safety + 1
- end
- 
- data.action( rec )
- end,
+ function( recursion_level, iteration )
+      SetRandomSeed( GameGetFrameNum() + #deck, GameGetFrameNum() + 203 )
+      local rnd = Random( 1, #actions )
+      local data = actions[rnd]
+      
+      local safety = 0
+      local rec = check_recursion( data, recursion_level )
+      
+      while ( safety < 100 ) and ( ( data.type ~= 0 ) or ( rec == -1 ) ) do
+        rnd = Random( 1, #actions )
+        data = actions[rnd]
+        rec = check_recursion( data, recursion_level )
+        
+        safety = safety + 1
+      end
+      
+      data.action( rec )
+    end,
 ```
 
 ## ![Random spell](RANDOM_SPELL.png)Random spell (RANDOM_SPELL)
@@ -8642,24 +8642,24 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- SetRandomSeed( GameGetFrameNum() + #deck, GameGetFrameNum() + 263 )
- local rnd = Random( 1, #actions )
- local data = actions[rnd]
- 
- local safety = 0
- local rec = check_recursion( data, recursion_level )
- 
- while ( safety < 100 ) and ( rec == -1 ) do
- rnd = Random( 1, #actions )
- data = actions[rnd]
- rec = check_recursion( data, recursion_level )
- 
- safety = safety + 1
- end
- 
- data.action( rec )
- end,
+ function( recursion_level, iteration )
+      SetRandomSeed( GameGetFrameNum() + #deck, GameGetFrameNum() + 263 )
+      local rnd = Random( 1, #actions )
+      local data = actions[rnd]
+      
+      local safety = 0
+      local rec = check_recursion( data, recursion_level )
+      
+      while ( safety < 100 ) and ( rec == -1 ) do
+        rnd = Random( 1, #actions )
+        data = actions[rnd]
+        rec = check_recursion( data, recursion_level )
+        
+        safety = safety + 1
+      end
+      
+      data.action( rec )
+    end,
 ```
 
 ## ![Random static projectile spell](RANDOM_STATIC_PROJECTILE.png)Random static projectile spell (RANDOM_STATIC_PROJECTILE)
@@ -8682,24 +8682,24 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- SetRandomSeed( GameGetFrameNum() + #deck, GameGetFrameNum() + 253 )
- local rnd = Random( 1, #actions )
- local data = actions[rnd]
- 
- local safety = 0
- local rec = check_recursion( data, recursion_level )
- 
- while ( safety < 100 ) and ( ( data.type ~= 1 ) or ( rec == -1 ) ) do
- rnd = Random( 1, #actions )
- data = actions[rnd]
- rec = check_recursion( data, recursion_level )
- 
- safety = safety + 1
- end
- 
- data.action( rec )
- end,
+ function( recursion_level, iteration )
+      SetRandomSeed( GameGetFrameNum() + #deck, GameGetFrameNum() + 253 )
+      local rnd = Random( 1, #actions )
+      local data = actions[rnd]
+      
+      local safety = 0
+      local rec = check_recursion( data, recursion_level )
+      
+      while ( safety < 100 ) and ( ( data.type ~= 1 ) or ( rec == -1 ) ) do
+        rnd = Random( 1, #actions )
+        data = actions[rnd]
+        rec = check_recursion( data, recursion_level )
+        
+        safety = safety + 1
+      end
+      
+      data.action( rec )
+    end,
 ```
 
 ## ![Recoil](RECOIL.png)Recoil (RECOIL)
@@ -8722,10 +8722,10 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function()
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 200.0
- draw_actions( 1, true )
- end,
+ function()
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 200.0
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Recoil Damper](RECOIL_DAMPER.png)Recoil Damper (RECOIL_DAMPER)
@@ -8748,10 +8748,10 @@ function()
 * **action**:
 
 ```lua
-function()
- shot_effects.recoil_knockback = shot_effects.recoil_knockback - 200
- draw_actions( 1, true )
- end,
+ function()
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback - 200
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Red Glimmer](COLOUR_RED.png)Red Glimmer (COLOUR_RED)
@@ -8774,15 +8774,15 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,data/entities/misc/colour_red.xml,"
- c.fire_rate_wait = c.fire_rate_wait - 8
- c.screenshake = c.screenshake - 2.5
- if ( c.screenshake < 0 ) then
- c.screenshake = 0
- end
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,data/entities/misc/colour_red.xml,"
+      c.fire_rate_wait = c.fire_rate_wait - 8
+      c.screenshake = c.screenshake - 2.5
+      if ( c.screenshake < 0 ) then
+        c.screenshake = 0
+      end
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Reduce lifetime](LIFETIME_DOWN.png)Reduce lifetime (LIFETIME_DOWN)
@@ -8805,11 +8805,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.lifetime_add = c.lifetime_add - 42
- c.fire_rate_wait = c.fire_rate_wait - 15
- draw_actions( 1, true )
- end,
+ function()
+      c.lifetime_add     = c.lifetime_add - 42
+      c.fire_rate_wait = c.fire_rate_wait - 15
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Reduce recharge time](RECHARGE.png)Reduce recharge time (RECHARGE)
@@ -8832,11 +8832,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait - 10
- current_reload_time = current_reload_time - 20
- draw_actions( 1, true )
- end,
+ function()
+      c.fire_rate_wait    = c.fire_rate_wait - 10
+      current_reload_time = current_reload_time - 20
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Reduce spread](SPREAD_REDUCE.png)Reduce spread (SPREAD_REDUCE)
@@ -8859,10 +8859,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.spread_degrees = c.spread_degrees - 60.0
- draw_actions( 1, true )
- end,
+ function()
+      c.spread_degrees = c.spread_degrees - 60.0
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Remove Bounce](REMOVE_BOUNCE.png)Remove Bounce (REMOVE_BOUNCE)
@@ -8885,11 +8885,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/remove_bounce.xml,"
- c.bounces = 0
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/remove_bounce.xml,"
+      c.bounces = 0
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Remove Explosion](EXPLOSION_REMOVE.png)Remove Explosion (EXPLOSION_REMOVE)
@@ -8912,13 +8912,13 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/explosion_remove.xml,"
- c.fire_rate_wait = c.fire_rate_wait - 15
- c.explosion_radius = c.explosion_radius - 30.0
- c.damage_explosion_add = c.damage_explosion_add - 0.8
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/explosion_remove.xml,"
+      c.fire_rate_wait = c.fire_rate_wait - 15
+      c.explosion_radius = c.explosion_radius - 30.0
+      c.damage_explosion_add = c.damage_explosion_add - 0.8
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Requirement - Endpoint](IF_END.png)Requirement - Endpoint (IF_END)
@@ -8941,9 +8941,9 @@ function()
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- draw_actions( 1, true )
- end,
+ function( recursion_level, iteration ) 
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Requirement - Enemies](IF_ENEMY.png)Requirement - Enemies (IF_ENEMY)
@@ -8966,79 +8966,79 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- local endpoint = -1
- local elsepoint = -1
- local x,y = EntityGetTransform( GetUpdatedEntityID() )
- local enemies = EntityGetInRadiusWithTag( x, y, 240, "homing_target" )
- 
- local doskip = false
- if ( #enemies < 15 ) then
- doskip = true
- end
- 
- if ( #deck > 0 ) then
- for i,v in ipairs( deck ) do
- if ( v ~= nil ) then
- if ( string.sub( v.id, 1, 3 ) == "IF_" ) and ( v.id ~= "IF_END" ) and ( v.id ~= "IF_ELSE" ) then
- endpoint = -1
- break
- end
- 
- if ( v.id == "IF_ELSE" ) then
- endpoint = i
- elsepoint = i
- end
- 
- if ( v.id == "IF_END" ) then
- endpoint = i
- break
- end
- end
- end
- 
- local envelope_min = 1
- local envelope_max = 1
- 
- if doskip then
- if ( elsepoint > 0 ) then
- envelope_max = elsepoint
- elseif ( endpoint > 0 ) then
- envelope_max = endpoint
- end
- 
- for i=envelope_min,envelope_max do
- local v = deck[envelope_min]
- 
- if ( v ~= nil ) then
- table.insert( discarded, v )
- table.remove( deck, envelope_min )
- end
- end
- else
- if ( elsepoint > 0 ) then
- envelope_min = elsepoint
- 
- if ( endpoint > 0 ) then
- envelope_max = endpoint
- else
- envelope_max = #deck
- end
- 
- for i=envelope_min,envelope_max do
- local v = deck[envelope_min]
- 
- if ( v ~= nil ) then
- table.insert( discarded, v )
- table.remove( deck, envelope_min )
- end
- end
- end
- end
- end
- 
- draw_actions( 1, true )
- end,
+ function( recursion_level, iteration )
+      local endpoint = -1
+      local elsepoint = -1
+      local x,y = EntityGetTransform( GetUpdatedEntityID() )
+      local enemies = EntityGetInRadiusWithTag( x, y, 240, "homing_target" )
+      
+      local doskip = false
+      if ( #enemies < 15 ) then
+        doskip = true
+      end
+      
+      if ( #deck > 0 ) then
+        for i,v in ipairs( deck ) do
+          if ( v ~= nil ) then
+            if ( string.sub( v.id, 1, 3 ) == "IF_" ) and ( v.id ~= "IF_END" ) and ( v.id ~= "IF_ELSE" ) then
+              endpoint = -1
+              break
+            end
+            
+            if ( v.id == "IF_ELSE" ) then
+              endpoint = i
+              elsepoint = i
+            end
+            
+            if ( v.id == "IF_END" ) then
+              endpoint = i
+              break
+            end
+          end
+        end
+        
+        local envelope_min = 1
+        local envelope_max = 1
+          
+        if doskip then
+          if ( elsepoint > 0 ) then
+            envelope_max = elsepoint
+          elseif ( endpoint > 0 ) then
+            envelope_max = endpoint
+          end
+          
+          for i=envelope_min,envelope_max do
+            local v = deck[envelope_min]
+            
+            if ( v ~= nil ) then
+              table.insert( discarded, v )
+              table.remove( deck, envelope_min )
+            end
+          end
+        else
+          if ( elsepoint > 0 ) then
+            envelope_min = elsepoint
+            
+            if ( endpoint > 0 ) then
+              envelope_max = endpoint
+            else
+              envelope_max = #deck
+            end
+            
+            for i=envelope_min,envelope_max do
+              local v = deck[envelope_min]
+              
+              if ( v ~= nil ) then
+                table.insert( discarded, v )
+                table.remove( deck, envelope_min )
+              end
+            end
+          end
+        end
+      end
+      
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Requirement - Every Other](IF_HALF.png)Requirement - Every Other (IF_HALF)
@@ -9061,84 +9061,84 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- local endpoint = -1
- local elsepoint = -1
- local doskip = false
- 
- if ( reflecting == false ) then
- local status = tonumber( GlobalsGetValue( "GUN_ACTION_IF_HALF_STATUS", "0" ) ) or 0
- 
- if ( status == 1 ) then
- doskip = true
- end
- 
- status = 1 - status
- GlobalsSetValue( "GUN_ACTION_IF_HALF_STATUS", tostring( status ) )
- end
- 
- if ( #deck > 0 ) then
- for i,v in ipairs( deck ) do
- if ( v ~= nil ) then
- if ( string.sub( v.id, 1, 3 ) == "IF_" ) and ( v.id ~= "IF_END" ) and ( v.id ~= "IF_ELSE" ) then
- endpoint = -1
- break
- end
- 
- if ( v.id == "IF_ELSE" ) then
- endpoint = i
- elsepoint = i
- end
- 
- if ( v.id == "IF_END" ) then
- endpoint = i
- break
- end
- end
- end
- 
- local envelope_min = 1
- local envelope_max = 1
- 
- if doskip then
- if ( elsepoint > 0 ) then
- envelope_max = elsepoint
- elseif ( endpoint > 0 ) then
- envelope_max = endpoint
- end
- 
- for i=envelope_min,envelope_max do
- local v = deck[envelope_min]
- 
- if ( v ~= nil ) then
- table.insert( discarded, v )
- table.remove( deck, envelope_min )
- end
- end
- else
- if ( elsepoint > 0 ) then
- envelope_min = elsepoint
- 
- if ( endpoint > 0 ) then
- envelope_max = endpoint
- else
- envelope_max = #deck
- end
- 
- for i=envelope_min,envelope_max do
- local v = deck[envelope_min]
- 
- if ( v ~= nil ) then
- table.insert( discarded, v )
- table.remove( deck, envelope_min )
- end
- end
- end
- end
- end
- 
- draw_actions( 1, true )
- end,
+ function( recursion_level, iteration )
+      local endpoint = -1
+      local elsepoint = -1
+      local doskip = false
+      
+      if ( reflecting == false ) then
+        local status = tonumber( GlobalsGetValue( "GUN_ACTION_IF_HALF_STATUS", "0" ) ) or 0
+        
+        if ( status == 1 ) then
+          doskip = true
+        end
+        
+        status = 1 - status
+        GlobalsSetValue( "GUN_ACTION_IF_HALF_STATUS", tostring( status ) )
+      end
+      
+      if ( #deck > 0 ) then
+        for i,v in ipairs( deck ) do
+          if ( v ~= nil ) then
+            if ( string.sub( v.id, 1, 3 ) == "IF_" ) and ( v.id ~= "IF_END" ) and ( v.id ~= "IF_ELSE" ) then
+              endpoint = -1
+              break
+            end
+            
+            if ( v.id == "IF_ELSE" ) then
+              endpoint = i
+              elsepoint = i
+            end
+            
+            if ( v.id == "IF_END" ) then
+              endpoint = i
+              break
+            end
+          end
+        end
+        
+        local envelope_min = 1
+        local envelope_max = 1
+        
+        if doskip then
+          if ( elsepoint > 0 ) then
+            envelope_max = elsepoint
+          elseif ( endpoint > 0 ) then
+            envelope_max = endpoint
+          end
+          
+          for i=envelope_min,envelope_max do
+            local v = deck[envelope_min]
+          
+            if ( v ~= nil ) then
+              table.insert( discarded, v )
+              table.remove( deck, envelope_min )
+            end
+          end
+        else
+          if ( elsepoint > 0 ) then
+            envelope_min = elsepoint
+            
+            if ( endpoint > 0 ) then
+              envelope_max = endpoint
+            else
+              envelope_max = #deck
+            end
+            
+            for i=envelope_min,envelope_max do
+              local v = deck[envelope_min]
+              
+              if ( v ~= nil ) then
+                table.insert( discarded, v )
+                table.remove( deck, envelope_min )
+              end
+            end
+          end
+        end
+      end
+      
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Requirement - Low Health](IF_HP.png)Requirement - Low Health (IF_HP)
@@ -9161,87 +9161,87 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- local endpoint = -1
- local elsepoint = -1
- local entity_id = GetUpdatedEntityID()
- local comp = EntityGetFirstComponent( entity_id, "DamageModelComponent" )
- local hpdiff = 1.0
- 
- if ( comp ~= nil ) then
- local hp = ComponentGetValue2( comp, "hp" )
- local max_hp = ComponentGetValue2( comp, "max_hp" )
- 
- hpdiff = hp / max_hp
- end
- 
- local doskip = false
- if ( hpdiff > 0.25 ) then
- doskip = true
- end
- 
- if ( #deck > 0 ) then
- for i,v in ipairs( deck ) do
- if ( v ~= nil ) then
- if ( string.sub( v.id, 1, 3 ) == "IF_" ) and ( v.id ~= "IF_END" ) and ( v.id ~= "IF_ELSE" ) then
- endpoint = -1
- break
- end
- 
- if ( v.id == "IF_ELSE" ) then
- endpoint = i
- elsepoint = i
- end
- 
- if ( v.id == "IF_END" ) then
- endpoint = i
- break
- end
- end
- end
- 
- local envelope_min = 1
- local envelope_max = 1
- 
- if doskip then
- if ( elsepoint > 0 ) then
- envelope_max = elsepoint
- elseif ( endpoint > 0 ) then
- envelope_max = endpoint
- end
- 
- for i=envelope_min,envelope_max do
- local v = deck[envelope_min]
- 
- if ( v ~= nil ) then
- table.insert( discarded, v )
- table.remove( deck, envelope_min )
- end
- end
- else
- if ( elsepoint > 0 ) then
- envelope_min = elsepoint
- 
- if ( endpoint > 0 ) then
- envelope_max = endpoint
- else
- envelope_max = #deck
- end
- 
- for i=envelope_min,envelope_max do
- local v = deck[envelope_min]
- 
- if ( v ~= nil ) then
- table.insert( discarded, v )
- table.remove( deck, envelope_min )
- end
- end
- end
- end
- end
- 
- draw_actions( 1, true )
- end,
+ function( recursion_level, iteration )
+      local endpoint = -1
+      local elsepoint = -1
+      local entity_id = GetUpdatedEntityID()
+      local comp = EntityGetFirstComponent( entity_id, "DamageModelComponent" )
+      local hpdiff = 1.0
+      
+      if ( comp ~= nil ) then
+        local hp = ComponentGetValue2( comp, "hp" )
+        local max_hp = ComponentGetValue2( comp, "max_hp" )
+        
+        hpdiff = hp / max_hp
+      end
+      
+      local doskip = false
+      if ( hpdiff > 0.25 ) then
+        doskip = true
+      end
+      
+      if ( #deck > 0 ) then
+        for i,v in ipairs( deck ) do
+          if ( v ~= nil ) then
+            if ( string.sub( v.id, 1, 3 ) == "IF_" ) and ( v.id ~= "IF_END" ) and ( v.id ~= "IF_ELSE" ) then
+              endpoint = -1
+              break
+            end
+            
+            if ( v.id == "IF_ELSE" ) then
+              endpoint = i
+              elsepoint = i
+            end
+            
+            if ( v.id == "IF_END" ) then
+              endpoint = i
+              break
+            end
+          end
+        end
+        
+        local envelope_min = 1
+        local envelope_max = 1
+          
+        if doskip then
+          if ( elsepoint > 0 ) then
+            envelope_max = elsepoint
+          elseif ( endpoint > 0 ) then
+            envelope_max = endpoint
+          end
+          
+          for i=envelope_min,envelope_max do
+            local v = deck[envelope_min]
+            
+            if ( v ~= nil ) then
+              table.insert( discarded, v )
+              table.remove( deck, envelope_min )
+            end
+          end
+        else
+          if ( elsepoint > 0 ) then
+            envelope_min = elsepoint
+            
+            if ( endpoint > 0 ) then
+              envelope_max = endpoint
+            else
+              envelope_max = #deck
+            end
+            
+            for i=envelope_min,envelope_max do
+              local v = deck[envelope_min]
+              
+              if ( v ~= nil ) then
+                table.insert( discarded, v )
+                table.remove( deck, envelope_min )
+              end
+            end
+          end
+        end
+      end
+      
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Requirement - Otherwise](IF_ELSE.png)Requirement - Otherwise (IF_ELSE)
@@ -9264,9 +9264,9 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- draw_actions( 1, true )
- end,
+ function( recursion_level, iteration ) 
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Requirement - Projectile Spells](IF_PROJECTILE.png)Requirement - Projectile Spells (IF_PROJECTILE)
@@ -9289,79 +9289,79 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- local endpoint = -1
- local elsepoint = -1
- local x,y = EntityGetTransform( GetUpdatedEntityID() )
- local enemies = EntityGetInRadiusWithTag( x, y, 160, "projectile" )
- 
- local doskip = false
- if ( #enemies < 20 ) then
- doskip = true
- end
- 
- if ( #deck > 0 ) then
- for i,v in ipairs( deck ) do
- if ( v ~= nil ) then
- if ( string.sub( v.id, 1, 3 ) == "IF_" ) and ( v.id ~= "IF_END" ) and ( v.id ~= "IF_ELSE" ) then
- endpoint = -1
- break
- end
- 
- if ( v.id == "IF_ELSE" ) then
- endpoint = i
- elsepoint = i
- end
- 
- if ( v.id == "IF_END" ) then
- endpoint = i
- break
- end
- end
- end
- 
- local envelope_min = 1
- local envelope_max = 1
- 
- if doskip then
- if ( elsepoint > 0 ) then
- envelope_max = elsepoint
- elseif ( endpoint > 0 ) then
- envelope_max = endpoint
- end
- 
- for i=envelope_min,envelope_max do
- local v = deck[envelope_min]
- 
- if ( v ~= nil ) then
- table.insert( discarded, v )
- table.remove( deck, envelope_min )
- end
- end
- else
- if ( elsepoint > 0 ) then
- envelope_min = elsepoint
- 
- if ( endpoint > 0 ) then
- envelope_max = endpoint
- else
- envelope_max = #deck
- end
- 
- for i=envelope_min,envelope_max do
- local v = deck[envelope_min]
- 
- if ( v ~= nil ) then
- table.insert( discarded, v )
- table.remove( deck, envelope_min )
- end
- end
- end
- end
- end
- 
- draw_actions( 1, true )
- end,
+ function( recursion_level, iteration )
+      local endpoint = -1
+      local elsepoint = -1
+      local x,y = EntityGetTransform( GetUpdatedEntityID() )
+      local enemies = EntityGetInRadiusWithTag( x, y, 160, "projectile" )
+      
+      local doskip = false
+      if ( #enemies < 20 ) then
+        doskip = true
+      end
+      
+      if ( #deck > 0 ) then
+        for i,v in ipairs( deck ) do
+          if ( v ~= nil ) then
+            if ( string.sub( v.id, 1, 3 ) == "IF_" ) and ( v.id ~= "IF_END" ) and ( v.id ~= "IF_ELSE" ) then
+              endpoint = -1
+              break
+            end
+            
+            if ( v.id == "IF_ELSE" ) then
+              endpoint = i
+              elsepoint = i
+            end
+            
+            if ( v.id == "IF_END" ) then
+              endpoint = i
+              break
+            end
+          end
+        end
+        
+        local envelope_min = 1
+        local envelope_max = 1
+          
+        if doskip then
+          if ( elsepoint > 0 ) then
+            envelope_max = elsepoint
+          elseif ( endpoint > 0 ) then
+            envelope_max = endpoint
+          end
+          
+          for i=envelope_min,envelope_max do
+            local v = deck[envelope_min]
+            
+            if ( v ~= nil ) then
+              table.insert( discarded, v )
+              table.remove( deck, envelope_min )
+            end
+          end
+        else
+          if ( elsepoint > 0 ) then
+            envelope_min = elsepoint
+            
+            if ( endpoint > 0 ) then
+              envelope_max = endpoint
+            else
+              envelope_max = #deck
+            end
+            
+            for i=envelope_min,envelope_max do
+              local v = deck[envelope_min]
+              
+              if ( v ~= nil ) then
+                table.insert( discarded, v )
+                table.remove( deck, envelope_min )
+              end
+            end
+          end
+        end
+      end
+      
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Return](TELEPORT_PROJECTILE_STATIC.png)Return (TELEPORT_PROJECTILE_STATIC)
@@ -9384,11 +9384,11 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/teleport_projectile_static.xml")
- c.fire_rate_wait = c.fire_rate_wait + 3
- c.spread_degrees = c.spread_degrees - 2.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/teleport_projectile_static.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 3
+      c.spread_degrees = c.spread_degrees - 2.0
+    end,
 ```
 
 ## ![Rock](SUMMON_ROCK.png)Rock (SUMMON_ROCK)
@@ -9411,9 +9411,9 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/rock.xml")
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/rock.xml")
+    end,
 ```
 
 ## ![Rotate towards foes](HOMING_ROTATE.png)Rotate towards foes (HOMING_ROTATE)
@@ -9436,10 +9436,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/homing_rotate.xml,data/entities/particles/tinyspark_white.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/homing_rotate.xml,data/entities/particles/tinyspark_white.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Sawblade Orbit](ORBIT_DISCS.png)Sawblade Orbit (ORBIT_DISCS)
@@ -9462,10 +9462,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/orbit_discs.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/orbit_discs.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Sea of acid](SEA_ACID.png)Sea of acid (SEA_ACID)
@@ -9488,10 +9488,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/sea_acid.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/sea_acid.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Sea of alcohol](SEA_ALCOHOL.png)Sea of alcohol (SEA_ALCOHOL)
@@ -9514,10 +9514,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/sea_alcohol.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/sea_alcohol.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Sea of flammable gas](SEA_ACID_GAS.png)Sea of flammable gas (SEA_ACID_GAS)
@@ -9540,10 +9540,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/sea_acid_gas.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/sea_acid_gas.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Sea of lava](SEA_LAVA.png)Sea of lava (SEA_LAVA)
@@ -9566,10 +9566,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/sea_lava.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/sea_lava.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Sea of oil](SEA_OIL.png)Sea of oil (SEA_OIL)
@@ -9592,10 +9592,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/sea_oil.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/sea_oil.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Sea of water](SEA_WATER.png)Sea of water (SEA_WATER)
@@ -9618,10 +9618,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/sea_water.xml")
- c.fire_rate_wait = c.fire_rate_wait + 15
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/sea_water.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
 ```
 
 ## ![Short-range Homing](HOMING_SHORT.png)Short-range Homing (HOMING_SHORT)
@@ -9644,10 +9644,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/homing_short.xml,data/entities/particles/tinyspark_white_weak.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/homing_short.xml,data/entities/particles/tinyspark_white_weak.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Sigma](SIGMA.png)Sigma (SIGMA)
@@ -9670,52 +9670,52 @@ function()
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- c.fire_rate_wait = c.fire_rate_wait + 30
- 
- local firerate = c.fire_rate_wait
- local reload = current_reload_time
- local mana_ = mana
- 
- if ( discarded ~= nil ) then
- for i,data in ipairs( discarded ) do
- local rec = check_recursion( data, recursion_level )
- if ( data ~= nil ) and ( data.type == 1 ) and ( rec > -1 ) then
- dont_draw_actions = true
- data.action( rec )
- dont_draw_actions = false
- end
- end
- end
- 
- if ( hand ~= nil ) then
- for i,data in ipairs( hand ) do
- local rec = check_recursion( data, recursion_level )
- if ( data ~= nil ) and ( data.type == 1 ) and ( rec > -1 ) then
- dont_draw_actions = true
- data.action( rec )
- dont_draw_actions = false
- end
- end
- end
- 
- if ( deck ~= nil ) then
- for i,data in ipairs( deck ) do
- local rec = check_recursion( data, recursion_level )
- if ( data ~= nil ) and ( data.type == 1 ) and ( rec > -1 ) then
- dont_draw_actions = true
- data.action( rec )
- dont_draw_actions = false
- end
- end
- end
- 
- c.fire_rate_wait = firerate
- current_reload_time = reload
- mana = mana_
- 
- draw_actions( 1, true )
- end,
+ function( recursion_level, iteration )
+      c.fire_rate_wait = c.fire_rate_wait + 30
+      
+      local firerate = c.fire_rate_wait
+      local reload = current_reload_time
+      local mana_ = mana
+      
+      if ( discarded ~= nil ) then
+        for i,data in ipairs( discarded ) do
+          local rec = check_recursion( data, recursion_level )
+          if ( data ~= nil ) and ( data.type == 1 ) and ( rec > -1 ) then
+            dont_draw_actions = true
+            data.action( rec )
+            dont_draw_actions = false
+          end
+        end
+      end
+      
+      if ( hand ~= nil ) then
+        for i,data in ipairs( hand ) do
+          local rec = check_recursion( data, recursion_level )
+          if ( data ~= nil ) and ( data.type == 1 ) and ( rec > -1 ) then
+            dont_draw_actions = true
+            data.action( rec )
+            dont_draw_actions = false
+          end
+        end
+      end
+      
+      if ( deck ~= nil ) then
+        for i,data in ipairs( deck ) do
+          local rec = check_recursion( data, recursion_level )
+          if ( data ~= nil ) and ( data.type == 1 ) and ( rec > -1 ) then
+            dont_draw_actions = true
+            data.action( rec )
+            dont_draw_actions = false
+          end
+        end
+      end
+      
+      c.fire_rate_wait = firerate
+      current_reload_time = reload
+      mana = mana_
+      
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Slime mist](MIST_SLIME.png)Slime mist (MIST_SLIME)
@@ -9738,10 +9738,10 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/mist_slime.xml")
- c.fire_rate_wait = c.fire_rate_wait + 10
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/mist_slime.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 10
+    end,
 ```
 
 ## ![Slimeball](SLIMEBALL.png)Slimeball (SLIMEBALL)
@@ -9764,18 +9764,18 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/slime.xml")
- c.spread_degrees = c.spread_degrees + 4.0
- c.fire_rate_wait = c.fire_rate_wait + 10
- c.speed_multiplier = c.speed_multiplier * 1.1
- 
- if ( c.speed_multiplier >= 20 ) then
- c.speed_multiplier = math.min( c.speed_multiplier, 20 )
- elseif ( c.speed_multiplier < 0 ) then
- c.speed_multiplier = 0
- end
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/slime.xml")
+      c.spread_degrees = c.spread_degrees + 4.0
+      c.fire_rate_wait = c.fire_rate_wait + 10
+      c.speed_multiplier = c.speed_multiplier * 1.1
+      
+      if ( c.speed_multiplier >= 20 ) then
+        c.speed_multiplier = math.min( c.speed_multiplier, 20 )
+      elseif ( c.speed_multiplier < 0 ) then
+        c.speed_multiplier = 0
+      end
+    end,
 ```
 
 ## ![Slithering path](SINEWAVE.png)Slithering path (SINEWAVE)
@@ -9798,18 +9798,18 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/sinewave.xml,"
- c.speed_multiplier = c.speed_multiplier * 2
- 
- if ( c.speed_multiplier >= 20 ) then
- c.speed_multiplier = math.min( c.speed_multiplier, 20 )
- elseif ( c.speed_multiplier < 0 ) then
- c.speed_multiplier = 0
- end
- 
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/sinewave.xml,"
+      c.speed_multiplier = c.speed_multiplier * 2
+      
+      if ( c.speed_multiplier >= 20 ) then
+        c.speed_multiplier = math.min( c.speed_multiplier, 20 )
+      elseif ( c.speed_multiplier < 0 ) then
+        c.speed_multiplier = 0
+      end
+      
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Slow But Steady](SLOW_BUT_STEADY.png)Slow But Steady (SLOW_BUT_STEADY)
@@ -9832,11 +9832,11 @@ function()
 * **action**:
 
 ```lua
-function()
- current_reload_time = 90
- shot_effects.recoil_knockback = shot_effects.recoil_knockback - 80.0
- draw_actions( 1, true )
- end,
+ function()
+      current_reload_time = 90
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback - 80.0
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Small Teleport Bolt](TELEPORT_PROJECTILE_SHORT.png)Small Teleport Bolt (TELEPORT_PROJECTILE_SHORT)
@@ -9859,10 +9859,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/teleport_projectile_short.xml")
- c.spread_degrees = c.spread_degrees - 2.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/teleport_projectile_short.xml")
+      c.spread_degrees = c.spread_degrees - 2.0
+    end,
 ```
 
 ## ![Spark bolt](LIGHT_BULLET.png)Spark bolt (LIGHT_BULLET)
@@ -9885,13 +9885,13 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/light_bullet.xml")
- c.fire_rate_wait = c.fire_rate_wait + 3
- c.screenshake = c.screenshake + 0.5
- c.spread_degrees = c.spread_degrees - 1.0
- c.damage_critical_chance = c.damage_critical_chance + 5
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/light_bullet.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 3
+      c.screenshake = c.screenshake + 0.5
+      c.spread_degrees = c.spread_degrees - 1.0
+      c.damage_critical_chance = c.damage_critical_chance + 5
+    end,
 ```
 
 ## ![Spark bolt with double trigger](LIGHT_BULLET_TRIGGER_2.png)Spark bolt with double trigger (LIGHT_BULLET_TRIGGER_2)
@@ -9914,12 +9914,12 @@ function()
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait + 4
- c.screenshake = c.screenshake + 1
- c.damage_critical_chance = c.damage_critical_chance + 5
- add_projectile_trigger_hit_world("data/entities/projectiles/deck/light_bullet_blue.xml", 2)
- end,
+ function()
+      c.fire_rate_wait = c.fire_rate_wait + 4
+      c.screenshake = c.screenshake + 1
+      c.damage_critical_chance = c.damage_critical_chance + 5
+      add_projectile_trigger_hit_world("data/entities/projectiles/deck/light_bullet_blue.xml", 2)
+    end,
 ```
 
 ## ![Spark bolt with timer](LIGHT_BULLET_TIMER.png)Spark bolt with timer (LIGHT_BULLET_TIMER)
@@ -9942,12 +9942,12 @@ function()
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait + 3
- c.screenshake = c.screenshake + 0.5
- c.damage_critical_chance = c.damage_critical_chance + 5
- add_projectile_trigger_timer("data/entities/projectiles/deck/light_bullet.xml", 10, 1)
- end,
+ function()
+      c.fire_rate_wait = c.fire_rate_wait + 3
+      c.screenshake = c.screenshake + 0.5
+      c.damage_critical_chance = c.damage_critical_chance + 5
+      add_projectile_trigger_timer("data/entities/projectiles/deck/light_bullet.xml", 10, 1)
+    end,
 ```
 
 ## ![Spark bolt with trigger](LIGHT_BULLET_TRIGGER.png)Spark bolt with trigger (LIGHT_BULLET_TRIGGER)
@@ -9970,12 +9970,12 @@ function()
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait + 3
- c.screenshake = c.screenshake + 0.5
- c.damage_critical_chance = c.damage_critical_chance + 5
- add_projectile_trigger_hit_world("data/entities/projectiles/deck/light_bullet.xml", 1)
- end,
+ function()
+      c.fire_rate_wait = c.fire_rate_wait + 3
+      c.screenshake = c.screenshake + 0.5
+      c.damage_critical_chance = c.damage_critical_chance + 5
+      add_projectile_trigger_hit_world("data/entities/projectiles/deck/light_bullet.xml", 1)
+    end,
 ```
 
 ## ![Speed Up](SPEED.png)Speed Up (SPEED)
@@ -9998,17 +9998,17 @@ function()
 * **action**:
 
 ```lua
-function()
- c.speed_multiplier = c.speed_multiplier * 2.5
- 
- if ( c.speed_multiplier >= 20 ) then
- c.speed_multiplier = math.min( c.speed_multiplier, 20 )
- elseif ( c.speed_multiplier < 0 ) then
- c.speed_multiplier = 0
- end
- 
- draw_actions( 1, true )
- end,
+ function()
+      c.speed_multiplier = c.speed_multiplier * 2.5
+      
+      if ( c.speed_multiplier >= 20 ) then
+        c.speed_multiplier = math.min( c.speed_multiplier, 20 )
+      elseif ( c.speed_multiplier < 0 ) then
+        c.speed_multiplier = 0
+      end
+      
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Spell duplication](DUPLICATE.png)Spell duplication (DUPLICATE)
@@ -10031,21 +10031,21 @@ function()
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- local hand_count = #hand
- 
- for i,v in ipairs( hand ) do
- local rec = check_recursion( v, recursion_level )
- if ( v.id ~= "DUPLICATE" ) and ( i <= hand_count ) and ( rec > -1 ) then
- v.action( rec )
- end
- end
- 
- c.fire_rate_wait = c.fire_rate_wait + 20
- current_reload_time = current_reload_time + 20
- 
- draw_actions( 1, true )
- end,
+ function( recursion_level, iteration )
+      local hand_count = #hand
+      
+      for i,v in ipairs( hand ) do
+        local rec = check_recursion( v, recursion_level )
+        if ( v.id ~= "DUPLICATE" ) and ( i <= hand_count ) and ( rec > -1 ) then
+          v.action( rec )
+        end
+      end
+      
+      c.fire_rate_wait = c.fire_rate_wait + 20
+      current_reload_time = current_reload_time + 20
+      
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Spells to Power](SPELLS_TO_POWER.png)Spells to Power (SPELLS_TO_POWER)
@@ -10068,11 +10068,11 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/spells_to_power.xml,"
- c.fire_rate_wait = c.fire_rate_wait + 40
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/spells_to_power.xml,"
+      c.fire_rate_wait    = c.fire_rate_wait + 40
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Spells to acid](ALL_ACID.png)Spells to acid (ALL_ACID)
@@ -10095,11 +10095,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/all_acid.xml")
- c.fire_rate_wait = c.fire_rate_wait + 100
- current_reload_time = current_reload_time + 100
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/all_acid.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 100
+      current_reload_time = current_reload_time + 100
+    end,
 ```
 
 ## ![Spells to black holes](ALL_BLACKHOLES.png)Spells to black holes (ALL_BLACKHOLES)
@@ -10122,11 +10122,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/all_blackholes.xml")
- c.fire_rate_wait = c.fire_rate_wait + 100
- current_reload_time = current_reload_time + 100
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/all_blackholes.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 100
+      current_reload_time = current_reload_time + 100
+    end,
 ```
 
 ## ![Spells to death crosses](ALL_DEATHCROSSES.png)Spells to death crosses (ALL_DEATHCROSSES)
@@ -10149,11 +10149,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/all_deathcrosses.xml")
- c.fire_rate_wait = c.fire_rate_wait + 40
- current_reload_time = current_reload_time + 40
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/all_deathcrosses.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 40
+      current_reload_time = current_reload_time + 40
+    end,
 ```
 
 ## ![Spells to giga sawblades](ALL_DISCS.png)Spells to giga sawblades (ALL_DISCS)
@@ -10176,11 +10176,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/all_discs.xml")
- c.fire_rate_wait = c.fire_rate_wait + 50
- current_reload_time = current_reload_time + 50
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/all_discs.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 50
+      current_reload_time = current_reload_time + 50
+    end,
 ```
 
 ## ![Spells to magic missiles](ALL_ROCKETS.png)Spells to magic missiles (ALL_ROCKETS)
@@ -10203,11 +10203,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/all_rockets.xml")
- c.fire_rate_wait = c.fire_rate_wait + 50
- current_reload_time = current_reload_time + 50
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/all_rockets.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 50
+      current_reload_time = current_reload_time + 50
+    end,
 ```
 
 ## ![Spells to nukes](ALL_NUKES.png)Spells to nukes (ALL_NUKES)
@@ -10230,11 +10230,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/all_nukes.xml")
- c.fire_rate_wait = c.fire_rate_wait + 100
- current_reload_time = current_reload_time + 100
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/all_nukes.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 100
+      current_reload_time = current_reload_time + 100
+    end,
 ```
 
 ## ![Spiral Arc](SPIRALING_SHOT.png)Spiral Arc (SPIRALING_SHOT)
@@ -10257,13 +10257,13 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/orbit_shot.xml,"
- draw_actions( 1, true )
- c.damage_projectile_add = c.damage_projectile_add + 0.1
- c.fire_rate_wait = c.fire_rate_wait - 6
- c.lifetime_add = c.lifetime_add + 50
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/orbit_shot.xml,"
+      draw_actions( 1, true )
+      c.damage_projectile_add = c.damage_projectile_add + 0.1
+      c.fire_rate_wait    = c.fire_rate_wait - 6
+      c.lifetime_add     = c.lifetime_add + 50
+    end,
 ```
 
 ## ![Spiral shot](SPIRAL_SHOT.png)Spiral shot (SPIRAL_SHOT)
@@ -10286,10 +10286,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/spiral_shot.xml")
- c.fire_rate_wait = c.fire_rate_wait + 20
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/spiral_shot.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 20
+    end,
 ```
 
 ## ![Spitter bolt](SPITTER.png)Spitter bolt (SPITTER)
@@ -10312,13 +10312,13 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/spitter.xml")
- c.fire_rate_wait = c.fire_rate_wait - 1
- c.screenshake = c.screenshake + 0.1
- c.dampening = 0.1
- c.spread_degrees = c.spread_degrees + 6.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/spitter.xml")
+      c.fire_rate_wait = c.fire_rate_wait - 1
+      c.screenshake = c.screenshake + 0.1
+      c.dampening = 0.1
+      c.spread_degrees = c.spread_degrees + 6.0
+    end,
 ```
 
 ## ![Spitter bolt with timer](SPITTER_TIMER.png)Spitter bolt with timer (SPITTER_TIMER)
@@ -10341,13 +10341,13 @@ function()
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait - 1
- c.screenshake = c.screenshake + 0.1
- c.dampening = 0.1
- c.spread_degrees = c.spread_degrees + 6.0
- add_projectile_trigger_timer("data/entities/projectiles/deck/spitter.xml", 40, 1)
- end,
+ function()
+      c.fire_rate_wait = c.fire_rate_wait - 1
+      c.screenshake = c.screenshake + 0.1
+      c.dampening = 0.1
+      c.spread_degrees = c.spread_degrees + 6.0
+      add_projectile_trigger_timer("data/entities/projectiles/deck/spitter.xml", 40, 1)
+    end,
 ```
 
 ## ![Square barrier](WALL_SQUARE.png)Square barrier (WALL_SQUARE)
@@ -10370,10 +10370,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/wall_square.xml")
- c.fire_rate_wait = c.fire_rate_wait + 20
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/wall_square.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 20
+    end,
 ```
 
 ## ![Summon Explosive Box](TNTBOX.png)Summon Explosive Box (TNTBOX)
@@ -10396,10 +10396,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/tntbox.xml")
- c.fire_rate_wait = c.fire_rate_wait + 30
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/tntbox.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 30
+    end,
 ```
 
 ## ![Summon Firebug swarm](SWARM_FIREBUG.png)Summon Firebug swarm (SWARM_FIREBUG)
@@ -10422,15 +10422,15 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/swarm_firebug.xml")
- add_projectile("data/entities/projectiles/deck/swarm_firebug.xml")
- add_projectile("data/entities/projectiles/deck/swarm_firebug.xml")
- add_projectile("data/entities/projectiles/deck/swarm_firebug.xml")
- c.spread_degrees = c.spread_degrees + 12.0
- c.fire_rate_wait = c.fire_rate_wait + 60
- current_reload_time = current_reload_time + 20
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/swarm_firebug.xml")
+      add_projectile("data/entities/projectiles/deck/swarm_firebug.xml")
+      add_projectile("data/entities/projectiles/deck/swarm_firebug.xml")
+      add_projectile("data/entities/projectiles/deck/swarm_firebug.xml")
+      c.spread_degrees = c.spread_degrees + 12.0
+      c.fire_rate_wait = c.fire_rate_wait + 60
+      current_reload_time = current_reload_time + 20
+    end,
 ```
 
 ## ![Summon Friendly fly](FRIEND_FLY.png)Summon Friendly fly (FRIEND_FLY)
@@ -10453,12 +10453,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/friend_fly.xml")
- c.spread_degrees = c.spread_degrees + 24.0
- c.fire_rate_wait = c.fire_rate_wait + 80
- current_reload_time = current_reload_time + 40
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/friend_fly.xml")
+      c.spread_degrees = c.spread_degrees + 24.0
+      c.fire_rate_wait = c.fire_rate_wait + 80
+      current_reload_time = current_reload_time + 40
+    end,
 ```
 
 ## ![Summon Large Explosive Box](TNTBOX_BIG.png)Summon Large Explosive Box (TNTBOX_BIG)
@@ -10481,10 +10481,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/tntbox_big.xml")
- c.fire_rate_wait = c.fire_rate_wait + 30
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/tntbox_big.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 30
+    end,
 ```
 
 ## ![Summon Omega Sawblade](DISC_BULLET_BIGGER.png)Summon Omega Sawblade (DISC_BULLET_BIGGER)
@@ -10507,13 +10507,13 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/disc_bullet_bigger.xml")
- c.fire_rate_wait = c.fire_rate_wait + 40
- c.spread_degrees = c.spread_degrees + 6.4
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
- c.damage_projectile_add = c.damage_projectile_add + 0.2
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/disc_bullet_bigger.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 40
+      c.spread_degrees = c.spread_degrees + 6.4
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
+      c.damage_projectile_add = c.damage_projectile_add + 0.2
+    end,
 ```
 
 ## ![Summon Platform](TEMPORARY_PLATFORM.png)Summon Platform (TEMPORARY_PLATFORM)
@@ -10536,10 +10536,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/temporary_platform.xml")
- c.fire_rate_wait = c.fire_rate_wait + 40
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/temporary_platform.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 40
+    end,
 ```
 
 ## ![Summon Taikasauva](SUMMON_WANDGHOST.png)Summon Taikasauva (SUMMON_WANDGHOST)
@@ -10562,10 +10562,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/wand_ghost_player.xml")
- add_projectile("data/entities/particles/image_emitters/wand_effect.xml")
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/wand_ghost_player.xml")
+      add_projectile("data/entities/particles/image_emitters/wand_effect.xml")
+    end,
 ```
 
 ## ![Summon Tentacle](TENTACLE.png)Summon Tentacle (TENTACLE)
@@ -10588,10 +10588,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/tentacle.xml")
- c.fire_rate_wait = c.fire_rate_wait + 40
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/tentacle.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 40
+    end,
 ```
 
 ## ![Summon Tentacle with timer](TENTACLE_TIMER.png)Summon Tentacle with timer (TENTACLE_TIMER)
@@ -10614,10 +10614,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile_trigger_timer("data/entities/projectiles/deck/tentacle.xml",20,1)
- c.fire_rate_wait = c.fire_rate_wait + 40
- end,
+ function()
+      add_projectile_trigger_timer("data/entities/projectiles/deck/tentacle.xml",20,1)
+      c.fire_rate_wait = c.fire_rate_wait + 40
+    end,
 ```
 
 ## ![Summon Tiny Ghost](TINY_GHOST.png)Summon Tiny Ghost (TINY_GHOST)
@@ -10640,9 +10640,9 @@ function()
 * **action**:
 
 ```lua
-function()
- draw_actions( 1, true )
- end,
+ function()
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Summon Wall](TEMPORARY_WALL.png)Summon Wall (TEMPORARY_WALL)
@@ -10665,10 +10665,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/temporary_wall.xml")
- c.fire_rate_wait = c.fire_rate_wait + 40
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/temporary_wall.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 40
+    end,
 ```
 
 ## ![Summon Wasp swarm](SWARM_WASP.png)Summon Wasp swarm (SWARM_WASP)
@@ -10691,17 +10691,17 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/swarm_wasp.xml")
- add_projectile("data/entities/projectiles/deck/swarm_wasp.xml")
- add_projectile("data/entities/projectiles/deck/swarm_wasp.xml")
- add_projectile("data/entities/projectiles/deck/swarm_wasp.xml")
- add_projectile("data/entities/projectiles/deck/swarm_wasp.xml")
- add_projectile("data/entities/projectiles/deck/swarm_wasp.xml")
- c.spread_degrees = c.spread_degrees + 24.0
- c.fire_rate_wait = c.fire_rate_wait + 60
- current_reload_time = current_reload_time + 20
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/swarm_wasp.xml")
+      add_projectile("data/entities/projectiles/deck/swarm_wasp.xml")
+      add_projectile("data/entities/projectiles/deck/swarm_wasp.xml")
+      add_projectile("data/entities/projectiles/deck/swarm_wasp.xml")
+      add_projectile("data/entities/projectiles/deck/swarm_wasp.xml")
+      add_projectile("data/entities/projectiles/deck/swarm_wasp.xml")
+      c.spread_degrees = c.spread_degrees + 24.0
+      c.fire_rate_wait = c.fire_rate_wait + 60
+      current_reload_time = current_reload_time + 20
+    end,
 ```
 
 ## ![Summon deercoy](EXPLODING_DEER.png)Summon deercoy (EXPLODING_DEER)
@@ -10724,10 +10724,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/exploding_deer.xml")
- c.fire_rate_wait = c.fire_rate_wait + 80
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/exploding_deer.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 80
+    end,
 ```
 
 ## ![Summon egg](SUMMON_EGG.png)Summon egg (SUMMON_EGG)
@@ -10750,13 +10750,13 @@ function()
 * **action**:
 
 ```lua
-function()
- SetRandomSeed( GameGetFrameNum(), GameGetFrameNum() )
- local types = {"monster","slime","red","fire"}
- local rnd = Random(1, #types)
- local egg_name = "egg_" .. tostring(types[rnd]) .. ".xml"
- add_projectile("data/entities/items/pickup/" .. egg_name)
- end,
+ function()
+      SetRandomSeed( GameGetFrameNum(), GameGetFrameNum() )
+      local types = {"monster","slime","red","fire"}
+      local rnd = Random(1, #types)
+      local egg_name = "egg_" .. tostring(types[rnd]) .. ".xml"
+      add_projectile("data/entities/items/pickup/" .. egg_name)
+    end,
 ```
 
 ## ![Summon fly swarm](SWARM_FLY.png)Summon fly swarm (SWARM_FLY)
@@ -10779,16 +10779,16 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/swarm_fly.xml")
- add_projectile("data/entities/projectiles/deck/swarm_fly.xml")
- add_projectile("data/entities/projectiles/deck/swarm_fly.xml")
- add_projectile("data/entities/projectiles/deck/swarm_fly.xml")
- add_projectile("data/entities/projectiles/deck/swarm_fly.xml")
- c.spread_degrees = c.spread_degrees + 6.0
- c.fire_rate_wait = c.fire_rate_wait + 60
- current_reload_time = current_reload_time + 20
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/swarm_fly.xml")
+      add_projectile("data/entities/projectiles/deck/swarm_fly.xml")
+      add_projectile("data/entities/projectiles/deck/swarm_fly.xml")
+      add_projectile("data/entities/projectiles/deck/swarm_fly.xml")
+      add_projectile("data/entities/projectiles/deck/swarm_fly.xml")
+      c.spread_degrees = c.spread_degrees + 6.0
+      c.fire_rate_wait = c.fire_rate_wait + 60
+      current_reload_time = current_reload_time + 20
+    end,
 ```
 
 ## ![Summon hollow egg](SUMMON_HOLLOW_EGG.png)Summon hollow egg (SUMMON_HOLLOW_EGG)
@@ -10811,10 +10811,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile_trigger_death("data/entities/items/pickup/egg_hollow.xml", 1)
- c.fire_rate_wait = c.fire_rate_wait - 12
- end,
+ function()
+      add_projectile_trigger_death("data/entities/items/pickup/egg_hollow.xml", 1)
+      c.fire_rate_wait = c.fire_rate_wait - 12
+    end,
 ```
 
 ## ![Summon missile](MISSILE.png)Summon missile (MISSILE)
@@ -10837,12 +10837,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/rocket_player.xml")
- current_reload_time = current_reload_time + 30
- c.spread_degrees = c.spread_degrees + 3.0
- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 60.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/rocket_player.xml")
+      current_reload_time = current_reload_time + 30
+      c.spread_degrees = c.spread_degrees + 3.0
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 60.0
+    end,
 ```
 
 ## ![Summon portal](SUMMON_PORTAL.png)Summon portal (SUMMON_PORTAL)
@@ -10865,10 +10865,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/summon_portal.xml")
- c.fire_rate_wait = c.fire_rate_wait + 80
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/summon_portal.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 80
+    end,
 ```
 
 ## ![Summon rock spirit](PEBBLE.png)Summon rock spirit (PEBBLE)
@@ -10891,10 +10891,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/pebble_player.xml")
- c.fire_rate_wait = c.fire_rate_wait + 80
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/pebble_player.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 80
+    end,
 ```
 
 ## ![Swapper](SWAPPER_PROJECTILE.png)Swapper (SWAPPER_PROJECTILE)
@@ -10917,13 +10917,13 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/swapper.xml")
- c.fire_rate_wait = c.fire_rate_wait + 3
- c.screenshake = c.screenshake + 0.5
- c.spread_degrees = c.spread_degrees - 2.0
- c.damage_critical_chance = c.damage_critical_chance + 5
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/swapper.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 3
+      c.screenshake = c.screenshake + 0.5
+      c.spread_degrees = c.spread_degrees - 2.0
+      c.damage_critical_chance = c.damage_critical_chance + 5
+    end,
 ```
 
 ## ![Tau](TAU.png)Tau (TAU)
@@ -10946,41 +10946,41 @@ function()
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- c.fire_rate_wait = c.fire_rate_wait + 35
- 
- local data1 = {}
- local data2 = {}
- 
- local s1 = ""
- local s2 = ""
- 
- if ( #deck > 0 ) then
- s1 = "deck"
- data1 = deck[1]
- else
- data1 = nil
- end
- 
- if ( #deck > 0 ) then
- s2 = "deck 2"
- data2 = deck[2]
- else
- data2 = nil
- end
- 
- local rec1 = check_recursion( data1, recursion_level )
- local rec2 = check_recursion( data2, recursion_level )
- 
- if ( data1 ~= nil ) and ( rec1 > -1 ) then
- data1.action( rec1 )
- end
- 
- if ( data2 ~= nil ) and ( rec2 > -1 ) then
- data2.action( rec2 )
- end
- 
- end,
+ function( recursion_level, iteration )
+      c.fire_rate_wait = c.fire_rate_wait + 35
+      
+      local data1 = {}
+      local data2 = {}
+      
+      local s1 = ""
+      local s2 = ""
+      
+      if ( #deck > 0 ) then
+        s1 = "deck"
+        data1 = deck[1]
+      else
+        data1 = nil
+      end
+      
+      if ( #deck > 0 ) then
+        s2 = "deck 2"
+        data2 = deck[2]
+      else
+        data2 = nil
+      end
+      
+      local rec1 = check_recursion( data1, recursion_level )
+      local rec2 = check_recursion( data2, recursion_level )
+      
+      if ( data1 ~= nil ) and ( rec1 > -1 ) then
+        data1.action( rec1 )
+      end
+      
+      if ( data2 ~= nil ) and ( rec2 > -1 ) then
+        data2.action( rec2 )
+      end
+      
+    end,
 ```
 
 ## ![Teleport bolt](TELEPORT_PROJECTILE.png)Teleport bolt (TELEPORT_PROJECTILE)
@@ -11003,11 +11003,11 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/teleport_projectile.xml")
- c.fire_rate_wait = c.fire_rate_wait + 3
- c.spread_degrees = c.spread_degrees - 2.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/teleport_projectile.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 3
+      c.spread_degrees = c.spread_degrees - 2.0
+    end,
 ```
 
 ## ![Teleporting cast](TELEPORT_CAST.png)Teleporting cast (TELEPORT_CAST)
@@ -11030,11 +11030,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile_trigger_death("data/entities/projectiles/deck/teleport_cast.xml", 1)
- c.fire_rate_wait = c.fire_rate_wait + 20
- c.spread_degrees = c.spread_degrees + 24
- end,
+ function()
+      add_projectile_trigger_death("data/entities/projectiles/deck/teleport_cast.xml", 1)
+      c.fire_rate_wait = c.fire_rate_wait + 20
+      c.spread_degrees = c.spread_degrees + 24
+    end,
 ```
 
 ## ![Tentacler](TENTACLE_RAY.png)Tentacler (TENTACLE_RAY)
@@ -11057,10 +11057,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/tentacle_ray.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/tentacle_ray.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![The end of everything](ALL_SPELLS.png)The end of everything (ALL_SPELLS)
@@ -11083,15 +11083,15 @@ function()
 * **action**:
 
 ```lua
-function()
- local players = EntityGetWithTag( "player_unit" )
- for i,v in ipairs( players ) do
- local x,y = EntityGetTransform( v )
- local eid = EntityLoad("data/entities/projectiles/deck/all_spells_loader.xml", x, y)
- end
- c.fire_rate_wait = c.fire_rate_wait + 100
- current_reload_time = current_reload_time + 100
- end,
+ function()
+      local players = EntityGetWithTag( "player_unit" )
+      for i,v in ipairs( players ) do
+        local x,y = EntityGetTransform( v )
+        local eid = EntityLoad("data/entities/projectiles/deck/all_spells_loader.xml", x, y)
+      end
+      c.fire_rate_wait = c.fire_rate_wait + 100
+      current_reload_time = current_reload_time + 100
+    end,
 ```
 
 ## ![Thunder charge](THUNDERBALL.png)Thunder charge (THUNDERBALL)
@@ -11114,10 +11114,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/thunderball.xml")
- c.fire_rate_wait = c.fire_rate_wait + 120
- end,
+ function()
+      add_projectile("data/entities/projectiles/thunderball.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 120
+    end,
 ```
 
 ## ![Thundercloud](CLOUD_THUNDER.png)Thundercloud (CLOUD_THUNDER)
@@ -11140,10 +11140,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/cloud_thunder.xml")
- c.fire_rate_wait = c.fire_rate_wait + 30
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/cloud_thunder.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 30
+    end,
 ```
 
 ## ![Torch](TORCH.png)Torch (TORCH)
@@ -11166,9 +11166,9 @@ function()
 * **action**:
 
 ```lua
-function()
- draw_actions( 1, true )
- end,
+ function()
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Touch of Blood](TOUCH_BLOOD.png)Touch of Blood (TOUCH_BLOOD)
@@ -11191,9 +11191,9 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/touch_blood.xml")
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/touch_blood.xml")
+    end,
 ```
 
 ## ![Touch of Gold](TOUCH_GOLD.png)Touch of Gold (TOUCH_GOLD)
@@ -11216,9 +11216,9 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/touch_gold.xml")
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/touch_gold.xml")
+    end,
 ```
 
 ## ![Touch of Oil](TOUCH_OIL.png)Touch of Oil (TOUCH_OIL)
@@ -11241,9 +11241,9 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/touch_oil.xml")
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/touch_oil.xml")
+    end,
 ```
 
 ## ![Touch of Smoke](TOUCH_SMOKE.png)Touch of Smoke (TOUCH_SMOKE)
@@ -11266,9 +11266,9 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/touch_smoke.xml")
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/touch_smoke.xml")
+    end,
 ```
 
 ## ![Touch of Spirits](TOUCH_ALCOHOL.png)Touch of Spirits (TOUCH_ALCOHOL)
@@ -11291,9 +11291,9 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/touch_alcohol.xml")
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/touch_alcohol.xml")
+    end,
 ```
 
 ## ![Touch of Water](TOUCH_WATER.png)Touch of Water (TOUCH_WATER)
@@ -11316,9 +11316,9 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/touch_water.xml")
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/touch_water.xml")
+    end,
 ```
 
 ## ![Toxic mist](MIST_RADIOACTIVE.png)Toxic mist (MIST_RADIOACTIVE)
@@ -11341,10 +11341,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/mist_radioactive.xml")
- c.fire_rate_wait = c.fire_rate_wait + 10
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/mist_radioactive.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 10
+    end,
 ```
 
 ## ![Toxic sludge to acid](TOXIC_TO_ACID.png)Toxic sludge to acid (TOXIC_TO_ACID)
@@ -11367,11 +11367,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/toxic_to_acid.xml,data/entities/particles/tinyspark_green.xml,"
- c.fire_rate_wait = c.fire_rate_wait + 10
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/toxic_to_acid.xml,data/entities/particles/tinyspark_green.xml,"
+      c.fire_rate_wait = c.fire_rate_wait + 10
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Triple scatter spell](SCATTER_3.png)Triple scatter spell (SCATTER_3)
@@ -11394,10 +11394,10 @@ function()
 * **action**:
 
 ```lua
-function()
- draw_actions( 3, true )
- c.spread_degrees = c.spread_degrees + 20.0
- end,
+ function()
+      draw_actions( 3, true )
+      c.spread_degrees = c.spread_degrees + 20.0
+    end,
 ```
 
 ## ![Triple spell](BURST_3.png)Triple spell (BURST_3)
@@ -11420,9 +11420,9 @@ function()
 * **action**:
 
 ```lua
-function()
- draw_actions( 3, true )
- end,
+ function()
+      draw_actions( 3, true )
+    end,
 ```
 
 ## ![Triplicate bolt](BUCKSHOT.png)Triplicate bolt (BUCKSHOT)
@@ -11445,13 +11445,13 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/buckshot_player.xml")
- add_projectile("data/entities/projectiles/deck/buckshot_player.xml")
- add_projectile("data/entities/projectiles/deck/buckshot_player.xml")
- c.fire_rate_wait = c.fire_rate_wait + 8
- c.spread_degrees = c.spread_degrees + 14.0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/buckshot_player.xml")
+      add_projectile("data/entities/projectiles/deck/buckshot_player.xml")
+      add_projectile("data/entities/projectiles/deck/buckshot_player.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 8
+      c.spread_degrees = c.spread_degrees + 14.0
+    end,
 ```
 
 ## ![Two-way fireball thrower](FIREBALL_RAY_LINE.png)Two-way fireball thrower (FIREBALL_RAY_LINE)
@@ -11474,10 +11474,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/fireball_ray_line.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/fireball_ray_line.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Unstable crystal](MINE.png)Unstable crystal (MINE)
@@ -11500,19 +11500,19 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/mine.xml")
- c.fire_rate_wait = c.fire_rate_wait + 30
- c.child_speed_multiplier = c.child_speed_multiplier * 0.75
- c.speed_multiplier = c.speed_multiplier * 0.75
- shot_effects.recoil_knockback = 60.0
- 
- if ( c.speed_multiplier >= 20 ) then
- c.speed_multiplier = math.min( c.speed_multiplier, 20 )
- elseif ( c.speed_multiplier < 0 ) then
- c.speed_multiplier = 0
- end
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/mine.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 30
+      c.child_speed_multiplier = c.child_speed_multiplier * 0.75
+      c.speed_multiplier = c.speed_multiplier * 0.75
+      shot_effects.recoil_knockback = 60.0
+      
+      if ( c.speed_multiplier >= 20 ) then
+        c.speed_multiplier = math.min( c.speed_multiplier, 20 )
+      elseif ( c.speed_multiplier < 0 ) then
+        c.speed_multiplier = 0
+      end
+    end,
 ```
 
 ## ![Unstable crystal with trigger](MINE_DEATH_TRIGGER.png)Unstable crystal with trigger (MINE_DEATH_TRIGGER)
@@ -11535,19 +11535,19 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile_trigger_death("data/entities/projectiles/deck/mine.xml", 1)
- c.fire_rate_wait = c.fire_rate_wait + 30
- c.child_speed_multiplier = c.child_speed_multiplier * 0.75
- c.speed_multiplier = c.speed_multiplier * 0.75
- shot_effects.recoil_knockback = 60.0
- 
- if ( c.speed_multiplier >= 20 ) then
- c.speed_multiplier = math.min( c.speed_multiplier, 20 )
- elseif ( c.speed_multiplier < 0 ) then
- c.speed_multiplier = 0
- end
- end,
+ function()
+      add_projectile_trigger_death("data/entities/projectiles/deck/mine.xml", 1)
+      c.fire_rate_wait = c.fire_rate_wait + 30
+      c.child_speed_multiplier = c.child_speed_multiplier * 0.75
+      c.speed_multiplier = c.speed_multiplier * 0.75
+      shot_effects.recoil_knockback = 60.0
+      
+      if ( c.speed_multiplier >= 20 ) then
+        c.speed_multiplier = math.min( c.speed_multiplier, 20 )
+      elseif ( c.speed_multiplier < 0 ) then
+        c.speed_multiplier = 0
+      end
+    end,
 ```
 
 ## ![Upwards larpa](LARPA_UPWARDS.png)Upwards larpa (LARPA_UPWARDS)
@@ -11570,11 +11570,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.fire_rate_wait = c.fire_rate_wait + 15
- c.extra_entities = c.extra_entities .. "data/entities/misc/larpa_upwards.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.fire_rate_wait = c.fire_rate_wait + 15
+      c.extra_entities = c.extra_entities .. "data/entities/misc/larpa_upwards.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Vacuum Field](VACUUM_ENTITIES.png)Vacuum Field (VACUUM_ENTITIES)
@@ -11597,10 +11597,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/vacuum_entities.xml")
- c.fire_rate_wait = c.fire_rate_wait + 10
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/vacuum_entities.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 10
+    end,
 ```
 
 ## ![Venomous Curse](CURSE.png)Venomous Curse (CURSE)
@@ -11623,10 +11623,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_curse.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_curse.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Vertical barrier](WALL_VERTICAL.png)Vertical barrier (WALL_VERTICAL)
@@ -11649,10 +11649,10 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/wall_vertical.xml")
- c.fire_rate_wait = c.fire_rate_wait + 5
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/wall_vertical.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 5
+    end,
 ```
 
 ## ![Wand Refresh](RESET.png)Wand Refresh (RESET)
@@ -11675,26 +11675,26 @@ function()
 * **action**:
 
 ```lua
-function()
- current_reload_time = current_reload_time - 25
- 
- for i,v in ipairs( hand ) do
- table.insert( discarded, v )
- end
- 
- for i,v in ipairs( deck ) do
- table.insert( discarded, v )
- end
- 
- hand = {}
- deck = {}
- 
- if ( force_stop_draws == false ) then
- force_stop_draws = true
- move_discarded_to_deck()
- order_deck()
- end
- end,
+ function()
+      current_reload_time = current_reload_time - 25
+      
+      for i,v in ipairs( hand ) do
+        table.insert( discarded, v )
+      end
+      
+      for i,v in ipairs( deck ) do
+        table.insert( discarded, v )
+      end
+      
+      hand = {}
+      deck = {}
+      
+      if ( force_stop_draws == false ) then
+        force_stop_draws = true
+        move_discarded_to_deck()
+        order_deck()
+      end
+    end,
 ```
 
 ## ![Warp cast](SUPER_TELEPORT_CAST.png)Warp cast (SUPER_TELEPORT_CAST)
@@ -11717,11 +11717,11 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile_trigger_death("data/entities/projectiles/deck/super_teleport_cast.xml", 1)
- c.fire_rate_wait = c.fire_rate_wait + 10
- c.spread_degrees = c.spread_degrees - 6
- end,
+ function()
+      add_projectile_trigger_death("data/entities/projectiles/deck/super_teleport_cast.xml", 1)
+      c.fire_rate_wait = c.fire_rate_wait + 10
+      c.spread_degrees = c.spread_degrees - 6
+    end,
 ```
 
 ## ![Water](MATERIAL_WATER.png)Water (MATERIAL_WATER)
@@ -11744,12 +11744,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/material_water.xml")
- c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_wet.xml,"
- c.fire_rate_wait = c.fire_rate_wait - 15
- current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the cement reload time back to 0
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/material_water.xml")
+      c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_wet.xml,"
+      c.fire_rate_wait = c.fire_rate_wait - 15
+      current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the cement reload time back to 0
+    end,
 ```
 
 ## ![Water to poison](WATER_TO_POISON.png)Water to poison (WATER_TO_POISON)
@@ -11772,11 +11772,11 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/water_to_poison.xml,data/entities/particles/tinyspark_purple.xml,"
- c.fire_rate_wait = c.fire_rate_wait + 10
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/water_to_poison.xml,data/entities/particles/tinyspark_purple.xml,"
+      c.fire_rate_wait = c.fire_rate_wait + 10
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Water trail](WATER_TRAIL.png)Water trail (WATER_TRAIL)
@@ -11799,12 +11799,12 @@ function()
 * **action**:
 
 ```lua
-function()
- c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_wet.xml,"
- c.trail_material = c.trail_material .. "water,"
- c.trail_material_amount = c.trail_material_amount + 20
- draw_actions( 1, true )
- end,
+ function()
+      c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_wet.xml,"
+      c.trail_material = c.trail_material .. "water,"
+      c.trail_material_amount = c.trail_material_amount + 20
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Weakening Curse - Electricity](CURSE_WITHER_ELECTRICITY.png)Weakening Curse - Electricity (CURSE_WITHER_ELECTRICITY)
@@ -11827,10 +11827,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_curse_wither_electricity.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_curse_wither_electricity.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Weakening Curse - Explosives](CURSE_WITHER_EXPLOSION.png)Weakening Curse - Explosives (CURSE_WITHER_EXPLOSION)
@@ -11853,10 +11853,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_curse_wither_explosion.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_curse_wither_explosion.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Weakening Curse - Melee](CURSE_WITHER_MELEE.png)Weakening Curse - Melee (CURSE_WITHER_MELEE)
@@ -11879,10 +11879,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_curse_wither_melee.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_curse_wither_melee.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Weakening Curse - Projectiles](CURSE_WITHER_PROJECTILE.png)Weakening Curse - Projectiles (CURSE_WITHER_PROJECTILE)
@@ -11905,10 +11905,10 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_curse_wither_projectile.xml,"
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_curse_wither_projectile.xml,"
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Worm Launcher](WORM_SHOT.png)Worm Launcher (WORM_SHOT)
@@ -11931,12 +11931,12 @@ function()
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/worm_shot.xml")
- c.fire_rate_wait = c.fire_rate_wait + 80
- current_reload_time = current_reload_time + 40
- c.spread_degrees = c.spread_degrees + 20
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/worm_shot.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 80
+      current_reload_time = current_reload_time + 40
+      c.spread_degrees = c.spread_degrees + 20
+    end,
 ```
 
 ## ![Yellow Glimmer](COLOUR_YELLOW.png)Yellow Glimmer (COLOUR_YELLOW)
@@ -11959,15 +11959,15 @@ function()
 * **action**:
 
 ```lua
-function()
- c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,data/entities/misc/colour_yellow.xml,"
- c.fire_rate_wait = c.fire_rate_wait - 8
- c.screenshake = c.screenshake - 2.5
- if ( c.screenshake < 0 ) then
- c.screenshake = 0
- end
- draw_actions( 1, true )
- end,
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,data/entities/misc/colour_yellow.xml,"
+      c.fire_rate_wait = c.fire_rate_wait - 8
+      c.screenshake = c.screenshake - 2.5
+      if ( c.screenshake < 0 ) then
+        c.screenshake = 0
+      end
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![Zeta](ZETA.png)Zeta (ZETA)
@@ -11990,65 +11990,65 @@ function()
 * **action**:
 
 ```lua
-function( recursion_level, iteration )
- local entity_id = GetUpdatedEntityID()
- local x, y = EntityGetTransform( entity_id )
- local options = {}
- 
- local children = EntityGetAllChildren( entity_id )
- local inventory = EntityGetFirstComponent( entity_id, "Inventory2Component" )
- 
- if ( children ~= nil ) and ( inventory ~= nil ) then
- local active_wand = ComponentGetValue2( inventory, "mActiveItem" )
- 
- for i,child_id in ipairs( children ) do
- if ( EntityGetName( child_id ) == "inventory_quick" ) then
- local wands = EntityGetAllChildren( child_id )
- 
- if ( wands ~= nil ) then
- for k,wand_id in ipairs( wands ) do
- if ( wand_id ~= active_wand ) and EntityHasTag( wand_id, "wand" ) then
- local spells = EntityGetAllChildren( wand_id )
- 
- if ( spells ~= nil ) then
- for j,spell_id in ipairs( spells ) do
- local comp = EntityGetFirstComponentIncludingDisabled( spell_id, "ItemActionComponent" )
- 
- if ( comp ~= nil ) then
- local action_id = ComponentGetValue2( comp, "action_id" )
- 
- table.insert( options, action_id )
- end
- end
- end
- end
- end
- end
- end
- end
- end
- 
- if ( #options > 0 ) then
- SetRandomSeed( x + GameGetFrameNum(), y + 251 )
- 
- local rnd = Random( 1, #options )
- local action_id = options[rnd]
- 
- for i,data in ipairs( actions ) do
- if ( data.id == action_id ) then
- local rec = check_recursion( data, recursion_level )
- if ( rec > -1 ) then
- dont_draw_actions = true
- data.action( rec )
- dont_draw_actions = false
- end
- break
- end
- end
- end
- 
- draw_actions( 1, true )
- end,
+ function( recursion_level, iteration )
+      local entity_id = GetUpdatedEntityID()
+      local x, y = EntityGetTransform( entity_id )
+      local options = {}
+      
+      local children = EntityGetAllChildren( entity_id )
+      local inventory = EntityGetFirstComponent( entity_id, "Inventory2Component" )
+      
+      if ( children ~= nil ) and ( inventory ~= nil ) then
+        local active_wand = ComponentGetValue2( inventory, "mActiveItem" )
+        
+        for i,child_id in ipairs( children ) do
+          if ( EntityGetName( child_id ) == "inventory_quick" ) then
+            local wands = EntityGetAllChildren( child_id )
+            
+            if ( wands ~= nil ) then
+              for k,wand_id in ipairs( wands ) do
+                if ( wand_id ~= active_wand ) and EntityHasTag( wand_id, "wand" ) then
+                  local spells = EntityGetAllChildren( wand_id )
+                  
+                  if ( spells ~= nil ) then
+                    for j,spell_id in ipairs( spells ) do
+                      local comp = EntityGetFirstComponentIncludingDisabled( spell_id, "ItemActionComponent" )
+                      
+                      if ( comp ~= nil ) then
+                        local action_id = ComponentGetValue2( comp, "action_id" )
+                        
+                        table.insert( options, action_id )
+                      end
+                    end
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+      
+      if ( #options > 0 ) then
+        SetRandomSeed( x + GameGetFrameNum(), y + 251 )
+        
+        local rnd = Random( 1, #options )
+        local action_id = options[rnd]
+        
+        for i,data in ipairs( actions ) do
+          if ( data.id == action_id ) then
+            local rec = check_recursion( data, recursion_level )
+            if ( rec > -1 ) then
+              dont_draw_actions = true
+              data.action( rec )
+              dont_draw_actions = false
+            end
+            break
+          end
+        end
+      end
+      
+      draw_actions( 1, true )
+    end,
 ```
 
 ## ![mist of spirits](MIST_ALCOHOL.png)mist of spirits (MIST_ALCOHOL)
@@ -12071,9 +12071,9 @@ function( recursion_level, iteration )
 * **action**:
 
 ```lua
-function()
- add_projectile("data/entities/projectiles/deck/mist_alcohol.xml")
- c.fire_rate_wait = c.fire_rate_wait + 10
- end,
+ function()
+      add_projectile("data/entities/projectiles/deck/mist_alcohol.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 10
+    end,
 ```
 
