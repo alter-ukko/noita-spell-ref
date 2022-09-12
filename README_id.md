@@ -6,399 +6,399 @@
 
 ## contents
 
-* [#ACCELERATING_SHOT]($action_accelerating_shot)
-* [#ACID_TRAIL]($action_acid_trail)
-* [#ACIDSHOT]($action_acidshot)
-* [#ADD_DEATH_TRIGGER]($action_add_death_trigger)
-* [#ADD_TIMER]($action_add_timer)
-* [#ADD_TRIGGER]($action_add_trigger)
-* [#AIR_BULLET]($action_air_bullet)
-* [#ALCOHOL_BLAST]($action_alcohol_blast)
-* [#ALL_ACID]($action_all_acid)
-* [#ALL_BLACKHOLES]($action_all_blackholes)
-* [#ALL_DEATHCROSSES]($action_all_deathcrosses)
-* [#ALL_DISCS]($action_all_discs)
-* [#ALL_NUKES]($action_all_nukes)
-* [#ALL_ROCKETS]($action_all_rockets)
-* [#ALL_SPELLS]($action_all_spells)
-* [#ALPHA]($action_alpha)
-* [#ARC_ELECTRIC]($action_arc_electric)
-* [#ARC_FIRE]($action_arc_fire)
-* [#ARC_GUNPOWDER]($action_arc_gunpowder)
-* [#ARC_POISON]($action_arc_poison)
-* [#AREA_DAMAGE]($action_area_damage)
-* [#ARROW]($action_arrow)
-* [#AUTOAIM]($action_autoaim)
-* [#AVOIDING_ARC]($action_avoiding_arc)
-* [#BALL_LIGHTNING]($action_ball_lightning)
-* [#BERSERK_FIELD]($action_berserk_field)
-* [#BIG_MAGIC_SHIELD]($action_big_magic_shield)
-* [#BLACK_HOLE]($action_black_hole)
-* [#BLACK_HOLE_BIG]($action_black_hole_big)
-* [#BLACK_HOLE_DEATH_TRIGGER]($action_black_hole_death_trigger)
-* [#BLACK_HOLE_GIGA]($action_black_hole_giga)
-* [#BLOOD_MAGIC]($action_blood_magic)
-* [#BLOOD_TO_ACID]($action_blood_to_acid)
-* [#BLOOD_TO_POWER]($action_blood_to_power)
-* [#BLOODLUST]($action_bloodlust)
-* [#BOMB]($action_bomb)
-* [#BOMB_CART]($action_bomb_cart)
-* [#BOMB_DETONATOR]($action_bomb_detonator)
-* [#BOMB_HOLY]($action_bomb_holy)
-* [#BOMB_HOLY_GIGA]($action_bomb_holy_giga)
-* [#BOUNCE]($action_bounce)
-* [#BOUNCE_EXPLOSION]($action_bounce_explosion)
-* [#BOUNCE_LARPA]($action_bounce_larpa)
-* [#BOUNCE_LASER]($action_bounce_laser)
-* [#BOUNCE_LASER_EMITTER]($action_bounce_laser_emitter)
-* [#BOUNCE_SPARK]($action_bounce_spark)
-* [#BOUNCY_ORB]($action_bouncy_orb)
-* [#BOUNCY_ORB_TIMER]($action_bouncy_orb_timer)
-* [#BUBBLESHOT]($action_bubbleshot)
-* [#BUBBLESHOT_TRIGGER]($action_bubbleshot_trigger)
-* [#BUCKSHOT]($action_buckshot)
-* [#BULLET]($action_bullet)
-* [#BULLET_TIMER]($action_bullet_timer)
-* [#BULLET_TRIGGER]($action_bullet_trigger)
-* [#BURN_TRAIL]($action_burn_trail)
-* [#BURST_2]($action_burst_2)
-* [#BURST_3]($action_burst_3)
-* [#BURST_4]($action_burst_4)
-* [#BURST_8]($action_burst_8)
-* [#BURST_X]($action_burst_x)
-* [#CHAIN_BOLT]($action_chain_bolt)
-* [#CHAIN_SHOT]($action_chain_shot)
-* [#CHAINSAW]($action_chainsaw)
-* [#CHAOS_POLYMORPH_FIELD]($action_chaos_polymorph_field)
-* [#CHAOTIC_ARC]($action_chaotic_arc)
-* [#CIRCLE_ACID]($action_circle_acid)
-* [#CIRCLE_FIRE]($action_circle_fire)
-* [#CIRCLE_OIL]($action_circle_oil)
-* [#CIRCLE_SHAPE]($action_circle_shape)
-* [#CIRCLE_WATER]($action_circle_water)
-* [#CLIPPING_SHOT]($action_clipping_shot)
-* [#CLOUD_ACID]($action_cloud_acid)
-* [#CLOUD_BLOOD]($action_cloud_blood)
-* [#CLOUD_OIL]($action_cloud_oil)
-* [#CLOUD_THUNDER]($action_cloud_thunder)
-* [#CLOUD_WATER]($action_cloud_water)
-* [#COLOUR_BLUE]($action_colour_blue)
-* [#COLOUR_GREEN]($action_colour_green)
-* [#COLOUR_INVIS]($action_colour_invis)
-* [#COLOUR_ORANGE]($action_colour_orange)
-* [#COLOUR_PURPLE]($action_colour_purple)
-* [#COLOUR_RAINBOW]($action_colour_rainbow)
-* [#COLOUR_RED]($action_colour_red)
-* [#COLOUR_YELLOW]($action_colour_yellow)
-* [#CRITICAL_HIT]($action_critical_hit)
-* [#CRUMBLING_EARTH]($action_crumbling_earth)
-* [#CRUMBLING_EARTH_PROJECTILE]($action_crumbling_earth_projectile)
-* [#CURSE]($action_curse)
-* [#CURSE_WITHER_ELECTRICITY]($action_curse_wither_electricity)
-* [#CURSE_WITHER_EXPLOSION]($action_curse_wither_explosion)
-* [#CURSE_WITHER_MELEE]($action_curse_wither_melee)
-* [#CURSE_WITHER_PROJECTILE]($action_curse_wither_projectile)
-* [#CURSED_ORB]($action_cursed_orb)
-* [#DAMAGE]($action_damage)
-* [#DAMAGE_FOREVER]($action_damage_forever)
-* [#DAMAGE_RANDOM]($action_damage_random)
-* [#DARKFLAME]($action_darkflame)
-* [#DEATH_CROSS]($action_death_cross)
-* [#DEATH_CROSS_BIG]($action_death_cross_big)
-* [#DECELERATING_SHOT]($action_decelerating_shot)
-* [#DELAYED_SPELL]($action_delayed_spell)
-* [#DESTRUCTION]($action_destruction)
-* [#DIGGER]($action_digger)
-* [#DISC_BULLET]($action_disc_bullet)
-* [#DISC_BULLET_BIG]($action_disc_bullet_big)
-* [#DIVIDE_10]($action_divide_10)
-* [#DIVIDE_2]($action_divide_2)
-* [#DIVIDE_3]($action_divide_3)
-* [#DIVIDE_4]($action_divide_4)
-* [#DRAW_3_RANDOM]($action_draw_3_random)
-* [#DRAW_RANDOM]($action_draw_random)
-* [#DRAW_RANDOM_X3]($action_draw_random_x3)
-* [#DUPLICATE]($action_duplicate)
-* [#DYNAMITE]($action_dynamite)
-* [#ELECTRIC_CHARGE]($action_electric_charge)
-* [#ELECTROCUTION_FIELD]($action_electrocution_field)
-* [#ESSENCE_TO_POWER]($action_enemies_to_power)
-* [#ENERGY_SHIELD]($action_energy_shield)
-* [#ENERGY_SHIELD_SECTOR]($action_energy_shield_sector)
-* [#ENERGY_SHIELD_SHOT]($action_energy_shield_shot)
-* [#EXPANDING_ORB]($action_expanding_orb)
-* [#EXPLODING_DEER]($action_exploding_deer)
-* [#EXPLODING_DUCKS]($action_exploding_ducks)
-* [#EXPLOSION]($action_explosion)
-* [#EXPLOSION_LIGHT]($action_explosion_light)
-* [#EXPLOSION_REMOVE]($action_explosion_remove)
-* [#EXPLOSION_TINY]($action_explosion_tiny)
-* [#EXPLOSIVE_PROJECTILE]($action_explosive_projectile)
-* [#FIRE_BLAST]($action_fire_blast)
-* [#FIRE_TRAIL]($action_fire_trail)
-* [#FIREBALL]($action_fireball)
-* [#FIREBALL_RAY]($action_fireball_ray)
-* [#FIREBALL_RAY_ENEMY]($action_fireball_ray_enemy)
-* [#FIREBALL_RAY_LINE]($action_fireball_ray_line)
-* [#FIREBOMB]($action_firebomb)
-* [#FIREWORK]($action_firework)
-* [#FIZZLE]($action_fizzle)
-* [#FLAMETHROWER]($action_flamethrower)
-* [#FLOATING_ARC]($action_floating_arc)
-* [#FLY_DOWNWARDS]($action_fly_downwards)
-* [#FLY_UPWARDS]($action_fly_upwards)
-* [#FREEZE]($action_freeze)
-* [#FREEZE_FIELD]($action_freeze_field)
-* [#FREEZING_GAZE]($action_freezing_gaze)
-* [#FRIEND_FLY]($action_friend_fly)
-* [#GAMMA]($action_gamma)
-* [#GLITTER_BOMB]($action_glitter_bomb)
-* [#GLOWING_BOLT]($action_glowing_bolt)
-* [#GLUE_SHOT]($action_glue_shot)
-* [#GRAVITY]($action_gravity)
-* [#GRAVITY_ANTI]($action_gravity_anti)
-* [#GRAVITY_FIELD_ENEMY]($action_gravity_field_enemy)
-* [#GRENADE]($action_grenade)
-* [#GRENADE_ANTI]($action_grenade_anti)
-* [#GRENADE_LARGE]($action_grenade_large)
-* [#GRENADE_TIER_2]($action_grenade_tier_2)
-* [#GRENADE_TIER_3]($action_grenade_tier_3)
-* [#GRENADE_TRIGGER]($action_grenade_trigger)
-* [#GUNPOWDER_TRAIL]($action_gunpowder_trail)
-* [#HEAL_BULLET]($action_heal_bullet)
-* [#HEAVY_BULLET]($action_heavy_bullet)
-* [#HEAVY_BULLET_TIMER]($action_heavy_bullet_timer)
-* [#HEAVY_BULLET_TRIGGER]($action_heavy_bullet_trigger)
-* [#HEAVY_SHOT]($action_heavy_shot)
-* [#HEAVY_SPREAD]($action_heavy_spread)
-* [#HITFX_BURNING_CRITICAL_HIT]($action_hitfx_burning_critical_hit)
-* [#HITFX_CRITICAL_BLOOD]($action_hitfx_critical_blood)
-* [#HITFX_CRITICAL_OIL]($action_hitfx_critical_oil)
-* [#HITFX_CRITICAL_WATER]($action_hitfx_critical_water)
-* [#HITFX_EXPLOSION_ALCOHOL]($action_hitfx_explosion_alcohol)
-* [#HITFX_EXPLOSION_ALCOHOL_GIGA]($action_hitfx_explosion_alcohol_giga)
-* [#HITFX_EXPLOSION_SLIME]($action_hitfx_explosion_slime)
-* [#HITFX_EXPLOSION_SLIME_GIGA]($action_hitfx_explosion_slime_giga)
-* [#HITFX_TOXIC_CHARM]($action_hitfx_toxic_charm)
-* [#HOMING]($action_homing)
-* [#HOMING_ACCELERATING]($action_homing_accelerating)
-* [#HOMING_AREA]($action_homing_area)
-* [#HOMING_CURSOR]($action_homing_cursor)
-* [#HOMING_ROTATE]($action_homing_rotate)
-* [#HOMING_SHOOTER]($action_homing_shooter)
-* [#HOMING_SHORT]($action_homing_short)
-* [#HORIZONTAL_ARC]($action_horizontal_arc)
-* [#I_SHAPE]($action_i_shape)
-* [#ICEBALL]($action_iceball)
-* [#IF_ELSE]($action_if_else)
-* [#IF_END]($action_if_end)
-* [#IF_ENEMY]($action_if_enemy)
-* [#IF_HALF]($action_if_half)
-* [#IF_HP]($action_if_hp)
-* [#IF_PROJECTILE]($action_if_projectile)
-* [#INFESTATION]($action_infestation)
-* [#KANTELE_A]($action_kantele_a)
-* [#KANTELE_D]($action_kantele_d)
-* [#KANTELE_DIS]($action_kantele_dis)
-* [#KANTELE_E]($action_kantele_e)
-* [#KANTELE_G]($action_kantele_g)
-* [#KNOCKBACK]($action_knockback)
-* [#LANCE]($action_lance)
-* [#LARPA_CHAOS]($action_larpa_chaos)
-* [#LARPA_CHAOS_2]($action_larpa_chaos_2)
-* [#LARPA_DEATH]($action_larpa_death)
-* [#LARPA_DOWNWARDS]($action_larpa_downwards)
-* [#LARPA_UPWARDS]($action_larpa_upwards)
-* [#LASER]($action_laser)
-* [#LASER_EMITTER]($action_laser_emitter)
-* [#LASER_EMITTER_CUTTER]($action_laser_emitter_cutter)
-* [#LASER_EMITTER_FOUR]($action_laser_emitter_four)
-* [#LASER_EMITTER_RAY]($action_laser_emitter_ray)
-* [#LASER_EMITTER_WIDER]($action_laser_emitter_wider)
-* [#LAVA_TO_BLOOD]($action_lava_to_blood)
-* [#LEVITATION_FIELD]($action_levitation_field)
-* [#LIFETIME]($action_lifetime)
-* [#LIFETIME_DOWN]($action_lifetime_down)
-* [#LIGHT]($action_light)
-* [#LIGHT_BULLET]($action_light_bullet)
-* [#LIGHT_BULLET_TIMER]($action_light_bullet_timer)
-* [#LIGHT_BULLET_TRIGGER]($action_light_bullet_trigger)
-* [#LIGHT_BULLET_TRIGGER_2]($action_light_bullet_trigger_2)
-* [#LIGHT_SHOT]($action_light_shot)
-* [#LIGHTNING]($action_lightning)
-* [#LIGHTNING_RAY]($action_lightning_ray)
-* [#LIGHTNING_RAY_ENEMY]($action_lightning_ray_enemy)
-* [#LINE_ARC]($action_line_arc)
-* [#LIQUID_TO_EXPLOSION]($action_liquid_to_explosion)
-* [#LONG_DISTANCE_CAST]($action_long_distance_cast)
-* [#LUMINOUS_DRILL]($action_luminous_drill)
-* [#LASER_LUMINOUS_DRILL]($action_luminous_drill_timer)
-* [#MAGIC_SHIELD]($action_magic_shield)
-* [#MANA_REDUCE]($action_mana_reduce)
-* [#MATERIAL_ACID]($action_material_acid)
-* [#MATERIAL_BLOOD]($action_material_blood)
-* [#MATERIAL_CEMENT]($action_material_cement)
-* [#MATERIAL_OIL]($action_material_oil)
-* [#MATERIAL_WATER]($action_material_water)
-* [#MATTER_EATER]($action_matter_eater)
-* [#MEGALASER]($action_megalaser)
-* [#METEOR]($action_meteor)
-* [#METEOR_RAIN]($action_meteor_rain)
-* [#MINE]($action_mine)
-* [#MINE_DEATH_TRIGGER]($action_mine_death_trigger)
-* [#MISSILE]($action_missile)
-* [#MIST_ALCOHOL]($action_mist_alcohol)
-* [#MIST_BLOOD]($action_mist_blood)
-* [#MIST_RADIOACTIVE]($action_mist_radioactive)
-* [#MIST_SLIME]($action_mist_slime)
-* [#MONEY_MAGIC]($action_money_magic)
-* [#MU]($action_mu)
-* [#NECROMANCY]($action_necromancy)
-* [#NOLLA]($action_nolla)
-* [#NUKE]($action_nuke)
-* [#NUKE_GIGA]($action_nuke_giga)
-* [#OCARINA_A]($action_ocarina_a)
-* [#OCARINA_A2]($action_ocarina_a2)
-* [#OCARINA_B]($action_ocarina_b)
-* [#OCARINA_C]($action_ocarina_c)
-* [#OCARINA_D]($action_ocarina_d)
-* [#OCARINA_E]($action_ocarina_e)
-* [#OCARINA_F]($action_ocarina_f)
-* [#OCARINA_GSHARP]($action_ocarina_gsharp)
-* [#OIL_TRAIL]($action_oil_trail)
-* [#OMEGA]($action_omega)
-* [#DISC_BULLET_BIGGER]($action_omega_disc_bullet)
-* [#ORBIT_DISCS]($action_orbit_discs)
-* [#ORBIT_FIREBALLS]($action_orbit_fireballs)
-* [#ORBIT_LARPA]($action_orbit_larpa)
-* [#ORBIT_LASERS]($action_orbit_lasers)
-* [#ORBIT_NUKES]($action_orbit_nukes)
-* [#ORBIT_SHOT]($action_orbit_shot)
-* [#PEBBLE]($action_pebble)
-* [#PENTAGRAM_SHAPE]($action_pentagram_shape)
-* [#HITFX_PETRIFY]($action_petrify)
-* [#PHASING_ARC]($action_phasing_arc)
-* [#PHI]($action_phi)
-* [#PIERCING_SHOT]($action_piercing_shot)
-* [#PINGPONG_PATH]($action_pingpong_path)
-* [#PIPE_BOMB]($action_pipe_bomb)
-* [#PIPE_BOMB_DEATH_TRIGGER]($action_pipe_bomb_death_trigger)
-* [#POISON_BLAST]($action_poison_blast)
-* [#POISON_TRAIL]($action_poison_trail)
-* [#POLLEN]($action_pollen)
-* [#POLYMORPH_FIELD]($action_polymorph_field)
-* [#POWERDIGGER]($action_powerdigger)
-* [#PROJECTILE_GRAVITY_FIELD]($action_projectile_gravity_field)
-* [#PROJECTILE_THUNDER_FIELD]($action_projectile_thunder_field)
-* [#PROJECTILE_TRANSMUTATION_FIELD]($action_projectile_transmutation_field)
-* [#PROPANE_TANK]($action_propane_tank)
-* [#PURPLE_EXPLOSION_FIELD]($action_purple_explosion_field)
-* [#QUANTUM_SPLIT]($action_quantum_split)
-* [#RAINBOW_TRAIL]($action_rainbow_trail)
-* [#RANDOM_EXPLOSION]($action_random_explosion)
-* [#RANDOM_MODIFIER]($action_random_modifier)
-* [#RANDOM_PROJECTILE]($action_random_projectile)
-* [#RANDOM_SPELL]($action_random_spell)
-* [#RANDOM_STATIC_PROJECTILE]($action_random_static_projectile)
-* [#RECHARGE]($action_recharge)
-* [#RECOIL]($action_recoil)
-* [#RECOIL_DAMPER]($action_recoil_damper)
-* [#REGENERATION_FIELD]($action_regeneration_field)
-* [#REMOVE_BOUNCE]($action_remove_bounce)
-* [#RESET]($action_reset)
-* [#ROCKET]($action_rocket)
-* [#ROCKET_DOWNWARDS]($action_rocket_downwards)
-* [#ROCKET_OCTAGON]($action_rocket_octagon)
-* [#ROCKET_TIER_2]($action_rocket_tier_2)
-* [#ROCKET_TIER_3]($action_rocket_tier_3)
-* [#RUBBER_BALL]($action_rubber_ball)
-* [#SCATTER_2]($action_scatter_2)
-* [#SCATTER_3]($action_scatter_3)
-* [#SCATTER_4]($action_scatter_4)
-* [#SEA_ACID]($action_sea_acid)
-* [#SEA_ACID_GAS]($action_sea_acid_gas)
-* [#SEA_ALCOHOL]($action_sea_alcohol)
-* [#SEA_LAVA]($action_sea_lava)
-* [#SEA_OIL]($action_sea_oil)
-* [#SEA_WATER]($action_sea_water)
-* [#SHIELD_FIELD]($action_shield_field)
-* [#SIGMA]($action_sigma)
-* [#SINEWAVE]($action_sinewave)
-* [#SLIMEBALL]($action_slimeball)
-* [#SLOW_BULLET]($action_slow_bullet)
-* [#SLOW_BULLET_TIMER]($action_slow_bullet_timer)
-* [#SLOW_BULLET_TRIGGER]($action_slow_bullet_trigger)
-* [#SLOW_BUT_STEADY]($action_slow_but_steady)
-* [#SOILBALL]($action_soilball)
-* [#SPEED]($action_speed)
-* [#SPELLS_TO_POWER]($action_spells_to_power)
-* [#SPIRAL_SHOT]($action_spiral_shot)
-* [#SPIRALING_SHOT]($action_spiraling_shot)
-* [#SPITTER]($action_spitter)
-* [#SPITTER_TIER_2]($action_spitter_tier_2)
-* [#SPITTER_TIER_2_TIMER]($action_spitter_tier_2_timer)
-* [#SPITTER_TIER_3]($action_spitter_tier_3)
-* [#SPITTER_TIER_3_TIMER]($action_spitter_tier_3_timer)
-* [#SPITTER_TIMER]($action_spitter_timer)
-* [#SPORE_POD]($action_spore_pod)
-* [#SPREAD_REDUCE]($action_spread_reduce)
-* [#STATIC_TO_SAND]($action_static_to_sand)
-* [#SUMMON_EGG]($action_summon_egg)
-* [#SUMMON_HOLLOW_EGG]($action_summon_hollow_egg)
-* [#SUMMON_PORTAL]($action_summon_portal)
-* [#SUMMON_ROCK]($action_summon_rock)
-* [#SUMMON_WANDGHOST]($action_summon_wandghost)
-* [#SUPER_TELEPORT_CAST]($action_super_teleport_cast)
-* [#SWAPPER_PROJECTILE]($action_swapper_projectile)
-* [#SWARM_FIREBUG]($action_swarm_firebug)
-* [#SWARM_FLY]($action_swarm_fly)
-* [#SWARM_WASP]($action_swarm_wasp)
-* [#T_SHAPE]($action_t_shape)
-* [#TAU]($action_tau)
-* [#TELEPORT_CAST]($action_teleport_cast)
-* [#TELEPORT_PROJECTILE_CLOSER]($action_teleport_closer)
-* [#TELEPORT_PROJECTILE]($action_teleport_projectile)
-* [#TELEPORT_PROJECTILE_SHORT]($action_teleport_projectile_short)
-* [#TELEPORT_PROJECTILE_STATIC]($action_teleport_projectile_static)
-* [#TELEPORTATION_FIELD]($action_teleportation_field)
-* [#TEMPORARY_PLATFORM]($action_temporary_platform)
-* [#TEMPORARY_WALL]($action_temporary_wall)
-* [#TENTACLE]($action_tentacle)
-* [#TENTACLE_PORTAL]($action_tentacle_portal)
-* [#TENTACLE_RAY]($action_tentacle_ray)
-* [#TENTACLE_RAY_ENEMY]($action_tentacle_ray_enemy)
-* [#TENTACLE_TIMER]($action_tentacle_timer)
-* [#THUNDER_BLAST]($action_thunder_blast)
-* [#THUNDERBALL]($action_thunderball)
-* [#TINY_GHOST]($action_tiny_ghost)
-* [#TNTBOX]($action_tntbox)
-* [#TNTBOX_BIG]($action_tntbox_big)
-* [#TORCH]($action_torch)
-* [#TORCH_ELECTRIC]($action_torch_electric)
-* [#TOUCH_ALCOHOL]($action_touch_alcohol)
-* [#TOUCH_BLOOD]($action_touch_blood)
-* [#TOUCH_GOLD]($action_touch_gold)
-* [#TOUCH_OIL]($action_touch_oil)
-* [#TOUCH_SMOKE]($action_touch_smoke)
-* [#TOUCH_WATER]($action_touch_water)
-* [#TOXIC_TO_ACID]($action_toxic_to_acid)
-* [#TRANSMUTATION]($action_transmutation)
-* [#UNSTABLE_GUNPOWDER]($action_unstable_gunpowder)
-* [#VACUUM_ENTITIES]($action_vacuum_entities)
-* [#VACUUM_LIQUID]($action_vacuum_liquid)
-* [#VACUUM_POWDER]($action_vacuum_powder)
-* [#W_SHAPE]($action_w_shape)
-* [#WALL_HORIZONTAL]($action_wall_horizontal)
-* [#WALL_SQUARE]($action_wall_square)
-* [#WALL_VERTICAL]($action_wall_vertical)
-* [#WATER_TO_POISON]($action_water_to_poison)
-* [#WATER_TRAIL]($action_water_trail)
-* [#WORM_RAIN]($action_worm_rain)
-* [#WORM_SHOT]($action_worm_shot)
-* [#X_RAY]($action_x_ray)
-* [#Y_SHAPE]($action_y_shape)
-* [#ZETA]($action_zeta)
-* [#FUNKY_SPELL](???)
+* [#ACCELERATING_SHOT](ACCELERATING_SHOT)
+* [#ACIDSHOT](ACIDSHOT)
+* [#ACID_TRAIL](ACID_TRAIL)
+* [#ADD_DEATH_TRIGGER](ADD_DEATH_TRIGGER)
+* [#ADD_TIMER](ADD_TIMER)
+* [#ADD_TRIGGER](ADD_TRIGGER)
+* [#AIR_BULLET](AIR_BULLET)
+* [#ALCOHOL_BLAST](ALCOHOL_BLAST)
+* [#ALL_ACID](ALL_ACID)
+* [#ALL_BLACKHOLES](ALL_BLACKHOLES)
+* [#ALL_DEATHCROSSES](ALL_DEATHCROSSES)
+* [#ALL_DISCS](ALL_DISCS)
+* [#ALL_NUKES](ALL_NUKES)
+* [#ALL_ROCKETS](ALL_ROCKETS)
+* [#ALL_SPELLS](ALL_SPELLS)
+* [#ALPHA](ALPHA)
+* [#ARC_ELECTRIC](ARC_ELECTRIC)
+* [#ARC_FIRE](ARC_FIRE)
+* [#ARC_GUNPOWDER](ARC_GUNPOWDER)
+* [#ARC_POISON](ARC_POISON)
+* [#AREA_DAMAGE](AREA_DAMAGE)
+* [#ARROW](ARROW)
+* [#AUTOAIM](AUTOAIM)
+* [#AVOIDING_ARC](AVOIDING_ARC)
+* [#BALL_LIGHTNING](BALL_LIGHTNING)
+* [#BERSERK_FIELD](BERSERK_FIELD)
+* [#BIG_MAGIC_SHIELD](BIG_MAGIC_SHIELD)
+* [#BLACK_HOLE](BLACK_HOLE)
+* [#BLACK_HOLE_BIG](BLACK_HOLE_BIG)
+* [#BLACK_HOLE_DEATH_TRIGGER](BLACK_HOLE_DEATH_TRIGGER)
+* [#BLACK_HOLE_GIGA](BLACK_HOLE_GIGA)
+* [#BLOODLUST](BLOODLUST)
+* [#BLOOD_MAGIC](BLOOD_MAGIC)
+* [#BLOOD_TO_ACID](BLOOD_TO_ACID)
+* [#BLOOD_TO_POWER](BLOOD_TO_POWER)
+* [#BOMB](BOMB)
+* [#BOMB_CART](BOMB_CART)
+* [#BOMB_DETONATOR](BOMB_DETONATOR)
+* [#BOMB_HOLY](BOMB_HOLY)
+* [#BOMB_HOLY_GIGA](BOMB_HOLY_GIGA)
+* [#BOUNCE](BOUNCE)
+* [#BOUNCE_EXPLOSION](BOUNCE_EXPLOSION)
+* [#BOUNCE_LARPA](BOUNCE_LARPA)
+* [#BOUNCE_LASER](BOUNCE_LASER)
+* [#BOUNCE_LASER_EMITTER](BOUNCE_LASER_EMITTER)
+* [#BOUNCE_SPARK](BOUNCE_SPARK)
+* [#BOUNCY_ORB](BOUNCY_ORB)
+* [#BOUNCY_ORB_TIMER](BOUNCY_ORB_TIMER)
+* [#BUBBLESHOT](BUBBLESHOT)
+* [#BUBBLESHOT_TRIGGER](BUBBLESHOT_TRIGGER)
+* [#BUCKSHOT](BUCKSHOT)
+* [#BULLET](BULLET)
+* [#BULLET_TIMER](BULLET_TIMER)
+* [#BULLET_TRIGGER](BULLET_TRIGGER)
+* [#BURN_TRAIL](BURN_TRAIL)
+* [#BURST_2](BURST_2)
+* [#BURST_3](BURST_3)
+* [#BURST_4](BURST_4)
+* [#BURST_8](BURST_8)
+* [#BURST_X](BURST_X)
+* [#CHAINSAW](CHAINSAW)
+* [#CHAIN_BOLT](CHAIN_BOLT)
+* [#CHAIN_SHOT](CHAIN_SHOT)
+* [#CHAOS_POLYMORPH_FIELD](CHAOS_POLYMORPH_FIELD)
+* [#CHAOTIC_ARC](CHAOTIC_ARC)
+* [#CIRCLE_ACID](CIRCLE_ACID)
+* [#CIRCLE_FIRE](CIRCLE_FIRE)
+* [#CIRCLE_OIL](CIRCLE_OIL)
+* [#CIRCLE_SHAPE](CIRCLE_SHAPE)
+* [#CIRCLE_WATER](CIRCLE_WATER)
+* [#CLIPPING_SHOT](CLIPPING_SHOT)
+* [#CLOUD_ACID](CLOUD_ACID)
+* [#CLOUD_BLOOD](CLOUD_BLOOD)
+* [#CLOUD_OIL](CLOUD_OIL)
+* [#CLOUD_THUNDER](CLOUD_THUNDER)
+* [#CLOUD_WATER](CLOUD_WATER)
+* [#COLOUR_BLUE](COLOUR_BLUE)
+* [#COLOUR_GREEN](COLOUR_GREEN)
+* [#COLOUR_INVIS](COLOUR_INVIS)
+* [#COLOUR_ORANGE](COLOUR_ORANGE)
+* [#COLOUR_PURPLE](COLOUR_PURPLE)
+* [#COLOUR_RAINBOW](COLOUR_RAINBOW)
+* [#COLOUR_RED](COLOUR_RED)
+* [#COLOUR_YELLOW](COLOUR_YELLOW)
+* [#CRITICAL_HIT](CRITICAL_HIT)
+* [#CRUMBLING_EARTH](CRUMBLING_EARTH)
+* [#CRUMBLING_EARTH_PROJECTILE](CRUMBLING_EARTH_PROJECTILE)
+* [#CURSE](CURSE)
+* [#CURSED_ORB](CURSED_ORB)
+* [#CURSE_WITHER_ELECTRICITY](CURSE_WITHER_ELECTRICITY)
+* [#CURSE_WITHER_EXPLOSION](CURSE_WITHER_EXPLOSION)
+* [#CURSE_WITHER_MELEE](CURSE_WITHER_MELEE)
+* [#CURSE_WITHER_PROJECTILE](CURSE_WITHER_PROJECTILE)
+* [#DAMAGE](DAMAGE)
+* [#DAMAGE_FOREVER](DAMAGE_FOREVER)
+* [#DAMAGE_RANDOM](DAMAGE_RANDOM)
+* [#DARKFLAME](DARKFLAME)
+* [#DEATH_CROSS](DEATH_CROSS)
+* [#DEATH_CROSS_BIG](DEATH_CROSS_BIG)
+* [#DECELERATING_SHOT](DECELERATING_SHOT)
+* [#DELAYED_SPELL](DELAYED_SPELL)
+* [#DESTRUCTION](DESTRUCTION)
+* [#DIGGER](DIGGER)
+* [#DISC_BULLET](DISC_BULLET)
+* [#DISC_BULLET_BIG](DISC_BULLET_BIG)
+* [#DISC_BULLET_BIGGER](DISC_BULLET_BIGGER)
+* [#DIVIDE_10](DIVIDE_10)
+* [#DIVIDE_2](DIVIDE_2)
+* [#DIVIDE_3](DIVIDE_3)
+* [#DIVIDE_4](DIVIDE_4)
+* [#DRAW_3_RANDOM](DRAW_3_RANDOM)
+* [#DRAW_RANDOM](DRAW_RANDOM)
+* [#DRAW_RANDOM_X3](DRAW_RANDOM_X3)
+* [#DUPLICATE](DUPLICATE)
+* [#DYNAMITE](DYNAMITE)
+* [#ELECTRIC_CHARGE](ELECTRIC_CHARGE)
+* [#ELECTROCUTION_FIELD](ELECTROCUTION_FIELD)
+* [#ENERGY_SHIELD](ENERGY_SHIELD)
+* [#ENERGY_SHIELD_SECTOR](ENERGY_SHIELD_SECTOR)
+* [#ENERGY_SHIELD_SHOT](ENERGY_SHIELD_SHOT)
+* [#ESSENCE_TO_POWER](ESSENCE_TO_POWER)
+* [#EXPANDING_ORB](EXPANDING_ORB)
+* [#EXPLODING_DEER](EXPLODING_DEER)
+* [#EXPLODING_DUCKS](EXPLODING_DUCKS)
+* [#EXPLOSION](EXPLOSION)
+* [#EXPLOSION_LIGHT](EXPLOSION_LIGHT)
+* [#EXPLOSION_REMOVE](EXPLOSION_REMOVE)
+* [#EXPLOSION_TINY](EXPLOSION_TINY)
+* [#EXPLOSIVE_PROJECTILE](EXPLOSIVE_PROJECTILE)
+* [#FIREBALL](FIREBALL)
+* [#FIREBALL_RAY](FIREBALL_RAY)
+* [#FIREBALL_RAY_ENEMY](FIREBALL_RAY_ENEMY)
+* [#FIREBALL_RAY_LINE](FIREBALL_RAY_LINE)
+* [#FIREBOMB](FIREBOMB)
+* [#FIREWORK](FIREWORK)
+* [#FIRE_BLAST](FIRE_BLAST)
+* [#FIRE_TRAIL](FIRE_TRAIL)
+* [#FIZZLE](FIZZLE)
+* [#FLAMETHROWER](FLAMETHROWER)
+* [#FLOATING_ARC](FLOATING_ARC)
+* [#FLY_DOWNWARDS](FLY_DOWNWARDS)
+* [#FLY_UPWARDS](FLY_UPWARDS)
+* [#FREEZE](FREEZE)
+* [#FREEZE_FIELD](FREEZE_FIELD)
+* [#FREEZING_GAZE](FREEZING_GAZE)
+* [#FRIEND_FLY](FRIEND_FLY)
+* [#FUNKY_SPELL](FUNKY_SPELL)
+* [#GAMMA](GAMMA)
+* [#GLITTER_BOMB](GLITTER_BOMB)
+* [#GLOWING_BOLT](GLOWING_BOLT)
+* [#GLUE_SHOT](GLUE_SHOT)
+* [#GRAVITY](GRAVITY)
+* [#GRAVITY_ANTI](GRAVITY_ANTI)
+* [#GRAVITY_FIELD_ENEMY](GRAVITY_FIELD_ENEMY)
+* [#GRENADE](GRENADE)
+* [#GRENADE_ANTI](GRENADE_ANTI)
+* [#GRENADE_LARGE](GRENADE_LARGE)
+* [#GRENADE_TIER_2](GRENADE_TIER_2)
+* [#GRENADE_TIER_3](GRENADE_TIER_3)
+* [#GRENADE_TRIGGER](GRENADE_TRIGGER)
+* [#GUNPOWDER_TRAIL](GUNPOWDER_TRAIL)
+* [#HEAL_BULLET](HEAL_BULLET)
+* [#HEAVY_BULLET](HEAVY_BULLET)
+* [#HEAVY_BULLET_TIMER](HEAVY_BULLET_TIMER)
+* [#HEAVY_BULLET_TRIGGER](HEAVY_BULLET_TRIGGER)
+* [#HEAVY_SHOT](HEAVY_SHOT)
+* [#HEAVY_SPREAD](HEAVY_SPREAD)
+* [#HITFX_BURNING_CRITICAL_HIT](HITFX_BURNING_CRITICAL_HIT)
+* [#HITFX_CRITICAL_BLOOD](HITFX_CRITICAL_BLOOD)
+* [#HITFX_CRITICAL_OIL](HITFX_CRITICAL_OIL)
+* [#HITFX_CRITICAL_WATER](HITFX_CRITICAL_WATER)
+* [#HITFX_EXPLOSION_ALCOHOL](HITFX_EXPLOSION_ALCOHOL)
+* [#HITFX_EXPLOSION_ALCOHOL_GIGA](HITFX_EXPLOSION_ALCOHOL_GIGA)
+* [#HITFX_EXPLOSION_SLIME](HITFX_EXPLOSION_SLIME)
+* [#HITFX_EXPLOSION_SLIME_GIGA](HITFX_EXPLOSION_SLIME_GIGA)
+* [#HITFX_PETRIFY](HITFX_PETRIFY)
+* [#HITFX_TOXIC_CHARM](HITFX_TOXIC_CHARM)
+* [#HOMING](HOMING)
+* [#HOMING_ACCELERATING](HOMING_ACCELERATING)
+* [#HOMING_AREA](HOMING_AREA)
+* [#HOMING_CURSOR](HOMING_CURSOR)
+* [#HOMING_ROTATE](HOMING_ROTATE)
+* [#HOMING_SHOOTER](HOMING_SHOOTER)
+* [#HOMING_SHORT](HOMING_SHORT)
+* [#HORIZONTAL_ARC](HORIZONTAL_ARC)
+* [#ICEBALL](ICEBALL)
+* [#IF_ELSE](IF_ELSE)
+* [#IF_END](IF_END)
+* [#IF_ENEMY](IF_ENEMY)
+* [#IF_HALF](IF_HALF)
+* [#IF_HP](IF_HP)
+* [#IF_PROJECTILE](IF_PROJECTILE)
+* [#INFESTATION](INFESTATION)
+* [#I_SHAPE](I_SHAPE)
+* [#KANTELE_A](KANTELE_A)
+* [#KANTELE_D](KANTELE_D)
+* [#KANTELE_DIS](KANTELE_DIS)
+* [#KANTELE_E](KANTELE_E)
+* [#KANTELE_G](KANTELE_G)
+* [#KNOCKBACK](KNOCKBACK)
+* [#LANCE](LANCE)
+* [#LARPA_CHAOS](LARPA_CHAOS)
+* [#LARPA_CHAOS_2](LARPA_CHAOS_2)
+* [#LARPA_DEATH](LARPA_DEATH)
+* [#LARPA_DOWNWARDS](LARPA_DOWNWARDS)
+* [#LARPA_UPWARDS](LARPA_UPWARDS)
+* [#LASER](LASER)
+* [#LASER_EMITTER](LASER_EMITTER)
+* [#LASER_EMITTER_CUTTER](LASER_EMITTER_CUTTER)
+* [#LASER_EMITTER_FOUR](LASER_EMITTER_FOUR)
+* [#LASER_EMITTER_RAY](LASER_EMITTER_RAY)
+* [#LASER_EMITTER_WIDER](LASER_EMITTER_WIDER)
+* [#LASER_LUMINOUS_DRILL](LASER_LUMINOUS_DRILL)
+* [#LAVA_TO_BLOOD](LAVA_TO_BLOOD)
+* [#LEVITATION_FIELD](LEVITATION_FIELD)
+* [#LIFETIME](LIFETIME)
+* [#LIFETIME_DOWN](LIFETIME_DOWN)
+* [#LIGHT](LIGHT)
+* [#LIGHTNING](LIGHTNING)
+* [#LIGHTNING_RAY](LIGHTNING_RAY)
+* [#LIGHTNING_RAY_ENEMY](LIGHTNING_RAY_ENEMY)
+* [#LIGHT_BULLET](LIGHT_BULLET)
+* [#LIGHT_BULLET_TIMER](LIGHT_BULLET_TIMER)
+* [#LIGHT_BULLET_TRIGGER](LIGHT_BULLET_TRIGGER)
+* [#LIGHT_BULLET_TRIGGER_2](LIGHT_BULLET_TRIGGER_2)
+* [#LIGHT_SHOT](LIGHT_SHOT)
+* [#LINE_ARC](LINE_ARC)
+* [#LIQUID_TO_EXPLOSION](LIQUID_TO_EXPLOSION)
+* [#LONG_DISTANCE_CAST](LONG_DISTANCE_CAST)
+* [#LUMINOUS_DRILL](LUMINOUS_DRILL)
+* [#MAGIC_SHIELD](MAGIC_SHIELD)
+* [#MANA_REDUCE](MANA_REDUCE)
+* [#MATERIAL_ACID](MATERIAL_ACID)
+* [#MATERIAL_BLOOD](MATERIAL_BLOOD)
+* [#MATERIAL_CEMENT](MATERIAL_CEMENT)
+* [#MATERIAL_OIL](MATERIAL_OIL)
+* [#MATERIAL_WATER](MATERIAL_WATER)
+* [#MATTER_EATER](MATTER_EATER)
+* [#MEGALASER](MEGALASER)
+* [#METEOR](METEOR)
+* [#METEOR_RAIN](METEOR_RAIN)
+* [#MINE](MINE)
+* [#MINE_DEATH_TRIGGER](MINE_DEATH_TRIGGER)
+* [#MISSILE](MISSILE)
+* [#MIST_ALCOHOL](MIST_ALCOHOL)
+* [#MIST_BLOOD](MIST_BLOOD)
+* [#MIST_RADIOACTIVE](MIST_RADIOACTIVE)
+* [#MIST_SLIME](MIST_SLIME)
+* [#MONEY_MAGIC](MONEY_MAGIC)
+* [#MU](MU)
+* [#NECROMANCY](NECROMANCY)
+* [#NOLLA](NOLLA)
+* [#NUKE](NUKE)
+* [#NUKE_GIGA](NUKE_GIGA)
+* [#OCARINA_A](OCARINA_A)
+* [#OCARINA_A2](OCARINA_A2)
+* [#OCARINA_B](OCARINA_B)
+* [#OCARINA_C](OCARINA_C)
+* [#OCARINA_D](OCARINA_D)
+* [#OCARINA_E](OCARINA_E)
+* [#OCARINA_F](OCARINA_F)
+* [#OCARINA_GSHARP](OCARINA_GSHARP)
+* [#OIL_TRAIL](OIL_TRAIL)
+* [#OMEGA](OMEGA)
+* [#ORBIT_DISCS](ORBIT_DISCS)
+* [#ORBIT_FIREBALLS](ORBIT_FIREBALLS)
+* [#ORBIT_LARPA](ORBIT_LARPA)
+* [#ORBIT_LASERS](ORBIT_LASERS)
+* [#ORBIT_NUKES](ORBIT_NUKES)
+* [#ORBIT_SHOT](ORBIT_SHOT)
+* [#PEBBLE](PEBBLE)
+* [#PENTAGRAM_SHAPE](PENTAGRAM_SHAPE)
+* [#PHASING_ARC](PHASING_ARC)
+* [#PHI](PHI)
+* [#PIERCING_SHOT](PIERCING_SHOT)
+* [#PINGPONG_PATH](PINGPONG_PATH)
+* [#PIPE_BOMB](PIPE_BOMB)
+* [#PIPE_BOMB_DEATH_TRIGGER](PIPE_BOMB_DEATH_TRIGGER)
+* [#POISON_BLAST](POISON_BLAST)
+* [#POISON_TRAIL](POISON_TRAIL)
+* [#POLLEN](POLLEN)
+* [#POLYMORPH_FIELD](POLYMORPH_FIELD)
+* [#POWERDIGGER](POWERDIGGER)
+* [#PROJECTILE_GRAVITY_FIELD](PROJECTILE_GRAVITY_FIELD)
+* [#PROJECTILE_THUNDER_FIELD](PROJECTILE_THUNDER_FIELD)
+* [#PROJECTILE_TRANSMUTATION_FIELD](PROJECTILE_TRANSMUTATION_FIELD)
+* [#PROPANE_TANK](PROPANE_TANK)
+* [#PURPLE_EXPLOSION_FIELD](PURPLE_EXPLOSION_FIELD)
+* [#QUANTUM_SPLIT](QUANTUM_SPLIT)
+* [#RAINBOW_TRAIL](RAINBOW_TRAIL)
+* [#RANDOM_EXPLOSION](RANDOM_EXPLOSION)
+* [#RANDOM_MODIFIER](RANDOM_MODIFIER)
+* [#RANDOM_PROJECTILE](RANDOM_PROJECTILE)
+* [#RANDOM_SPELL](RANDOM_SPELL)
+* [#RANDOM_STATIC_PROJECTILE](RANDOM_STATIC_PROJECTILE)
+* [#RECHARGE](RECHARGE)
+* [#RECOIL](RECOIL)
+* [#RECOIL_DAMPER](RECOIL_DAMPER)
+* [#REGENERATION_FIELD](REGENERATION_FIELD)
+* [#REMOVE_BOUNCE](REMOVE_BOUNCE)
+* [#RESET](RESET)
+* [#ROCKET](ROCKET)
+* [#ROCKET_DOWNWARDS](ROCKET_DOWNWARDS)
+* [#ROCKET_OCTAGON](ROCKET_OCTAGON)
+* [#ROCKET_TIER_2](ROCKET_TIER_2)
+* [#ROCKET_TIER_3](ROCKET_TIER_3)
+* [#RUBBER_BALL](RUBBER_BALL)
+* [#SCATTER_2](SCATTER_2)
+* [#SCATTER_3](SCATTER_3)
+* [#SCATTER_4](SCATTER_4)
+* [#SEA_ACID](SEA_ACID)
+* [#SEA_ACID_GAS](SEA_ACID_GAS)
+* [#SEA_ALCOHOL](SEA_ALCOHOL)
+* [#SEA_LAVA](SEA_LAVA)
+* [#SEA_OIL](SEA_OIL)
+* [#SEA_WATER](SEA_WATER)
+* [#SHIELD_FIELD](SHIELD_FIELD)
+* [#SIGMA](SIGMA)
+* [#SINEWAVE](SINEWAVE)
+* [#SLIMEBALL](SLIMEBALL)
+* [#SLOW_BULLET](SLOW_BULLET)
+* [#SLOW_BULLET_TIMER](SLOW_BULLET_TIMER)
+* [#SLOW_BULLET_TRIGGER](SLOW_BULLET_TRIGGER)
+* [#SLOW_BUT_STEADY](SLOW_BUT_STEADY)
+* [#SOILBALL](SOILBALL)
+* [#SPEED](SPEED)
+* [#SPELLS_TO_POWER](SPELLS_TO_POWER)
+* [#SPIRALING_SHOT](SPIRALING_SHOT)
+* [#SPIRAL_SHOT](SPIRAL_SHOT)
+* [#SPITTER](SPITTER)
+* [#SPITTER_TIER_2](SPITTER_TIER_2)
+* [#SPITTER_TIER_2_TIMER](SPITTER_TIER_2_TIMER)
+* [#SPITTER_TIER_3](SPITTER_TIER_3)
+* [#SPITTER_TIER_3_TIMER](SPITTER_TIER_3_TIMER)
+* [#SPITTER_TIMER](SPITTER_TIMER)
+* [#SPORE_POD](SPORE_POD)
+* [#SPREAD_REDUCE](SPREAD_REDUCE)
+* [#STATIC_TO_SAND](STATIC_TO_SAND)
+* [#SUMMON_EGG](SUMMON_EGG)
+* [#SUMMON_HOLLOW_EGG](SUMMON_HOLLOW_EGG)
+* [#SUMMON_PORTAL](SUMMON_PORTAL)
+* [#SUMMON_ROCK](SUMMON_ROCK)
+* [#SUMMON_WANDGHOST](SUMMON_WANDGHOST)
+* [#SUPER_TELEPORT_CAST](SUPER_TELEPORT_CAST)
+* [#SWAPPER_PROJECTILE](SWAPPER_PROJECTILE)
+* [#SWARM_FIREBUG](SWARM_FIREBUG)
+* [#SWARM_FLY](SWARM_FLY)
+* [#SWARM_WASP](SWARM_WASP)
+* [#TAU](TAU)
+* [#TELEPORTATION_FIELD](TELEPORTATION_FIELD)
+* [#TELEPORT_CAST](TELEPORT_CAST)
+* [#TELEPORT_PROJECTILE](TELEPORT_PROJECTILE)
+* [#TELEPORT_PROJECTILE_CLOSER](TELEPORT_PROJECTILE_CLOSER)
+* [#TELEPORT_PROJECTILE_SHORT](TELEPORT_PROJECTILE_SHORT)
+* [#TELEPORT_PROJECTILE_STATIC](TELEPORT_PROJECTILE_STATIC)
+* [#TEMPORARY_PLATFORM](TEMPORARY_PLATFORM)
+* [#TEMPORARY_WALL](TEMPORARY_WALL)
+* [#TENTACLE](TENTACLE)
+* [#TENTACLE_PORTAL](TENTACLE_PORTAL)
+* [#TENTACLE_RAY](TENTACLE_RAY)
+* [#TENTACLE_RAY_ENEMY](TENTACLE_RAY_ENEMY)
+* [#TENTACLE_TIMER](TENTACLE_TIMER)
+* [#THUNDERBALL](THUNDERBALL)
+* [#THUNDER_BLAST](THUNDER_BLAST)
+* [#TINY_GHOST](TINY_GHOST)
+* [#TNTBOX](TNTBOX)
+* [#TNTBOX_BIG](TNTBOX_BIG)
+* [#TORCH](TORCH)
+* [#TORCH_ELECTRIC](TORCH_ELECTRIC)
+* [#TOUCH_ALCOHOL](TOUCH_ALCOHOL)
+* [#TOUCH_BLOOD](TOUCH_BLOOD)
+* [#TOUCH_GOLD](TOUCH_GOLD)
+* [#TOUCH_OIL](TOUCH_OIL)
+* [#TOUCH_SMOKE](TOUCH_SMOKE)
+* [#TOUCH_WATER](TOUCH_WATER)
+* [#TOXIC_TO_ACID](TOXIC_TO_ACID)
+* [#TRANSMUTATION](TRANSMUTATION)
+* [#T_SHAPE](T_SHAPE)
+* [#UNSTABLE_GUNPOWDER](UNSTABLE_GUNPOWDER)
+* [#VACUUM_ENTITIES](VACUUM_ENTITIES)
+* [#VACUUM_LIQUID](VACUUM_LIQUID)
+* [#VACUUM_POWDER](VACUUM_POWDER)
+* [#WALL_HORIZONTAL](WALL_HORIZONTAL)
+* [#WALL_SQUARE](WALL_SQUARE)
+* [#WALL_VERTICAL](WALL_VERTICAL)
+* [#WATER_TO_POISON](WATER_TO_POISON)
+* [#WATER_TRAIL](WATER_TRAIL)
+* [#WORM_RAIN](WORM_RAIN)
+* [#WORM_SHOT](WORM_SHOT)
+* [#W_SHAPE](W_SHAPE)
+* [#X_RAY](X_RAY)
+* [#Y_SHAPE](Y_SHAPE)
+* [#ZETA](ZETA)
 
 ### <a id="ACCELERATING_SHOT"></a>![Accelerating shot](images/ACCELERATING_SHOT.png)Accelerating shot (ACCELERATING_SHOT)
 
@@ -438,6 +438,34 @@
 
 
 
+### <a id="ACIDSHOT"></a>![Acid ball](images/ACIDSHOT.png)Acid ball (ACIDSHOT)
+
+* **description**: A terrifying acidic projectile
+* **type**: ACTION_TYPE_PROJECTILE
+* **spawn_level**: [1, 2, 3, 4]
+* **spawn_probability**: [1.0, 1.0, 1.0, 1.0]
+* **price**: 180
+* **mana**: 20
+* **max_uses**: 20
+* **never_unlimited**: false
+* **spawn_manual_unlock**: false
+* **recursive**: false
+* **ai_never_uses**: false
+* **is_dangerous_blast**: false
+* **related_projectiles**: {"data/entities/projectiles/deck/acidshot.xml"}
+* **spawn_requires_flag**: 
+* **related_extra_entities**: 
+* **action**:
+
+```lua
+ function()
+      add_projectile("data/entities/projectiles/deck/acidshot.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 10
+    end,
+```
+
+
+
 ### <a id="ACID_TRAIL"></a>![Acid trail](images/ACID_TRAIL.png)Acid trail (ACID_TRAIL)
 
 * **description**: Gives a projectile a trail of acid
@@ -462,34 +490,6 @@
       c.trail_material = c.trail_material .. "acid,"
       c.trail_material_amount = c.trail_material_amount + 5
       draw_actions( 1, true )
-    end,
-```
-
-
-
-### <a id="ACIDSHOT"></a>![Acid ball](images/ACIDSHOT.png)Acid ball (ACIDSHOT)
-
-* **description**: A terrifying acidic projectile
-* **type**: ACTION_TYPE_PROJECTILE
-* **spawn_level**: [1, 2, 3, 4]
-* **spawn_probability**: [1.0, 1.0, 1.0, 1.0]
-* **price**: 180
-* **mana**: 20
-* **max_uses**: 20
-* **never_unlimited**: false
-* **spawn_manual_unlock**: false
-* **recursive**: false
-* **ai_never_uses**: false
-* **is_dangerous_blast**: false
-* **related_projectiles**: {"data/entities/projectiles/deck/acidshot.xml"}
-* **spawn_requires_flag**: 
-* **related_extra_entities**: 
-* **action**:
-
-```lua
- function()
-      add_projectile("data/entities/projectiles/deck/acidshot.xml")
-      c.fire_rate_wait = c.fire_rate_wait + 10
     end,
 ```
 
@@ -1511,6 +1511,40 @@
 
 
 
+### <a id="BLOODLUST"></a>![Bloodlust](images/BLOODLUST.png)Bloodlust (BLOODLUST)
+
+* **description**: A projectile gains a hefty damage boost, but is also able to hurt you
+* **type**: ACTION_TYPE_MODIFIER
+* **spawn_level**: [1, 3, 4, 5, 6]
+* **spawn_probability**: [0.2, 0.3, 0.6, 0.6, 0.3]
+* **price**: 160
+* **mana**: 2
+* **max_uses**: 0
+* **never_unlimited**: false
+* **spawn_manual_unlock**: false
+* **recursive**: false
+* **ai_never_uses**: false
+* **is_dangerous_blast**: false
+* **related_projectiles**: 
+* **spawn_requires_flag**: 
+* **related_extra_entities**: { "data/entities/particles/tinyspark_red.xml" }
+* **action**:
+
+```lua
+ function()
+      c.damage_projectile_add = c.damage_projectile_add + 1.3
+      c.gore_particles    = c.gore_particles + 15
+      c.fire_rate_wait    = c.fire_rate_wait + 8
+      c.friendly_fire    = true
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
+      c.spread_degrees = c.spread_degrees + 6
+      c.extra_entities    = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,"
+      draw_actions( 1, true )
+    end,
+```
+
+
+
 ### <a id="BLOOD_MAGIC"></a>![Blood magic](images/BLOOD_MAGIC.png)Blood magic (BLOOD_MAGIC)
 
 * **description**: Reduces a spell's mana cost and recharge time greatly, at the costs of four health points
@@ -1622,40 +1656,6 @@
         end
       end
       
-      draw_actions( 1, true )
-    end,
-```
-
-
-
-### <a id="BLOODLUST"></a>![Bloodlust](images/BLOODLUST.png)Bloodlust (BLOODLUST)
-
-* **description**: A projectile gains a hefty damage boost, but is also able to hurt you
-* **type**: ACTION_TYPE_MODIFIER
-* **spawn_level**: [1, 3, 4, 5, 6]
-* **spawn_probability**: [0.2, 0.3, 0.6, 0.6, 0.3]
-* **price**: 160
-* **mana**: 2
-* **max_uses**: 0
-* **never_unlimited**: false
-* **spawn_manual_unlock**: false
-* **recursive**: false
-* **ai_never_uses**: false
-* **is_dangerous_blast**: false
-* **related_projectiles**: 
-* **spawn_requires_flag**: 
-* **related_extra_entities**: { "data/entities/particles/tinyspark_red.xml" }
-* **action**:
-
-```lua
- function()
-      c.damage_projectile_add = c.damage_projectile_add + 1.3
-      c.gore_particles    = c.gore_particles + 15
-      c.fire_rate_wait    = c.fire_rate_wait + 8
-      c.friendly_fire    = true
-      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
-      c.spread_degrees = c.spread_degrees + 6
-      c.extra_entities    = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,"
       draw_actions( 1, true )
     end,
 ```
@@ -2398,6 +2398,36 @@
 
 
 
+### <a id="CHAINSAW"></a>![Chainsaw](images/CHAINSAW.png)Chainsaw (CHAINSAW)
+
+* **description**: A good tool for cutting meat. Also has some magical properties...
+* **type**: ACTION_TYPE_PROJECTILE
+* **spawn_level**: [0, 2]
+* **spawn_probability**: [1.0, 1.0]
+* **price**: 80
+* **mana**: 1
+* **max_uses**: 0
+* **never_unlimited**: false
+* **spawn_manual_unlock**: false
+* **recursive**: false
+* **ai_never_uses**: false
+* **is_dangerous_blast**: false
+* **related_projectiles**: {"data/entities/projectiles/deck/chainsaw.xml"}
+* **spawn_requires_flag**: 
+* **related_extra_entities**: 
+* **action**:
+
+```lua
+ function()
+      add_projectile("data/entities/projectiles/deck/chainsaw.xml")
+      c.fire_rate_wait = 0
+      c.spread_degrees = c.spread_degrees + 6.0
+      current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the digger reload time back to 0
+    end,
+```
+
+
+
 ### <a id="CHAIN_BOLT"></a>![Chain bolt](images/CHAIN_BOLT.png)Chain bolt (CHAIN_BOLT)
 
 * **description**: Fires a mysterious bolt that jumps from enemy to enemy
@@ -2457,36 +2487,6 @@
       end
       c.spread_degrees = c.spread_degrees + 10.0
       draw_actions( 1, true )
-    end,
-```
-
-
-
-### <a id="CHAINSAW"></a>![Chainsaw](images/CHAINSAW.png)Chainsaw (CHAINSAW)
-
-* **description**: A good tool for cutting meat. Also has some magical properties...
-* **type**: ACTION_TYPE_PROJECTILE
-* **spawn_level**: [0, 2]
-* **spawn_probability**: [1.0, 1.0]
-* **price**: 80
-* **mana**: 1
-* **max_uses**: 0
-* **never_unlimited**: false
-* **spawn_manual_unlock**: false
-* **recursive**: false
-* **ai_never_uses**: false
-* **is_dangerous_blast**: false
-* **related_projectiles**: {"data/entities/projectiles/deck/chainsaw.xml"}
-* **spawn_requires_flag**: 
-* **related_extra_entities**: 
-* **action**:
-
-```lua
- function()
-      add_projectile("data/entities/projectiles/deck/chainsaw.xml")
-      c.fire_rate_wait = 0
-      c.spread_degrees = c.spread_degrees + 6.0
-      current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the digger reload time back to 0
     end,
 ```
 
@@ -3241,6 +3241,35 @@
 
 
 
+### <a id="CURSED_ORB"></a>![Cursed sphere](images/CURSED_ORB.png)Cursed sphere (CURSED_ORB)
+
+* **description**: A projectile that brings bad luck to anyone it hits
+* **type**: ACTION_TYPE_PROJECTILE
+* **spawn_level**: [1, 2, 3]
+* **spawn_probability**: [0.3, 0.2, 0.1]
+* **price**: 200
+* **mana**: 40
+* **max_uses**: 0
+* **never_unlimited**: false
+* **spawn_manual_unlock**: false
+* **recursive**: false
+* **ai_never_uses**: false
+* **is_dangerous_blast**: false
+* **related_projectiles**: {"data/entities/projectiles/orb_cursed.xml"}
+* **spawn_requires_flag**: 
+* **related_extra_entities**: 
+* **action**:
+
+```lua
+ function()
+      add_projectile("data/entities/projectiles/orb_cursed.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 20
+      shot_effects.recoil_knockback = 40.0
+    end,
+```
+
+
+
 ### <a id="CURSE_WITHER_ELECTRICITY"></a>![Weakening Curse - Electricity](images/CURSE_WITHER_ELECTRICITY.png)Weakening Curse - Electricity (CURSE_WITHER_ELECTRICITY)
 
 * **description**: Target hit by a projectile takes 25% extra electricity damage for a time
@@ -3348,35 +3377,6 @@
  function()
       c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_curse_wither_projectile.xml,"
       draw_actions( 1, true )
-    end,
-```
-
-
-
-### <a id="CURSED_ORB"></a>![Cursed sphere](images/CURSED_ORB.png)Cursed sphere (CURSED_ORB)
-
-* **description**: A projectile that brings bad luck to anyone it hits
-* **type**: ACTION_TYPE_PROJECTILE
-* **spawn_level**: [1, 2, 3]
-* **spawn_probability**: [0.3, 0.2, 0.1]
-* **price**: 200
-* **mana**: 40
-* **max_uses**: 0
-* **never_unlimited**: false
-* **spawn_manual_unlock**: false
-* **recursive**: false
-* **ai_never_uses**: false
-* **is_dangerous_blast**: false
-* **related_projectiles**: {"data/entities/projectiles/orb_cursed.xml"}
-* **spawn_requires_flag**: 
-* **related_extra_entities**: 
-* **action**:
-
-```lua
- function()
-      add_projectile("data/entities/projectiles/orb_cursed.xml")
-      c.fire_rate_wait = c.fire_rate_wait + 20
-      shot_effects.recoil_knockback = 40.0
     end,
 ```
 
@@ -3753,6 +3753,37 @@
       c.fire_rate_wait = c.fire_rate_wait + 20
       c.spread_degrees = c.spread_degrees + 3.4
       shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
+    end,
+```
+
+
+
+### <a id="DISC_BULLET_BIGGER"></a>![Summon Omega Sawblade](images/DISC_BULLET_BIGGER.png)Summon Omega Sawblade (DISC_BULLET_BIGGER)
+
+* **description**: That's a lot of sawblade
+* **type**: ACTION_TYPE_PROJECTILE
+* **spawn_level**: [2, 3, 5, 10]
+* **spawn_probability**: [0.1, 0.6, 1.0, 0.1]
+* **price**: 270
+* **mana**: 70
+* **max_uses**: 0
+* **never_unlimited**: false
+* **spawn_manual_unlock**: false
+* **recursive**: false
+* **ai_never_uses**: false
+* **is_dangerous_blast**: false
+* **related_projectiles**: {"data/entities/projectiles/deck/disc_bullet_bigger.xml"}
+* **spawn_requires_flag**: card_unlocked_everything
+* **related_extra_entities**: 
+* **action**:
+
+```lua
+ function()
+      add_projectile("data/entities/projectiles/deck/disc_bullet_bigger.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 40
+      c.spread_degrees = c.spread_degrees + 6.4
+      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
+      c.damage_projectile_add = c.damage_projectile_add + 0.2
     end,
 ```
 
@@ -4460,35 +4491,6 @@
 
 
 
-### <a id="ESSENCE_TO_POWER"></a>![Essence to Power](images/ESSENCE_TO_POWER.png)Essence to Power (ESSENCE_TO_POWER)
-
-* **description**: Increases a projectile's damage based on the number of creatures nearby
-* **type**: ACTION_TYPE_MODIFIER
-* **spawn_level**: [1, 2, 3, 10]
-* **spawn_probability**: [0.2, 0.5, 0.5, 0.1]
-* **price**: 120
-* **mana**: 110
-* **max_uses**: 0
-* **never_unlimited**: false
-* **spawn_manual_unlock**: false
-* **recursive**: false
-* **ai_never_uses**: false
-* **is_dangerous_blast**: false
-* **related_projectiles**: 
-* **spawn_requires_flag**: 
-* **related_extra_entities**: { "data/entities/misc/essence_to_power.xml" }
-* **action**:
-
-```lua
- function()
-      c.extra_entities = c.extra_entities .. "data/entities/misc/essence_to_power.xml,"
-      c.fire_rate_wait    = c.fire_rate_wait + 20
-      draw_actions( 1, true )
-    end,
-```
-
-
-
 ### <a id="ENERGY_SHIELD"></a>![Energy shield](images/ENERGY_SHIELD.png)Energy shield (ENERGY_SHIELD)
 
 * **description**: Deflects incoming projectiles
@@ -4573,6 +4575,35 @@
         c.speed_multiplier = 0
       end
       
+      draw_actions( 1, true )
+    end,
+```
+
+
+
+### <a id="ESSENCE_TO_POWER"></a>![Essence to Power](images/ESSENCE_TO_POWER.png)Essence to Power (ESSENCE_TO_POWER)
+
+* **description**: Increases a projectile's damage based on the number of creatures nearby
+* **type**: ACTION_TYPE_MODIFIER
+* **spawn_level**: [1, 2, 3, 10]
+* **spawn_probability**: [0.2, 0.5, 0.5, 0.1]
+* **price**: 120
+* **mana**: 110
+* **max_uses**: 0
+* **never_unlimited**: false
+* **spawn_manual_unlock**: false
+* **recursive**: false
+* **ai_never_uses**: false
+* **is_dangerous_blast**: false
+* **related_projectiles**: 
+* **spawn_requires_flag**: 
+* **related_extra_entities**: { "data/entities/misc/essence_to_power.xml" }
+* **action**:
+
+```lua
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/essence_to_power.xml,"
+      c.fire_rate_wait    = c.fire_rate_wait + 20
       draw_actions( 1, true )
     end,
 ```
@@ -4826,65 +4857,6 @@
 
 
 
-### <a id="FIRE_BLAST"></a>![Explosion of brimstone](images/FIRE_BLAST.png)Explosion of brimstone (FIRE_BLAST)
-
-* **description**: A fiery explosion
-* **type**: ACTION_TYPE_STATIC_PROJECTILE
-* **spawn_level**: [0, 1, 3, 5]
-* **spawn_probability**: [0.5, 0.5, 0.6, 0.6]
-* **price**: 120
-* **mana**: 10
-* **max_uses**: 0
-* **never_unlimited**: false
-* **spawn_manual_unlock**: false
-* **recursive**: false
-* **ai_never_uses**: false
-* **is_dangerous_blast**: true
-* **related_projectiles**: {"data/entities/projectiles/deck/fireblast.xml"}
-* **spawn_requires_flag**: 
-* **related_extra_entities**: 
-* **action**:
-
-```lua
- function()
-      add_projectile("data/entities/projectiles/deck/fireblast.xml")
-      c.fire_rate_wait = c.fire_rate_wait + 3
-      c.screenshake = c.screenshake + 0.5
-    end,
-```
-
-
-
-### <a id="FIRE_TRAIL"></a>![Fire trail](images/FIRE_TRAIL.png)Fire trail (FIRE_TRAIL)
-
-* **description**: Gives a projectile a trail of fiery particles
-* **type**: ACTION_TYPE_MODIFIER
-* **spawn_level**: [0, 1, 2, 3, 4]
-* **spawn_probability**: [0.3, 0.3, 0.3, 0.3, 0.3]
-* **price**: 130
-* **mana**: 10
-* **max_uses**: 0
-* **never_unlimited**: false
-* **spawn_manual_unlock**: false
-* **recursive**: false
-* **ai_never_uses**: false
-* **is_dangerous_blast**: false
-* **related_projectiles**: 
-* **spawn_requires_flag**: 
-* **related_extra_entities**: 
-* **action**:
-
-```lua
- function()
-      c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_on_fire.xml,"
-      c.trail_material = c.trail_material .. "fire,"
-      c.trail_material_amount = c.trail_material_amount + 10
-      draw_actions( 1, true )
-    end,
-```
-
-
-
 ### <a id="FIREBALL"></a>![Fireball](images/FIREBALL.png)Fireball (FIREBALL)
 
 * **description**: A powerful exploding spell
@@ -5055,6 +5027,65 @@
       c.fire_rate_wait = c.fire_rate_wait + 60
       c.ragdoll_fx = 2
       shot_effects.recoil_knockback = 120.0
+    end,
+```
+
+
+
+### <a id="FIRE_BLAST"></a>![Explosion of brimstone](images/FIRE_BLAST.png)Explosion of brimstone (FIRE_BLAST)
+
+* **description**: A fiery explosion
+* **type**: ACTION_TYPE_STATIC_PROJECTILE
+* **spawn_level**: [0, 1, 3, 5]
+* **spawn_probability**: [0.5, 0.5, 0.6, 0.6]
+* **price**: 120
+* **mana**: 10
+* **max_uses**: 0
+* **never_unlimited**: false
+* **spawn_manual_unlock**: false
+* **recursive**: false
+* **ai_never_uses**: false
+* **is_dangerous_blast**: true
+* **related_projectiles**: {"data/entities/projectiles/deck/fireblast.xml"}
+* **spawn_requires_flag**: 
+* **related_extra_entities**: 
+* **action**:
+
+```lua
+ function()
+      add_projectile("data/entities/projectiles/deck/fireblast.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 3
+      c.screenshake = c.screenshake + 0.5
+    end,
+```
+
+
+
+### <a id="FIRE_TRAIL"></a>![Fire trail](images/FIRE_TRAIL.png)Fire trail (FIRE_TRAIL)
+
+* **description**: Gives a projectile a trail of fiery particles
+* **type**: ACTION_TYPE_MODIFIER
+* **spawn_level**: [0, 1, 2, 3, 4]
+* **spawn_probability**: [0.3, 0.3, 0.3, 0.3, 0.3]
+* **price**: 130
+* **mana**: 10
+* **max_uses**: 0
+* **never_unlimited**: false
+* **spawn_manual_unlock**: false
+* **recursive**: false
+* **ai_never_uses**: false
+* **is_dangerous_blast**: false
+* **related_projectiles**: 
+* **spawn_requires_flag**: 
+* **related_extra_entities**: 
+* **action**:
+
+```lua
+ function()
+      c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_on_fire.xml,"
+      c.trail_material = c.trail_material .. "fire,"
+      c.trail_material_amount = c.trail_material_amount + 10
+      draw_actions( 1, true )
     end,
 ```
 
@@ -5335,6 +5366,37 @@
       c.spread_degrees = c.spread_degrees + 24.0
       c.fire_rate_wait = c.fire_rate_wait + 80
       current_reload_time = current_reload_time + 40
+    end,
+```
+
+
+
+### <a id="FUNKY_SPELL"></a>![???](images/FUNKY_SPELL.png)??? (FUNKY_SPELL)
+
+* **description**: ???
+* **type**: ACTION_TYPE_PROJECTILE
+* **spawn_level**: [6, 10]
+* **spawn_probability**: [0.1, 0.1]
+* **price**: 50
+* **mana**: 5
+* **max_uses**: 0
+* **never_unlimited**: false
+* **spawn_manual_unlock**: false
+* **recursive**: false
+* **ai_never_uses**: false
+* **is_dangerous_blast**: false
+* **related_projectiles**: {"data/entities/projectiles/deck/machinegun_bullet.xml"}
+* **spawn_requires_flag**: card_unlocked_funky
+* **related_extra_entities**: 
+* **action**:
+
+```lua
+ function()
+      add_projectile("data/entities/projectiles/deck/machinegun_bullet.xml")
+      c.fire_rate_wait = c.fire_rate_wait - 3
+      c.screenshake = c.screenshake + 0.2
+      c.spread_degrees = c.spread_degrees + 2.0
+      c.damage_critical_chance = c.damage_critical_chance + 1
     end,
 ```
 
@@ -6189,6 +6251,34 @@
 
 
 
+### <a id="HITFX_PETRIFY"></a>![Petrify](images/HITFX_PETRIFY.png)Petrify (HITFX_PETRIFY)
+
+* **description**: Turns a wounded enemy into stone
+* **type**: ACTION_TYPE_MODIFIER
+* **spawn_level**: [2, 3, 5, 6]
+* **spawn_probability**: [0.2, 0.2, 0.2, 0.2]
+* **price**: 140
+* **mana**: 10
+* **max_uses**: 0
+* **never_unlimited**: false
+* **spawn_manual_unlock**: false
+* **recursive**: false
+* **ai_never_uses**: false
+* **is_dangerous_blast**: false
+* **related_projectiles**: 
+* **spawn_requires_flag**: 
+* **related_extra_entities**: 
+* **action**:
+
+```lua
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_petrify.xml,"
+      draw_actions( 1, true )
+    end,
+```
+
+
+
 ### <a id="HITFX_TOXIC_CHARM"></a>![Charm on toxic sludge](images/HITFX_TOXIC_CHARM.png)Charm on toxic sludge (HITFX_TOXIC_CHARM)
 
 * **description**: Makes a projectile charm creatures covered in toxic sludge
@@ -6448,34 +6538,6 @@
       draw_actions( 1, true )
       c.damage_projectile_add = c.damage_projectile_add + 0.3
       c.fire_rate_wait    = c.fire_rate_wait - 6
-    end,
-```
-
-
-
-### <a id="I_SHAPE"></a>![Formation - behind your back](images/I_SHAPE.png)Formation - behind your back (I_SHAPE)
-
-* **description**: Casts two spells: one ahead of and one behind the caster
-* **type**: ACTION_TYPE_DRAW_MANY
-* **spawn_level**: [1, 2, 3, 4]
-* **spawn_probability**: [0.4, 0.4, 0.4, 0.4]
-* **price**: 80
-* **mana**: 0
-* **max_uses**: 0
-* **never_unlimited**: false
-* **spawn_manual_unlock**: false
-* **recursive**: false
-* **ai_never_uses**: false
-* **is_dangerous_blast**: false
-* **related_projectiles**: 
-* **spawn_requires_flag**: 
-* **related_extra_entities**: 
-* **action**:
-
-```lua
- function()
-      draw_actions(2, true)
-      c.pattern_degrees = 180
     end,
 ```
 
@@ -6992,6 +7054,34 @@
       end
       c.fire_rate_wait = c.fire_rate_wait - 2
       c.spread_degrees = c.spread_degrees + 25
+    end,
+```
+
+
+
+### <a id="I_SHAPE"></a>![Formation - behind your back](images/I_SHAPE.png)Formation - behind your back (I_SHAPE)
+
+* **description**: Casts two spells: one ahead of and one behind the caster
+* **type**: ACTION_TYPE_DRAW_MANY
+* **spawn_level**: [1, 2, 3, 4]
+* **spawn_probability**: [0.4, 0.4, 0.4, 0.4]
+* **price**: 80
+* **mana**: 0
+* **max_uses**: 0
+* **never_unlimited**: false
+* **spawn_manual_unlock**: false
+* **recursive**: false
+* **ai_never_uses**: false
+* **is_dangerous_blast**: false
+* **related_projectiles**: 
+* **spawn_requires_flag**: 
+* **related_extra_entities**: 
+* **action**:
+
+```lua
+ function()
+      draw_actions(2, true)
+      c.pattern_degrees = 180
     end,
 ```
 
@@ -7515,6 +7605,35 @@
 
 
 
+### <a id="LASER_LUMINOUS_DRILL"></a>![Luminous drill with timer](images/LASER_LUMINOUS_DRILL.png)Luminous drill with timer (LASER_LUMINOUS_DRILL)
+
+* **description**: A pinpointed, short-ranged beam of concentrated light that casts another spell after a timer runs out
+* **type**: ACTION_TYPE_PROJECTILE
+* **spawn_level**: [0, 2]
+* **spawn_probability**: [1.0, 1.0]
+* **price**: 220
+* **mana**: 30
+* **max_uses**: 0
+* **never_unlimited**: false
+* **spawn_manual_unlock**: false
+* **recursive**: false
+* **ai_never_uses**: false
+* **is_dangerous_blast**: false
+* **related_projectiles**: {"data/entities/projectiles/deck/luminous_drill.xml"}
+* **spawn_requires_flag**: 
+* **related_extra_entities**: 
+* **action**:
+
+```lua
+ function()
+      add_projectile_trigger_timer("data/entities/projectiles/deck/luminous_drill.xml",4,1)
+      c.fire_rate_wait = c.fire_rate_wait - 35
+      current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the digger reload time back to 0
+    end,
+```
+
+
+
 ### <a id="LAVA_TO_BLOOD"></a>![Lava to blood](images/LAVA_TO_BLOOD.png)Lava to blood (LAVA_TO_BLOOD)
 
 * **description**: Makes any lava within a projectile's range turn into blood
@@ -7652,6 +7771,91 @@
 ```lua
  function()
       c.extra_entities = c.extra_entities .. "data/entities/misc/light.xml,"
+      draw_actions( 1, true )
+    end,
+```
+
+
+
+### <a id="LIGHTNING"></a>![Lightning bolt](images/LIGHTNING.png)Lightning bolt (LIGHTNING)
+
+* **description**: The primordial force of nature
+* **type**: ACTION_TYPE_PROJECTILE
+* **spawn_level**: [1, 2, 5, 6]
+* **spawn_probability**: [1.0, 1.0, 1.0, 1.0]
+* **price**: 250
+* **mana**: 70
+* **max_uses**: 0
+* **never_unlimited**: false
+* **spawn_manual_unlock**: false
+* **recursive**: false
+* **ai_never_uses**: false
+* **is_dangerous_blast**: false
+* **related_projectiles**: {"data/entities/projectiles/deck/lightning.xml"}
+* **spawn_requires_flag**: 
+* **related_extra_entities**: 
+* **action**:
+
+```lua
+ function()
+      add_projectile("data/entities/projectiles/deck/lightning.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 50
+      shot_effects.recoil_knockback = 180.0
+    end,
+```
+
+
+
+### <a id="LIGHTNING_RAY"></a>![Lightning thrower](images/LIGHTNING_RAY.png)Lightning thrower (LIGHTNING_RAY)
+
+* **description**: Makes a projectile cast lightning in random directions
+* **type**: ACTION_TYPE_MODIFIER
+* **spawn_level**: [1, 2, 3, 4, 5]
+* **spawn_probability**: [0.0, 0.0, 0.4, 0.4, 0.4]
+* **price**: 180
+* **mana**: 110
+* **max_uses**: 16
+* **never_unlimited**: false
+* **spawn_manual_unlock**: false
+* **recursive**: false
+* **ai_never_uses**: false
+* **is_dangerous_blast**: false
+* **related_projectiles**: 
+* **spawn_requires_flag**: 
+* **related_extra_entities**: { "data/entities/misc/lightning_ray.xml" }
+* **action**:
+
+```lua
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/lightning_ray.xml,"
+      draw_actions( 1, true )
+    end,
+```
+
+
+
+### <a id="LIGHTNING_RAY_ENEMY"></a>![Personal lightning caster](images/LIGHTNING_RAY_ENEMY.png)Personal lightning caster (LIGHTNING_RAY_ENEMY)
+
+* **description**: Makes a projectile turn the creatures it hits into living thunderstorms
+* **type**: ACTION_TYPE_MODIFIER
+* **spawn_level**: [1, 2, 3, 4, 5]
+* **spawn_probability**: [0.0, 0.0, 0.4, 0.4, 0.4]
+* **price**: 150
+* **mana**: 90
+* **max_uses**: 20
+* **never_unlimited**: false
+* **spawn_manual_unlock**: false
+* **recursive**: false
+* **ai_never_uses**: false
+* **is_dangerous_blast**: false
+* **related_projectiles**: 
+* **spawn_requires_flag**: 
+* **related_extra_entities**: { "data/entities/misc/hitfx_lightning_ray_enemy.xml" }
+* **action**:
+
+```lua
+ function()
+      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_lightning_ray_enemy.xml,"
       draw_actions( 1, true )
     end,
 ```
@@ -7823,91 +8027,6 @@
 
 
 
-### <a id="LIGHTNING"></a>![Lightning bolt](images/LIGHTNING.png)Lightning bolt (LIGHTNING)
-
-* **description**: The primordial force of nature
-* **type**: ACTION_TYPE_PROJECTILE
-* **spawn_level**: [1, 2, 5, 6]
-* **spawn_probability**: [1.0, 1.0, 1.0, 1.0]
-* **price**: 250
-* **mana**: 70
-* **max_uses**: 0
-* **never_unlimited**: false
-* **spawn_manual_unlock**: false
-* **recursive**: false
-* **ai_never_uses**: false
-* **is_dangerous_blast**: false
-* **related_projectiles**: {"data/entities/projectiles/deck/lightning.xml"}
-* **spawn_requires_flag**: 
-* **related_extra_entities**: 
-* **action**:
-
-```lua
- function()
-      add_projectile("data/entities/projectiles/deck/lightning.xml")
-      c.fire_rate_wait = c.fire_rate_wait + 50
-      shot_effects.recoil_knockback = 180.0
-    end,
-```
-
-
-
-### <a id="LIGHTNING_RAY"></a>![Lightning thrower](images/LIGHTNING_RAY.png)Lightning thrower (LIGHTNING_RAY)
-
-* **description**: Makes a projectile cast lightning in random directions
-* **type**: ACTION_TYPE_MODIFIER
-* **spawn_level**: [1, 2, 3, 4, 5]
-* **spawn_probability**: [0.0, 0.0, 0.4, 0.4, 0.4]
-* **price**: 180
-* **mana**: 110
-* **max_uses**: 16
-* **never_unlimited**: false
-* **spawn_manual_unlock**: false
-* **recursive**: false
-* **ai_never_uses**: false
-* **is_dangerous_blast**: false
-* **related_projectiles**: 
-* **spawn_requires_flag**: 
-* **related_extra_entities**: { "data/entities/misc/lightning_ray.xml" }
-* **action**:
-
-```lua
- function()
-      c.extra_entities = c.extra_entities .. "data/entities/misc/lightning_ray.xml,"
-      draw_actions( 1, true )
-    end,
-```
-
-
-
-### <a id="LIGHTNING_RAY_ENEMY"></a>![Personal lightning caster](images/LIGHTNING_RAY_ENEMY.png)Personal lightning caster (LIGHTNING_RAY_ENEMY)
-
-* **description**: Makes a projectile turn the creatures it hits into living thunderstorms
-* **type**: ACTION_TYPE_MODIFIER
-* **spawn_level**: [1, 2, 3, 4, 5]
-* **spawn_probability**: [0.0, 0.0, 0.4, 0.4, 0.4]
-* **price**: 150
-* **mana**: 90
-* **max_uses**: 20
-* **never_unlimited**: false
-* **spawn_manual_unlock**: false
-* **recursive**: false
-* **ai_never_uses**: false
-* **is_dangerous_blast**: false
-* **related_projectiles**: 
-* **spawn_requires_flag**: 
-* **related_extra_entities**: { "data/entities/misc/hitfx_lightning_ray_enemy.xml" }
-* **action**:
-
-```lua
- function()
-      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_lightning_ray_enemy.xml,"
-      draw_actions( 1, true )
-    end,
-```
-
-
-
 ### <a id="LINE_ARC"></a>![Linear arc](images/LINE_ARC.png)Linear arc (LINE_ARC)
 
 * **description**: Makes a projectile fly only in cardinal or diagonal lines
@@ -8017,35 +8136,6 @@
 ```lua
  function()
       add_projectile("data/entities/projectiles/deck/luminous_drill.xml")
-      c.fire_rate_wait = c.fire_rate_wait - 35
-      current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the digger reload time back to 0
-    end,
-```
-
-
-
-### <a id="LASER_LUMINOUS_DRILL"></a>![Luminous drill with timer](images/LASER_LUMINOUS_DRILL.png)Luminous drill with timer (LASER_LUMINOUS_DRILL)
-
-* **description**: A pinpointed, short-ranged beam of concentrated light that casts another spell after a timer runs out
-* **type**: ACTION_TYPE_PROJECTILE
-* **spawn_level**: [0, 2]
-* **spawn_probability**: [1.0, 1.0]
-* **price**: 220
-* **mana**: 30
-* **max_uses**: 0
-* **never_unlimited**: false
-* **spawn_manual_unlock**: false
-* **recursive**: false
-* **ai_never_uses**: false
-* **is_dangerous_blast**: false
-* **related_projectiles**: {"data/entities/projectiles/deck/luminous_drill.xml"}
-* **spawn_requires_flag**: 
-* **related_extra_entities**: 
-* **action**:
-
-```lua
- function()
-      add_projectile_trigger_timer("data/entities/projectiles/deck/luminous_drill.xml",4,1)
       c.fire_rate_wait = c.fire_rate_wait - 35
       current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the digger reload time back to 0
     end,
@@ -9179,37 +9269,6 @@
 
 
 
-### <a id="DISC_BULLET_BIGGER"></a>![Summon Omega Sawblade](images/DISC_BULLET_BIGGER.png)Summon Omega Sawblade (DISC_BULLET_BIGGER)
-
-* **description**: That's a lot of sawblade
-* **type**: ACTION_TYPE_PROJECTILE
-* **spawn_level**: [2, 3, 5, 10]
-* **spawn_probability**: [0.1, 0.6, 1.0, 0.1]
-* **price**: 270
-* **mana**: 70
-* **max_uses**: 0
-* **never_unlimited**: false
-* **spawn_manual_unlock**: false
-* **recursive**: false
-* **ai_never_uses**: false
-* **is_dangerous_blast**: false
-* **related_projectiles**: {"data/entities/projectiles/deck/disc_bullet_bigger.xml"}
-* **spawn_requires_flag**: card_unlocked_everything
-* **related_extra_entities**: 
-* **action**:
-
-```lua
- function()
-      add_projectile("data/entities/projectiles/deck/disc_bullet_bigger.xml")
-      c.fire_rate_wait = c.fire_rate_wait + 40
-      c.spread_degrees = c.spread_degrees + 6.4
-      shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
-      c.damage_projectile_add = c.damage_projectile_add + 0.2
-    end,
-```
-
-
-
 ### <a id="ORBIT_DISCS"></a>![Sawblade Orbit](images/ORBIT_DISCS.png)Sawblade Orbit (ORBIT_DISCS)
 
 * **description**: Makes four sawblades rotate around a projectile
@@ -9432,34 +9491,6 @@
  function()
       draw_actions(5, true)
       c.pattern_degrees = 180
-    end,
-```
-
-
-
-### <a id="HITFX_PETRIFY"></a>![Petrify](images/HITFX_PETRIFY.png)Petrify (HITFX_PETRIFY)
-
-* **description**: Turns a wounded enemy into stone
-* **type**: ACTION_TYPE_MODIFIER
-* **spawn_level**: [2, 3, 5, 6]
-* **spawn_probability**: [0.2, 0.2, 0.2, 0.2]
-* **price**: 140
-* **mana**: 10
-* **max_uses**: 0
-* **never_unlimited**: false
-* **spawn_manual_unlock**: false
-* **recursive**: false
-* **ai_never_uses**: false
-* **is_dangerous_blast**: false
-* **related_projectiles**: 
-* **spawn_requires_flag**: 
-* **related_extra_entities**: 
-* **action**:
-
-```lua
- function()
-      c.extra_entities = c.extra_entities .. "data/entities/misc/hitfx_petrify.xml,"
-      draw_actions( 1, true )
     end,
 ```
 
@@ -11249,34 +11280,6 @@
 
 
 
-### <a id="SPIRAL_SHOT"></a>![Spiral shot](images/SPIRAL_SHOT.png)Spiral shot (SPIRAL_SHOT)
-
-* **description**: A mystical whirlwind of magic sparks
-* **type**: ACTION_TYPE_PROJECTILE
-* **spawn_level**: [4, 5, 6]
-* **spawn_probability**: [1.0, 1.0, 1.0]
-* **price**: 190
-* **mana**: 50
-* **max_uses**: 15
-* **never_unlimited**: false
-* **spawn_manual_unlock**: false
-* **recursive**: false
-* **ai_never_uses**: false
-* **is_dangerous_blast**: false
-* **related_projectiles**: {"data/entities/projectiles/deck/spiral_shot.xml"}
-* **spawn_requires_flag**: card_unlocked_spiral_shot
-* **related_extra_entities**: 
-* **action**:
-
-```lua
- function()
-      add_projectile("data/entities/projectiles/deck/spiral_shot.xml")
-      c.fire_rate_wait = c.fire_rate_wait + 20
-    end,
-```
-
-
-
 ### <a id="SPIRALING_SHOT"></a>![Spiral Arc](images/SPIRALING_SHOT.png)Spiral Arc (SPIRALING_SHOT)
 
 * **description**: A projectile flies in a spiralling pattern
@@ -11303,6 +11306,34 @@
       c.damage_projectile_add = c.damage_projectile_add + 0.1
       c.fire_rate_wait    = c.fire_rate_wait - 6
       c.lifetime_add     = c.lifetime_add + 50
+    end,
+```
+
+
+
+### <a id="SPIRAL_SHOT"></a>![Spiral shot](images/SPIRAL_SHOT.png)Spiral shot (SPIRAL_SHOT)
+
+* **description**: A mystical whirlwind of magic sparks
+* **type**: ACTION_TYPE_PROJECTILE
+* **spawn_level**: [4, 5, 6]
+* **spawn_probability**: [1.0, 1.0, 1.0]
+* **price**: 190
+* **mana**: 50
+* **max_uses**: 15
+* **never_unlimited**: false
+* **spawn_manual_unlock**: false
+* **recursive**: false
+* **ai_never_uses**: false
+* **is_dangerous_blast**: false
+* **related_projectiles**: {"data/entities/projectiles/deck/spiral_shot.xml"}
+* **spawn_requires_flag**: card_unlocked_spiral_shot
+* **related_extra_entities**: 
+* **action**:
+
+```lua
+ function()
+      add_projectile("data/entities/projectiles/deck/spiral_shot.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 20
     end,
 ```
 
@@ -11884,34 +11915,6 @@
 
 
 
-### <a id="T_SHAPE"></a>![Formation - above and below](images/T_SHAPE.png)Formation - above and below (T_SHAPE)
-
-* **description**: Casts 3 spells - ahead, above and below the caster
-* **type**: ACTION_TYPE_DRAW_MANY
-* **spawn_level**: [1, 2, 3, 4, 5]
-* **spawn_probability**: [0.4, 0.4, 0.4, 0.4, 0.4]
-* **price**: 120
-* **mana**: 3
-* **max_uses**: 0
-* **never_unlimited**: false
-* **spawn_manual_unlock**: false
-* **recursive**: false
-* **ai_never_uses**: false
-* **is_dangerous_blast**: false
-* **related_projectiles**: 
-* **spawn_requires_flag**: 
-* **related_extra_entities**: 
-* **action**:
-
-```lua
- function()
-      draw_actions(3, true)
-      c.pattern_degrees = 90
-    end,
-```
-
-
-
 ### <a id="TAU"></a>![Tau](images/TAU.png)Tau (TAU)
 
 * **description**: Copies the two following spells in the wand when cast
@@ -11971,6 +11974,34 @@
 
 
 
+### <a id="TELEPORTATION_FIELD"></a>![Circle of displacement](images/TELEPORTATION_FIELD.png)Circle of displacement (TELEPORTATION_FIELD)
+
+* **description**: A field of teleportative magic
+* **type**: ACTION_TYPE_STATIC_PROJECTILE
+* **spawn_level**: [0, 1, 2, 3, 4, 5]
+* **spawn_probability**: [0.3, 0.6, 0.3, 0.3, 0.6, 0.3]
+* **price**: 150
+* **mana**: 30
+* **max_uses**: 15
+* **never_unlimited**: false
+* **spawn_manual_unlock**: false
+* **recursive**: false
+* **ai_never_uses**: false
+* **is_dangerous_blast**: false
+* **related_projectiles**: {"data/entities/projectiles/deck/teleportation_field.xml"}
+* **spawn_requires_flag**: 
+* **related_extra_entities**: 
+* **action**:
+
+```lua
+ function()
+      add_projectile("data/entities/projectiles/deck/teleportation_field.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 15
+    end,
+```
+
+
+
 ### <a id="TELEPORT_CAST"></a>![Teleporting cast](images/TELEPORT_CAST.png)Teleporting cast (TELEPORT_CAST)
 
 * **description**: Casts a spell from the closest enemy
@@ -12000,34 +12031,6 @@
 
 
 
-### <a id="TELEPORT_PROJECTILE_CLOSER"></a>![Homebringer Teleport Bolt](images/TELEPORT_PROJECTILE_CLOSER.png)Homebringer Teleport Bolt (TELEPORT_PROJECTILE_CLOSER)
-
-* **description**: Brings the target hit closer to you
-* **type**: ACTION_TYPE_PROJECTILE
-* **spawn_level**: [0, 1, 2, 4, 5, 6]
-* **spawn_probability**: [0.6, 0.6, 0.6, 0.4, 0.4, 0.4]
-* **price**: 130
-* **mana**: 20
-* **max_uses**: 0
-* **never_unlimited**: false
-* **spawn_manual_unlock**: false
-* **recursive**: false
-* **ai_never_uses**: false
-* **is_dangerous_blast**: false
-* **related_projectiles**: {"data/entities/projectiles/deck/teleport_projectile_closer.xml"}
-* **spawn_requires_flag**: 
-* **related_extra_entities**: 
-* **action**:
-
-```lua
- function()
-      add_projectile("data/entities/projectiles/deck/teleport_projectile_closer.xml")
-      c.spread_degrees = c.spread_degrees - 2.0
-    end,
-```
-
-
-
 ### <a id="TELEPORT_PROJECTILE"></a>![Teleport bolt](images/TELEPORT_PROJECTILE.png)Teleport bolt (TELEPORT_PROJECTILE)
 
 * **description**: A magical bolt that moves you wherever it ends up flying
@@ -12051,6 +12054,34 @@
  function()
       add_projectile("data/entities/projectiles/deck/teleport_projectile.xml")
       c.fire_rate_wait = c.fire_rate_wait + 3
+      c.spread_degrees = c.spread_degrees - 2.0
+    end,
+```
+
+
+
+### <a id="TELEPORT_PROJECTILE_CLOSER"></a>![Homebringer Teleport Bolt](images/TELEPORT_PROJECTILE_CLOSER.png)Homebringer Teleport Bolt (TELEPORT_PROJECTILE_CLOSER)
+
+* **description**: Brings the target hit closer to you
+* **type**: ACTION_TYPE_PROJECTILE
+* **spawn_level**: [0, 1, 2, 4, 5, 6]
+* **spawn_probability**: [0.6, 0.6, 0.6, 0.4, 0.4, 0.4]
+* **price**: 130
+* **mana**: 20
+* **max_uses**: 0
+* **never_unlimited**: false
+* **spawn_manual_unlock**: false
+* **recursive**: false
+* **ai_never_uses**: false
+* **is_dangerous_blast**: false
+* **related_projectiles**: {"data/entities/projectiles/deck/teleport_projectile_closer.xml"}
+* **spawn_requires_flag**: 
+* **related_extra_entities**: 
+* **action**:
+
+```lua
+ function()
+      add_projectile("data/entities/projectiles/deck/teleport_projectile_closer.xml")
       c.spread_degrees = c.spread_degrees - 2.0
     end,
 ```
@@ -12109,34 +12140,6 @@
       add_projectile("data/entities/projectiles/deck/teleport_projectile_static.xml")
       c.fire_rate_wait = c.fire_rate_wait + 3
       c.spread_degrees = c.spread_degrees - 2.0
-    end,
-```
-
-
-
-### <a id="TELEPORTATION_FIELD"></a>![Circle of displacement](images/TELEPORTATION_FIELD.png)Circle of displacement (TELEPORTATION_FIELD)
-
-* **description**: A field of teleportative magic
-* **type**: ACTION_TYPE_STATIC_PROJECTILE
-* **spawn_level**: [0, 1, 2, 3, 4, 5]
-* **spawn_probability**: [0.3, 0.6, 0.3, 0.3, 0.6, 0.3]
-* **price**: 150
-* **mana**: 30
-* **max_uses**: 15
-* **never_unlimited**: false
-* **spawn_manual_unlock**: false
-* **recursive**: false
-* **ai_never_uses**: false
-* **is_dangerous_blast**: false
-* **related_projectiles**: {"data/entities/projectiles/deck/teleportation_field.xml"}
-* **spawn_requires_flag**: 
-* **related_extra_entities**: 
-* **action**:
-
-```lua
- function()
-      add_projectile("data/entities/projectiles/deck/teleportation_field.xml")
-      c.fire_rate_wait = c.fire_rate_wait + 15
     end,
 ```
 
@@ -12338,6 +12341,34 @@
 
 
 
+### <a id="THUNDERBALL"></a>![Thunder charge](images/THUNDERBALL.png)Thunder charge (THUNDERBALL)
+
+* **description**: A projectile with immense stored electricity
+* **type**: ACTION_TYPE_PROJECTILE
+* **spawn_level**: [2, 4, 6, 10]
+* **spawn_probability**: [1.0, 1.0, 1.0, 0.2]
+* **price**: 300
+* **mana**: 120
+* **max_uses**: 3
+* **never_unlimited**: false
+* **spawn_manual_unlock**: false
+* **recursive**: false
+* **ai_never_uses**: false
+* **is_dangerous_blast**: false
+* **related_projectiles**: {"data/entities/projectiles/thunderball.xml"}
+* **spawn_requires_flag**: 
+* **related_extra_entities**: 
+* **action**:
+
+```lua
+ function()
+      add_projectile("data/entities/projectiles/thunderball.xml")
+      c.fire_rate_wait = c.fire_rate_wait + 120
+    end,
+```
+
+
+
 ### <a id="THUNDER_BLAST"></a>![Explosion of thunder](images/THUNDER_BLAST.png)Explosion of thunder (THUNDER_BLAST)
 
 * **description**: An electric explosion
@@ -12363,34 +12394,6 @@
       c.fire_rate_wait = c.fire_rate_wait + 15
       c.screenshake = c.screenshake + 3.0
       shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
-    end,
-```
-
-
-
-### <a id="THUNDERBALL"></a>![Thunder charge](images/THUNDERBALL.png)Thunder charge (THUNDERBALL)
-
-* **description**: A projectile with immense stored electricity
-* **type**: ACTION_TYPE_PROJECTILE
-* **spawn_level**: [2, 4, 6, 10]
-* **spawn_probability**: [1.0, 1.0, 1.0, 0.2]
-* **price**: 300
-* **mana**: 120
-* **max_uses**: 3
-* **never_unlimited**: false
-* **spawn_manual_unlock**: false
-* **recursive**: false
-* **ai_never_uses**: false
-* **is_dangerous_blast**: false
-* **related_projectiles**: {"data/entities/projectiles/thunderball.xml"}
-* **spawn_requires_flag**: 
-* **related_extra_entities**: 
-* **action**:
-
-```lua
- function()
-      add_projectile("data/entities/projectiles/thunderball.xml")
-      c.fire_rate_wait = c.fire_rate_wait + 120
     end,
 ```
 
@@ -12753,6 +12756,34 @@
 
 
 
+### <a id="T_SHAPE"></a>![Formation - above and below](images/T_SHAPE.png)Formation - above and below (T_SHAPE)
+
+* **description**: Casts 3 spells - ahead, above and below the caster
+* **type**: ACTION_TYPE_DRAW_MANY
+* **spawn_level**: [1, 2, 3, 4, 5]
+* **spawn_probability**: [0.4, 0.4, 0.4, 0.4, 0.4]
+* **price**: 120
+* **mana**: 3
+* **max_uses**: 0
+* **never_unlimited**: false
+* **spawn_manual_unlock**: false
+* **recursive**: false
+* **ai_never_uses**: false
+* **is_dangerous_blast**: false
+* **related_projectiles**: 
+* **spawn_requires_flag**: 
+* **related_extra_entities**: 
+* **action**:
+
+```lua
+ function()
+      draw_actions(3, true)
+      c.pattern_degrees = 90
+    end,
+```
+
+
+
 ### <a id="UNSTABLE_GUNPOWDER"></a>![Firecrackers](images/UNSTABLE_GUNPOWDER.png)Firecrackers (UNSTABLE_GUNPOWDER)
 
 * **description**: Makes a projectile release firecrackers when it disappears
@@ -12861,34 +12892,6 @@
  function()
       add_projectile("data/entities/projectiles/deck/vacuum_powder.xml")
       c.fire_rate_wait = c.fire_rate_wait + 10
-    end,
-```
-
-
-
-### <a id="W_SHAPE"></a>![Formation - trifurcated](images/W_SHAPE.png)Formation - trifurcated (W_SHAPE)
-
-* **description**: Casts 3 spells in a trifurcated pattern
-* **type**: ACTION_TYPE_DRAW_MANY
-* **spawn_level**: [2, 3, 4, 5, 6]
-* **spawn_probability**: [0.4, 0.3, 0.3, 0.3, 0.3]
-* **price**: 160
-* **mana**: 3
-* **max_uses**: 0
-* **never_unlimited**: false
-* **spawn_manual_unlock**: false
-* **recursive**: false
-* **ai_never_uses**: false
-* **is_dangerous_blast**: false
-* **related_projectiles**: 
-* **spawn_requires_flag**: 
-* **related_extra_entities**: 
-* **action**:
-
-```lua
- function()
-      draw_actions(3, true)
-      c.pattern_degrees = 20
     end,
 ```
 
@@ -13096,6 +13099,34 @@
 
 
 
+### <a id="W_SHAPE"></a>![Formation - trifurcated](images/W_SHAPE.png)Formation - trifurcated (W_SHAPE)
+
+* **description**: Casts 3 spells in a trifurcated pattern
+* **type**: ACTION_TYPE_DRAW_MANY
+* **spawn_level**: [2, 3, 4, 5, 6]
+* **spawn_probability**: [0.4, 0.3, 0.3, 0.3, 0.3]
+* **price**: 160
+* **mana**: 3
+* **max_uses**: 0
+* **never_unlimited**: false
+* **spawn_manual_unlock**: false
+* **recursive**: false
+* **ai_never_uses**: false
+* **is_dangerous_blast**: false
+* **related_projectiles**: 
+* **spawn_requires_flag**: 
+* **related_extra_entities**: 
+* **action**:
+
+```lua
+ function()
+      draw_actions(3, true)
+      c.pattern_degrees = 20
+    end,
+```
+
+
+
 ### <a id="X_RAY"></a>![All-seeing eye](images/X_RAY.png)All-seeing eye (X_RAY)
 
 * **description**: See into the unexplored. But not everywhere...
@@ -13229,37 +13260,6 @@
       end
       
       draw_actions( 1, true )
-    end,
-```
-
-
-
-### <a id="FUNKY_SPELL"></a>![???](images/FUNKY_SPELL.png)??? (FUNKY_SPELL)
-
-* **description**: ???
-* **type**: ACTION_TYPE_PROJECTILE
-* **spawn_level**: [6, 10]
-* **spawn_probability**: [0.1, 0.1]
-* **price**: 50
-* **mana**: 5
-* **max_uses**: 0
-* **never_unlimited**: false
-* **spawn_manual_unlock**: false
-* **recursive**: false
-* **ai_never_uses**: false
-* **is_dangerous_blast**: false
-* **related_projectiles**: {"data/entities/projectiles/deck/machinegun_bullet.xml"}
-* **spawn_requires_flag**: card_unlocked_funky
-* **related_extra_entities**: 
-* **action**:
-
-```lua
- function()
-      add_projectile("data/entities/projectiles/deck/machinegun_bullet.xml")
-      c.fire_rate_wait = c.fire_rate_wait - 3
-      c.screenshake = c.screenshake + 0.2
-      c.spread_degrees = c.spread_degrees + 2.0
-      c.damage_critical_chance = c.damage_critical_chance + 1
     end,
 ```
 
