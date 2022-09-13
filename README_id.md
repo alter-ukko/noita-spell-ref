@@ -4,7 +4,7 @@
 * [by category](README_cat.md)
 * [by spell id](README_id.md)
 
-## contents
+<a id="contents"></a>## contents
 
 * [ACCELERATING_SHOT](#ACCELERATING_SHOT)
 * [ACIDSHOT](#ACIDSHOT)
@@ -400,7 +400,7 @@
 * [Y_SHAPE](#Y_SHAPE)
 * [ZETA](#ZETA)
 
-### <a id="ACCELERATING_SHOT"></a>![Accelerating shot](images/ACCELERATING_SHOT.png)Accelerating shot (ACCELERATING_SHOT)
+### <a id="ACCELERATING_SHOT"></a>![Accelerating shot](images/ACCELERATING_SHOT.png)Accelerating shot (ACCELERATING_SHOT) [[toc](#contents)]
 
 * **description**: Causes a projectile to accelerate as it flies
 * **type**: ACTION_TYPE_MODIFIER
@@ -438,7 +438,7 @@
 
 
 
-### <a id="ACIDSHOT"></a>![Acid ball](images/ACIDSHOT.png)Acid ball (ACIDSHOT)
+### <a id="ACIDSHOT"></a>![Acid ball](images/ACIDSHOT.png)Acid ball (ACIDSHOT) [[toc](#contents)]
 
 * **description**: A terrifying acidic projectile
 * **type**: ACTION_TYPE_PROJECTILE
@@ -466,7 +466,7 @@
 
 
 
-### <a id="ACID_TRAIL"></a>![Acid trail](images/ACID_TRAIL.png)Acid trail (ACID_TRAIL)
+### <a id="ACID_TRAIL"></a>![Acid trail](images/ACID_TRAIL.png)Acid trail (ACID_TRAIL) [[toc](#contents)]
 
 * **description**: Gives a projectile a trail of acid
 * **type**: ACTION_TYPE_MODIFIER
@@ -495,7 +495,7 @@
 
 
 
-### <a id="ADD_DEATH_TRIGGER"></a>![Add expiration trigger](images/ADD_DEATH_TRIGGER.png)Add expiration trigger (ADD_DEATH_TRIGGER)
+### <a id="ADD_DEATH_TRIGGER"></a>![Add expiration trigger](images/ADD_DEATH_TRIGGER.png)Add expiration trigger (ADD_DEATH_TRIGGER) [[toc](#contents)]
 
 * **description**: Makes a projectile cast another spell upon expiring
 * **type**: ACTION_TYPE_OTHER
@@ -585,7 +585,7 @@
 
 
 
-### <a id="ADD_TIMER"></a>![Add timer](images/ADD_TIMER.png)Add timer (ADD_TIMER)
+### <a id="ADD_TIMER"></a>![Add timer](images/ADD_TIMER.png)Add timer (ADD_TIMER) [[toc](#contents)]
 
 * **description**: Makes a projectile cast another spell after a short time
 * **type**: ACTION_TYPE_OTHER
@@ -675,7 +675,7 @@
 
 
 
-### <a id="ADD_TRIGGER"></a>![Add trigger](images/ADD_TRIGGER.png)Add trigger (ADD_TRIGGER)
+### <a id="ADD_TRIGGER"></a>![Add trigger](images/ADD_TRIGGER.png)Add trigger (ADD_TRIGGER) [[toc](#contents)]
 
 * **description**: Makes a projectile cast another spell upon collision
 * **type**: ACTION_TYPE_OTHER
@@ -765,7 +765,7 @@
 
 
 
-### <a id="AIR_BULLET"></a>![Burst of air](images/AIR_BULLET.png)Burst of air (AIR_BULLET)
+### <a id="AIR_BULLET"></a>![Burst of air](images/AIR_BULLET.png)Burst of air (AIR_BULLET) [[toc](#contents)]
 
 * **description**: A brittle burst of air capable of greatly pushing objects
 * **type**: ACTION_TYPE_PROJECTILE
@@ -794,7 +794,7 @@
 
 
 
-### <a id="ALCOHOL_BLAST"></a>![Explosion of spirits](images/ALCOHOL_BLAST.png)Explosion of spirits (ALCOHOL_BLAST)
+### <a id="ALCOHOL_BLAST"></a>![Explosion of spirits](images/ALCOHOL_BLAST.png)Explosion of spirits (ALCOHOL_BLAST) [[toc](#contents)]
 
 * **description**: An inebriating explosion
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -823,7 +823,7 @@
 
 
 
-### <a id="ALL_ACID"></a>![Spells to acid](images/ALL_ACID.png)Spells to acid (ALL_ACID)
+### <a id="ALL_ACID"></a>![Spells to acid](images/ALL_ACID.png)Spells to acid (ALL_ACID) [[toc](#contents)]
 
 * **description**: Transforms every projectile currently in the air into a pool of acid
 * **type**: ACTION_TYPE_UTILITY
@@ -852,7 +852,7 @@
 
 
 
-### <a id="ALL_BLACKHOLES"></a>![Spells to black holes](images/ALL_BLACKHOLES.png)Spells to black holes (ALL_BLACKHOLES)
+### <a id="ALL_BLACKHOLES"></a>![Spells to black holes](images/ALL_BLACKHOLES.png)Spells to black holes (ALL_BLACKHOLES) [[toc](#contents)]
 
 * **description**: Transforms every projectile currently in the air into a black hole
 * **type**: ACTION_TYPE_UTILITY
@@ -881,7 +881,7 @@
 
 
 
-### <a id="ALL_DEATHCROSSES"></a>![Spells to death crosses](images/ALL_DEATHCROSSES.png)Spells to death crosses (ALL_DEATHCROSSES)
+### <a id="ALL_DEATHCROSSES"></a>![Spells to death crosses](images/ALL_DEATHCROSSES.png)Spells to death crosses (ALL_DEATHCROSSES) [[toc](#contents)]
 
 * **description**: Transforms every projectile currently in the air into a death cross
 * **type**: ACTION_TYPE_UTILITY
@@ -910,7 +910,7 @@
 
 
 
-### <a id="ALL_DISCS"></a>![Spells to giga sawblades](images/ALL_DISCS.png)Spells to giga sawblades (ALL_DISCS)
+### <a id="ALL_DISCS"></a>![Spells to giga sawblades](images/ALL_DISCS.png)Spells to giga sawblades (ALL_DISCS) [[toc](#contents)]
 
 * **description**: Transforms every projectile currently in the air into a giant sawblade
 * **type**: ACTION_TYPE_UTILITY
@@ -939,7 +939,7 @@
 
 
 
-### <a id="ALL_NUKES"></a>![Spells to nukes](images/ALL_NUKES.png)Spells to nukes (ALL_NUKES)
+### <a id="ALL_NUKES"></a>![Spells to nukes](images/ALL_NUKES.png)Spells to nukes (ALL_NUKES) [[toc](#contents)]
 
 * **description**: Transforms every projectile currently in the air into a nuke; not a good idea
 * **type**: ACTION_TYPE_UTILITY
@@ -968,7 +968,7 @@
 
 
 
-### <a id="ALL_ROCKETS"></a>![Spells to magic missiles](images/ALL_ROCKETS.png)Spells to magic missiles (ALL_ROCKETS)
+### <a id="ALL_ROCKETS"></a>![Spells to magic missiles](images/ALL_ROCKETS.png)Spells to magic missiles (ALL_ROCKETS) [[toc](#contents)]
 
 * **description**: Transforms every projectile currently in the air into a magic missile
 * **type**: ACTION_TYPE_UTILITY
@@ -997,7 +997,7 @@
 
 
 
-### <a id="ALL_SPELLS"></a>![The end of everything](images/ALL_SPELLS.png)The end of everything (ALL_SPELLS)
+### <a id="ALL_SPELLS"></a>![The end of everything](images/ALL_SPELLS.png)The end of everything (ALL_SPELLS) [[toc](#contents)]
 
 * **description**: You're heavily advised not to cast this spell.
 * **type**: ACTION_TYPE_OTHER
@@ -1030,7 +1030,7 @@
 
 
 
-### <a id="ALPHA"></a>![Alpha](images/ALPHA.png)Alpha (ALPHA)
+### <a id="ALPHA"></a>![Alpha](images/ALPHA.png)Alpha (ALPHA) [[toc](#contents)]
 
 * **description**: Casts a copy of the first spell in your wand
 * **type**: ACTION_TYPE_OTHER
@@ -1076,7 +1076,7 @@
 
 
 
-### <a id="ARC_ELECTRIC"></a>![Electric Arc](images/ARC_ELECTRIC.png)Electric Arc (ARC_ELECTRIC)
+### <a id="ARC_ELECTRIC"></a>![Electric Arc](images/ARC_ELECTRIC.png)Electric Arc (ARC_ELECTRIC) [[toc](#contents)]
 
 * **description**: Creates arcs of lightning between projectiles (requires 2 projectile spells)
 * **type**: ACTION_TYPE_MODIFIER
@@ -1104,7 +1104,7 @@
 
 
 
-### <a id="ARC_FIRE"></a>![Fire Arc](images/ARC_FIRE.png)Fire Arc (ARC_FIRE)
+### <a id="ARC_FIRE"></a>![Fire Arc](images/ARC_FIRE.png)Fire Arc (ARC_FIRE) [[toc](#contents)]
 
 * **description**: Creates arcs of fire between projectiles (requires 2 projectile spells)
 * **type**: ACTION_TYPE_MODIFIER
@@ -1132,7 +1132,7 @@
 
 
 
-### <a id="ARC_GUNPOWDER"></a>![Gunpowder Arc](images/ARC_GUNPOWDER.png)Gunpowder Arc (ARC_GUNPOWDER)
+### <a id="ARC_GUNPOWDER"></a>![Gunpowder Arc](images/ARC_GUNPOWDER.png)Gunpowder Arc (ARC_GUNPOWDER) [[toc](#contents)]
 
 * **description**: Creates arcs of gunpowder between projectiles (requires 2 projectile spells)
 * **type**: ACTION_TYPE_MODIFIER
@@ -1160,7 +1160,7 @@
 
 
 
-### <a id="ARC_POISON"></a>![Poison Arc](images/ARC_POISON.png)Poison Arc (ARC_POISON)
+### <a id="ARC_POISON"></a>![Poison Arc](images/ARC_POISON.png)Poison Arc (ARC_POISON) [[toc](#contents)]
 
 * **description**: Creates arcs of poison between projectiles (requires 2 projectile spells)
 * **type**: ACTION_TYPE_MODIFIER
@@ -1188,7 +1188,7 @@
 
 
 
-### <a id="AREA_DAMAGE"></a>![Damage field](images/AREA_DAMAGE.png)Damage field (AREA_DAMAGE)
+### <a id="AREA_DAMAGE"></a>![Damage field](images/AREA_DAMAGE.png)Damage field (AREA_DAMAGE) [[toc](#contents)]
 
 * **description**: Gives a projectile an energy field that constantly deals 3.5 damage to nearby creatures
 * **type**: ACTION_TYPE_MODIFIER
@@ -1216,7 +1216,7 @@
 
 
 
-### <a id="ARROW"></a>![Arrow](images/ARROW.png)Arrow (ARROW)
+### <a id="ARROW"></a>![Arrow](images/ARROW.png)Arrow (ARROW) [[toc](#contents)]
 
 * **description**: Summons an arrow
 * **type**: ACTION_TYPE_PROJECTILE
@@ -1246,7 +1246,7 @@
 
 
 
-### <a id="AUTOAIM"></a>![Auto-Aim](images/AUTOAIM.png)Auto-Aim (AUTOAIM)
+### <a id="AUTOAIM"></a>![Auto-Aim](images/AUTOAIM.png)Auto-Aim (AUTOAIM) [[toc](#contents)]
 
 * **description**: Makes a projectile turns towards the nearest visible enemy
 * **type**: ACTION_TYPE_MODIFIER
@@ -1274,7 +1274,7 @@
 
 
 
-### <a id="AVOIDING_ARC"></a>![Avoiding arc](images/AVOIDING_ARC.png)Avoiding arc (AVOIDING_ARC)
+### <a id="AVOIDING_ARC"></a>![Avoiding arc](images/AVOIDING_ARC.png)Avoiding arc (AVOIDING_ARC) [[toc](#contents)]
 
 * **description**: Makes a projectile shy away from obstacles
 * **type**: ACTION_TYPE_MODIFIER
@@ -1303,7 +1303,7 @@
 
 
 
-### <a id="BALL_LIGHTNING"></a>![Ball Lightning](images/BALL_LIGHTNING.png)Ball Lightning (BALL_LIGHTNING)
+### <a id="BALL_LIGHTNING"></a>![Ball Lightning](images/BALL_LIGHTNING.png)Ball Lightning (BALL_LIGHTNING) [[toc](#contents)]
 
 * **description**: Summons three short range electrical orbs
 * **type**: ACTION_TYPE_PROJECTILE
@@ -1334,7 +1334,7 @@
 
 
 
-### <a id="BERSERK_FIELD"></a>![Circle of fervour](images/BERSERK_FIELD.png)Circle of fervour (BERSERK_FIELD)
+### <a id="BERSERK_FIELD"></a>![Circle of fervour](images/BERSERK_FIELD.png)Circle of fervour (BERSERK_FIELD) [[toc](#contents)]
 
 * **description**: A field of berserk magic
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -1362,7 +1362,7 @@
 
 
 
-### <a id="BIG_MAGIC_SHIELD"></a>![Big magic guard](images/BIG_MAGIC_SHIELD.png)Big magic guard (BIG_MAGIC_SHIELD)
+### <a id="BIG_MAGIC_SHIELD"></a>![Big magic guard](images/BIG_MAGIC_SHIELD.png)Big magic guard (BIG_MAGIC_SHIELD) [[toc](#contents)]
 
 * **description**: Eight guarding lights rotate around you for a time
 * **type**: ACTION_TYPE_PROJECTILE
@@ -1390,7 +1390,7 @@
 
 
 
-### <a id="BLACK_HOLE"></a>![Black hole](images/BLACK_HOLE.png)Black hole (BLACK_HOLE)
+### <a id="BLACK_HOLE"></a>![Black hole](images/BLACK_HOLE.png)Black hole (BLACK_HOLE) [[toc](#contents)]
 
 * **description**: A slow orb of void that eats through all obstacles
 * **type**: ACTION_TYPE_PROJECTILE
@@ -1419,7 +1419,7 @@
 
 
 
-### <a id="BLACK_HOLE_BIG"></a>![Giga black hole](images/BLACK_HOLE_BIG.png)Giga black hole (BLACK_HOLE_BIG)
+### <a id="BLACK_HOLE_BIG"></a>![Giga black hole](images/BLACK_HOLE_BIG.png)Giga black hole (BLACK_HOLE_BIG) [[toc](#contents)]
 
 * **description**: A growing orb of negative energy that destroys everything in its reach
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -1448,7 +1448,7 @@
 
 
 
-### <a id="BLACK_HOLE_DEATH_TRIGGER"></a>![Black Hole with Death Trigger](images/BLACK_HOLE_DEATH_TRIGGER.png)Black Hole with Death Trigger (BLACK_HOLE_DEATH_TRIGGER)
+### <a id="BLACK_HOLE_DEATH_TRIGGER"></a>![Black Hole with Death Trigger](images/BLACK_HOLE_DEATH_TRIGGER.png)Black Hole with Death Trigger (BLACK_HOLE_DEATH_TRIGGER) [[toc](#contents)]
 
 * **description**: A slow orb of void that eats through all obstacles and casts another spell as it expires
 * **type**: ACTION_TYPE_PROJECTILE
@@ -1477,7 +1477,7 @@
 
 
 
-### <a id="BLACK_HOLE_GIGA"></a>![Omega Black Hole](images/BLACK_HOLE_GIGA.png)Omega Black Hole (BLACK_HOLE_GIGA)
+### <a id="BLACK_HOLE_GIGA"></a>![Omega Black Hole](images/BLACK_HOLE_GIGA.png)Omega Black Hole (BLACK_HOLE_GIGA) [[toc](#contents)]
 
 * **description**: Even light dies eventually...
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -1511,7 +1511,7 @@
 
 
 
-### <a id="BLOODLUST"></a>![Bloodlust](images/BLOODLUST.png)Bloodlust (BLOODLUST)
+### <a id="BLOODLUST"></a>![Bloodlust](images/BLOODLUST.png)Bloodlust (BLOODLUST) [[toc](#contents)]
 
 * **description**: A projectile gains a hefty damage boost, but is also able to hurt you
 * **type**: ACTION_TYPE_MODIFIER
@@ -1545,7 +1545,7 @@
 
 
 
-### <a id="BLOOD_MAGIC"></a>![Blood magic](images/BLOOD_MAGIC.png)Blood magic (BLOOD_MAGIC)
+### <a id="BLOOD_MAGIC"></a>![Blood magic](images/BLOOD_MAGIC.png)Blood magic (BLOOD_MAGIC) [[toc](#contents)]
 
 * **description**: Reduces a spell's mana cost and recharge time greatly, at the costs of four health points
 * **type**: ACTION_TYPE_UTILITY
@@ -1587,7 +1587,7 @@
 
 
 
-### <a id="BLOOD_TO_ACID"></a>![Blood to acid](images/BLOOD_TO_ACID.png)Blood to acid (BLOOD_TO_ACID)
+### <a id="BLOOD_TO_ACID"></a>![Blood to acid](images/BLOOD_TO_ACID.png)Blood to acid (BLOOD_TO_ACID) [[toc](#contents)]
 
 * **description**: Makes any blood within a projectile's range turns into acid
 * **type**: ACTION_TYPE_MODIFIER
@@ -1616,7 +1616,7 @@
 
 
 
-### <a id="BLOOD_TO_POWER"></a>![Blood to Power](images/BLOOD_TO_POWER.png)Blood to Power (BLOOD_TO_POWER)
+### <a id="BLOOD_TO_POWER"></a>![Blood to Power](images/BLOOD_TO_POWER.png)Blood to Power (BLOOD_TO_POWER) [[toc](#contents)]
 
 * **description**: A projectile gains additional damage at the cost of 20% of your health
 * **type**: ACTION_TYPE_UTILITY
@@ -1662,7 +1662,7 @@
 
 
 
-### <a id="BOMB"></a>![Bomb](images/BOMB.png)Bomb (BOMB)
+### <a id="BOMB"></a>![Bomb](images/BOMB.png)Bomb (BOMB) [[toc](#contents)]
 
 * **description**: Summons a bomb that destroys ground very efficiently
 * **type**: ACTION_TYPE_PROJECTILE
@@ -1690,7 +1690,7 @@
 
 
 
-### <a id="BOMB_CART"></a>![Bomb cart](images/BOMB_CART.png)Bomb cart (BOMB_CART)
+### <a id="BOMB_CART"></a>![Bomb cart](images/BOMB_CART.png)Bomb cart (BOMB_CART) [[toc](#contents)]
 
 * **description**: Summons a self-propeled mine cart loaded with explosives
 * **type**: ACTION_TYPE_PROJECTILE
@@ -1719,7 +1719,7 @@
 
 
 
-### <a id="BOMB_DETONATOR"></a>![Explosive Detonator](images/BOMB_DETONATOR.png)Explosive Detonator (BOMB_DETONATOR)
+### <a id="BOMB_DETONATOR"></a>![Explosive Detonator](images/BOMB_DETONATOR.png)Explosive Detonator (BOMB_DETONATOR) [[toc](#contents)]
 
 * **description**: All nearby explosive spells cast by you instantly detonate
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -1746,7 +1746,7 @@
 
 
 
-### <a id="BOMB_HOLY"></a>![Holy Bomb](images/BOMB_HOLY.png)Holy Bomb (BOMB_HOLY)
+### <a id="BOMB_HOLY"></a>![Holy Bomb](images/BOMB_HOLY.png)Holy Bomb (BOMB_HOLY) [[toc](#contents)]
 
 * **description**: Summons a bomb that... well...
 * **type**: ACTION_TYPE_PROJECTILE
@@ -1776,7 +1776,7 @@
 
 
 
-### <a id="BOMB_HOLY_GIGA"></a>![Giga Holy Bomb](images/BOMB_HOLY_GIGA.png)Giga Holy Bomb (BOMB_HOLY_GIGA)
+### <a id="BOMB_HOLY_GIGA"></a>![Giga Holy Bomb](images/BOMB_HOLY_GIGA.png)Giga Holy Bomb (BOMB_HOLY_GIGA) [[toc](#contents)]
 
 * **description**: Bigger and therefore holier
 * **type**: ACTION_TYPE_PROJECTILE
@@ -1806,7 +1806,7 @@
 
 
 
-### <a id="BOUNCE"></a>![Bounce](images/BOUNCE.png)Bounce (BOUNCE)
+### <a id="BOUNCE"></a>![Bounce](images/BOUNCE.png)Bounce (BOUNCE) [[toc](#contents)]
 
 * **description**: Makes a projectile bounce on impact
 * **type**: ACTION_TYPE_MODIFIER
@@ -1834,7 +1834,7 @@
 
 
 
-### <a id="BOUNCE_EXPLOSION"></a>![Explosive bounce](images/BOUNCE_EXPLOSION.png)Explosive bounce (BOUNCE_EXPLOSION)
+### <a id="BOUNCE_EXPLOSION"></a>![Explosive bounce](images/BOUNCE_EXPLOSION.png)Explosive bounce (BOUNCE_EXPLOSION) [[toc](#contents)]
 
 * **description**: Makes a projectile explode as it bounces
 * **type**: ACTION_TYPE_MODIFIER
@@ -1865,7 +1865,7 @@
 
 
 
-### <a id="BOUNCE_LARPA"></a>![Larpa Bounce](images/BOUNCE_LARPA.png)Larpa Bounce (BOUNCE_LARPA)
+### <a id="BOUNCE_LARPA"></a>![Larpa Bounce](images/BOUNCE_LARPA.png)Larpa Bounce (BOUNCE_LARPA) [[toc](#contents)]
 
 * **description**: A projectile will launch a copy of itself when it bounces
 * **type**: ACTION_TYPE_MODIFIER
@@ -1896,7 +1896,7 @@
 
 
 
-### <a id="BOUNCE_LASER"></a>![Concentrated light bounce](images/BOUNCE_LASER.png)Concentrated light bounce (BOUNCE_LASER)
+### <a id="BOUNCE_LASER"></a>![Concentrated light bounce](images/BOUNCE_LASER.png)Concentrated light bounce (BOUNCE_LASER) [[toc](#contents)]
 
 * **description**: Makes a projectile release a bundle of concentrated light as it bounces
 * **type**: ACTION_TYPE_MODIFIER
@@ -1927,7 +1927,7 @@
 
 
 
-### <a id="BOUNCE_LASER_EMITTER"></a>![Plasma Beam Bounce](images/BOUNCE_LASER_EMITTER.png)Plasma Beam Bounce (BOUNCE_LASER_EMITTER)
+### <a id="BOUNCE_LASER_EMITTER"></a>![Plasma Beam Bounce](images/BOUNCE_LASER_EMITTER.png)Plasma Beam Bounce (BOUNCE_LASER_EMITTER) [[toc](#contents)]
 
 * **description**: A projectile launches a plasma beam upon bouncing
 * **type**: ACTION_TYPE_MODIFIER
@@ -1958,7 +1958,7 @@
 
 
 
-### <a id="BOUNCE_SPARK"></a>![Bubbly bounce](images/BOUNCE_SPARK.png)Bubbly bounce (BOUNCE_SPARK)
+### <a id="BOUNCE_SPARK"></a>![Bubbly bounce](images/BOUNCE_SPARK.png)Bubbly bounce (BOUNCE_SPARK) [[toc](#contents)]
 
 * **description**: Makes a projectile shoot bubble sparks as it bounces
 * **type**: ACTION_TYPE_MODIFIER
@@ -1989,7 +1989,7 @@
 
 
 
-### <a id="BOUNCY_ORB"></a>![Energy sphere](images/BOUNCY_ORB.png)Energy sphere (BOUNCY_ORB)
+### <a id="BOUNCY_ORB"></a>![Energy sphere](images/BOUNCY_ORB.png)Energy sphere (BOUNCY_ORB) [[toc](#contents)]
 
 * **description**: A fast, arcing projectile
 * **type**: ACTION_TYPE_PROJECTILE
@@ -2018,7 +2018,7 @@
 
 
 
-### <a id="BOUNCY_ORB_TIMER"></a>![Energy sphere with timer](images/BOUNCY_ORB_TIMER.png)Energy sphere with timer (BOUNCY_ORB_TIMER)
+### <a id="BOUNCY_ORB_TIMER"></a>![Energy sphere with timer](images/BOUNCY_ORB_TIMER.png)Energy sphere with timer (BOUNCY_ORB_TIMER) [[toc](#contents)]
 
 * **description**: A fast, arcing projectile that casts another spell after a timer runs out
 * **type**: ACTION_TYPE_PROJECTILE
@@ -2047,7 +2047,7 @@
 
 
 
-### <a id="BUBBLESHOT"></a>![Bubble spark](images/BUBBLESHOT.png)Bubble spark (BUBBLESHOT)
+### <a id="BUBBLESHOT"></a>![Bubble spark](images/BUBBLESHOT.png)Bubble spark (BUBBLESHOT) [[toc](#contents)]
 
 * **description**: A bouncy, inaccurate spell
 * **type**: ACTION_TYPE_PROJECTILE
@@ -2076,7 +2076,7 @@
 
 
 
-### <a id="BUBBLESHOT_TRIGGER"></a>![Bubble spark with trigger](images/BUBBLESHOT_TRIGGER.png)Bubble spark with trigger (BUBBLESHOT_TRIGGER)
+### <a id="BUBBLESHOT_TRIGGER"></a>![Bubble spark with trigger](images/BUBBLESHOT_TRIGGER.png)Bubble spark with trigger (BUBBLESHOT_TRIGGER) [[toc](#contents)]
 
 * **description**: A bouncy, inaccurate spell that casts another spell upon collision
 * **type**: ACTION_TYPE_PROJECTILE
@@ -2105,7 +2105,7 @@
 
 
 
-### <a id="BUCKSHOT"></a>![Triplicate bolt](images/BUCKSHOT.png)Triplicate bolt (BUCKSHOT)
+### <a id="BUCKSHOT"></a>![Triplicate bolt](images/BUCKSHOT.png)Triplicate bolt (BUCKSHOT) [[toc](#contents)]
 
 * **description**: A formation of three small, fast bolts
 * **type**: ACTION_TYPE_PROJECTILE
@@ -2136,7 +2136,7 @@
 
 
 
-### <a id="BULLET"></a>![Magic arrow](images/BULLET.png)Magic arrow (BULLET)
+### <a id="BULLET"></a>![Magic arrow](images/BULLET.png)Magic arrow (BULLET) [[toc](#contents)]
 
 * **description**: A handy magical arrow
 * **type**: ACTION_TYPE_PROJECTILE
@@ -2168,7 +2168,7 @@
 
 
 
-### <a id="BULLET_TIMER"></a>![Magic arrow with timer](images/BULLET_TIMER.png)Magic arrow with timer (BULLET_TIMER)
+### <a id="BULLET_TIMER"></a>![Magic arrow with timer](images/BULLET_TIMER.png)Magic arrow with timer (BULLET_TIMER) [[toc](#contents)]
 
 * **description**: A magical arrow that casts another spell after a timer runs out
 * **type**: ACTION_TYPE_PROJECTILE
@@ -2200,7 +2200,7 @@
 
 
 
-### <a id="BULLET_TRIGGER"></a>![Magic arrow with trigger](images/BULLET_TRIGGER.png)Magic arrow with trigger (BULLET_TRIGGER)
+### <a id="BULLET_TRIGGER"></a>![Magic arrow with trigger](images/BULLET_TRIGGER.png)Magic arrow with trigger (BULLET_TRIGGER) [[toc](#contents)]
 
 * **description**: A magical arrow that casts another spell upon collision
 * **type**: ACTION_TYPE_PROJECTILE
@@ -2232,7 +2232,7 @@
 
 
 
-### <a id="BURN_TRAIL"></a>![Burning trail](images/BURN_TRAIL.png)Burning trail (BURN_TRAIL)
+### <a id="BURN_TRAIL"></a>![Burning trail](images/BURN_TRAIL.png)Burning trail (BURN_TRAIL) [[toc](#contents)]
 
 * **description**: Gives a projectile a tail of fire
 * **type**: ACTION_TYPE_MODIFIER
@@ -2261,7 +2261,7 @@
 
 
 
-### <a id="BURST_2"></a>![Double spell](images/BURST_2.png)Double spell (BURST_2)
+### <a id="BURST_2"></a>![Double spell](images/BURST_2.png)Double spell (BURST_2) [[toc](#contents)]
 
 * **description**: Simultaneously casts 2 spells
 * **type**: ACTION_TYPE_DRAW_MANY
@@ -2288,7 +2288,7 @@
 
 
 
-### <a id="BURST_3"></a>![Triple spell](images/BURST_3.png)Triple spell (BURST_3)
+### <a id="BURST_3"></a>![Triple spell](images/BURST_3.png)Triple spell (BURST_3) [[toc](#contents)]
 
 * **description**: Simultaneously casts 3 spells
 * **type**: ACTION_TYPE_DRAW_MANY
@@ -2315,7 +2315,7 @@
 
 
 
-### <a id="BURST_4"></a>![Quadruple spell](images/BURST_4.png)Quadruple spell (BURST_4)
+### <a id="BURST_4"></a>![Quadruple spell](images/BURST_4.png)Quadruple spell (BURST_4) [[toc](#contents)]
 
 * **description**: Simultaneously casts 4 spells
 * **type**: ACTION_TYPE_DRAW_MANY
@@ -2342,7 +2342,7 @@
 
 
 
-### <a id="BURST_8"></a>![Octuple spell](images/BURST_8.png)Octuple spell (BURST_8)
+### <a id="BURST_8"></a>![Octuple spell](images/BURST_8.png)Octuple spell (BURST_8) [[toc](#contents)]
 
 * **description**: Simultaneously cast 8 spells
 * **type**: ACTION_TYPE_DRAW_MANY
@@ -2369,7 +2369,7 @@
 
 
 
-### <a id="BURST_X"></a>![Myriad Spell](images/BURST_X.png)Myriad Spell (BURST_X)
+### <a id="BURST_X"></a>![Myriad Spell](images/BURST_X.png)Myriad Spell (BURST_X) [[toc](#contents)]
 
 * **description**: Simultaneously casts as many spells as you have left uncast in your wand
 * **type**: ACTION_TYPE_DRAW_MANY
@@ -2398,7 +2398,7 @@
 
 
 
-### <a id="CHAINSAW"></a>![Chainsaw](images/CHAINSAW.png)Chainsaw (CHAINSAW)
+### <a id="CHAINSAW"></a>![Chainsaw](images/CHAINSAW.png)Chainsaw (CHAINSAW) [[toc](#contents)]
 
 * **description**: A good tool for cutting meat. Also has some magical properties...
 * **type**: ACTION_TYPE_PROJECTILE
@@ -2428,7 +2428,7 @@
 
 
 
-### <a id="CHAIN_BOLT"></a>![Chain bolt](images/CHAIN_BOLT.png)Chain bolt (CHAIN_BOLT)
+### <a id="CHAIN_BOLT"></a>![Chain bolt](images/CHAIN_BOLT.png)Chain bolt (CHAIN_BOLT) [[toc](#contents)]
 
 * **description**: Fires a mysterious bolt that jumps from enemy to enemy
 * **type**: ACTION_TYPE_PROJECTILE
@@ -2457,7 +2457,7 @@
 
 
 
-### <a id="CHAIN_SHOT"></a>![Chain Spell](images/CHAIN_SHOT.png)Chain Spell (CHAIN_SHOT)
+### <a id="CHAIN_SHOT"></a>![Chain Spell](images/CHAIN_SHOT.png)Chain Spell (CHAIN_SHOT) [[toc](#contents)]
 
 * **description**: Causes a projectile to cast a copy of itself upon expiring, up to 5 times
 * **type**: ACTION_TYPE_MODIFIER
@@ -2492,7 +2492,7 @@
 
 
 
-### <a id="CHAOS_POLYMORPH_FIELD"></a>![Circle of unstable metamorphosis](images/CHAOS_POLYMORPH_FIELD.png)Circle of unstable metamorphosis (CHAOS_POLYMORPH_FIELD)
+### <a id="CHAOS_POLYMORPH_FIELD"></a>![Circle of unstable metamorphosis](images/CHAOS_POLYMORPH_FIELD.png)Circle of unstable metamorphosis (CHAOS_POLYMORPH_FIELD) [[toc](#contents)]
 
 * **description**: A field of transformative magic
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -2520,7 +2520,7 @@
 
 
 
-### <a id="CHAOTIC_ARC"></a>![Chaotic path](images/CHAOTIC_ARC.png)Chaotic path (CHAOTIC_ARC)
+### <a id="CHAOTIC_ARC"></a>![Chaotic path](images/CHAOTIC_ARC.png)Chaotic path (CHAOTIC_ARC) [[toc](#contents)]
 
 * **description**: Causes a projectile to chaotically fly wherever it wishes
 * **type**: ACTION_TYPE_MODIFIER
@@ -2556,7 +2556,7 @@
 
 
 
-### <a id="CIRCLE_ACID"></a>![Circle of acid](images/CIRCLE_ACID.png)Circle of acid (CIRCLE_ACID)
+### <a id="CIRCLE_ACID"></a>![Circle of acid](images/CIRCLE_ACID.png)Circle of acid (CIRCLE_ACID) [[toc](#contents)]
 
 * **description**: An expanding circle of dripping acid
 * **type**: ACTION_TYPE_MATERIAL
@@ -2584,7 +2584,7 @@
 
 
 
-### <a id="CIRCLE_FIRE"></a>![Circle of fire](images/CIRCLE_FIRE.png)Circle of fire (CIRCLE_FIRE)
+### <a id="CIRCLE_FIRE"></a>![Circle of fire](images/CIRCLE_FIRE.png)Circle of fire (CIRCLE_FIRE) [[toc](#contents)]
 
 * **description**: An expanding circle of burning air
 * **type**: ACTION_TYPE_MATERIAL
@@ -2612,7 +2612,7 @@
 
 
 
-### <a id="CIRCLE_OIL"></a>![Circle of oil](images/CIRCLE_OIL.png)Circle of oil (CIRCLE_OIL)
+### <a id="CIRCLE_OIL"></a>![Circle of oil](images/CIRCLE_OIL.png)Circle of oil (CIRCLE_OIL) [[toc](#contents)]
 
 * **description**: An expanding circle of slick oil
 * **type**: ACTION_TYPE_MATERIAL
@@ -2640,7 +2640,7 @@
 
 
 
-### <a id="CIRCLE_SHAPE"></a>![Formation - hexagon](images/CIRCLE_SHAPE.png)Formation - hexagon (CIRCLE_SHAPE)
+### <a id="CIRCLE_SHAPE"></a>![Formation - hexagon](images/CIRCLE_SHAPE.png)Formation - hexagon (CIRCLE_SHAPE) [[toc](#contents)]
 
 * **description**: Casts 6 spells in a hexagonal pattern
 * **type**: ACTION_TYPE_DRAW_MANY
@@ -2668,7 +2668,7 @@
 
 
 
-### <a id="CIRCLE_WATER"></a>![Circle of water](images/CIRCLE_WATER.png)Circle of water (CIRCLE_WATER)
+### <a id="CIRCLE_WATER"></a>![Circle of water](images/CIRCLE_WATER.png)Circle of water (CIRCLE_WATER) [[toc](#contents)]
 
 * **description**: An expanding circle of water
 * **type**: ACTION_TYPE_MATERIAL
@@ -2696,7 +2696,7 @@
 
 
 
-### <a id="CLIPPING_SHOT"></a>![Drilling shot](images/CLIPPING_SHOT.png)Drilling shot (CLIPPING_SHOT)
+### <a id="CLIPPING_SHOT"></a>![Drilling shot](images/CLIPPING_SHOT.png)Drilling shot (CLIPPING_SHOT) [[toc](#contents)]
 
 * **description**: Gives a projectile the power to go through the ground
 * **type**: ACTION_TYPE_MODIFIER
@@ -2726,7 +2726,7 @@
 
 
 
-### <a id="CLOUD_ACID"></a>![Acid cloud](images/CLOUD_ACID.png)Acid cloud (CLOUD_ACID)
+### <a id="CLOUD_ACID"></a>![Acid cloud](images/CLOUD_ACID.png)Acid cloud (CLOUD_ACID) [[toc](#contents)]
 
 * **description**: Creates a rain of acid
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -2754,7 +2754,7 @@
 
 
 
-### <a id="CLOUD_BLOOD"></a>![Blood cloud](images/CLOUD_BLOOD.png)Blood cloud (CLOUD_BLOOD)
+### <a id="CLOUD_BLOOD"></a>![Blood cloud](images/CLOUD_BLOOD.png)Blood cloud (CLOUD_BLOOD) [[toc](#contents)]
 
 * **description**: Creates a rain of blood
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -2782,7 +2782,7 @@
 
 
 
-### <a id="CLOUD_OIL"></a>![Oil cloud](images/CLOUD_OIL.png)Oil cloud (CLOUD_OIL)
+### <a id="CLOUD_OIL"></a>![Oil cloud](images/CLOUD_OIL.png)Oil cloud (CLOUD_OIL) [[toc](#contents)]
 
 * **description**: Creates a rain of oil
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -2810,7 +2810,7 @@
 
 
 
-### <a id="CLOUD_THUNDER"></a>![Thundercloud](images/CLOUD_THUNDER.png)Thundercloud (CLOUD_THUNDER)
+### <a id="CLOUD_THUNDER"></a>![Thundercloud](images/CLOUD_THUNDER.png)Thundercloud (CLOUD_THUNDER) [[toc](#contents)]
 
 * **description**: Creates a stormy cloud
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -2838,7 +2838,7 @@
 
 
 
-### <a id="CLOUD_WATER"></a>![Rain cloud](images/CLOUD_WATER.png)Rain cloud (CLOUD_WATER)
+### <a id="CLOUD_WATER"></a>![Rain cloud](images/CLOUD_WATER.png)Rain cloud (CLOUD_WATER) [[toc](#contents)]
 
 * **description**: Creates a watery weather phenomenon
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -2866,7 +2866,7 @@
 
 
 
-### <a id="COLOUR_BLUE"></a>![Blue Glimmer](images/COLOUR_BLUE.png)Blue Glimmer (COLOUR_BLUE)
+### <a id="COLOUR_BLUE"></a>![Blue Glimmer](images/COLOUR_BLUE.png)Blue Glimmer (COLOUR_BLUE) [[toc](#contents)]
 
 * **description**: Gives a projectile a blue sparkly trail
 * **type**: ACTION_TYPE_MODIFIER
@@ -2899,7 +2899,7 @@
 
 
 
-### <a id="COLOUR_GREEN"></a>![Green Glimmer](images/COLOUR_GREEN.png)Green Glimmer (COLOUR_GREEN)
+### <a id="COLOUR_GREEN"></a>![Green Glimmer](images/COLOUR_GREEN.png)Green Glimmer (COLOUR_GREEN) [[toc](#contents)]
 
 * **description**: Gives a projectile a green sparkly trail
 * **type**: ACTION_TYPE_MODIFIER
@@ -2932,7 +2932,7 @@
 
 
 
-### <a id="COLOUR_INVIS"></a>![Invisible Spell](images/COLOUR_INVIS.png)Invisible Spell (COLOUR_INVIS)
+### <a id="COLOUR_INVIS"></a>![Invisible Spell](images/COLOUR_INVIS.png)Invisible Spell (COLOUR_INVIS) [[toc](#contents)]
 
 * **description**: Turns a projectile invisible
 * **type**: ACTION_TYPE_MODIFIER
@@ -2965,7 +2965,7 @@
 
 
 
-### <a id="COLOUR_ORANGE"></a>![Orange Glimmer](images/COLOUR_ORANGE.png)Orange Glimmer (COLOUR_ORANGE)
+### <a id="COLOUR_ORANGE"></a>![Orange Glimmer](images/COLOUR_ORANGE.png)Orange Glimmer (COLOUR_ORANGE) [[toc](#contents)]
 
 * **description**: Gives a projectile a orange sparkly trail
 * **type**: ACTION_TYPE_MODIFIER
@@ -2998,7 +2998,7 @@
 
 
 
-### <a id="COLOUR_PURPLE"></a>![Purple Glimmer](images/COLOUR_PURPLE.png)Purple Glimmer (COLOUR_PURPLE)
+### <a id="COLOUR_PURPLE"></a>![Purple Glimmer](images/COLOUR_PURPLE.png)Purple Glimmer (COLOUR_PURPLE) [[toc](#contents)]
 
 * **description**: Gives a projectile a purple sparkly trail
 * **type**: ACTION_TYPE_MODIFIER
@@ -3031,7 +3031,7 @@
 
 
 
-### <a id="COLOUR_RAINBOW"></a>![Rainbow Glimmer](images/COLOUR_RAINBOW.png)Rainbow Glimmer (COLOUR_RAINBOW)
+### <a id="COLOUR_RAINBOW"></a>![Rainbow Glimmer](images/COLOUR_RAINBOW.png)Rainbow Glimmer (COLOUR_RAINBOW) [[toc](#contents)]
 
 * **description**: Gives a projectile a randomly colored sparkly trail
 * **type**: ACTION_TYPE_MODIFIER
@@ -3064,7 +3064,7 @@
 
 
 
-### <a id="COLOUR_RED"></a>![Red Glimmer](images/COLOUR_RED.png)Red Glimmer (COLOUR_RED)
+### <a id="COLOUR_RED"></a>![Red Glimmer](images/COLOUR_RED.png)Red Glimmer (COLOUR_RED) [[toc](#contents)]
 
 * **description**: Gives a projectile a red sparkly trail
 * **type**: ACTION_TYPE_MODIFIER
@@ -3097,7 +3097,7 @@
 
 
 
-### <a id="COLOUR_YELLOW"></a>![Yellow Glimmer](images/COLOUR_YELLOW.png)Yellow Glimmer (COLOUR_YELLOW)
+### <a id="COLOUR_YELLOW"></a>![Yellow Glimmer](images/COLOUR_YELLOW.png)Yellow Glimmer (COLOUR_YELLOW) [[toc](#contents)]
 
 * **description**: Gives a projectile a yellow sparkly trail
 * **type**: ACTION_TYPE_MODIFIER
@@ -3130,7 +3130,7 @@
 
 
 
-### <a id="CRITICAL_HIT"></a>![Critical Plus](images/CRITICAL_HIT.png)Critical Plus (CRITICAL_HIT)
+### <a id="CRITICAL_HIT"></a>![Critical Plus](images/CRITICAL_HIT.png)Critical Plus (CRITICAL_HIT) [[toc](#contents)]
 
 * **description**: Gives a projectile +15% chance of a critical hit
 * **type**: ACTION_TYPE_MODIFIER
@@ -3158,7 +3158,7 @@
 
 
 
-### <a id="CRUMBLING_EARTH"></a>![Earthquake](images/CRUMBLING_EARTH.png)Earthquake (CRUMBLING_EARTH)
+### <a id="CRUMBLING_EARTH"></a>![Earthquake](images/CRUMBLING_EARTH.png)Earthquake (CRUMBLING_EARTH) [[toc](#contents)]
 
 * **description**: Calls the anger of the earth
 * **type**: ACTION_TYPE_PROJECTILE
@@ -3185,7 +3185,7 @@
 
 
 
-### <a id="CRUMBLING_EARTH_PROJECTILE"></a>![Earthquake shot](images/CRUMBLING_EARTH_PROJECTILE.png)Earthquake shot (CRUMBLING_EARTH_PROJECTILE)
+### <a id="CRUMBLING_EARTH_PROJECTILE"></a>![Earthquake shot](images/CRUMBLING_EARTH_PROJECTILE.png)Earthquake shot (CRUMBLING_EARTH_PROJECTILE) [[toc](#contents)]
 
 * **description**: Makes a projectile crumble the earth it hits
 * **type**: ACTION_TYPE_MODIFIER
@@ -3213,7 +3213,7 @@
 
 
 
-### <a id="CURSE"></a>![Venomous Curse](images/CURSE.png)Venomous Curse (CURSE)
+### <a id="CURSE"></a>![Venomous Curse](images/CURSE.png)Venomous Curse (CURSE) [[toc](#contents)]
 
 * **description**: Imbues a projectile with a curse that makes the target hit by the projectile to waste away
 * **type**: ACTION_TYPE_MODIFIER
@@ -3241,7 +3241,7 @@
 
 
 
-### <a id="CURSED_ORB"></a>![Cursed sphere](images/CURSED_ORB.png)Cursed sphere (CURSED_ORB)
+### <a id="CURSED_ORB"></a>![Cursed sphere](images/CURSED_ORB.png)Cursed sphere (CURSED_ORB) [[toc](#contents)]
 
 * **description**: A projectile that brings bad luck to anyone it hits
 * **type**: ACTION_TYPE_PROJECTILE
@@ -3270,7 +3270,7 @@
 
 
 
-### <a id="CURSE_WITHER_ELECTRICITY"></a>![Weakening Curse - Electricity](images/CURSE_WITHER_ELECTRICITY.png)Weakening Curse - Electricity (CURSE_WITHER_ELECTRICITY)
+### <a id="CURSE_WITHER_ELECTRICITY"></a>![Weakening Curse - Electricity](images/CURSE_WITHER_ELECTRICITY.png)Weakening Curse - Electricity (CURSE_WITHER_ELECTRICITY) [[toc](#contents)]
 
 * **description**: Target hit by a projectile takes 25% extra electricity damage for a time
 * **type**: ACTION_TYPE_MODIFIER
@@ -3298,7 +3298,7 @@
 
 
 
-### <a id="CURSE_WITHER_EXPLOSION"></a>![Weakening Curse - Explosives](images/CURSE_WITHER_EXPLOSION.png)Weakening Curse - Explosives (CURSE_WITHER_EXPLOSION)
+### <a id="CURSE_WITHER_EXPLOSION"></a>![Weakening Curse - Explosives](images/CURSE_WITHER_EXPLOSION.png)Weakening Curse - Explosives (CURSE_WITHER_EXPLOSION) [[toc](#contents)]
 
 * **description**: Target hit by a projectile takes 25% extra explosion damage for a time
 * **type**: ACTION_TYPE_MODIFIER
@@ -3326,7 +3326,7 @@
 
 
 
-### <a id="CURSE_WITHER_MELEE"></a>![Weakening Curse - Melee](images/CURSE_WITHER_MELEE.png)Weakening Curse - Melee (CURSE_WITHER_MELEE)
+### <a id="CURSE_WITHER_MELEE"></a>![Weakening Curse - Melee](images/CURSE_WITHER_MELEE.png)Weakening Curse - Melee (CURSE_WITHER_MELEE) [[toc](#contents)]
 
 * **description**: Target hit by a projectile takes 25% extra melee damage for a time
 * **type**: ACTION_TYPE_MODIFIER
@@ -3354,7 +3354,7 @@
 
 
 
-### <a id="CURSE_WITHER_PROJECTILE"></a>![Weakening Curse - Projectiles](images/CURSE_WITHER_PROJECTILE.png)Weakening Curse - Projectiles (CURSE_WITHER_PROJECTILE)
+### <a id="CURSE_WITHER_PROJECTILE"></a>![Weakening Curse - Projectiles](images/CURSE_WITHER_PROJECTILE.png)Weakening Curse - Projectiles (CURSE_WITHER_PROJECTILE) [[toc](#contents)]
 
 * **description**: Target hit by a projectile takes 25% extra projectile damage for a time
 * **type**: ACTION_TYPE_MODIFIER
@@ -3382,7 +3382,7 @@
 
 
 
-### <a id="DAMAGE"></a>![Damage Plus](images/DAMAGE.png)Damage Plus (DAMAGE)
+### <a id="DAMAGE"></a>![Damage Plus](images/DAMAGE.png)Damage Plus (DAMAGE) [[toc](#contents)]
 
 * **description**: Increases the damage done by a projectile
 * **type**: ACTION_TYPE_MODIFIER
@@ -3414,7 +3414,7 @@
 
 
 
-### <a id="DAMAGE_FOREVER"></a>![Mana To Damage](images/DAMAGE_FOREVER.png)Mana To Damage (DAMAGE_FOREVER)
+### <a id="DAMAGE_FOREVER"></a>![Mana To Damage](images/DAMAGE_FOREVER.png)Mana To Damage (DAMAGE_FOREVER) [[toc](#contents)]
 
 * **description**: If the wand has more than 50 mana, all mana over that is converted into additional damage
 * **type**: ACTION_TYPE_MODIFIER
@@ -3452,7 +3452,7 @@
 
 
 
-### <a id="DAMAGE_RANDOM"></a>![Random damage](images/DAMAGE_RANDOM.png)Random damage (DAMAGE_RANDOM)
+### <a id="DAMAGE_RANDOM"></a>![Random damage](images/DAMAGE_RANDOM.png)Random damage (DAMAGE_RANDOM) [[toc](#contents)]
 
 * **description**: Randomly increases or lowers the damage done by projectiles
 * **type**: ACTION_TYPE_MODIFIER
@@ -3489,7 +3489,7 @@
 
 
 
-### <a id="DARKFLAME"></a>![Path of dark flame](images/DARKFLAME.png)Path of dark flame (DARKFLAME)
+### <a id="DARKFLAME"></a>![Path of dark flame](images/DARKFLAME.png)Path of dark flame (DARKFLAME) [[toc](#contents)]
 
 * **description**: A trail of dark, deadly flames
 * **type**: ACTION_TYPE_PROJECTILE
@@ -3517,7 +3517,7 @@
 
 
 
-### <a id="DEATH_CROSS"></a>![Death cross](images/DEATH_CROSS.png)Death cross (DEATH_CROSS)
+### <a id="DEATH_CROSS"></a>![Death cross](images/DEATH_CROSS.png)Death cross (DEATH_CROSS) [[toc](#contents)]
 
 * **description**: A deadly energy cross that explodes after a short time
 * **type**: ACTION_TYPE_PROJECTILE
@@ -3545,7 +3545,7 @@
 
 
 
-### <a id="DEATH_CROSS_BIG"></a>![Giga death cross](images/DEATH_CROSS_BIG.png)Giga death cross (DEATH_CROSS_BIG)
+### <a id="DEATH_CROSS_BIG"></a>![Giga death cross](images/DEATH_CROSS_BIG.png)Giga death cross (DEATH_CROSS_BIG) [[toc](#contents)]
 
 * **description**: A giant, deadly energy cross that explodes after a short time
 * **type**: ACTION_TYPE_PROJECTILE
@@ -3574,7 +3574,7 @@
 
 
 
-### <a id="DECELERATING_SHOT"></a>![Decelerating shot](images/DECELERATING_SHOT.png)Decelerating shot (DECELERATING_SHOT)
+### <a id="DECELERATING_SHOT"></a>![Decelerating shot](images/DECELERATING_SHOT.png)Decelerating shot (DECELERATING_SHOT) [[toc](#contents)]
 
 * **description**: Makes a projectile decelerate as it flies
 * **type**: ACTION_TYPE_MODIFIER
@@ -3612,7 +3612,7 @@
 
 
 
-### <a id="DELAYED_SPELL"></a>![Delayed spellcast](images/DELAYED_SPELL.png)Delayed spellcast (DELAYED_SPELL)
+### <a id="DELAYED_SPELL"></a>![Delayed spellcast](images/DELAYED_SPELL.png)Delayed spellcast (DELAYED_SPELL) [[toc](#contents)]
 
 * **description**: A static, magical phenomenon that casts 3 extra spells after a short while
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -3640,7 +3640,7 @@
 
 
 
-### <a id="DESTRUCTION"></a>![Destruction](images/DESTRUCTION.png)Destruction (DESTRUCTION)
+### <a id="DESTRUCTION"></a>![Destruction](images/DESTRUCTION.png)Destruction (DESTRUCTION) [[toc](#contents)]
 
 * **description**: Instantly decimates foes around you, at the cost of your HP
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -3669,7 +3669,7 @@
 
 
 
-### <a id="DIGGER"></a>![Digging bolt](images/DIGGER.png)Digging bolt (DIGGER)
+### <a id="DIGGER"></a>![Digging bolt](images/DIGGER.png)Digging bolt (DIGGER) [[toc](#contents)]
 
 * **description**: A bolt that is ideal for mining operations
 * **type**: ACTION_TYPE_PROJECTILE
@@ -3698,7 +3698,7 @@
 
 
 
-### <a id="DISC_BULLET"></a>![Disc projectile](images/DISC_BULLET.png)Disc projectile (DISC_BULLET)
+### <a id="DISC_BULLET"></a>![Disc projectile](images/DISC_BULLET.png)Disc projectile (DISC_BULLET) [[toc](#contents)]
 
 * **description**: Summons a sharp disc projectile
 * **type**: ACTION_TYPE_PROJECTILE
@@ -3728,7 +3728,7 @@
 
 
 
-### <a id="DISC_BULLET_BIG"></a>![Giga disc projectile](images/DISC_BULLET_BIG.png)Giga disc projectile (DISC_BULLET_BIG)
+### <a id="DISC_BULLET_BIG"></a>![Giga disc projectile](images/DISC_BULLET_BIG.png)Giga disc projectile (DISC_BULLET_BIG) [[toc](#contents)]
 
 * **description**: Summons a large, serrated disc with a curious flight pattern
 * **type**: ACTION_TYPE_PROJECTILE
@@ -3758,7 +3758,7 @@
 
 
 
-### <a id="DISC_BULLET_BIGGER"></a>![Summon Omega Sawblade](images/DISC_BULLET_BIGGER.png)Summon Omega Sawblade (DISC_BULLET_BIGGER)
+### <a id="DISC_BULLET_BIGGER"></a>![Summon Omega Sawblade](images/DISC_BULLET_BIGGER.png)Summon Omega Sawblade (DISC_BULLET_BIGGER) [[toc](#contents)]
 
 * **description**: That's a lot of sawblade
 * **type**: ACTION_TYPE_PROJECTILE
@@ -3789,7 +3789,7 @@
 
 
 
-### <a id="DIVIDE_10"></a>![Divide by 10](images/DIVIDE_10.png)Divide by 10 (DIVIDE_10)
+### <a id="DIVIDE_10"></a>![Divide by 10](images/DIVIDE_10.png)Divide by 10 (DIVIDE_10) [[toc](#contents)]
 
 * **description**: Casts the next spell 10 times, but with reduced damage
 * **type**: ACTION_TYPE_OTHER
@@ -3883,7 +3883,7 @@
 
 
 
-### <a id="DIVIDE_2"></a>![Divide by 2](images/DIVIDE_2.png)Divide by 2 (DIVIDE_2)
+### <a id="DIVIDE_2"></a>![Divide by 2](images/DIVIDE_2.png)Divide by 2 (DIVIDE_2) [[toc](#contents)]
 
 * **description**: Casts the next spell twice, but with reduced damage
 * **type**: ACTION_TYPE_OTHER
@@ -3976,7 +3976,7 @@
 
 
 
-### <a id="DIVIDE_3"></a>![Divide by 3](images/DIVIDE_3.png)Divide by 3 (DIVIDE_3)
+### <a id="DIVIDE_3"></a>![Divide by 3](images/DIVIDE_3.png)Divide by 3 (DIVIDE_3) [[toc](#contents)]
 
 * **description**: Casts the next spell 3 times, but with reduced damage
 * **type**: ACTION_TYPE_OTHER
@@ -4069,7 +4069,7 @@
 
 
 
-### <a id="DIVIDE_4"></a>![Divide by 4](images/DIVIDE_4.png)Divide by 4 (DIVIDE_4)
+### <a id="DIVIDE_4"></a>![Divide by 4](images/DIVIDE_4.png)Divide by 4 (DIVIDE_4) [[toc](#contents)]
 
 * **description**: Casts the next spell 4 times, but with reduced damage
 * **type**: ACTION_TYPE_OTHER
@@ -4162,7 +4162,7 @@
 
 
 
-### <a id="DRAW_3_RANDOM"></a>![Copy three random spells](images/DRAW_3_RANDOM.png)Copy three random spells (DRAW_3_RANDOM)
+### <a id="DRAW_3_RANDOM"></a>![Copy three random spells](images/DRAW_3_RANDOM.png)Copy three random spells (DRAW_3_RANDOM) [[toc](#contents)]
 
 * **description**: Casts three random spells among the spells in your wand
 * **type**: ACTION_TYPE_OTHER
@@ -4231,7 +4231,7 @@
 
 
 
-### <a id="DRAW_RANDOM"></a>![Copy random spell](images/DRAW_RANDOM.png)Copy random spell (DRAW_RANDOM)
+### <a id="DRAW_RANDOM"></a>![Copy random spell](images/DRAW_RANDOM.png)Copy random spell (DRAW_RANDOM) [[toc](#contents)]
 
 * **description**: Casts a random spell among the spells in your wand
 * **type**: ACTION_TYPE_OTHER
@@ -4297,7 +4297,7 @@
 
 
 
-### <a id="DRAW_RANDOM_X3"></a>![Copy random spell thrice](images/DRAW_RANDOM_X3.png)Copy random spell thrice (DRAW_RANDOM_X3)
+### <a id="DRAW_RANDOM_X3"></a>![Copy random spell thrice](images/DRAW_RANDOM_X3.png)Copy random spell thrice (DRAW_RANDOM_X3) [[toc](#contents)]
 
 * **description**: Casts a random spell among the spells in your wand three times!
 * **type**: ACTION_TYPE_OTHER
@@ -4365,7 +4365,7 @@
 
 
 
-### <a id="DUPLICATE"></a>![Spell duplication](images/DUPLICATE.png)Spell duplication (DUPLICATE)
+### <a id="DUPLICATE"></a>![Spell duplication](images/DUPLICATE.png)Spell duplication (DUPLICATE) [[toc](#contents)]
 
 * **description**: Duplicates every spell cast before it
 * **type**: ACTION_TYPE_OTHER
@@ -4404,7 +4404,7 @@
 
 
 
-### <a id="DYNAMITE"></a>![Dynamite](images/DYNAMITE.png)Dynamite (DYNAMITE)
+### <a id="DYNAMITE"></a>![Dynamite](images/DYNAMITE.png)Dynamite (DYNAMITE) [[toc](#contents)]
 
 * **description**: Summons a small explosive
 * **type**: ACTION_TYPE_PROJECTILE
@@ -4433,7 +4433,7 @@
 
 
 
-### <a id="ELECTRIC_CHARGE"></a>![Electric charge](images/ELECTRIC_CHARGE.png)Electric charge (ELECTRIC_CHARGE)
+### <a id="ELECTRIC_CHARGE"></a>![Electric charge](images/ELECTRIC_CHARGE.png)Electric charge (ELECTRIC_CHARGE) [[toc](#contents)]
 
 * **description**: Gives a projectile an electric charge, that it will release on impact
 * **type**: ACTION_TYPE_MODIFIER
@@ -4463,7 +4463,7 @@
 
 
 
-### <a id="ELECTROCUTION_FIELD"></a>![Circle of thunder](images/ELECTROCUTION_FIELD.png)Circle of thunder (ELECTROCUTION_FIELD)
+### <a id="ELECTROCUTION_FIELD"></a>![Circle of thunder](images/ELECTROCUTION_FIELD.png)Circle of thunder (ELECTROCUTION_FIELD) [[toc](#contents)]
 
 * **description**: A field of electrifying magic
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -4491,7 +4491,7 @@
 
 
 
-### <a id="ENERGY_SHIELD"></a>![Energy shield](images/ENERGY_SHIELD.png)Energy shield (ENERGY_SHIELD)
+### <a id="ENERGY_SHIELD"></a>![Energy shield](images/ENERGY_SHIELD.png)Energy shield (ENERGY_SHIELD) [[toc](#contents)]
 
 * **description**: Deflects incoming projectiles
 * **type**: ACTION_TYPE_PASSIVE
@@ -4518,7 +4518,7 @@
 
 
 
-### <a id="ENERGY_SHIELD_SECTOR"></a>![Energy shield sector](images/ENERGY_SHIELD_SECTOR.png)Energy shield sector (ENERGY_SHIELD_SECTOR)
+### <a id="ENERGY_SHIELD_SECTOR"></a>![Energy shield sector](images/ENERGY_SHIELD_SECTOR.png)Energy shield sector (ENERGY_SHIELD_SECTOR) [[toc](#contents)]
 
 * **description**: Deflects incoming projectiles
 * **type**: ACTION_TYPE_PASSIVE
@@ -4545,7 +4545,7 @@
 
 
 
-### <a id="ENERGY_SHIELD_SHOT"></a>![Projectile energy shield](images/ENERGY_SHIELD_SHOT.png)Projectile energy shield (ENERGY_SHIELD_SHOT)
+### <a id="ENERGY_SHIELD_SHOT"></a>![Projectile energy shield](images/ENERGY_SHIELD_SHOT.png)Projectile energy shield (ENERGY_SHIELD_SHOT) [[toc](#contents)]
 
 * **description**: Gives a projectile a shield that deflects other projectiles
 * **type**: ACTION_TYPE_MODIFIER
@@ -4581,7 +4581,7 @@
 
 
 
-### <a id="ESSENCE_TO_POWER"></a>![Essence to Power](images/ESSENCE_TO_POWER.png)Essence to Power (ESSENCE_TO_POWER)
+### <a id="ESSENCE_TO_POWER"></a>![Essence to Power](images/ESSENCE_TO_POWER.png)Essence to Power (ESSENCE_TO_POWER) [[toc](#contents)]
 
 * **description**: Increases a projectile's damage based on the number of creatures nearby
 * **type**: ACTION_TYPE_MODIFIER
@@ -4610,7 +4610,7 @@
 
 
 
-### <a id="EXPANDING_ORB"></a>![Expanding Sphere](images/EXPANDING_ORB.png)Expanding Sphere (EXPANDING_ORB)
+### <a id="EXPANDING_ORB"></a>![Expanding Sphere](images/EXPANDING_ORB.png)Expanding Sphere (EXPANDING_ORB) [[toc](#contents)]
 
 * **description**: A slow projectile that increases its damage over time
 * **type**: ACTION_TYPE_PROJECTILE
@@ -4639,7 +4639,7 @@
 
 
 
-### <a id="EXPLODING_DEER"></a>![Summon deercoy](images/EXPLODING_DEER.png)Summon deercoy (EXPLODING_DEER)
+### <a id="EXPLODING_DEER"></a>![Summon deercoy](images/EXPLODING_DEER.png)Summon deercoy (EXPLODING_DEER) [[toc](#contents)]
 
 * **description**: Summons a seemingly-innocuous deer
 * **type**: ACTION_TYPE_PROJECTILE
@@ -4667,7 +4667,7 @@
 
 
 
-### <a id="EXPLODING_DUCKS"></a>![Flock of Ducks](images/EXPLODING_DUCKS.png)Flock of Ducks (EXPLODING_DUCKS)
+### <a id="EXPLODING_DUCKS"></a>![Flock of Ducks](images/EXPLODING_DUCKS.png)Flock of Ducks (EXPLODING_DUCKS) [[toc](#contents)]
 
 * **description**: Summons a chaotic flock of spicy ducks
 * **type**: ACTION_TYPE_PROJECTILE
@@ -4698,7 +4698,7 @@
 
 
 
-### <a id="EXPLOSION"></a>![Explosion](images/EXPLOSION.png)Explosion (EXPLOSION)
+### <a id="EXPLOSION"></a>![Explosion](images/EXPLOSION.png)Explosion (EXPLOSION) [[toc](#contents)]
 
 * **description**: A powerful explosion
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -4727,7 +4727,7 @@
 
 
 
-### <a id="EXPLOSION_LIGHT"></a>![Magical Explosion](images/EXPLOSION_LIGHT.png)Magical Explosion (EXPLOSION_LIGHT)
+### <a id="EXPLOSION_LIGHT"></a>![Magical Explosion](images/EXPLOSION_LIGHT.png)Magical Explosion (EXPLOSION_LIGHT) [[toc](#contents)]
 
 * **description**: A large explosion that doesn't damage the ground
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -4756,7 +4756,7 @@
 
 
 
-### <a id="EXPLOSION_REMOVE"></a>![Remove Explosion](images/EXPLOSION_REMOVE.png)Remove Explosion (EXPLOSION_REMOVE)
+### <a id="EXPLOSION_REMOVE"></a>![Remove Explosion](images/EXPLOSION_REMOVE.png)Remove Explosion (EXPLOSION_REMOVE) [[toc](#contents)]
 
 * **description**: Makes a projectile no longer explode
 * **type**: ACTION_TYPE_MODIFIER
@@ -4787,7 +4787,7 @@
 
 
 
-### <a id="EXPLOSION_TINY"></a>![Concentrated Explosion](images/EXPLOSION_TINY.png)Concentrated Explosion (EXPLOSION_TINY)
+### <a id="EXPLOSION_TINY"></a>![Concentrated Explosion](images/EXPLOSION_TINY.png)Concentrated Explosion (EXPLOSION_TINY) [[toc](#contents)]
 
 * **description**: Limits the radius of a projectile's explosion heavily
 * **type**: ACTION_TYPE_MODIFIER
@@ -4818,7 +4818,7 @@
 
 
 
-### <a id="EXPLOSIVE_PROJECTILE"></a>![Explosive projectile](images/EXPLOSIVE_PROJECTILE.png)Explosive projectile (EXPLOSIVE_PROJECTILE)
+### <a id="EXPLOSIVE_PROJECTILE"></a>![Explosive projectile](images/EXPLOSIVE_PROJECTILE.png)Explosive projectile (EXPLOSIVE_PROJECTILE) [[toc](#contents)]
 
 * **description**: Makes a projectile more destructive to the environment
 * **type**: ACTION_TYPE_MODIFIER
@@ -4857,7 +4857,7 @@
 
 
 
-### <a id="FIREBALL"></a>![Fireball](images/FIREBALL.png)Fireball (FIREBALL)
+### <a id="FIREBALL"></a>![Fireball](images/FIREBALL.png)Fireball (FIREBALL) [[toc](#contents)]
 
 * **description**: A powerful exploding spell
 * **type**: ACTION_TYPE_PROJECTILE
@@ -4887,7 +4887,7 @@
 
 
 
-### <a id="FIREBALL_RAY"></a>![Fireball thrower](images/FIREBALL_RAY.png)Fireball thrower (FIREBALL_RAY)
+### <a id="FIREBALL_RAY"></a>![Fireball thrower](images/FIREBALL_RAY.png)Fireball thrower (FIREBALL_RAY) [[toc](#contents)]
 
 * **description**: Makes a projectile cast fireballs in random directions
 * **type**: ACTION_TYPE_MODIFIER
@@ -4915,7 +4915,7 @@
 
 
 
-### <a id="FIREBALL_RAY_ENEMY"></a>![Personal fireball thrower](images/FIREBALL_RAY_ENEMY.png)Personal fireball thrower (FIREBALL_RAY_ENEMY)
+### <a id="FIREBALL_RAY_ENEMY"></a>![Personal fireball thrower](images/FIREBALL_RAY_ENEMY.png)Personal fireball thrower (FIREBALL_RAY_ENEMY) [[toc](#contents)]
 
 * **description**: Makes a projectile turn the creatures it hits into living fireball throwers
 * **type**: ACTION_TYPE_MODIFIER
@@ -4943,7 +4943,7 @@
 
 
 
-### <a id="FIREBALL_RAY_LINE"></a>![Two-way fireball thrower](images/FIREBALL_RAY_LINE.png)Two-way fireball thrower (FIREBALL_RAY_LINE)
+### <a id="FIREBALL_RAY_LINE"></a>![Two-way fireball thrower](images/FIREBALL_RAY_LINE.png)Two-way fireball thrower (FIREBALL_RAY_LINE) [[toc](#contents)]
 
 * **description**: Makes a projectile fire small fireballs perpendicular to its trajectory
 * **type**: ACTION_TYPE_MODIFIER
@@ -4971,7 +4971,7 @@
 
 
 
-### <a id="FIREBOMB"></a>![Firebomb](images/FIREBOMB.png)Firebomb (FIREBOMB)
+### <a id="FIREBOMB"></a>![Firebomb](images/FIREBOMB.png)Firebomb (FIREBOMB) [[toc](#contents)]
 
 * **description**: Slow, fiery bolt
 * **type**: ACTION_TYPE_PROJECTILE
@@ -4998,7 +4998,7 @@
 
 
 
-### <a id="FIREWORK"></a>![Fireworks!](images/FIREWORK.png)Fireworks! (FIREWORK)
+### <a id="FIREWORK"></a>![Fireworks!](images/FIREWORK.png)Fireworks! (FIREWORK) [[toc](#contents)]
 
 * **description**: A fiery, explosive projectile
 * **type**: ACTION_TYPE_PROJECTILE
@@ -5032,7 +5032,7 @@
 
 
 
-### <a id="FIRE_BLAST"></a>![Explosion of brimstone](images/FIRE_BLAST.png)Explosion of brimstone (FIRE_BLAST)
+### <a id="FIRE_BLAST"></a>![Explosion of brimstone](images/FIRE_BLAST.png)Explosion of brimstone (FIRE_BLAST) [[toc](#contents)]
 
 * **description**: A fiery explosion
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -5061,7 +5061,7 @@
 
 
 
-### <a id="FIRE_TRAIL"></a>![Fire trail](images/FIRE_TRAIL.png)Fire trail (FIRE_TRAIL)
+### <a id="FIRE_TRAIL"></a>![Fire trail](images/FIRE_TRAIL.png)Fire trail (FIRE_TRAIL) [[toc](#contents)]
 
 * **description**: Gives a projectile a trail of fiery particles
 * **type**: ACTION_TYPE_MODIFIER
@@ -5091,7 +5091,7 @@
 
 
 
-### <a id="FIZZLE"></a>![Fizzle](images/FIZZLE.png)Fizzle (FIZZLE)
+### <a id="FIZZLE"></a>![Fizzle](images/FIZZLE.png)Fizzle (FIZZLE) [[toc](#contents)]
 
 * **description**: Gives a spell a small probability of short-circuiting
 * **type**: ACTION_TYPE_MODIFIER
@@ -5128,7 +5128,7 @@
 
 
 
-### <a id="FLAMETHROWER"></a>![Flamethrower](images/FLAMETHROWER.png)Flamethrower (FLAMETHROWER)
+### <a id="FLAMETHROWER"></a>![Flamethrower](images/FLAMETHROWER.png)Flamethrower (FLAMETHROWER) [[toc](#contents)]
 
 * **description**: A stream of fire!!
 * **type**: ACTION_TYPE_PROJECTILE
@@ -5156,7 +5156,7 @@
 
 
 
-### <a id="FLOATING_ARC"></a>![Floating arc](images/FLOATING_ARC.png)Floating arc (FLOATING_ARC)
+### <a id="FLOATING_ARC"></a>![Floating arc](images/FLOATING_ARC.png)Floating arc (FLOATING_ARC) [[toc](#contents)]
 
 * **description**: Makes a projectile float above the ground
 * **type**: ACTION_TYPE_MODIFIER
@@ -5185,7 +5185,7 @@
 
 
 
-### <a id="FLY_DOWNWARDS"></a>![Fly downwards](images/FLY_DOWNWARDS.png)Fly downwards (FLY_DOWNWARDS)
+### <a id="FLY_DOWNWARDS"></a>![Fly downwards](images/FLY_DOWNWARDS.png)Fly downwards (FLY_DOWNWARDS) [[toc](#contents)]
 
 * **description**: Causes a projectile to aim straight downwards a short time after casting
 * **type**: ACTION_TYPE_MODIFIER
@@ -5214,7 +5214,7 @@
 
 
 
-### <a id="FLY_UPWARDS"></a>![Fly upwards](images/FLY_UPWARDS.png)Fly upwards (FLY_UPWARDS)
+### <a id="FLY_UPWARDS"></a>![Fly upwards](images/FLY_UPWARDS.png)Fly upwards (FLY_UPWARDS) [[toc](#contents)]
 
 * **description**: Causes a projectile to aim straight upwards a short time after casting
 * **type**: ACTION_TYPE_MODIFIER
@@ -5243,7 +5243,7 @@
 
 
 
-### <a id="FREEZE"></a>![Freeze charge](images/FREEZE.png)Freeze charge (FREEZE)
+### <a id="FREEZE"></a>![Freeze charge](images/FREEZE.png)Freeze charge (FREEZE) [[toc](#contents)]
 
 * **description**: Gives a projectile a frozen charge, that it will release on impact
 * **type**: ACTION_TYPE_MODIFIER
@@ -5273,7 +5273,7 @@
 
 
 
-### <a id="FREEZE_FIELD"></a>![Circle of stillness](images/FREEZE_FIELD.png)Circle of stillness (FREEZE_FIELD)
+### <a id="FREEZE_FIELD"></a>![Circle of stillness](images/FREEZE_FIELD.png)Circle of stillness (FREEZE_FIELD) [[toc](#contents)]
 
 * **description**: A field of freezing magic
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -5301,7 +5301,7 @@
 
 
 
-### <a id="FREEZING_GAZE"></a>![Freezing gaze](images/FREEZING_GAZE.png)Freezing gaze (FREEZING_GAZE)
+### <a id="FREEZING_GAZE"></a>![Freezing gaze](images/FREEZING_GAZE.png)Freezing gaze (FREEZING_GAZE) [[toc](#contents)]
 
 * **description**: A heart-freezingly sinister aura
 * **type**: ACTION_TYPE_PROJECTILE
@@ -5341,7 +5341,7 @@
 
 
 
-### <a id="FRIEND_FLY"></a>![Summon Friendly fly](images/FRIEND_FLY.png)Summon Friendly fly (FRIEND_FLY)
+### <a id="FRIEND_FLY"></a>![Summon Friendly fly](images/FRIEND_FLY.png)Summon Friendly fly (FRIEND_FLY) [[toc](#contents)]
 
 * **description**: Summons a friendly fly that attacks your enemies!
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -5371,7 +5371,7 @@
 
 
 
-### <a id="FUNKY_SPELL"></a>![???](images/FUNKY_SPELL.png)??? (FUNKY_SPELL)
+### <a id="FUNKY_SPELL"></a>![???](images/FUNKY_SPELL.png)??? (FUNKY_SPELL) [[toc](#contents)]
 
 * **description**: ???
 * **type**: ACTION_TYPE_PROJECTILE
@@ -5402,7 +5402,7 @@
 
 
 
-### <a id="GAMMA"></a>![Gamma](images/GAMMA.png)Gamma (GAMMA)
+### <a id="GAMMA"></a>![Gamma](images/GAMMA.png)Gamma (GAMMA) [[toc](#contents)]
 
 * **description**: Casts a copy of the last spell in your wand
 * **type**: ACTION_TYPE_OTHER
@@ -5446,7 +5446,7 @@
 
 
 
-### <a id="GLITTER_BOMB"></a>![Glitter bomb](images/GLITTER_BOMB.png)Glitter bomb (GLITTER_BOMB)
+### <a id="GLITTER_BOMB"></a>![Glitter bomb](images/GLITTER_BOMB.png)Glitter bomb (GLITTER_BOMB) [[toc](#contents)]
 
 * **description**: Summons a bomb that explodes into volatile fragments
 * **type**: ACTION_TYPE_PROJECTILE
@@ -5475,7 +5475,7 @@
 
 
 
-### <a id="GLOWING_BOLT"></a>![Pinpoint of light](images/GLOWING_BOLT.png)Pinpoint of light (GLOWING_BOLT)
+### <a id="GLOWING_BOLT"></a>![Pinpoint of light](images/GLOWING_BOLT.png)Pinpoint of light (GLOWING_BOLT) [[toc](#contents)]
 
 * **description**: An extremely concentrated point of light that explodes after a moment
 * **type**: ACTION_TYPE_PROJECTILE
@@ -5504,7 +5504,7 @@
 
 
 
-### <a id="GLUE_SHOT"></a>![Glue Ball](images/GLUE_SHOT.png)Glue Ball (GLUE_SHOT)
+### <a id="GLUE_SHOT"></a>![Glue Ball](images/GLUE_SHOT.png)Glue Ball (GLUE_SHOT) [[toc](#contents)]
 
 * **description**: A projectile that explodes into a sticky mess
 * **type**: ACTION_TYPE_PROJECTILE
@@ -5533,7 +5533,7 @@
 
 
 
-### <a id="GRAVITY"></a>![Gravity](images/GRAVITY.png)Gravity (GRAVITY)
+### <a id="GRAVITY"></a>![Gravity](images/GRAVITY.png)Gravity (GRAVITY) [[toc](#contents)]
 
 * **description**: Increases the effect gravity has on a projectile
 * **type**: ACTION_TYPE_MODIFIER
@@ -5561,7 +5561,7 @@
 
 
 
-### <a id="GRAVITY_ANTI"></a>![Anti-gravity](images/GRAVITY_ANTI.png)Anti-gravity (GRAVITY_ANTI)
+### <a id="GRAVITY_ANTI"></a>![Anti-gravity](images/GRAVITY_ANTI.png)Anti-gravity (GRAVITY_ANTI) [[toc](#contents)]
 
 * **description**: Applies a lifting force to a projectile
 * **type**: ACTION_TYPE_MODIFIER
@@ -5589,7 +5589,7 @@
 
 
 
-### <a id="GRAVITY_FIELD_ENEMY"></a>![Personal gravity field](images/GRAVITY_FIELD_ENEMY.png)Personal gravity field (GRAVITY_FIELD_ENEMY)
+### <a id="GRAVITY_FIELD_ENEMY"></a>![Personal gravity field](images/GRAVITY_FIELD_ENEMY.png)Personal gravity field (GRAVITY_FIELD_ENEMY) [[toc](#contents)]
 
 * **description**: Makes creatures hit by a projectile gain a temporary gravity well that draws projectiles in
 * **type**: ACTION_TYPE_MODIFIER
@@ -5617,7 +5617,7 @@
 
 
 
-### <a id="GRENADE"></a>![Firebolt](images/GRENADE.png)Firebolt (GRENADE)
+### <a id="GRENADE"></a>![Firebolt](images/GRENADE.png)Firebolt (GRENADE) [[toc](#contents)]
 
 * **description**: A bouncy, explosive bolt
 * **type**: ACTION_TYPE_PROJECTILE
@@ -5648,7 +5648,7 @@
 
 
 
-### <a id="GRENADE_ANTI"></a>![Odd Firebolt](images/GRENADE_ANTI.png)Odd Firebolt (GRENADE_ANTI)
+### <a id="GRENADE_ANTI"></a>![Odd Firebolt](images/GRENADE_ANTI.png)Odd Firebolt (GRENADE_ANTI) [[toc](#contents)]
 
 * **description**: A somewhat peculiar bouncy, explosive bolt
 * **type**: ACTION_TYPE_PROJECTILE
@@ -5679,7 +5679,7 @@
 
 
 
-### <a id="GRENADE_LARGE"></a>![Dropper bolt](images/GRENADE_LARGE.png)Dropper bolt (GRENADE_LARGE)
+### <a id="GRENADE_LARGE"></a>![Dropper bolt](images/GRENADE_LARGE.png)Dropper bolt (GRENADE_LARGE) [[toc](#contents)]
 
 * **description**: A very heavy explosive bolt
 * **type**: ACTION_TYPE_PROJECTILE
@@ -5710,7 +5710,7 @@
 
 
 
-### <a id="GRENADE_TIER_2"></a>![Large firebolt](images/GRENADE_TIER_2.png)Large firebolt (GRENADE_TIER_2)
+### <a id="GRENADE_TIER_2"></a>![Large firebolt](images/GRENADE_TIER_2.png)Large firebolt (GRENADE_TIER_2) [[toc](#contents)]
 
 * **description**: A more powerful version of Firebolt
 * **type**: ACTION_TYPE_PROJECTILE
@@ -5741,7 +5741,7 @@
 
 
 
-### <a id="GRENADE_TIER_3"></a>![Giant firebolt](images/GRENADE_TIER_3.png)Giant firebolt (GRENADE_TIER_3)
+### <a id="GRENADE_TIER_3"></a>![Giant firebolt](images/GRENADE_TIER_3.png)Giant firebolt (GRENADE_TIER_3) [[toc](#contents)]
 
 * **description**: The most powerful version of Firebolt
 * **type**: ACTION_TYPE_PROJECTILE
@@ -5772,7 +5772,7 @@
 
 
 
-### <a id="GRENADE_TRIGGER"></a>![Firebolt with trigger](images/GRENADE_TRIGGER.png)Firebolt with trigger (GRENADE_TRIGGER)
+### <a id="GRENADE_TRIGGER"></a>![Firebolt with trigger](images/GRENADE_TRIGGER.png)Firebolt with trigger (GRENADE_TRIGGER) [[toc](#contents)]
 
 * **description**: A bouncy, explosive bolt that that casts another spell upon collision
 * **type**: ACTION_TYPE_PROJECTILE
@@ -5803,7 +5803,7 @@
 
 
 
-### <a id="GUNPOWDER_TRAIL"></a>![Gunpowder trail](images/GUNPOWDER_TRAIL.png)Gunpowder trail (GUNPOWDER_TRAIL)
+### <a id="GUNPOWDER_TRAIL"></a>![Gunpowder trail](images/GUNPOWDER_TRAIL.png)Gunpowder trail (GUNPOWDER_TRAIL) [[toc](#contents)]
 
 * **description**: Gives a projectile a trail of gunpowder
 * **type**: ACTION_TYPE_MODIFIER
@@ -5832,7 +5832,7 @@
 
 
 
-### <a id="HEAL_BULLET"></a>![Healing bolt](images/HEAL_BULLET.png)Healing bolt (HEAL_BULLET)
+### <a id="HEAL_BULLET"></a>![Healing bolt](images/HEAL_BULLET.png)Healing bolt (HEAL_BULLET) [[toc](#contents)]
 
 * **description**: A magical bolt with rejuvenative powers
 * **type**: ACTION_TYPE_PROJECTILE
@@ -5861,7 +5861,7 @@
 
 
 
-### <a id="HEAVY_BULLET"></a>![Magic bolt](images/HEAVY_BULLET.png)Magic bolt (HEAVY_BULLET)
+### <a id="HEAVY_BULLET"></a>![Magic bolt](images/HEAVY_BULLET.png)Magic bolt (HEAVY_BULLET) [[toc](#contents)]
 
 * **description**: A powerful magical bolt
 * **type**: ACTION_TYPE_PROJECTILE
@@ -5893,7 +5893,7 @@
 
 
 
-### <a id="HEAVY_BULLET_TIMER"></a>![Magic bolt with timer](images/HEAVY_BULLET_TIMER.png)Magic bolt with timer (HEAVY_BULLET_TIMER)
+### <a id="HEAVY_BULLET_TIMER"></a>![Magic bolt with timer](images/HEAVY_BULLET_TIMER.png)Magic bolt with timer (HEAVY_BULLET_TIMER) [[toc](#contents)]
 
 * **description**: A powerful magical bolt that casts another spell after a timer runs out
 * **type**: ACTION_TYPE_PROJECTILE
@@ -5925,7 +5925,7 @@
 
 
 
-### <a id="HEAVY_BULLET_TRIGGER"></a>![Magic bolt with trigger](images/HEAVY_BULLET_TRIGGER.png)Magic bolt with trigger (HEAVY_BULLET_TRIGGER)
+### <a id="HEAVY_BULLET_TRIGGER"></a>![Magic bolt with trigger](images/HEAVY_BULLET_TRIGGER.png)Magic bolt with trigger (HEAVY_BULLET_TRIGGER) [[toc](#contents)]
 
 * **description**: A powerful magical bolt that casts another spell upon collision
 * **type**: ACTION_TYPE_PROJECTILE
@@ -5957,7 +5957,7 @@
 
 
 
-### <a id="HEAVY_SHOT"></a>![Heavy Shot](images/HEAVY_SHOT.png)Heavy Shot (HEAVY_SHOT)
+### <a id="HEAVY_SHOT"></a>![Heavy Shot](images/HEAVY_SHOT.png)Heavy Shot (HEAVY_SHOT) [[toc](#contents)]
 
 * **description**: Greatly increases the damage done by a projectile, at the cost of its speed
 * **type**: ACTION_TYPE_MODIFIER
@@ -5997,7 +5997,7 @@
 
 
 
-### <a id="HEAVY_SPREAD"></a>![Heavy spread](images/HEAVY_SPREAD.png)Heavy spread (HEAVY_SPREAD)
+### <a id="HEAVY_SPREAD"></a>![Heavy spread](images/HEAVY_SPREAD.png)Heavy spread (HEAVY_SPREAD) [[toc](#contents)]
 
 * **description**: Gives a projectile a much lower cast delay, but no respect to your aim
 * **type**: ACTION_TYPE_MODIFIER
@@ -6027,7 +6027,7 @@
 
 
 
-### <a id="HITFX_BURNING_CRITICAL_HIT"></a>![Critical on burning](images/HITFX_BURNING_CRITICAL_HIT.png)Critical on burning (HITFX_BURNING_CRITICAL_HIT)
+### <a id="HITFX_BURNING_CRITICAL_HIT"></a>![Critical on burning](images/HITFX_BURNING_CRITICAL_HIT.png)Critical on burning (HITFX_BURNING_CRITICAL_HIT) [[toc](#contents)]
 
 * **description**: Makes a projectile always do a critical hit on burning enemies
 * **type**: ACTION_TYPE_MODIFIER
@@ -6055,7 +6055,7 @@
 
 
 
-### <a id="HITFX_CRITICAL_BLOOD"></a>![Critical on bloody enemies](images/HITFX_CRITICAL_BLOOD.png)Critical on bloody enemies (HITFX_CRITICAL_BLOOD)
+### <a id="HITFX_CRITICAL_BLOOD"></a>![Critical on bloody enemies](images/HITFX_CRITICAL_BLOOD.png)Critical on bloody enemies (HITFX_CRITICAL_BLOOD) [[toc](#contents)]
 
 * **description**: Makes a projectile always do a critical hit on bloody enemies
 * **type**: ACTION_TYPE_MODIFIER
@@ -6083,7 +6083,7 @@
 
 
 
-### <a id="HITFX_CRITICAL_OIL"></a>![Critical on oiled enemies](images/HITFX_CRITICAL_OIL.png)Critical on oiled enemies (HITFX_CRITICAL_OIL)
+### <a id="HITFX_CRITICAL_OIL"></a>![Critical on oiled enemies](images/HITFX_CRITICAL_OIL.png)Critical on oiled enemies (HITFX_CRITICAL_OIL) [[toc](#contents)]
 
 * **description**: Makes a projectile always do a critical hit on oiled enemies
 * **type**: ACTION_TYPE_MODIFIER
@@ -6111,7 +6111,7 @@
 
 
 
-### <a id="HITFX_CRITICAL_WATER"></a>![Critical on wet (water) enemies](images/HITFX_CRITICAL_WATER.png)Critical on wet (water) enemies (HITFX_CRITICAL_WATER)
+### <a id="HITFX_CRITICAL_WATER"></a>![Critical on wet (water) enemies](images/HITFX_CRITICAL_WATER.png)Critical on wet (water) enemies (HITFX_CRITICAL_WATER) [[toc](#contents)]
 
 * **description**: Makes a projectile always do a critical hit on wet (water) enemies
 * **type**: ACTION_TYPE_MODIFIER
@@ -6139,7 +6139,7 @@
 
 
 
-### <a id="HITFX_EXPLOSION_ALCOHOL"></a>![Explosion on drunk enemies](images/HITFX_EXPLOSION_ALCOHOL.png)Explosion on drunk enemies (HITFX_EXPLOSION_ALCOHOL)
+### <a id="HITFX_EXPLOSION_ALCOHOL"></a>![Explosion on drunk enemies](images/HITFX_EXPLOSION_ALCOHOL.png)Explosion on drunk enemies (HITFX_EXPLOSION_ALCOHOL) [[toc](#contents)]
 
 * **description**: Makes a projectile explode upon collision with creatures covered in alcohol
 * **type**: ACTION_TYPE_MODIFIER
@@ -6167,7 +6167,7 @@
 
 
 
-### <a id="HITFX_EXPLOSION_ALCOHOL_GIGA"></a>![Giant explosion on drunk enemies](images/HITFX_EXPLOSION_ALCOHOL_GIGA.png)Giant explosion on drunk enemies (HITFX_EXPLOSION_ALCOHOL_GIGA)
+### <a id="HITFX_EXPLOSION_ALCOHOL_GIGA"></a>![Giant explosion on drunk enemies](images/HITFX_EXPLOSION_ALCOHOL_GIGA.png)Giant explosion on drunk enemies (HITFX_EXPLOSION_ALCOHOL_GIGA) [[toc](#contents)]
 
 * **description**: Makes a projectile explode powerfully upon collision with creatures covered in alcohol
 * **type**: ACTION_TYPE_MODIFIER
@@ -6195,7 +6195,7 @@
 
 
 
-### <a id="HITFX_EXPLOSION_SLIME"></a>![Explosion on slimy enemies](images/HITFX_EXPLOSION_SLIME.png)Explosion on slimy enemies (HITFX_EXPLOSION_SLIME)
+### <a id="HITFX_EXPLOSION_SLIME"></a>![Explosion on slimy enemies](images/HITFX_EXPLOSION_SLIME.png)Explosion on slimy enemies (HITFX_EXPLOSION_SLIME) [[toc](#contents)]
 
 * **description**: Makes a projectile explode upon collision with creatures covered in slime
 * **type**: ACTION_TYPE_MODIFIER
@@ -6223,7 +6223,7 @@
 
 
 
-### <a id="HITFX_EXPLOSION_SLIME_GIGA"></a>![Giant explosion on slimy enemies](images/HITFX_EXPLOSION_SLIME_GIGA.png)Giant explosion on slimy enemies (HITFX_EXPLOSION_SLIME_GIGA)
+### <a id="HITFX_EXPLOSION_SLIME_GIGA"></a>![Giant explosion on slimy enemies](images/HITFX_EXPLOSION_SLIME_GIGA.png)Giant explosion on slimy enemies (HITFX_EXPLOSION_SLIME_GIGA) [[toc](#contents)]
 
 * **description**: Makes a projectile explode powerfully upon collision with creatures covered in slime
 * **type**: ACTION_TYPE_MODIFIER
@@ -6251,7 +6251,7 @@
 
 
 
-### <a id="HITFX_PETRIFY"></a>![Petrify](images/HITFX_PETRIFY.png)Petrify (HITFX_PETRIFY)
+### <a id="HITFX_PETRIFY"></a>![Petrify](images/HITFX_PETRIFY.png)Petrify (HITFX_PETRIFY) [[toc](#contents)]
 
 * **description**: Turns a wounded enemy into stone
 * **type**: ACTION_TYPE_MODIFIER
@@ -6279,7 +6279,7 @@
 
 
 
-### <a id="HITFX_TOXIC_CHARM"></a>![Charm on toxic sludge](images/HITFX_TOXIC_CHARM.png)Charm on toxic sludge (HITFX_TOXIC_CHARM)
+### <a id="HITFX_TOXIC_CHARM"></a>![Charm on toxic sludge](images/HITFX_TOXIC_CHARM.png)Charm on toxic sludge (HITFX_TOXIC_CHARM) [[toc](#contents)]
 
 * **description**: Makes a projectile charm creatures covered in toxic sludge
 * **type**: ACTION_TYPE_MODIFIER
@@ -6307,7 +6307,7 @@
 
 
 
-### <a id="HOMING"></a>![Homing](images/HOMING.png)Homing (HOMING)
+### <a id="HOMING"></a>![Homing](images/HOMING.png)Homing (HOMING) [[toc](#contents)]
 
 * **description**: Makes a projectile accelerate towards your foes
 * **type**: ACTION_TYPE_MODIFIER
@@ -6335,7 +6335,7 @@
 
 
 
-### <a id="HOMING_ACCELERATING"></a>![Accelerative Homing](images/HOMING_ACCELERATING.png)Accelerative Homing (HOMING_ACCELERATING)
+### <a id="HOMING_ACCELERATING"></a>![Accelerative Homing](images/HOMING_ACCELERATING.png)Accelerative Homing (HOMING_ACCELERATING) [[toc](#contents)]
 
 * **description**: A projectile homes towards enemies at an increasing pace
 * **type**: ACTION_TYPE_MODIFIER
@@ -6363,7 +6363,7 @@
 
 
 
-### <a id="HOMING_AREA"></a>![Projectile Area Teleport](images/HOMING_AREA.png)Projectile Area Teleport (HOMING_AREA)
+### <a id="HOMING_AREA"></a>![Projectile Area Teleport](images/HOMING_AREA.png)Projectile Area Teleport (HOMING_AREA) [[toc](#contents)]
 
 * **description**: If a valid target appears somewhere in the proximity of a projectile, the projectile will teleport right on top of the target
 * **type**: ACTION_TYPE_MODIFIER
@@ -6401,7 +6401,7 @@
 
 
 
-### <a id="HOMING_CURSOR"></a>![Aiming Arc](images/HOMING_CURSOR.png)Aiming Arc (HOMING_CURSOR)
+### <a id="HOMING_CURSOR"></a>![Aiming Arc](images/HOMING_CURSOR.png)Aiming Arc (HOMING_CURSOR) [[toc](#contents)]
 
 * **description**: A projectile rotates towards the direction you're aiming
 * **type**: ACTION_TYPE_MODIFIER
@@ -6429,7 +6429,7 @@
 
 
 
-### <a id="HOMING_ROTATE"></a>![Rotate towards foes](images/HOMING_ROTATE.png)Rotate towards foes (HOMING_ROTATE)
+### <a id="HOMING_ROTATE"></a>![Rotate towards foes](images/HOMING_ROTATE.png)Rotate towards foes (HOMING_ROTATE) [[toc](#contents)]
 
 * **description**: Makes a projectile turn towards your foes
 * **type**: ACTION_TYPE_MODIFIER
@@ -6457,7 +6457,7 @@
 
 
 
-### <a id="HOMING_SHOOTER"></a>![Boomerang](images/HOMING_SHOOTER.png)Boomerang (HOMING_SHOOTER)
+### <a id="HOMING_SHOOTER"></a>![Boomerang](images/HOMING_SHOOTER.png)Boomerang (HOMING_SHOOTER) [[toc](#contents)]
 
 * **description**: Gives a projectile a path that curves towards you
 * **type**: ACTION_TYPE_MODIFIER
@@ -6485,7 +6485,7 @@
 
 
 
-### <a id="HOMING_SHORT"></a>![Short-range Homing](images/HOMING_SHORT.png)Short-range Homing (HOMING_SHORT)
+### <a id="HOMING_SHORT"></a>![Short-range Homing](images/HOMING_SHORT.png)Short-range Homing (HOMING_SHORT) [[toc](#contents)]
 
 * **description**: A projectile flies towards targets when near them
 * **type**: ACTION_TYPE_MODIFIER
@@ -6513,7 +6513,7 @@
 
 
 
-### <a id="HORIZONTAL_ARC"></a>![Horizontal path](images/HORIZONTAL_ARC.png)Horizontal path (HORIZONTAL_ARC)
+### <a id="HORIZONTAL_ARC"></a>![Horizontal path](images/HORIZONTAL_ARC.png)Horizontal path (HORIZONTAL_ARC) [[toc](#contents)]
 
 * **description**: Forces a projectile on a horizontal path, but increases its damage
 * **type**: ACTION_TYPE_MODIFIER
@@ -6543,7 +6543,7 @@
 
 
 
-### <a id="ICEBALL"></a>![Iceball](images/ICEBALL.png)Iceball (ICEBALL)
+### <a id="ICEBALL"></a>![Iceball](images/ICEBALL.png)Iceball (ICEBALL) [[toc](#contents)]
 
 * **description**: A magical ball of frozen fire
 * **type**: ACTION_TYPE_PROJECTILE
@@ -6573,7 +6573,7 @@
 
 
 
-### <a id="IF_ELSE"></a>![Requirement - Otherwise](images/IF_ELSE.png)Requirement - Otherwise (IF_ELSE)
+### <a id="IF_ELSE"></a>![Requirement - Otherwise](images/IF_ELSE.png)Requirement - Otherwise (IF_ELSE) [[toc](#contents)]
 
 * **description**: If a Requirement spell before this succeeds, the next spell is skipped
 * **type**: ACTION_TYPE_OTHER
@@ -6600,7 +6600,7 @@
 
 
 
-### <a id="IF_END"></a>![Requirement - Endpoint](images/IF_END.png)Requirement - Endpoint (IF_END)
+### <a id="IF_END"></a>![Requirement - Endpoint](images/IF_END.png)Requirement - Endpoint (IF_END) [[toc](#contents)]
 
 * **description**: Any Requirement spells before this will skip all spells between them and this spell
 * **type**: ACTION_TYPE_OTHER
@@ -6627,7 +6627,7 @@
 
 
 
-### <a id="IF_ENEMY"></a>![Requirement - Enemies](images/IF_ENEMY.png)Requirement - Enemies (IF_ENEMY)
+### <a id="IF_ENEMY"></a>![Requirement - Enemies](images/IF_ENEMY.png)Requirement - Enemies (IF_ENEMY) [[toc](#contents)]
 
 * **description**: The next spell is skipped if there are less than 15 enemies nearby
 * **type**: ACTION_TYPE_OTHER
@@ -6724,7 +6724,7 @@
 
 
 
-### <a id="IF_HALF"></a>![Requirement - Every Other](images/IF_HALF.png)Requirement - Every Other (IF_HALF)
+### <a id="IF_HALF"></a>![Requirement - Every Other](images/IF_HALF.png)Requirement - Every Other (IF_HALF) [[toc](#contents)]
 
 * **description**: The next spell is skipped every other time this spell is cast
 * **type**: ACTION_TYPE_OTHER
@@ -6826,7 +6826,7 @@
 
 
 
-### <a id="IF_HP"></a>![Requirement - Low Health](images/IF_HP.png)Requirement - Low Health (IF_HP)
+### <a id="IF_HP"></a>![Requirement - Low Health](images/IF_HP.png)Requirement - Low Health (IF_HP) [[toc](#contents)]
 
 * **description**: The next spell is skipped if you have more than 25% health left
 * **type**: ACTION_TYPE_OTHER
@@ -6931,7 +6931,7 @@
 
 
 
-### <a id="IF_PROJECTILE"></a>![Requirement - Projectile Spells](images/IF_PROJECTILE.png)Requirement - Projectile Spells (IF_PROJECTILE)
+### <a id="IF_PROJECTILE"></a>![Requirement - Projectile Spells](images/IF_PROJECTILE.png)Requirement - Projectile Spells (IF_PROJECTILE) [[toc](#contents)]
 
 * **description**: The next spell is skipped if there are less than 20 projectiles nearby
 * **type**: ACTION_TYPE_OTHER
@@ -7028,7 +7028,7 @@
 
 
 
-### <a id="INFESTATION"></a>![Infestation](images/INFESTATION.png)Infestation (INFESTATION)
+### <a id="INFESTATION"></a>![Infestation](images/INFESTATION.png)Infestation (INFESTATION) [[toc](#contents)]
 
 * **description**: A bunch of magical sparks that fly in every direction
 * **type**: ACTION_TYPE_PROJECTILE
@@ -7059,7 +7059,7 @@
 
 
 
-### <a id="I_SHAPE"></a>![Formation - behind your back](images/I_SHAPE.png)Formation - behind your back (I_SHAPE)
+### <a id="I_SHAPE"></a>![Formation - behind your back](images/I_SHAPE.png)Formation - behind your back (I_SHAPE) [[toc](#contents)]
 
 * **description**: Casts two spells: one ahead of and one behind the caster
 * **type**: ACTION_TYPE_DRAW_MANY
@@ -7087,7 +7087,7 @@
 
 
 
-### <a id="KANTELE_A"></a>![Kantele - note A](images/KANTELE_A.png)Kantele - note A (KANTELE_A)
+### <a id="KANTELE_A"></a>![Kantele - note A](images/KANTELE_A.png)Kantele - note A (KANTELE_A) [[toc](#contents)]
 
 * **description**: Music for your ears!
 * **type**: ACTION_TYPE_OTHER
@@ -7115,7 +7115,7 @@
 
 
 
-### <a id="KANTELE_D"></a>![Kantele - note D](images/KANTELE_D.png)Kantele - note D (KANTELE_D)
+### <a id="KANTELE_D"></a>![Kantele - note D](images/KANTELE_D.png)Kantele - note D (KANTELE_D) [[toc](#contents)]
 
 * **description**: Music for your ears!
 * **type**: ACTION_TYPE_OTHER
@@ -7143,7 +7143,7 @@
 
 
 
-### <a id="KANTELE_DIS"></a>![Kantele - note D#](images/KANTELE_DIS.png)Kantele - note D# (KANTELE_DIS)
+### <a id="KANTELE_DIS"></a>![Kantele - note D#](images/KANTELE_DIS.png)Kantele - note D# (KANTELE_DIS) [[toc](#contents)]
 
 * **description**: Music for your ears!
 * **type**: ACTION_TYPE_OTHER
@@ -7171,7 +7171,7 @@
 
 
 
-### <a id="KANTELE_E"></a>![Kantele - note E](images/KANTELE_E.png)Kantele - note E (KANTELE_E)
+### <a id="KANTELE_E"></a>![Kantele - note E](images/KANTELE_E.png)Kantele - note E (KANTELE_E) [[toc](#contents)]
 
 * **description**: Music for your ears!
 * **type**: ACTION_TYPE_OTHER
@@ -7199,7 +7199,7 @@
 
 
 
-### <a id="KANTELE_G"></a>![Kantele - note G](images/KANTELE_G.png)Kantele - note G (KANTELE_G)
+### <a id="KANTELE_G"></a>![Kantele - note G](images/KANTELE_G.png)Kantele - note G (KANTELE_G) [[toc](#contents)]
 
 * **description**: Music for your ears!
 * **type**: ACTION_TYPE_OTHER
@@ -7227,7 +7227,7 @@
 
 
 
-### <a id="KNOCKBACK"></a>![Knockback](images/KNOCKBACK.png)Knockback (KNOCKBACK)
+### <a id="KNOCKBACK"></a>![Knockback](images/KNOCKBACK.png)Knockback (KNOCKBACK) [[toc](#contents)]
 
 * **description**: Gives a projectile the power to knock back the foes it hits
 * **type**: ACTION_TYPE_MODIFIER
@@ -7255,7 +7255,7 @@
 
 
 
-### <a id="LANCE"></a>![Glowing lance](images/LANCE.png)Glowing lance (LANCE)
+### <a id="LANCE"></a>![Glowing lance](images/LANCE.png)Glowing lance (LANCE) [[toc](#contents)]
 
 * **description**: A magical lance that cuts through soft materials
 * **type**: ACTION_TYPE_PROJECTILE
@@ -7285,7 +7285,7 @@
 
 
 
-### <a id="LARPA_CHAOS"></a>![Chaos larpa](images/LARPA_CHAOS.png)Chaos larpa (LARPA_CHAOS)
+### <a id="LARPA_CHAOS"></a>![Chaos larpa](images/LARPA_CHAOS.png)Chaos larpa (LARPA_CHAOS) [[toc](#contents)]
 
 * **description**: Makes a projectile cast copies of itself in random directions
 * **type**: ACTION_TYPE_MODIFIER
@@ -7314,7 +7314,7 @@
 
 
 
-### <a id="LARPA_CHAOS_2"></a>![Copy trail](images/LARPA_CHAOS_2.png)Copy trail (LARPA_CHAOS_2)
+### <a id="LARPA_CHAOS_2"></a>![Copy trail](images/LARPA_CHAOS_2.png)Copy trail (LARPA_CHAOS_2) [[toc](#contents)]
 
 * **description**: Makes a projectile leave a trail of copies of itself
 * **type**: ACTION_TYPE_MODIFIER
@@ -7343,7 +7343,7 @@
 
 
 
-### <a id="LARPA_DEATH"></a>![Larpa Explosion](images/LARPA_DEATH.png)Larpa Explosion (LARPA_DEATH)
+### <a id="LARPA_DEATH"></a>![Larpa Explosion](images/LARPA_DEATH.png)Larpa Explosion (LARPA_DEATH) [[toc](#contents)]
 
 * **description**: A projectile will shoot out 8 copies of itself when it expires or hits the ground
 * **type**: ACTION_TYPE_MODIFIER
@@ -7372,7 +7372,7 @@
 
 
 
-### <a id="LARPA_DOWNWARDS"></a>![Downwards larpa](images/LARPA_DOWNWARDS.png)Downwards larpa (LARPA_DOWNWARDS)
+### <a id="LARPA_DOWNWARDS"></a>![Downwards larpa](images/LARPA_DOWNWARDS.png)Downwards larpa (LARPA_DOWNWARDS) [[toc](#contents)]
 
 * **description**: Makes a projectile cast copies of itself with a downwards trajectory
 * **type**: ACTION_TYPE_MODIFIER
@@ -7401,7 +7401,7 @@
 
 
 
-### <a id="LARPA_UPWARDS"></a>![Upwards larpa](images/LARPA_UPWARDS.png)Upwards larpa (LARPA_UPWARDS)
+### <a id="LARPA_UPWARDS"></a>![Upwards larpa](images/LARPA_UPWARDS.png)Upwards larpa (LARPA_UPWARDS) [[toc](#contents)]
 
 * **description**: Makes a projectile cast copies of itself with an upwards trajectory
 * **type**: ACTION_TYPE_MODIFIER
@@ -7430,7 +7430,7 @@
 
 
 
-### <a id="LASER"></a>![Concentrated light](images/LASER.png)Concentrated light (LASER)
+### <a id="LASER"></a>![Concentrated light](images/LASER.png)Concentrated light (LASER) [[toc](#contents)]
 
 * **description**: A pinpointed beam of light
 * **type**: ACTION_TYPE_PROJECTILE
@@ -7460,7 +7460,7 @@
 
 
 
-### <a id="LASER_EMITTER"></a>![Plasma beam](images/LASER_EMITTER.png)Plasma beam (LASER_EMITTER)
+### <a id="LASER_EMITTER"></a>![Plasma beam](images/LASER_EMITTER.png)Plasma beam (LASER_EMITTER) [[toc](#contents)]
 
 * **description**: An instantaneous, dangerous beam of light
 * **type**: ACTION_TYPE_PROJECTILE
@@ -7490,7 +7490,7 @@
 
 
 
-### <a id="LASER_EMITTER_CUTTER"></a>![Plasma Cutter](images/LASER_EMITTER_CUTTER.png)Plasma Cutter (LASER_EMITTER_CUTTER)
+### <a id="LASER_EMITTER_CUTTER"></a>![Plasma Cutter](images/LASER_EMITTER_CUTTER.png)Plasma Cutter (LASER_EMITTER_CUTTER) [[toc](#contents)]
 
 * **description**: A plasma beam specialized in cutting materials!
 * **type**: ACTION_TYPE_PROJECTILE
@@ -7519,7 +7519,7 @@
 
 
 
-### <a id="LASER_EMITTER_FOUR"></a>![Plasma Beam Cross](images/LASER_EMITTER_FOUR.png)Plasma Beam Cross (LASER_EMITTER_FOUR)
+### <a id="LASER_EMITTER_FOUR"></a>![Plasma Beam Cross](images/LASER_EMITTER_FOUR.png)Plasma Beam Cross (LASER_EMITTER_FOUR) [[toc](#contents)]
 
 * **description**: Four deadly plasma beams in a cross-shape. Look out, they can hurt you as well!
 * **type**: ACTION_TYPE_PROJECTILE
@@ -7549,7 +7549,7 @@
 
 
 
-### <a id="LASER_EMITTER_RAY"></a>![Plasma Beam Thrower](images/LASER_EMITTER_RAY.png)Plasma Beam Thrower (LASER_EMITTER_RAY)
+### <a id="LASER_EMITTER_RAY"></a>![Plasma Beam Thrower](images/LASER_EMITTER_RAY.png)Plasma Beam Thrower (LASER_EMITTER_RAY) [[toc](#contents)]
 
 * **description**: A projectile fires plasma beams in all directions!
 * **type**: ACTION_TYPE_MODIFIER
@@ -7577,7 +7577,7 @@
 
 
 
-### <a id="LASER_EMITTER_WIDER"></a>![Plasma Beam Enhancer](images/LASER_EMITTER_WIDER.png)Plasma Beam Enhancer (LASER_EMITTER_WIDER)
+### <a id="LASER_EMITTER_WIDER"></a>![Plasma Beam Enhancer](images/LASER_EMITTER_WIDER.png)Plasma Beam Enhancer (LASER_EMITTER_WIDER) [[toc](#contents)]
 
 * **description**: Makes plasma beam spell's beam wider
 * **type**: ACTION_TYPE_MODIFIER
@@ -7605,7 +7605,7 @@
 
 
 
-### <a id="LASER_LUMINOUS_DRILL"></a>![Luminous drill with timer](images/LASER_LUMINOUS_DRILL.png)Luminous drill with timer (LASER_LUMINOUS_DRILL)
+### <a id="LASER_LUMINOUS_DRILL"></a>![Luminous drill with timer](images/LASER_LUMINOUS_DRILL.png)Luminous drill with timer (LASER_LUMINOUS_DRILL) [[toc](#contents)]
 
 * **description**: A pinpointed, short-ranged beam of concentrated light that casts another spell after a timer runs out
 * **type**: ACTION_TYPE_PROJECTILE
@@ -7634,7 +7634,7 @@
 
 
 
-### <a id="LAVA_TO_BLOOD"></a>![Lava to blood](images/LAVA_TO_BLOOD.png)Lava to blood (LAVA_TO_BLOOD)
+### <a id="LAVA_TO_BLOOD"></a>![Lava to blood](images/LAVA_TO_BLOOD.png)Lava to blood (LAVA_TO_BLOOD) [[toc](#contents)]
 
 * **description**: Makes any lava within a projectile's range turn into blood
 * **type**: ACTION_TYPE_MODIFIER
@@ -7663,7 +7663,7 @@
 
 
 
-### <a id="LEVITATION_FIELD"></a>![Circle of buoyancy](images/LEVITATION_FIELD.png)Circle of buoyancy (LEVITATION_FIELD)
+### <a id="LEVITATION_FIELD"></a>![Circle of buoyancy](images/LEVITATION_FIELD.png)Circle of buoyancy (LEVITATION_FIELD) [[toc](#contents)]
 
 * **description**: A field of levitative magic
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -7691,7 +7691,7 @@
 
 
 
-### <a id="LIFETIME"></a>![Increase lifetime](images/LIFETIME.png)Increase lifetime (LIFETIME)
+### <a id="LIFETIME"></a>![Increase lifetime](images/LIFETIME.png)Increase lifetime (LIFETIME) [[toc](#contents)]
 
 * **description**: Increases the lifetime of a spell
 * **type**: ACTION_TYPE_MODIFIER
@@ -7720,7 +7720,7 @@
 
 
 
-### <a id="LIFETIME_DOWN"></a>![Reduce lifetime](images/LIFETIME_DOWN.png)Reduce lifetime (LIFETIME_DOWN)
+### <a id="LIFETIME_DOWN"></a>![Reduce lifetime](images/LIFETIME_DOWN.png)Reduce lifetime (LIFETIME_DOWN) [[toc](#contents)]
 
 * **description**: Reduces the lifetime of a spell
 * **type**: ACTION_TYPE_MODIFIER
@@ -7749,7 +7749,7 @@
 
 
 
-### <a id="LIGHT"></a>![Light](images/LIGHT.png)Light (LIGHT)
+### <a id="LIGHT"></a>![Light](images/LIGHT.png)Light (LIGHT) [[toc](#contents)]
 
 * **description**: Makes a projectile illuminate its surroundings
 * **type**: ACTION_TYPE_MODIFIER
@@ -7777,7 +7777,7 @@
 
 
 
-### <a id="LIGHTNING"></a>![Lightning bolt](images/LIGHTNING.png)Lightning bolt (LIGHTNING)
+### <a id="LIGHTNING"></a>![Lightning bolt](images/LIGHTNING.png)Lightning bolt (LIGHTNING) [[toc](#contents)]
 
 * **description**: The primordial force of nature
 * **type**: ACTION_TYPE_PROJECTILE
@@ -7806,7 +7806,7 @@
 
 
 
-### <a id="LIGHTNING_RAY"></a>![Lightning thrower](images/LIGHTNING_RAY.png)Lightning thrower (LIGHTNING_RAY)
+### <a id="LIGHTNING_RAY"></a>![Lightning thrower](images/LIGHTNING_RAY.png)Lightning thrower (LIGHTNING_RAY) [[toc](#contents)]
 
 * **description**: Makes a projectile cast lightning in random directions
 * **type**: ACTION_TYPE_MODIFIER
@@ -7834,7 +7834,7 @@
 
 
 
-### <a id="LIGHTNING_RAY_ENEMY"></a>![Personal lightning caster](images/LIGHTNING_RAY_ENEMY.png)Personal lightning caster (LIGHTNING_RAY_ENEMY)
+### <a id="LIGHTNING_RAY_ENEMY"></a>![Personal lightning caster](images/LIGHTNING_RAY_ENEMY.png)Personal lightning caster (LIGHTNING_RAY_ENEMY) [[toc](#contents)]
 
 * **description**: Makes a projectile turn the creatures it hits into living thunderstorms
 * **type**: ACTION_TYPE_MODIFIER
@@ -7862,7 +7862,7 @@
 
 
 
-### <a id="LIGHT_BULLET"></a>![Spark bolt](images/LIGHT_BULLET.png)Spark bolt (LIGHT_BULLET)
+### <a id="LIGHT_BULLET"></a>![Spark bolt](images/LIGHT_BULLET.png)Spark bolt (LIGHT_BULLET) [[toc](#contents)]
 
 * **description**: A weak but enchanting sparkling projectile
 * **type**: ACTION_TYPE_PROJECTILE
@@ -7893,7 +7893,7 @@
 
 
 
-### <a id="LIGHT_BULLET_TIMER"></a>![Spark bolt with timer](images/LIGHT_BULLET_TIMER.png)Spark bolt with timer (LIGHT_BULLET_TIMER)
+### <a id="LIGHT_BULLET_TIMER"></a>![Spark bolt with timer](images/LIGHT_BULLET_TIMER.png)Spark bolt with timer (LIGHT_BULLET_TIMER) [[toc](#contents)]
 
 * **description**: A spark bolt that casts another spell after a timer runs out
 * **type**: ACTION_TYPE_PROJECTILE
@@ -7923,7 +7923,7 @@
 
 
 
-### <a id="LIGHT_BULLET_TRIGGER"></a>![Spark bolt with trigger](images/LIGHT_BULLET_TRIGGER.png)Spark bolt with trigger (LIGHT_BULLET_TRIGGER)
+### <a id="LIGHT_BULLET_TRIGGER"></a>![Spark bolt with trigger](images/LIGHT_BULLET_TRIGGER.png)Spark bolt with trigger (LIGHT_BULLET_TRIGGER) [[toc](#contents)]
 
 * **description**: A spark bolt that casts another spell upon collision
 * **type**: ACTION_TYPE_PROJECTILE
@@ -7953,7 +7953,7 @@
 
 
 
-### <a id="LIGHT_BULLET_TRIGGER_2"></a>![Spark bolt with double trigger](images/LIGHT_BULLET_TRIGGER_2.png)Spark bolt with double trigger (LIGHT_BULLET_TRIGGER_2)
+### <a id="LIGHT_BULLET_TRIGGER_2"></a>![Spark bolt with double trigger](images/LIGHT_BULLET_TRIGGER_2.png)Spark bolt with double trigger (LIGHT_BULLET_TRIGGER_2) [[toc](#contents)]
 
 * **description**: A spark bolt that casts two new spells upon collision
 * **type**: ACTION_TYPE_PROJECTILE
@@ -7983,7 +7983,7 @@
 
 
 
-### <a id="LIGHT_SHOT"></a>![Light shot](images/LIGHT_SHOT.png)Light shot (LIGHT_SHOT)
+### <a id="LIGHT_SHOT"></a>![Light shot](images/LIGHT_SHOT.png)Light shot (LIGHT_SHOT) [[toc](#contents)]
 
 * **description**: Makes a projectile move considerably faster, but deal less damage
 * **type**: ACTION_TYPE_MODIFIER
@@ -8027,7 +8027,7 @@
 
 
 
-### <a id="LINE_ARC"></a>![Linear arc](images/LINE_ARC.png)Linear arc (LINE_ARC)
+### <a id="LINE_ARC"></a>![Linear arc](images/LINE_ARC.png)Linear arc (LINE_ARC) [[toc](#contents)]
 
 * **description**: Makes a projectile fly only in cardinal or diagonal lines
 * **type**: ACTION_TYPE_MODIFIER
@@ -8057,7 +8057,7 @@
 
 
 
-### <a id="LIQUID_TO_EXPLOSION"></a>![Liquid Detonation](images/LIQUID_TO_EXPLOSION.png)Liquid Detonation (LIQUID_TO_EXPLOSION)
+### <a id="LIQUID_TO_EXPLOSION"></a>![Liquid Detonation](images/LIQUID_TO_EXPLOSION.png)Liquid Detonation (LIQUID_TO_EXPLOSION) [[toc](#contents)]
 
 * **description**: Converts nearby nonmagical liquids into explosive gunpowder
 * **type**: ACTION_TYPE_MODIFIER
@@ -8086,7 +8086,7 @@
 
 
 
-### <a id="LONG_DISTANCE_CAST"></a>![Long-distance cast](images/LONG_DISTANCE_CAST.png)Long-distance cast (LONG_DISTANCE_CAST)
+### <a id="LONG_DISTANCE_CAST"></a>![Long-distance cast](images/LONG_DISTANCE_CAST.png)Long-distance cast (LONG_DISTANCE_CAST) [[toc](#contents)]
 
 * **description**: Casts a spell some distance away from the caster
 * **type**: ACTION_TYPE_UTILITY
@@ -8114,7 +8114,7 @@
 
 
 
-### <a id="LUMINOUS_DRILL"></a>![Luminous drill](images/LUMINOUS_DRILL.png)Luminous drill (LUMINOUS_DRILL)
+### <a id="LUMINOUS_DRILL"></a>![Luminous drill](images/LUMINOUS_DRILL.png)Luminous drill (LUMINOUS_DRILL) [[toc](#contents)]
 
 * **description**: A pinpointed, short-ranged beam of concentrated light
 * **type**: ACTION_TYPE_PROJECTILE
@@ -8143,7 +8143,7 @@
 
 
 
-### <a id="MAGIC_SHIELD"></a>![Magic guard](images/MAGIC_SHIELD.png)Magic guard (MAGIC_SHIELD)
+### <a id="MAGIC_SHIELD"></a>![Magic guard](images/MAGIC_SHIELD.png)Magic guard (MAGIC_SHIELD) [[toc](#contents)]
 
 * **description**: Four guarding lights rotate around you for a time
 * **type**: ACTION_TYPE_PROJECTILE
@@ -8171,7 +8171,7 @@
 
 
 
-### <a id="MANA_REDUCE"></a>![Add mana](images/MANA_REDUCE.png)Add mana (MANA_REDUCE)
+### <a id="MANA_REDUCE"></a>![Add mana](images/MANA_REDUCE.png)Add mana (MANA_REDUCE) [[toc](#contents)]
 
 * **description**: Adds 30 mana to the wand
 * **type**: ACTION_TYPE_MODIFIER
@@ -8199,7 +8199,7 @@
 
 
 
-### <a id="MATERIAL_ACID"></a>![Acid](images/MATERIAL_ACID.png)Acid (MATERIAL_ACID)
+### <a id="MATERIAL_ACID"></a>![Acid](images/MATERIAL_ACID.png)Acid (MATERIAL_ACID) [[toc](#contents)]
 
 * **description**: Transmute drops of acid from nothing
 * **type**: ACTION_TYPE_MATERIAL
@@ -8228,7 +8228,7 @@
 
 
 
-### <a id="MATERIAL_BLOOD"></a>![Blood](images/MATERIAL_BLOOD.png)Blood (MATERIAL_BLOOD)
+### <a id="MATERIAL_BLOOD"></a>![Blood](images/MATERIAL_BLOOD.png)Blood (MATERIAL_BLOOD) [[toc](#contents)]
 
 * **description**: Blood blood blood
 * **type**: ACTION_TYPE_MATERIAL
@@ -8258,7 +8258,7 @@
 
 
 
-### <a id="MATERIAL_CEMENT"></a>![Cement](images/MATERIAL_CEMENT.png)Cement (MATERIAL_CEMENT)
+### <a id="MATERIAL_CEMENT"></a>![Cement](images/MATERIAL_CEMENT.png)Cement (MATERIAL_CEMENT) [[toc](#contents)]
 
 * **description**: Transmute drops of wet cement from nothing
 * **type**: ACTION_TYPE_MATERIAL
@@ -8287,7 +8287,7 @@
 
 
 
-### <a id="MATERIAL_OIL"></a>![Oil](images/MATERIAL_OIL.png)Oil (MATERIAL_OIL)
+### <a id="MATERIAL_OIL"></a>![Oil](images/MATERIAL_OIL.png)Oil (MATERIAL_OIL) [[toc](#contents)]
 
 * **description**: Transmute drops of oil from nothing
 * **type**: ACTION_TYPE_MATERIAL
@@ -8317,7 +8317,7 @@
 
 
 
-### <a id="MATERIAL_WATER"></a>![Water](images/MATERIAL_WATER.png)Water (MATERIAL_WATER)
+### <a id="MATERIAL_WATER"></a>![Water](images/MATERIAL_WATER.png)Water (MATERIAL_WATER) [[toc](#contents)]
 
 * **description**: Transmute drops of water from nothing
 * **type**: ACTION_TYPE_MATERIAL
@@ -8347,7 +8347,7 @@
 
 
 
-### <a id="MATTER_EATER"></a>![Matter eater](images/MATTER_EATER.png)Matter eater (MATTER_EATER)
+### <a id="MATTER_EATER"></a>![Matter eater](images/MATTER_EATER.png)Matter eater (MATTER_EATER) [[toc](#contents)]
 
 * **description**: Makes a projectile eat the environment as it flies
 * **type**: ACTION_TYPE_MODIFIER
@@ -8375,7 +8375,7 @@
 
 
 
-### <a id="MEGALASER"></a>![Intense concentrated light](images/MEGALASER.png)Intense concentrated light (MEGALASER)
+### <a id="MEGALASER"></a>![Intense concentrated light](images/MEGALASER.png)Intense concentrated light (MEGALASER) [[toc](#contents)]
 
 * **description**: A spectral wand is summoned that casts a huge beam of light
 * **type**: ACTION_TYPE_PROJECTILE
@@ -8411,7 +8411,7 @@
 
 
 
-### <a id="METEOR"></a>![Meteor](images/METEOR.png)Meteor (METEOR)
+### <a id="METEOR"></a>![Meteor](images/METEOR.png)Meteor (METEOR) [[toc](#contents)]
 
 * **description**: A destructive projectile from the skies!
 * **type**: ACTION_TYPE_PROJECTILE
@@ -8438,7 +8438,7 @@
 
 
 
-### <a id="METEOR_RAIN"></a>![Meteorisade](images/METEOR_RAIN.png)Meteorisade (METEOR_RAIN)
+### <a id="METEOR_RAIN"></a>![Meteorisade](images/METEOR_RAIN.png)Meteorisade (METEOR_RAIN) [[toc](#contents)]
 
 * **description**: Alea iacta est
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -8468,7 +8468,7 @@
 
 
 
-### <a id="MINE"></a>![Unstable crystal](images/MINE.png)Unstable crystal (MINE)
+### <a id="MINE"></a>![Unstable crystal](images/MINE.png)Unstable crystal (MINE) [[toc](#contents)]
 
 * **description**: A crystal that explodes when someone comes nearby
 * **type**: ACTION_TYPE_PROJECTILE
@@ -8505,7 +8505,7 @@
 
 
 
-### <a id="MINE_DEATH_TRIGGER"></a>![Unstable crystal with trigger](images/MINE_DEATH_TRIGGER.png)Unstable crystal with trigger (MINE_DEATH_TRIGGER)
+### <a id="MINE_DEATH_TRIGGER"></a>![Unstable crystal with trigger](images/MINE_DEATH_TRIGGER.png)Unstable crystal with trigger (MINE_DEATH_TRIGGER) [[toc](#contents)]
 
 * **description**: A crystal that explodes and casts another spell when someone comes nearby
 * **type**: ACTION_TYPE_PROJECTILE
@@ -8542,7 +8542,7 @@
 
 
 
-### <a id="MISSILE"></a>![Summon missile](images/MISSILE.png)Summon missile (MISSILE)
+### <a id="MISSILE"></a>![Summon missile](images/MISSILE.png)Summon missile (MISSILE) [[toc](#contents)]
 
 * **description**: A missile!!!
 * **type**: ACTION_TYPE_PROJECTILE
@@ -8572,7 +8572,7 @@
 
 
 
-### <a id="MIST_ALCOHOL"></a>![mist of spirits](images/MIST_ALCOHOL.png)mist of spirits (MIST_ALCOHOL)
+### <a id="MIST_ALCOHOL"></a>![mist of spirits](images/MIST_ALCOHOL.png)mist of spirits (MIST_ALCOHOL) [[toc](#contents)]
 
 * **description**: A cloud of potent alcohol
 * **type**: ACTION_TYPE_PROJECTILE
@@ -8600,7 +8600,7 @@
 
 
 
-### <a id="MIST_BLOOD"></a>![Blood mist](images/MIST_BLOOD.png)Blood mist (MIST_BLOOD)
+### <a id="MIST_BLOOD"></a>![Blood mist](images/MIST_BLOOD.png)Blood mist (MIST_BLOOD) [[toc](#contents)]
 
 * **description**: A cloud of blood mist
 * **type**: ACTION_TYPE_PROJECTILE
@@ -8628,7 +8628,7 @@
 
 
 
-### <a id="MIST_RADIOACTIVE"></a>![Toxic mist](images/MIST_RADIOACTIVE.png)Toxic mist (MIST_RADIOACTIVE)
+### <a id="MIST_RADIOACTIVE"></a>![Toxic mist](images/MIST_RADIOACTIVE.png)Toxic mist (MIST_RADIOACTIVE) [[toc](#contents)]
 
 * **description**: A cloud of toxic mist
 * **type**: ACTION_TYPE_PROJECTILE
@@ -8656,7 +8656,7 @@
 
 
 
-### <a id="MIST_SLIME"></a>![Slime mist](images/MIST_SLIME.png)Slime mist (MIST_SLIME)
+### <a id="MIST_SLIME"></a>![Slime mist](images/MIST_SLIME.png)Slime mist (MIST_SLIME) [[toc](#contents)]
 
 * **description**: A cloud of slimy mist
 * **type**: ACTION_TYPE_PROJECTILE
@@ -8684,7 +8684,7 @@
 
 
 
-### <a id="MONEY_MAGIC"></a>![Gold to Power](images/MONEY_MAGIC.png)Gold to Power (MONEY_MAGIC)
+### <a id="MONEY_MAGIC"></a>![Gold to Power](images/MONEY_MAGIC.png)Gold to Power (MONEY_MAGIC) [[toc](#contents)]
 
 * **description**: Spends 5% of your current gold and adds damage to a projectile proportional to the amount spent
 * **type**: ACTION_TYPE_UTILITY
@@ -8743,7 +8743,7 @@
 
 
 
-### <a id="MU"></a>![Mu](images/MU.png)Mu (MU)
+### <a id="MU"></a>![Mu](images/MU.png)Mu (MU) [[toc](#contents)]
 
 * **description**: Every modifier-type spell in the current wand is applied to a projectile
 * **type**: ACTION_TYPE_OTHER
@@ -8813,7 +8813,7 @@
 
 
 
-### <a id="NECROMANCY"></a>![Necromancy](images/NECROMANCY.png)Necromancy (NECROMANCY)
+### <a id="NECROMANCY"></a>![Necromancy](images/NECROMANCY.png)Necromancy (NECROMANCY) [[toc](#contents)]
 
 * **description**: Makes corpses of creatures killed by a projectile rise to your aid
 * **type**: ACTION_TYPE_MODIFIER
@@ -8842,7 +8842,7 @@
 
 
 
-### <a id="NOLLA"></a>![Nolla](images/NOLLA.png)Nolla (NOLLA)
+### <a id="NOLLA"></a>![Nolla](images/NOLLA.png)Nolla (NOLLA) [[toc](#contents)]
 
 * **description**: The duration of a projectile is set to zero
 * **type**: ACTION_TYPE_MODIFIER
@@ -8871,7 +8871,7 @@
 
 
 
-### <a id="NUKE"></a>![Nuke](images/NUKE.png)Nuke (NUKE)
+### <a id="NUKE"></a>![Nuke](images/NUKE.png)Nuke (NUKE) [[toc](#contents)]
 
 * **description**: Take cover!
 * **type**: ACTION_TYPE_PROJECTILE
@@ -8913,7 +8913,7 @@
 
 
 
-### <a id="NUKE_GIGA"></a>![Giga Nuke](images/NUKE_GIGA.png)Giga Nuke (NUKE_GIGA)
+### <a id="NUKE_GIGA"></a>![Giga Nuke](images/NUKE_GIGA.png)Giga Nuke (NUKE_GIGA) [[toc](#contents)]
 
 * **description**: What do you expect?
 * **type**: ACTION_TYPE_PROJECTILE
@@ -8955,7 +8955,7 @@
 
 
 
-### <a id="OCARINA_A"></a>![Ocarina - note A](images/OCARINA_A.png)Ocarina - note A (OCARINA_A)
+### <a id="OCARINA_A"></a>![Ocarina - note A](images/OCARINA_A.png)Ocarina - note A (OCARINA_A) [[toc](#contents)]
 
 * **description**: Music for your ears!
 * **type**: ACTION_TYPE_OTHER
@@ -8983,7 +8983,7 @@
 
 
 
-### <a id="OCARINA_A2"></a>![Ocarina - note A2](images/OCARINA_A2.png)Ocarina - note A2 (OCARINA_A2)
+### <a id="OCARINA_A2"></a>![Ocarina - note A2](images/OCARINA_A2.png)Ocarina - note A2 (OCARINA_A2) [[toc](#contents)]
 
 * **description**: Music for your ears!
 * **type**: ACTION_TYPE_OTHER
@@ -9011,7 +9011,7 @@
 
 
 
-### <a id="OCARINA_B"></a>![Ocarina - note B](images/OCARINA_B.png)Ocarina - note B (OCARINA_B)
+### <a id="OCARINA_B"></a>![Ocarina - note B](images/OCARINA_B.png)Ocarina - note B (OCARINA_B) [[toc](#contents)]
 
 * **description**: Music for your ears!
 * **type**: ACTION_TYPE_OTHER
@@ -9039,7 +9039,7 @@
 
 
 
-### <a id="OCARINA_C"></a>![Ocarina - note C](images/OCARINA_C.png)Ocarina - note C (OCARINA_C)
+### <a id="OCARINA_C"></a>![Ocarina - note C](images/OCARINA_C.png)Ocarina - note C (OCARINA_C) [[toc](#contents)]
 
 * **description**: Music for your ears!
 * **type**: ACTION_TYPE_OTHER
@@ -9067,7 +9067,7 @@
 
 
 
-### <a id="OCARINA_D"></a>![Ocarina - note D](images/OCARINA_D.png)Ocarina - note D (OCARINA_D)
+### <a id="OCARINA_D"></a>![Ocarina - note D](images/OCARINA_D.png)Ocarina - note D (OCARINA_D) [[toc](#contents)]
 
 * **description**: Music for your ears!
 * **type**: ACTION_TYPE_OTHER
@@ -9095,7 +9095,7 @@
 
 
 
-### <a id="OCARINA_E"></a>![Ocarina - note E](images/OCARINA_E.png)Ocarina - note E (OCARINA_E)
+### <a id="OCARINA_E"></a>![Ocarina - note E](images/OCARINA_E.png)Ocarina - note E (OCARINA_E) [[toc](#contents)]
 
 * **description**: Music for your ears!
 * **type**: ACTION_TYPE_OTHER
@@ -9123,7 +9123,7 @@
 
 
 
-### <a id="OCARINA_F"></a>![Ocarina - note F](images/OCARINA_F.png)Ocarina - note F (OCARINA_F)
+### <a id="OCARINA_F"></a>![Ocarina - note F](images/OCARINA_F.png)Ocarina - note F (OCARINA_F) [[toc](#contents)]
 
 * **description**: Music for your ears!
 * **type**: ACTION_TYPE_OTHER
@@ -9151,7 +9151,7 @@
 
 
 
-### <a id="OCARINA_GSHARP"></a>![Ocarina - note G#](images/OCARINA_GSHARP.png)Ocarina - note G# (OCARINA_GSHARP)
+### <a id="OCARINA_GSHARP"></a>![Ocarina - note G#](images/OCARINA_GSHARP.png)Ocarina - note G# (OCARINA_GSHARP) [[toc](#contents)]
 
 * **description**: Music for your ears!
 * **type**: ACTION_TYPE_OTHER
@@ -9179,7 +9179,7 @@
 
 
 
-### <a id="OIL_TRAIL"></a>![Oil trail](images/OIL_TRAIL.png)Oil trail (OIL_TRAIL)
+### <a id="OIL_TRAIL"></a>![Oil trail](images/OIL_TRAIL.png)Oil trail (OIL_TRAIL) [[toc](#contents)]
 
 * **description**: Gives a projectile a trail of oil
 * **type**: ACTION_TYPE_MODIFIER
@@ -9209,7 +9209,7 @@
 
 
 
-### <a id="OMEGA"></a>![Omega](images/OMEGA.png)Omega (OMEGA)
+### <a id="OMEGA"></a>![Omega](images/OMEGA.png)Omega (OMEGA) [[toc](#contents)]
 
 * **description**: Casts copies of every spell in your wand
 * **type**: ACTION_TYPE_OTHER
@@ -9269,7 +9269,7 @@
 
 
 
-### <a id="ORBIT_DISCS"></a>![Sawblade Orbit](images/ORBIT_DISCS.png)Sawblade Orbit (ORBIT_DISCS)
+### <a id="ORBIT_DISCS"></a>![Sawblade Orbit](images/ORBIT_DISCS.png)Sawblade Orbit (ORBIT_DISCS) [[toc](#contents)]
 
 * **description**: Makes four sawblades rotate around a projectile
 * **type**: ACTION_TYPE_MODIFIER
@@ -9297,7 +9297,7 @@
 
 
 
-### <a id="ORBIT_FIREBALLS"></a>![Fireball Orbit](images/ORBIT_FIREBALLS.png)Fireball Orbit (ORBIT_FIREBALLS)
+### <a id="ORBIT_FIREBALLS"></a>![Fireball Orbit](images/ORBIT_FIREBALLS.png)Fireball Orbit (ORBIT_FIREBALLS) [[toc](#contents)]
 
 * **description**: Makes four fireballs rotate around a projectile
 * **type**: ACTION_TYPE_MODIFIER
@@ -9325,7 +9325,7 @@
 
 
 
-### <a id="ORBIT_LARPA"></a>![Orbit Larpa](images/ORBIT_LARPA.png)Orbit Larpa (ORBIT_LARPA)
+### <a id="ORBIT_LARPA"></a>![Orbit Larpa](images/ORBIT_LARPA.png)Orbit Larpa (ORBIT_LARPA) [[toc](#contents)]
 
 * **description**: Makes four copies of a projectile rotate around it
 * **type**: ACTION_TYPE_MODIFIER
@@ -9353,7 +9353,7 @@
 
 
 
-### <a id="ORBIT_LASERS"></a>![Plasma Beam Orbit](images/ORBIT_LASERS.png)Plasma Beam Orbit (ORBIT_LASERS)
+### <a id="ORBIT_LASERS"></a>![Plasma Beam Orbit](images/ORBIT_LASERS.png)Plasma Beam Orbit (ORBIT_LASERS) [[toc](#contents)]
 
 * **description**: Makes four plasma beams rotate around a projectile
 * **type**: ACTION_TYPE_MODIFIER
@@ -9381,7 +9381,7 @@
 
 
 
-### <a id="ORBIT_NUKES"></a>![Nuke Orbit](images/ORBIT_NUKES.png)Nuke Orbit (ORBIT_NUKES)
+### <a id="ORBIT_NUKES"></a>![Nuke Orbit](images/ORBIT_NUKES.png)Nuke Orbit (ORBIT_NUKES) [[toc](#contents)]
 
 * **description**: Makes four… nukes(?!) rotate around a projectile
 * **type**: ACTION_TYPE_MODIFIER
@@ -9409,7 +9409,7 @@
 
 
 
-### <a id="ORBIT_SHOT"></a>![Orbiting Arc](images/ORBIT_SHOT.png)Orbiting Arc (ORBIT_SHOT)
+### <a id="ORBIT_SHOT"></a>![Orbiting Arc](images/ORBIT_SHOT.png)Orbiting Arc (ORBIT_SHOT) [[toc](#contents)]
 
 * **description**: A projectile orbits the point of its origin
 * **type**: ACTION_TYPE_MODIFIER
@@ -9440,7 +9440,7 @@
 
 
 
-### <a id="PEBBLE"></a>![Summon rock spirit](images/PEBBLE.png)Summon rock spirit (PEBBLE)
+### <a id="PEBBLE"></a>![Summon rock spirit](images/PEBBLE.png)Summon rock spirit (PEBBLE) [[toc](#contents)]
 
 * **description**: Summons an autonomous rock ally
 * **type**: ACTION_TYPE_PROJECTILE
@@ -9468,7 +9468,7 @@
 
 
 
-### <a id="PENTAGRAM_SHAPE"></a>![Formation - pentagon](images/PENTAGRAM_SHAPE.png)Formation - pentagon (PENTAGRAM_SHAPE)
+### <a id="PENTAGRAM_SHAPE"></a>![Formation - pentagon](images/PENTAGRAM_SHAPE.png)Formation - pentagon (PENTAGRAM_SHAPE) [[toc](#contents)]
 
 * **description**: Casts 5 spells in a pentagonal pattern
 * **type**: ACTION_TYPE_DRAW_MANY
@@ -9496,7 +9496,7 @@
 
 
 
-### <a id="PHASING_ARC"></a>![Phasing Arc](images/PHASING_ARC.png)Phasing Arc (PHASING_ARC)
+### <a id="PHASING_ARC"></a>![Phasing Arc](images/PHASING_ARC.png)Phasing Arc (PHASING_ARC) [[toc](#contents)]
 
 * **description**: Makes a projectile fly much slower, but teleport short distances over its flight
 * **type**: ACTION_TYPE_MODIFIER
@@ -9534,7 +9534,7 @@
 
 
 
-### <a id="PHI"></a>![Phi](images/PHI.png)Phi (PHI)
+### <a id="PHI"></a>![Phi](images/PHI.png)Phi (PHI) [[toc](#contents)]
 
 * **description**: Casts a copy of every projectile-type spell in the current wand
 * **type**: ACTION_TYPE_OTHER
@@ -9602,7 +9602,7 @@
 
 
 
-### <a id="PIERCING_SHOT"></a>![Piercing shot](images/PIERCING_SHOT.png)Piercing shot (PIERCING_SHOT)
+### <a id="PIERCING_SHOT"></a>![Piercing shot](images/PIERCING_SHOT.png)Piercing shot (PIERCING_SHOT) [[toc](#contents)]
 
 * **description**: Makes a projectile fly through enemies, but harmful to the caster
 * **type**: ACTION_TYPE_MODIFIER
@@ -9632,7 +9632,7 @@
 
 
 
-### <a id="PINGPONG_PATH"></a>![Ping-pong path](images/PINGPONG_PATH.png)Ping-pong path (PINGPONG_PATH)
+### <a id="PINGPONG_PATH"></a>![Ping-pong path](images/PINGPONG_PATH.png)Ping-pong path (PINGPONG_PATH) [[toc](#contents)]
 
 * **description**: Makes a projectile fly back and forth
 * **type**: ACTION_TYPE_MODIFIER
@@ -9661,7 +9661,7 @@
 
 
 
-### <a id="PIPE_BOMB"></a>![Dormant crystal](images/PIPE_BOMB.png)Dormant crystal (PIPE_BOMB)
+### <a id="PIPE_BOMB"></a>![Dormant crystal](images/PIPE_BOMB.png)Dormant crystal (PIPE_BOMB) [[toc](#contents)]
 
 * **description**: A crystal that explodes when caught in an explosion
 * **type**: ACTION_TYPE_PROJECTILE
@@ -9697,7 +9697,7 @@
 
 
 
-### <a id="PIPE_BOMB_DEATH_TRIGGER"></a>![Dormant crystal with trigger](images/PIPE_BOMB_DEATH_TRIGGER.png)Dormant crystal with trigger (PIPE_BOMB_DEATH_TRIGGER)
+### <a id="PIPE_BOMB_DEATH_TRIGGER"></a>![Dormant crystal with trigger](images/PIPE_BOMB_DEATH_TRIGGER.png)Dormant crystal with trigger (PIPE_BOMB_DEATH_TRIGGER) [[toc](#contents)]
 
 * **description**: A crystal that explodes and casts another spell when caught in an explosion
 * **type**: ACTION_TYPE_PROJECTILE
@@ -9734,7 +9734,7 @@
 
 
 
-### <a id="POISON_BLAST"></a>![Explosion of poison](images/POISON_BLAST.png)Explosion of poison (POISON_BLAST)
+### <a id="POISON_BLAST"></a>![Explosion of poison](images/POISON_BLAST.png)Explosion of poison (POISON_BLAST) [[toc](#contents)]
 
 * **description**: An alchemical explosion
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -9763,7 +9763,7 @@
 
 
 
-### <a id="POISON_TRAIL"></a>![Poison trail](images/POISON_TRAIL.png)Poison trail (POISON_TRAIL)
+### <a id="POISON_TRAIL"></a>![Poison trail](images/POISON_TRAIL.png)Poison trail (POISON_TRAIL) [[toc](#contents)]
 
 * **description**: Gives a projectile a trail of poison
 * **type**: ACTION_TYPE_MODIFIER
@@ -9793,7 +9793,7 @@
 
 
 
-### <a id="POLLEN"></a>![Pollen](images/POLLEN.png)Pollen (POLLEN)
+### <a id="POLLEN"></a>![Pollen](images/POLLEN.png)Pollen (POLLEN) [[toc](#contents)]
 
 * **description**: A small, floating projectile that homes towards nearby creatures
 * **type**: ACTION_TYPE_PROJECTILE
@@ -9822,7 +9822,7 @@
 
 
 
-### <a id="POLYMORPH_FIELD"></a>![Circle of transmogrification](images/POLYMORPH_FIELD.png)Circle of transmogrification (POLYMORPH_FIELD)
+### <a id="POLYMORPH_FIELD"></a>![Circle of transmogrification](images/POLYMORPH_FIELD.png)Circle of transmogrification (POLYMORPH_FIELD) [[toc](#contents)]
 
 * **description**: A field of sheep-like magic
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -9850,7 +9850,7 @@
 
 
 
-### <a id="POWERDIGGER"></a>![Digging blast](images/POWERDIGGER.png)Digging blast (POWERDIGGER)
+### <a id="POWERDIGGER"></a>![Digging blast](images/POWERDIGGER.png)Digging blast (POWERDIGGER) [[toc](#contents)]
 
 * **description**: More powerful digging
 * **type**: ACTION_TYPE_PROJECTILE
@@ -9879,7 +9879,7 @@
 
 
 
-### <a id="PROJECTILE_GRAVITY_FIELD"></a>![Projectile gravity field](images/PROJECTILE_GRAVITY_FIELD.png)Projectile gravity field (PROJECTILE_GRAVITY_FIELD)
+### <a id="PROJECTILE_GRAVITY_FIELD"></a>![Projectile gravity field](images/PROJECTILE_GRAVITY_FIELD.png)Projectile gravity field (PROJECTILE_GRAVITY_FIELD) [[toc](#contents)]
 
 * **description**: Projectiles caught within the field are attracted towards its center
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -9907,7 +9907,7 @@
 
 
 
-### <a id="PROJECTILE_THUNDER_FIELD"></a>![Projectile thunder field](images/PROJECTILE_THUNDER_FIELD.png)Projectile thunder field (PROJECTILE_THUNDER_FIELD)
+### <a id="PROJECTILE_THUNDER_FIELD"></a>![Projectile thunder field](images/PROJECTILE_THUNDER_FIELD.png)Projectile thunder field (PROJECTILE_THUNDER_FIELD) [[toc](#contents)]
 
 * **description**: Projectiles caught within the field transform into blasts of lightning
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -9935,7 +9935,7 @@
 
 
 
-### <a id="PROJECTILE_TRANSMUTATION_FIELD"></a>![Projectile transmutation field](images/PROJECTILE_TRANSMUTATION_FIELD.png)Projectile transmutation field (PROJECTILE_TRANSMUTATION_FIELD)
+### <a id="PROJECTILE_TRANSMUTATION_FIELD"></a>![Projectile transmutation field](images/PROJECTILE_TRANSMUTATION_FIELD.png)Projectile transmutation field (PROJECTILE_TRANSMUTATION_FIELD) [[toc](#contents)]
 
 * **description**: Projectiles caught within the field transform into harmless critters
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -9963,7 +9963,7 @@
 
 
 
-### <a id="PROPANE_TANK"></a>![Propane tank](images/PROPANE_TANK.png)Propane tank (PROPANE_TANK)
+### <a id="PROPANE_TANK"></a>![Propane tank](images/PROPANE_TANK.png)Propane tank (PROPANE_TANK) [[toc](#contents)]
 
 * **description**: Summons a propane tank. Be careful what you wish for.
 * **type**: ACTION_TYPE_PROJECTILE
@@ -9991,7 +9991,7 @@
 
 
 
-### <a id="PURPLE_EXPLOSION_FIELD"></a>![Glittering field](images/PURPLE_EXPLOSION_FIELD.png)Glittering field (PURPLE_EXPLOSION_FIELD)
+### <a id="PURPLE_EXPLOSION_FIELD"></a>![Glittering field](images/PURPLE_EXPLOSION_FIELD.png)Glittering field (PURPLE_EXPLOSION_FIELD) [[toc](#contents)]
 
 * **description**: Small explosions appear randomly over a large area
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -10026,7 +10026,7 @@
 
 
 
-### <a id="QUANTUM_SPLIT"></a>![Quantum Split](images/QUANTUM_SPLIT.png)Quantum Split (QUANTUM_SPLIT)
+### <a id="QUANTUM_SPLIT"></a>![Quantum Split](images/QUANTUM_SPLIT.png)Quantum Split (QUANTUM_SPLIT) [[toc](#contents)]
 
 * **description**: Makes a projectile split into three projectiles whose existences are entangled
 * **type**: ACTION_TYPE_MODIFIER
@@ -10055,7 +10055,7 @@
 
 
 
-### <a id="RAINBOW_TRAIL"></a>![Rainbow trail](images/RAINBOW_TRAIL.png)Rainbow trail (RAINBOW_TRAIL)
+### <a id="RAINBOW_TRAIL"></a>![Rainbow trail](images/RAINBOW_TRAIL.png)Rainbow trail (RAINBOW_TRAIL) [[toc](#contents)]
 
 * **description**: Gives a projectile a trail of rainbow
 * **type**: ACTION_TYPE_MODIFIER
@@ -10085,7 +10085,7 @@
 
 
 
-### <a id="RANDOM_EXPLOSION"></a>![Chaos magic](images/RANDOM_EXPLOSION.png)Chaos magic (RANDOM_EXPLOSION)
+### <a id="RANDOM_EXPLOSION"></a>![Chaos magic](images/RANDOM_EXPLOSION.png)Chaos magic (RANDOM_EXPLOSION) [[toc](#contents)]
 
 * **description**: Makes a projectile launch a random spell (out of a limited selection) when it hits something
 * **type**: ACTION_TYPE_MODIFIER
@@ -10114,7 +10114,7 @@
 
 
 
-### <a id="RANDOM_MODIFIER"></a>![Random modifier spell](images/RANDOM_MODIFIER.png)Random modifier spell (RANDOM_MODIFIER)
+### <a id="RANDOM_MODIFIER"></a>![Random modifier spell](images/RANDOM_MODIFIER.png)Random modifier spell (RANDOM_MODIFIER) [[toc](#contents)]
 
 * **description**: Casts one random modifier spell
 * **type**: ACTION_TYPE_MODIFIER
@@ -10156,7 +10156,7 @@
 
 
 
-### <a id="RANDOM_PROJECTILE"></a>![Random projectile spell](images/RANDOM_PROJECTILE.png)Random projectile spell (RANDOM_PROJECTILE)
+### <a id="RANDOM_PROJECTILE"></a>![Random projectile spell](images/RANDOM_PROJECTILE.png)Random projectile spell (RANDOM_PROJECTILE) [[toc](#contents)]
 
 * **description**: Casts one random projectile spell
 * **type**: ACTION_TYPE_PROJECTILE
@@ -10198,7 +10198,7 @@
 
 
 
-### <a id="RANDOM_SPELL"></a>![Random spell](images/RANDOM_SPELL.png)Random spell (RANDOM_SPELL)
+### <a id="RANDOM_SPELL"></a>![Random spell](images/RANDOM_SPELL.png)Random spell (RANDOM_SPELL) [[toc](#contents)]
 
 * **description**: Casts a spell, any spell, at random!
 * **type**: ACTION_TYPE_OTHER
@@ -10240,7 +10240,7 @@
 
 
 
-### <a id="RANDOM_STATIC_PROJECTILE"></a>![Random static projectile spell](images/RANDOM_STATIC_PROJECTILE.png)Random static projectile spell (RANDOM_STATIC_PROJECTILE)
+### <a id="RANDOM_STATIC_PROJECTILE"></a>![Random static projectile spell](images/RANDOM_STATIC_PROJECTILE.png)Random static projectile spell (RANDOM_STATIC_PROJECTILE) [[toc](#contents)]
 
 * **description**: Casts one random static projectile spell
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -10282,7 +10282,7 @@
 
 
 
-### <a id="RECHARGE"></a>![Reduce recharge time](images/RECHARGE.png)Reduce recharge time (RECHARGE)
+### <a id="RECHARGE"></a>![Reduce recharge time](images/RECHARGE.png)Reduce recharge time (RECHARGE) [[toc](#contents)]
 
 * **description**: Reduces the time between spellcasts
 * **type**: ACTION_TYPE_MODIFIER
@@ -10311,7 +10311,7 @@
 
 
 
-### <a id="RECOIL"></a>![Recoil](images/RECOIL.png)Recoil (RECOIL)
+### <a id="RECOIL"></a>![Recoil](images/RECOIL.png)Recoil (RECOIL) [[toc](#contents)]
 
 * **description**: Increases the recoil when casting spells
 * **type**: ACTION_TYPE_MODIFIER
@@ -10339,7 +10339,7 @@
 
 
 
-### <a id="RECOIL_DAMPER"></a>![Recoil Damper](images/RECOIL_DAMPER.png)Recoil Damper (RECOIL_DAMPER)
+### <a id="RECOIL_DAMPER"></a>![Recoil Damper](images/RECOIL_DAMPER.png)Recoil Damper (RECOIL_DAMPER) [[toc](#contents)]
 
 * **description**: Reduces the recoil when casting spells
 * **type**: ACTION_TYPE_MODIFIER
@@ -10367,7 +10367,7 @@
 
 
 
-### <a id="REGENERATION_FIELD"></a>![Circle of vigour](images/REGENERATION_FIELD.png)Circle of vigour (REGENERATION_FIELD)
+### <a id="REGENERATION_FIELD"></a>![Circle of vigour](images/REGENERATION_FIELD.png)Circle of vigour (REGENERATION_FIELD) [[toc](#contents)]
 
 * **description**: A field of regenerative magic
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -10395,7 +10395,7 @@
 
 
 
-### <a id="REMOVE_BOUNCE"></a>![Remove Bounce](images/REMOVE_BOUNCE.png)Remove Bounce (REMOVE_BOUNCE)
+### <a id="REMOVE_BOUNCE"></a>![Remove Bounce](images/REMOVE_BOUNCE.png)Remove Bounce (REMOVE_BOUNCE) [[toc](#contents)]
 
 * **description**: A normally bouncy projectile stops doing so
 * **type**: ACTION_TYPE_MODIFIER
@@ -10424,7 +10424,7 @@
 
 
 
-### <a id="RESET"></a>![Wand Refresh](images/RESET.png)Wand Refresh (RESET)
+### <a id="RESET"></a>![Wand Refresh](images/RESET.png)Wand Refresh (RESET) [[toc](#contents)]
 
 * **description**: Reloads the wand immediately
 * **type**: ACTION_TYPE_UTILITY
@@ -10468,7 +10468,7 @@
 
 
 
-### <a id="ROCKET"></a>![Magic missile](images/ROCKET.png)Magic missile (ROCKET)
+### <a id="ROCKET"></a>![Magic missile](images/ROCKET.png)Magic missile (ROCKET) [[toc](#contents)]
 
 * **description**: A fiery, explosive projectile
 * **type**: ACTION_TYPE_PROJECTILE
@@ -10498,7 +10498,7 @@
 
 
 
-### <a id="ROCKET_DOWNWARDS"></a>![Downwards bolt bundle](images/ROCKET_DOWNWARDS.png)Downwards bolt bundle (ROCKET_DOWNWARDS)
+### <a id="ROCKET_DOWNWARDS"></a>![Downwards bolt bundle](images/ROCKET_DOWNWARDS.png)Downwards bolt bundle (ROCKET_DOWNWARDS) [[toc](#contents)]
 
 * **description**: Makes a projectile separate into a bundle of 5 explosive bolts as soon as it moves downwards
 * **type**: ACTION_TYPE_MODIFIER
@@ -10527,7 +10527,7 @@
 
 
 
-### <a id="ROCKET_OCTAGON"></a>![Octagonal bolt bundle](images/ROCKET_OCTAGON.png)Octagonal bolt bundle (ROCKET_OCTAGON)
+### <a id="ROCKET_OCTAGON"></a>![Octagonal bolt bundle](images/ROCKET_OCTAGON.png)Octagonal bolt bundle (ROCKET_OCTAGON) [[toc](#contents)]
 
 * **description**: Makes a projectile launch 8 magical bolts if it moves slowly enough
 * **type**: ACTION_TYPE_MODIFIER
@@ -10556,7 +10556,7 @@
 
 
 
-### <a id="ROCKET_TIER_2"></a>![Large magic missile](images/ROCKET_TIER_2.png)Large magic missile (ROCKET_TIER_2)
+### <a id="ROCKET_TIER_2"></a>![Large magic missile](images/ROCKET_TIER_2.png)Large magic missile (ROCKET_TIER_2) [[toc](#contents)]
 
 * **description**: A more powerful version of Magic missile
 * **type**: ACTION_TYPE_PROJECTILE
@@ -10586,7 +10586,7 @@
 
 
 
-### <a id="ROCKET_TIER_3"></a>![Giant magic missile](images/ROCKET_TIER_3.png)Giant magic missile (ROCKET_TIER_3)
+### <a id="ROCKET_TIER_3"></a>![Giant magic missile](images/ROCKET_TIER_3.png)Giant magic missile (ROCKET_TIER_3) [[toc](#contents)]
 
 * **description**: The most powerful version of Magic missile
 * **type**: ACTION_TYPE_PROJECTILE
@@ -10616,7 +10616,7 @@
 
 
 
-### <a id="RUBBER_BALL"></a>![Bouncing burst](images/RUBBER_BALL.png)Bouncing burst (RUBBER_BALL)
+### <a id="RUBBER_BALL"></a>![Bouncing burst](images/RUBBER_BALL.png)Bouncing burst (RUBBER_BALL) [[toc](#contents)]
 
 * **description**: A very bouncy projectile
 * **type**: ACTION_TYPE_PROJECTILE
@@ -10645,7 +10645,7 @@
 
 
 
-### <a id="SCATTER_2"></a>![Double scatter spell](images/SCATTER_2.png)Double scatter spell (SCATTER_2)
+### <a id="SCATTER_2"></a>![Double scatter spell](images/SCATTER_2.png)Double scatter spell (SCATTER_2) [[toc](#contents)]
 
 * **description**: Simultaneously casts 2 spells with low accuracy
 * **type**: ACTION_TYPE_DRAW_MANY
@@ -10673,7 +10673,7 @@
 
 
 
-### <a id="SCATTER_3"></a>![Triple scatter spell](images/SCATTER_3.png)Triple scatter spell (SCATTER_3)
+### <a id="SCATTER_3"></a>![Triple scatter spell](images/SCATTER_3.png)Triple scatter spell (SCATTER_3) [[toc](#contents)]
 
 * **description**: Simultaneously casts 3 spells with low accuracy
 * **type**: ACTION_TYPE_DRAW_MANY
@@ -10701,7 +10701,7 @@
 
 
 
-### <a id="SCATTER_4"></a>![Quadruple scatter spell](images/SCATTER_4.png)Quadruple scatter spell (SCATTER_4)
+### <a id="SCATTER_4"></a>![Quadruple scatter spell](images/SCATTER_4.png)Quadruple scatter spell (SCATTER_4) [[toc](#contents)]
 
 * **description**: Simultaneously casts 4 spells with low accuracy
 * **type**: ACTION_TYPE_DRAW_MANY
@@ -10729,7 +10729,7 @@
 
 
 
-### <a id="SEA_ACID"></a>![Sea of acid](images/SEA_ACID.png)Sea of acid (SEA_ACID)
+### <a id="SEA_ACID"></a>![Sea of acid](images/SEA_ACID.png)Sea of acid (SEA_ACID) [[toc](#contents)]
 
 * **description**: Summons a large body of acid below the caster
 * **type**: ACTION_TYPE_MATERIAL
@@ -10757,7 +10757,7 @@
 
 
 
-### <a id="SEA_ACID_GAS"></a>![Sea of flammable gas](images/SEA_ACID_GAS.png)Sea of flammable gas (SEA_ACID_GAS)
+### <a id="SEA_ACID_GAS"></a>![Sea of flammable gas](images/SEA_ACID_GAS.png)Sea of flammable gas (SEA_ACID_GAS) [[toc](#contents)]
 
 * **description**: Summons a large body of flammable gas below the caster
 * **type**: ACTION_TYPE_MATERIAL
@@ -10785,7 +10785,7 @@
 
 
 
-### <a id="SEA_ALCOHOL"></a>![Sea of alcohol](images/SEA_ALCOHOL.png)Sea of alcohol (SEA_ALCOHOL)
+### <a id="SEA_ALCOHOL"></a>![Sea of alcohol](images/SEA_ALCOHOL.png)Sea of alcohol (SEA_ALCOHOL) [[toc](#contents)]
 
 * **description**: Summons a large body of tasty alcohol below the caster
 * **type**: ACTION_TYPE_MATERIAL
@@ -10813,7 +10813,7 @@
 
 
 
-### <a id="SEA_LAVA"></a>![Sea of lava](images/SEA_LAVA.png)Sea of lava (SEA_LAVA)
+### <a id="SEA_LAVA"></a>![Sea of lava](images/SEA_LAVA.png)Sea of lava (SEA_LAVA) [[toc](#contents)]
 
 * **description**: Summons a large body of lava below the caster
 * **type**: ACTION_TYPE_MATERIAL
@@ -10841,7 +10841,7 @@
 
 
 
-### <a id="SEA_OIL"></a>![Sea of oil](images/SEA_OIL.png)Sea of oil (SEA_OIL)
+### <a id="SEA_OIL"></a>![Sea of oil](images/SEA_OIL.png)Sea of oil (SEA_OIL) [[toc](#contents)]
 
 * **description**: Summons a large body of oil below the caster
 * **type**: ACTION_TYPE_MATERIAL
@@ -10869,7 +10869,7 @@
 
 
 
-### <a id="SEA_WATER"></a>![Sea of water](images/SEA_WATER.png)Sea of water (SEA_WATER)
+### <a id="SEA_WATER"></a>![Sea of water](images/SEA_WATER.png)Sea of water (SEA_WATER) [[toc](#contents)]
 
 * **description**: Summons a large body of water below the caster
 * **type**: ACTION_TYPE_MATERIAL
@@ -10897,7 +10897,7 @@
 
 
 
-### <a id="SHIELD_FIELD"></a>![Circle of shielding](images/SHIELD_FIELD.png)Circle of shielding (SHIELD_FIELD)
+### <a id="SHIELD_FIELD"></a>![Circle of shielding](images/SHIELD_FIELD.png)Circle of shielding (SHIELD_FIELD) [[toc](#contents)]
 
 * **description**: A field of protective magic
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -10925,7 +10925,7 @@
 
 
 
-### <a id="SIGMA"></a>![Sigma](images/SIGMA.png)Sigma (SIGMA)
+### <a id="SIGMA"></a>![Sigma](images/SIGMA.png)Sigma (SIGMA) [[toc](#contents)]
 
 * **description**: Copies every static projectile -type spell in the wand when cast
 * **type**: ACTION_TYPE_OTHER
@@ -10995,7 +10995,7 @@
 
 
 
-### <a id="SINEWAVE"></a>![Slithering path](images/SINEWAVE.png)Slithering path (SINEWAVE)
+### <a id="SINEWAVE"></a>![Slithering path](images/SINEWAVE.png)Slithering path (SINEWAVE) [[toc](#contents)]
 
 * **description**: Makes a projectile move rapidly in a slithering manner, like a snake
 * **type**: ACTION_TYPE_MODIFIER
@@ -11031,7 +11031,7 @@
 
 
 
-### <a id="SLIMEBALL"></a>![Slimeball](images/SLIMEBALL.png)Slimeball (SLIMEBALL)
+### <a id="SLIMEBALL"></a>![Slimeball](images/SLIMEBALL.png)Slimeball (SLIMEBALL) [[toc](#contents)]
 
 * **description**: A dripping ball of poisonous slime
 * **type**: ACTION_TYPE_PROJECTILE
@@ -11067,7 +11067,7 @@
 
 
 
-### <a id="SLOW_BULLET"></a>![Energy orb](images/SLOW_BULLET.png)Energy orb (SLOW_BULLET)
+### <a id="SLOW_BULLET"></a>![Energy orb](images/SLOW_BULLET.png)Energy orb (SLOW_BULLET) [[toc](#contents)]
 
 * **description**: A slow but powerful orb of energy
 * **type**: ACTION_TYPE_PROJECTILE
@@ -11098,7 +11098,7 @@
 
 
 
-### <a id="SLOW_BULLET_TIMER"></a>![Energy orb with a timer](images/SLOW_BULLET_TIMER.png)Energy orb with a timer (SLOW_BULLET_TIMER)
+### <a id="SLOW_BULLET_TIMER"></a>![Energy orb with a timer](images/SLOW_BULLET_TIMER.png)Energy orb with a timer (SLOW_BULLET_TIMER) [[toc](#contents)]
 
 * **description**: A slow but powerful orb of energy that casts another spell after a timer runs out
 * **type**: ACTION_TYPE_PROJECTILE
@@ -11129,7 +11129,7 @@
 
 
 
-### <a id="SLOW_BULLET_TRIGGER"></a>![Energy orb with a trigger](images/SLOW_BULLET_TRIGGER.png)Energy orb with a trigger (SLOW_BULLET_TRIGGER)
+### <a id="SLOW_BULLET_TRIGGER"></a>![Energy orb with a trigger](images/SLOW_BULLET_TRIGGER.png)Energy orb with a trigger (SLOW_BULLET_TRIGGER) [[toc](#contents)]
 
 * **description**: A slow but powerful orb of energy that casts another spell upon collision
 * **type**: ACTION_TYPE_PROJECTILE
@@ -11160,7 +11160,7 @@
 
 
 
-### <a id="SLOW_BUT_STEADY"></a>![Slow But Steady](images/SLOW_BUT_STEADY.png)Slow But Steady (SLOW_BUT_STEADY)
+### <a id="SLOW_BUT_STEADY"></a>![Slow But Steady](images/SLOW_BUT_STEADY.png)Slow But Steady (SLOW_BUT_STEADY) [[toc](#contents)]
 
 * **description**: The reload time of the wand is set to exactly 1.5 seconds
 * **type**: ACTION_TYPE_MODIFIER
@@ -11189,7 +11189,7 @@
 
 
 
-### <a id="SOILBALL"></a>![Chunk of soil](images/SOILBALL.png)Chunk of soil (SOILBALL)
+### <a id="SOILBALL"></a>![Chunk of soil](images/SOILBALL.png)Chunk of soil (SOILBALL) [[toc](#contents)]
 
 * **description**: Don't soil yourself
 * **type**: ACTION_TYPE_MATERIAL
@@ -11216,7 +11216,7 @@
 
 
 
-### <a id="SPEED"></a>![Speed Up](images/SPEED.png)Speed Up (SPEED)
+### <a id="SPEED"></a>![Speed Up](images/SPEED.png)Speed Up (SPEED) [[toc](#contents)]
 
 * **description**: Increases the speed at which a projectile flies through the air
 * **type**: ACTION_TYPE_MODIFIER
@@ -11251,7 +11251,7 @@
 
 
 
-### <a id="SPELLS_TO_POWER"></a>![Spells to Power](images/SPELLS_TO_POWER.png)Spells to Power (SPELLS_TO_POWER)
+### <a id="SPELLS_TO_POWER"></a>![Spells to Power](images/SPELLS_TO_POWER.png)Spells to Power (SPELLS_TO_POWER) [[toc](#contents)]
 
 * **description**: Converts any nearby projectiles cast by you into extra damage
 * **type**: ACTION_TYPE_MODIFIER
@@ -11280,7 +11280,7 @@
 
 
 
-### <a id="SPIRALING_SHOT"></a>![Spiral Arc](images/SPIRALING_SHOT.png)Spiral Arc (SPIRALING_SHOT)
+### <a id="SPIRALING_SHOT"></a>![Spiral Arc](images/SPIRALING_SHOT.png)Spiral Arc (SPIRALING_SHOT) [[toc](#contents)]
 
 * **description**: A projectile flies in a spiralling pattern
 * **type**: ACTION_TYPE_MODIFIER
@@ -11311,7 +11311,7 @@
 
 
 
-### <a id="SPIRAL_SHOT"></a>![Spiral shot](images/SPIRAL_SHOT.png)Spiral shot (SPIRAL_SHOT)
+### <a id="SPIRAL_SHOT"></a>![Spiral shot](images/SPIRAL_SHOT.png)Spiral shot (SPIRAL_SHOT) [[toc](#contents)]
 
 * **description**: A mystical whirlwind of magic sparks
 * **type**: ACTION_TYPE_PROJECTILE
@@ -11339,7 +11339,7 @@
 
 
 
-### <a id="SPITTER"></a>![Spitter bolt](images/SPITTER.png)Spitter bolt (SPITTER)
+### <a id="SPITTER"></a>![Spitter bolt](images/SPITTER.png)Spitter bolt (SPITTER) [[toc](#contents)]
 
 * **description**: A short-lived magical bolt
 * **type**: ACTION_TYPE_PROJECTILE
@@ -11370,7 +11370,7 @@
 
 
 
-### <a id="SPITTER_TIER_2"></a>![Large spitter bolt](images/SPITTER_TIER_2.png)Large spitter bolt (SPITTER_TIER_2)
+### <a id="SPITTER_TIER_2"></a>![Large spitter bolt](images/SPITTER_TIER_2.png)Large spitter bolt (SPITTER_TIER_2) [[toc](#contents)]
 
 * **description**: A more powerful version of Spitter Bolt
 * **type**: ACTION_TYPE_PROJECTILE
@@ -11401,7 +11401,7 @@
 
 
 
-### <a id="SPITTER_TIER_2_TIMER"></a>![Large spitter bolt with timer](images/SPITTER_TIER_2_TIMER.png)Large spitter bolt with timer (SPITTER_TIER_2_TIMER)
+### <a id="SPITTER_TIER_2_TIMER"></a>![Large spitter bolt with timer](images/SPITTER_TIER_2_TIMER.png)Large spitter bolt with timer (SPITTER_TIER_2_TIMER) [[toc](#contents)]
 
 * **description**: A more powerful version of Spitter Bolt that casts another spell after a timer runs out
 * **type**: ACTION_TYPE_PROJECTILE
@@ -11432,7 +11432,7 @@
 
 
 
-### <a id="SPITTER_TIER_3"></a>![Giant spitter bolt](images/SPITTER_TIER_3.png)Giant spitter bolt (SPITTER_TIER_3)
+### <a id="SPITTER_TIER_3"></a>![Giant spitter bolt](images/SPITTER_TIER_3.png)Giant spitter bolt (SPITTER_TIER_3) [[toc](#contents)]
 
 * **description**: The most powerful version of Spitter Bolt
 * **type**: ACTION_TYPE_PROJECTILE
@@ -11463,7 +11463,7 @@
 
 
 
-### <a id="SPITTER_TIER_3_TIMER"></a>![Giant spitter bolt with timer](images/SPITTER_TIER_3_TIMER.png)Giant spitter bolt with timer (SPITTER_TIER_3_TIMER)
+### <a id="SPITTER_TIER_3_TIMER"></a>![Giant spitter bolt with timer](images/SPITTER_TIER_3_TIMER.png)Giant spitter bolt with timer (SPITTER_TIER_3_TIMER) [[toc](#contents)]
 
 * **description**: The most powerful version of Spitter Bolt that casts another spell after a timer runs out
 * **type**: ACTION_TYPE_PROJECTILE
@@ -11494,7 +11494,7 @@
 
 
 
-### <a id="SPITTER_TIMER"></a>![Spitter bolt with timer](images/SPITTER_TIMER.png)Spitter bolt with timer (SPITTER_TIMER)
+### <a id="SPITTER_TIMER"></a>![Spitter bolt with timer](images/SPITTER_TIMER.png)Spitter bolt with timer (SPITTER_TIMER) [[toc](#contents)]
 
 * **description**: A short-lived magical bolt that casts another spell after a timer runs out
 * **type**: ACTION_TYPE_PROJECTILE
@@ -11525,7 +11525,7 @@
 
 
 
-### <a id="SPORE_POD"></a>![Prickly Spore Pod](images/SPORE_POD.png)Prickly Spore Pod (SPORE_POD)
+### <a id="SPORE_POD"></a>![Prickly Spore Pod](images/SPORE_POD.png)Prickly Spore Pod (SPORE_POD) [[toc](#contents)]
 
 * **description**: Summons a spore pod that attaches to a surface and then grows and explodes into spikes
 * **type**: ACTION_TYPE_PROJECTILE
@@ -11554,7 +11554,7 @@
 
 
 
-### <a id="SPREAD_REDUCE"></a>![Reduce spread](images/SPREAD_REDUCE.png)Reduce spread (SPREAD_REDUCE)
+### <a id="SPREAD_REDUCE"></a>![Reduce spread](images/SPREAD_REDUCE.png)Reduce spread (SPREAD_REDUCE) [[toc](#contents)]
 
 * **description**: Reduces the spread of a spell
 * **type**: ACTION_TYPE_MODIFIER
@@ -11582,7 +11582,7 @@
 
 
 
-### <a id="STATIC_TO_SAND"></a>![Ground to sand](images/STATIC_TO_SAND.png)Ground to sand (STATIC_TO_SAND)
+### <a id="STATIC_TO_SAND"></a>![Ground to sand](images/STATIC_TO_SAND.png)Ground to sand (STATIC_TO_SAND) [[toc](#contents)]
 
 * **description**: Makes any hard, solid materials within a projectile's range turn into sand
 * **type**: ACTION_TYPE_MODIFIER
@@ -11611,7 +11611,7 @@
 
 
 
-### <a id="SUMMON_EGG"></a>![Summon egg](images/SUMMON_EGG.png)Summon egg (SUMMON_EGG)
+### <a id="SUMMON_EGG"></a>![Summon egg](images/SUMMON_EGG.png)Summon egg (SUMMON_EGG) [[toc](#contents)]
 
 * **description**: Summons an egg that houses a friendly creature
 * **type**: ACTION_TYPE_PROJECTILE
@@ -11642,7 +11642,7 @@
 
 
 
-### <a id="SUMMON_HOLLOW_EGG"></a>![Summon hollow egg](images/SUMMON_HOLLOW_EGG.png)Summon hollow egg (SUMMON_HOLLOW_EGG)
+### <a id="SUMMON_HOLLOW_EGG"></a>![Summon hollow egg](images/SUMMON_HOLLOW_EGG.png)Summon hollow egg (SUMMON_HOLLOW_EGG) [[toc](#contents)]
 
 * **description**: Summons an otherwise empty egg that casts a spell upon cracking open
 * **type**: ACTION_TYPE_PROJECTILE
@@ -11670,7 +11670,7 @@
 
 
 
-### <a id="SUMMON_PORTAL"></a>![Summon portal](images/SUMMON_PORTAL.png)Summon portal (SUMMON_PORTAL)
+### <a id="SUMMON_PORTAL"></a>![Summon portal](images/SUMMON_PORTAL.png)Summon portal (SUMMON_PORTAL) [[toc](#contents)]
 
 * **description**: Summons a strange portal
 * **type**: ACTION_TYPE_OTHER
@@ -11698,7 +11698,7 @@
 
 
 
-### <a id="SUMMON_ROCK"></a>![Rock](images/SUMMON_ROCK.png)Rock (SUMMON_ROCK)
+### <a id="SUMMON_ROCK"></a>![Rock](images/SUMMON_ROCK.png)Rock (SUMMON_ROCK) [[toc](#contents)]
 
 * **description**: Create a mighty rock out of thin air
 * **type**: ACTION_TYPE_PROJECTILE
@@ -11725,7 +11725,7 @@
 
 
 
-### <a id="SUMMON_WANDGHOST"></a>![Summon Taikasauva](images/SUMMON_WANDGHOST.png)Summon Taikasauva (SUMMON_WANDGHOST)
+### <a id="SUMMON_WANDGHOST"></a>![Summon Taikasauva](images/SUMMON_WANDGHOST.png)Summon Taikasauva (SUMMON_WANDGHOST) [[toc](#contents)]
 
 * **description**: Summons a possessed wand to aid you
 * **type**: ACTION_TYPE_UTILITY
@@ -11753,7 +11753,7 @@
 
 
 
-### <a id="SUPER_TELEPORT_CAST"></a>![Warp cast](images/SUPER_TELEPORT_CAST.png)Warp cast (SUPER_TELEPORT_CAST)
+### <a id="SUPER_TELEPORT_CAST"></a>![Warp cast](images/SUPER_TELEPORT_CAST.png)Warp cast (SUPER_TELEPORT_CAST) [[toc](#contents)]
 
 * **description**: Makes a spell immediately jump a long distance, stopped by walls
 * **type**: ACTION_TYPE_UTILITY
@@ -11782,7 +11782,7 @@
 
 
 
-### <a id="SWAPPER_PROJECTILE"></a>![Swapper](images/SWAPPER_PROJECTILE.png)Swapper (SWAPPER_PROJECTILE)
+### <a id="SWAPPER_PROJECTILE"></a>![Swapper](images/SWAPPER_PROJECTILE.png)Swapper (SWAPPER_PROJECTILE) [[toc](#contents)]
 
 * **description**: It was theorized that the source of qualia would be transferred …But it turns out it was the whole body all along.
 * **type**: ACTION_TYPE_PROJECTILE
@@ -11813,7 +11813,7 @@
 
 
 
-### <a id="SWARM_FIREBUG"></a>![Summon Firebug swarm](images/SWARM_FIREBUG.png)Summon Firebug swarm (SWARM_FIREBUG)
+### <a id="SWARM_FIREBUG"></a>![Summon Firebug swarm](images/SWARM_FIREBUG.png)Summon Firebug swarm (SWARM_FIREBUG) [[toc](#contents)]
 
 * **description**: Summons four fire bugs to aid you in battle
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -11846,7 +11846,7 @@
 
 
 
-### <a id="SWARM_FLY"></a>![Summon fly swarm](images/SWARM_FLY.png)Summon fly swarm (SWARM_FLY)
+### <a id="SWARM_FLY"></a>![Summon fly swarm](images/SWARM_FLY.png)Summon fly swarm (SWARM_FLY) [[toc](#contents)]
 
 * **description**: Summons five flies to aid you in battle
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -11880,7 +11880,7 @@
 
 
 
-### <a id="SWARM_WASP"></a>![Summon Wasp swarm](images/SWARM_WASP.png)Summon Wasp swarm (SWARM_WASP)
+### <a id="SWARM_WASP"></a>![Summon Wasp swarm](images/SWARM_WASP.png)Summon Wasp swarm (SWARM_WASP) [[toc](#contents)]
 
 * **description**: Summon six wasps to aid you in battle
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -11915,7 +11915,7 @@
 
 
 
-### <a id="TAU"></a>![Tau](images/TAU.png)Tau (TAU)
+### <a id="TAU"></a>![Tau](images/TAU.png)Tau (TAU) [[toc](#contents)]
 
 * **description**: Copies the two following spells in the wand when cast
 * **type**: ACTION_TYPE_OTHER
@@ -11974,7 +11974,7 @@
 
 
 
-### <a id="TELEPORTATION_FIELD"></a>![Circle of displacement](images/TELEPORTATION_FIELD.png)Circle of displacement (TELEPORTATION_FIELD)
+### <a id="TELEPORTATION_FIELD"></a>![Circle of displacement](images/TELEPORTATION_FIELD.png)Circle of displacement (TELEPORTATION_FIELD) [[toc](#contents)]
 
 * **description**: A field of teleportative magic
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -12002,7 +12002,7 @@
 
 
 
-### <a id="TELEPORT_CAST"></a>![Teleporting cast](images/TELEPORT_CAST.png)Teleporting cast (TELEPORT_CAST)
+### <a id="TELEPORT_CAST"></a>![Teleporting cast](images/TELEPORT_CAST.png)Teleporting cast (TELEPORT_CAST) [[toc](#contents)]
 
 * **description**: Casts a spell from the closest enemy
 * **type**: ACTION_TYPE_UTILITY
@@ -12031,7 +12031,7 @@
 
 
 
-### <a id="TELEPORT_PROJECTILE"></a>![Teleport bolt](images/TELEPORT_PROJECTILE.png)Teleport bolt (TELEPORT_PROJECTILE)
+### <a id="TELEPORT_PROJECTILE"></a>![Teleport bolt](images/TELEPORT_PROJECTILE.png)Teleport bolt (TELEPORT_PROJECTILE) [[toc](#contents)]
 
 * **description**: A magical bolt that moves you wherever it ends up flying
 * **type**: ACTION_TYPE_PROJECTILE
@@ -12060,7 +12060,7 @@
 
 
 
-### <a id="TELEPORT_PROJECTILE_CLOSER"></a>![Homebringer Teleport Bolt](images/TELEPORT_PROJECTILE_CLOSER.png)Homebringer Teleport Bolt (TELEPORT_PROJECTILE_CLOSER)
+### <a id="TELEPORT_PROJECTILE_CLOSER"></a>![Homebringer Teleport Bolt](images/TELEPORT_PROJECTILE_CLOSER.png)Homebringer Teleport Bolt (TELEPORT_PROJECTILE_CLOSER) [[toc](#contents)]
 
 * **description**: Brings the target hit closer to you
 * **type**: ACTION_TYPE_PROJECTILE
@@ -12088,7 +12088,7 @@
 
 
 
-### <a id="TELEPORT_PROJECTILE_SHORT"></a>![Small Teleport Bolt](images/TELEPORT_PROJECTILE_SHORT.png)Small Teleport Bolt (TELEPORT_PROJECTILE_SHORT)
+### <a id="TELEPORT_PROJECTILE_SHORT"></a>![Small Teleport Bolt](images/TELEPORT_PROJECTILE_SHORT.png)Small Teleport Bolt (TELEPORT_PROJECTILE_SHORT) [[toc](#contents)]
 
 * **description**: A shortlived magical bolt that moves you wherever it ends up flying
 * **type**: ACTION_TYPE_PROJECTILE
@@ -12116,7 +12116,7 @@
 
 
 
-### <a id="TELEPORT_PROJECTILE_STATIC"></a>![Return](images/TELEPORT_PROJECTILE_STATIC.png)Return (TELEPORT_PROJECTILE_STATIC)
+### <a id="TELEPORT_PROJECTILE_STATIC"></a>![Return](images/TELEPORT_PROJECTILE_STATIC.png)Return (TELEPORT_PROJECTILE_STATIC) [[toc](#contents)]
 
 * **description**: After a period of time, you'll be returned to where you cast this spell
 * **type**: ACTION_TYPE_PROJECTILE
@@ -12145,7 +12145,7 @@
 
 
 
-### <a id="TEMPORARY_PLATFORM"></a>![Summon Platform](images/TEMPORARY_PLATFORM.png)Summon Platform (TEMPORARY_PLATFORM)
+### <a id="TEMPORARY_PLATFORM"></a>![Summon Platform](images/TEMPORARY_PLATFORM.png)Summon Platform (TEMPORARY_PLATFORM) [[toc](#contents)]
 
 * **description**: Summons a shortlived bit of ground
 * **type**: ACTION_TYPE_UTILITY
@@ -12173,7 +12173,7 @@
 
 
 
-### <a id="TEMPORARY_WALL"></a>![Summon Wall](images/TEMPORARY_WALL.png)Summon Wall (TEMPORARY_WALL)
+### <a id="TEMPORARY_WALL"></a>![Summon Wall](images/TEMPORARY_WALL.png)Summon Wall (TEMPORARY_WALL) [[toc](#contents)]
 
 * **description**: Summons a shortlived obstacle
 * **type**: ACTION_TYPE_UTILITY
@@ -12201,7 +12201,7 @@
 
 
 
-### <a id="TENTACLE"></a>![Summon Tentacle](images/TENTACLE.png)Summon Tentacle (TENTACLE)
+### <a id="TENTACLE"></a>![Summon Tentacle](images/TENTACLE.png)Summon Tentacle (TENTACLE) [[toc](#contents)]
 
 * **description**: Calls a terrifying appendage from another dimension
 * **type**: ACTION_TYPE_PROJECTILE
@@ -12229,7 +12229,7 @@
 
 
 
-### <a id="TENTACLE_PORTAL"></a>![Eldritch portal](images/TENTACLE_PORTAL.png)Eldritch portal (TENTACLE_PORTAL)
+### <a id="TENTACLE_PORTAL"></a>![Eldritch portal](images/TENTACLE_PORTAL.png)Eldritch portal (TENTACLE_PORTAL) [[toc](#contents)]
 
 * **description**: Summons a one-way portal to a sinister realm
 * **type**: ACTION_TYPE_PROJECTILE
@@ -12257,7 +12257,7 @@
 
 
 
-### <a id="TENTACLE_RAY"></a>![Tentacler](images/TENTACLE_RAY.png)Tentacler (TENTACLE_RAY)
+### <a id="TENTACLE_RAY"></a>![Tentacler](images/TENTACLE_RAY.png)Tentacler (TENTACLE_RAY) [[toc](#contents)]
 
 * **description**: Makes a projectile cast tentacles in random directions
 * **type**: ACTION_TYPE_MODIFIER
@@ -12285,7 +12285,7 @@
 
 
 
-### <a id="TENTACLE_RAY_ENEMY"></a>![Personal tentacler](images/TENTACLE_RAY_ENEMY.png)Personal tentacler (TENTACLE_RAY_ENEMY)
+### <a id="TENTACLE_RAY_ENEMY"></a>![Personal tentacler](images/TENTACLE_RAY_ENEMY.png)Personal tentacler (TENTACLE_RAY_ENEMY) [[toc](#contents)]
 
 * **description**: Makes creatures hit by a projectile grow tentacles in a chaotic manner
 * **type**: ACTION_TYPE_MODIFIER
@@ -12313,7 +12313,7 @@
 
 
 
-### <a id="TENTACLE_TIMER"></a>![Summon Tentacle with timer](images/TENTACLE_TIMER.png)Summon Tentacle with timer (TENTACLE_TIMER)
+### <a id="TENTACLE_TIMER"></a>![Summon Tentacle with timer](images/TENTACLE_TIMER.png)Summon Tentacle with timer (TENTACLE_TIMER) [[toc](#contents)]
 
 * **description**: Calls a terrifying appendage from another dimension! Comes with a timer
 * **type**: ACTION_TYPE_PROJECTILE
@@ -12341,7 +12341,7 @@
 
 
 
-### <a id="THUNDERBALL"></a>![Thunder charge](images/THUNDERBALL.png)Thunder charge (THUNDERBALL)
+### <a id="THUNDERBALL"></a>![Thunder charge](images/THUNDERBALL.png)Thunder charge (THUNDERBALL) [[toc](#contents)]
 
 * **description**: A projectile with immense stored electricity
 * **type**: ACTION_TYPE_PROJECTILE
@@ -12369,7 +12369,7 @@
 
 
 
-### <a id="THUNDER_BLAST"></a>![Explosion of thunder](images/THUNDER_BLAST.png)Explosion of thunder (THUNDER_BLAST)
+### <a id="THUNDER_BLAST"></a>![Explosion of thunder](images/THUNDER_BLAST.png)Explosion of thunder (THUNDER_BLAST) [[toc](#contents)]
 
 * **description**: An electric explosion
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -12399,7 +12399,7 @@
 
 
 
-### <a id="TINY_GHOST"></a>![Summon Tiny Ghost](images/TINY_GHOST.png)Summon Tiny Ghost (TINY_GHOST)
+### <a id="TINY_GHOST"></a>![Summon Tiny Ghost](images/TINY_GHOST.png)Summon Tiny Ghost (TINY_GHOST) [[toc](#contents)]
 
 * **description**: Summons a tiny ethereal being to your help. It may cast stronger spells depending on how much damage you have suffered.
 * **type**: ACTION_TYPE_PASSIVE
@@ -12426,7 +12426,7 @@
 
 
 
-### <a id="TNTBOX"></a>![Summon Explosive Box](images/TNTBOX.png)Summon Explosive Box (TNTBOX)
+### <a id="TNTBOX"></a>![Summon Explosive Box](images/TNTBOX.png)Summon Explosive Box (TNTBOX) [[toc](#contents)]
 
 * **description**: Summons a box of explosive matter
 * **type**: ACTION_TYPE_PROJECTILE
@@ -12454,7 +12454,7 @@
 
 
 
-### <a id="TNTBOX_BIG"></a>![Summon Large Explosive Box](images/TNTBOX_BIG.png)Summon Large Explosive Box (TNTBOX_BIG)
+### <a id="TNTBOX_BIG"></a>![Summon Large Explosive Box](images/TNTBOX_BIG.png)Summon Large Explosive Box (TNTBOX_BIG) [[toc](#contents)]
 
 * **description**: Summons a large box of explosive matter
 * **type**: ACTION_TYPE_PROJECTILE
@@ -12482,7 +12482,7 @@
 
 
 
-### <a id="TORCH"></a>![Torch](images/TORCH.png)Torch (TORCH)
+### <a id="TORCH"></a>![Torch](images/TORCH.png)Torch (TORCH) [[toc](#contents)]
 
 * **description**: Lights your wand right up!
 * **type**: ACTION_TYPE_PASSIVE
@@ -12509,7 +12509,7 @@
 
 
 
-### <a id="TORCH_ELECTRIC"></a>![Electric Torch](images/TORCH_ELECTRIC.png)Electric Torch (TORCH_ELECTRIC)
+### <a id="TORCH_ELECTRIC"></a>![Electric Torch](images/TORCH_ELECTRIC.png)Electric Torch (TORCH_ELECTRIC) [[toc](#contents)]
 
 * **description**: Gives your wand a bright but very dangerous light!
 * **type**: ACTION_TYPE_PASSIVE
@@ -12536,7 +12536,7 @@
 
 
 
-### <a id="TOUCH_ALCOHOL"></a>![Touch of Spirits](images/TOUCH_ALCOHOL.png)Touch of Spirits (TOUCH_ALCOHOL)
+### <a id="TOUCH_ALCOHOL"></a>![Touch of Spirits](images/TOUCH_ALCOHOL.png)Touch of Spirits (TOUCH_ALCOHOL) [[toc](#contents)]
 
 * **description**: Transmutes everything in a short radius into alcohol, including walls, creatures... and you
 * **type**: ACTION_TYPE_MATERIAL
@@ -12563,7 +12563,7 @@
 
 
 
-### <a id="TOUCH_BLOOD"></a>![Touch of Blood](images/TOUCH_BLOOD.png)Touch of Blood (TOUCH_BLOOD)
+### <a id="TOUCH_BLOOD"></a>![Touch of Blood](images/TOUCH_BLOOD.png)Touch of Blood (TOUCH_BLOOD) [[toc](#contents)]
 
 * **description**: Transmutes everything in a short radius into blood, including walls, creatures... and you
 * **type**: ACTION_TYPE_MATERIAL
@@ -12590,7 +12590,7 @@
 
 
 
-### <a id="TOUCH_GOLD"></a>![Touch of Gold](images/TOUCH_GOLD.png)Touch of Gold (TOUCH_GOLD)
+### <a id="TOUCH_GOLD"></a>![Touch of Gold](images/TOUCH_GOLD.png)Touch of Gold (TOUCH_GOLD) [[toc](#contents)]
 
 * **description**: Transmutes everything in a short radius into gold, including walls, creatures... and you
 * **type**: ACTION_TYPE_MATERIAL
@@ -12617,7 +12617,7 @@
 
 
 
-### <a id="TOUCH_OIL"></a>![Touch of Oil](images/TOUCH_OIL.png)Touch of Oil (TOUCH_OIL)
+### <a id="TOUCH_OIL"></a>![Touch of Oil](images/TOUCH_OIL.png)Touch of Oil (TOUCH_OIL) [[toc](#contents)]
 
 * **description**: Transmutes everything in a short radius into oil, including walls, creatures... and you
 * **type**: ACTION_TYPE_MATERIAL
@@ -12644,7 +12644,7 @@
 
 
 
-### <a id="TOUCH_SMOKE"></a>![Touch of Smoke](images/TOUCH_SMOKE.png)Touch of Smoke (TOUCH_SMOKE)
+### <a id="TOUCH_SMOKE"></a>![Touch of Smoke](images/TOUCH_SMOKE.png)Touch of Smoke (TOUCH_SMOKE) [[toc](#contents)]
 
 * **description**: Transmutes everything in a short radius into smoke, including walls, creatures... and you
 * **type**: ACTION_TYPE_MATERIAL
@@ -12671,7 +12671,7 @@
 
 
 
-### <a id="TOUCH_WATER"></a>![Touch of Water](images/TOUCH_WATER.png)Touch of Water (TOUCH_WATER)
+### <a id="TOUCH_WATER"></a>![Touch of Water](images/TOUCH_WATER.png)Touch of Water (TOUCH_WATER) [[toc](#contents)]
 
 * **description**: Transmutes everything in a short radius into water, including walls, creatures... and you
 * **type**: ACTION_TYPE_MATERIAL
@@ -12698,7 +12698,7 @@
 
 
 
-### <a id="TOXIC_TO_ACID"></a>![Toxic sludge to acid](images/TOXIC_TO_ACID.png)Toxic sludge to acid (TOXIC_TO_ACID)
+### <a id="TOXIC_TO_ACID"></a>![Toxic sludge to acid](images/TOXIC_TO_ACID.png)Toxic sludge to acid (TOXIC_TO_ACID) [[toc](#contents)]
 
 * **description**: Makes any toxic sludge within a projectile's range turn into acid
 * **type**: ACTION_TYPE_MODIFIER
@@ -12727,7 +12727,7 @@
 
 
 
-### <a id="TRANSMUTATION"></a>![Chaotic transmutation](images/TRANSMUTATION.png)Chaotic transmutation (TRANSMUTATION)
+### <a id="TRANSMUTATION"></a>![Chaotic transmutation](images/TRANSMUTATION.png)Chaotic transmutation (TRANSMUTATION) [[toc](#contents)]
 
 * **description**: Transmutes various liquids and powdery substances within a projectile's range into something else
 * **type**: ACTION_TYPE_MODIFIER
@@ -12756,7 +12756,7 @@
 
 
 
-### <a id="T_SHAPE"></a>![Formation - above and below](images/T_SHAPE.png)Formation - above and below (T_SHAPE)
+### <a id="T_SHAPE"></a>![Formation - above and below](images/T_SHAPE.png)Formation - above and below (T_SHAPE) [[toc](#contents)]
 
 * **description**: Casts 3 spells - ahead, above and below the caster
 * **type**: ACTION_TYPE_DRAW_MANY
@@ -12784,7 +12784,7 @@
 
 
 
-### <a id="UNSTABLE_GUNPOWDER"></a>![Firecrackers](images/UNSTABLE_GUNPOWDER.png)Firecrackers (UNSTABLE_GUNPOWDER)
+### <a id="UNSTABLE_GUNPOWDER"></a>![Firecrackers](images/UNSTABLE_GUNPOWDER.png)Firecrackers (UNSTABLE_GUNPOWDER) [[toc](#contents)]
 
 * **description**: Makes a projectile release firecrackers when it disappears
 * **type**: ACTION_TYPE_MODIFIER
@@ -12813,7 +12813,7 @@
 
 
 
-### <a id="VACUUM_ENTITIES"></a>![Vacuum Field](images/VACUUM_ENTITIES.png)Vacuum Field (VACUUM_ENTITIES)
+### <a id="VACUUM_ENTITIES"></a>![Vacuum Field](images/VACUUM_ENTITIES.png)Vacuum Field (VACUUM_ENTITIES) [[toc](#contents)]
 
 * **description**: Sucks nearby projectiles and creatures into the middle of the field instantaneously
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -12841,7 +12841,7 @@
 
 
 
-### <a id="VACUUM_LIQUID"></a>![Liquid Vacuum Field](images/VACUUM_LIQUID.png)Liquid Vacuum Field (VACUUM_LIQUID)
+### <a id="VACUUM_LIQUID"></a>![Liquid Vacuum Field](images/VACUUM_LIQUID.png)Liquid Vacuum Field (VACUUM_LIQUID) [[toc](#contents)]
 
 * **description**: Sucks liquid materials nearby and releases them upon expiring
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -12869,7 +12869,7 @@
 
 
 
-### <a id="VACUUM_POWDER"></a>![Powder Vacuum Field](images/VACUUM_POWDER.png)Powder Vacuum Field (VACUUM_POWDER)
+### <a id="VACUUM_POWDER"></a>![Powder Vacuum Field](images/VACUUM_POWDER.png)Powder Vacuum Field (VACUUM_POWDER) [[toc](#contents)]
 
 * **description**: Sucks powder-like materials nearby and releases them upon expiring
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -12897,7 +12897,7 @@
 
 
 
-### <a id="WALL_HORIZONTAL"></a>![Horizontal barrier](images/WALL_HORIZONTAL.png)Horizontal barrier (WALL_HORIZONTAL)
+### <a id="WALL_HORIZONTAL"></a>![Horizontal barrier](images/WALL_HORIZONTAL.png)Horizontal barrier (WALL_HORIZONTAL) [[toc](#contents)]
 
 * **description**: A thin, horizontal barrier that harms passing creatures, including you
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -12925,7 +12925,7 @@
 
 
 
-### <a id="WALL_SQUARE"></a>![Square barrier](images/WALL_SQUARE.png)Square barrier (WALL_SQUARE)
+### <a id="WALL_SQUARE"></a>![Square barrier](images/WALL_SQUARE.png)Square barrier (WALL_SQUARE) [[toc](#contents)]
 
 * **description**: A thin, square-shaped barrier that harms passing creatures, including you
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -12953,7 +12953,7 @@
 
 
 
-### <a id="WALL_VERTICAL"></a>![Vertical barrier](images/WALL_VERTICAL.png)Vertical barrier (WALL_VERTICAL)
+### <a id="WALL_VERTICAL"></a>![Vertical barrier](images/WALL_VERTICAL.png)Vertical barrier (WALL_VERTICAL) [[toc](#contents)]
 
 * **description**: A thin, vertical barrier that harms passing creatures, including you
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -12981,7 +12981,7 @@
 
 
 
-### <a id="WATER_TO_POISON"></a>![Water to poison](images/WATER_TO_POISON.png)Water to poison (WATER_TO_POISON)
+### <a id="WATER_TO_POISON"></a>![Water to poison](images/WATER_TO_POISON.png)Water to poison (WATER_TO_POISON) [[toc](#contents)]
 
 * **description**: Makes any water within a projectile's range turns into poison
 * **type**: ACTION_TYPE_MODIFIER
@@ -13010,7 +13010,7 @@
 
 
 
-### <a id="WATER_TRAIL"></a>![Water trail](images/WATER_TRAIL.png)Water trail (WATER_TRAIL)
+### <a id="WATER_TRAIL"></a>![Water trail](images/WATER_TRAIL.png)Water trail (WATER_TRAIL) [[toc](#contents)]
 
 * **description**: Gives a projectile a trail of water
 * **type**: ACTION_TYPE_MODIFIER
@@ -13040,7 +13040,7 @@
 
 
 
-### <a id="WORM_RAIN"></a>![Matosade](images/WORM_RAIN.png)Matosade (WORM_RAIN)
+### <a id="WORM_RAIN"></a>![Matosade](images/WORM_RAIN.png)Matosade (WORM_RAIN) [[toc](#contents)]
 
 * **description**: Alea iacta est
 * **type**: ACTION_TYPE_STATIC_PROJECTILE
@@ -13069,7 +13069,7 @@
 
 
 
-### <a id="WORM_SHOT"></a>![Worm Launcher](images/WORM_SHOT.png)Worm Launcher (WORM_SHOT)
+### <a id="WORM_SHOT"></a>![Worm Launcher](images/WORM_SHOT.png)Worm Launcher (WORM_SHOT) [[toc](#contents)]
 
 * **description**: Summons a giant worm to cause havoc for a moment!
 * **type**: ACTION_TYPE_PROJECTILE
@@ -13099,7 +13099,7 @@
 
 
 
-### <a id="W_SHAPE"></a>![Formation - trifurcated](images/W_SHAPE.png)Formation - trifurcated (W_SHAPE)
+### <a id="W_SHAPE"></a>![Formation - trifurcated](images/W_SHAPE.png)Formation - trifurcated (W_SHAPE) [[toc](#contents)]
 
 * **description**: Casts 3 spells in a trifurcated pattern
 * **type**: ACTION_TYPE_DRAW_MANY
@@ -13127,7 +13127,7 @@
 
 
 
-### <a id="X_RAY"></a>![All-seeing eye](images/X_RAY.png)All-seeing eye (X_RAY)
+### <a id="X_RAY"></a>![All-seeing eye](images/X_RAY.png)All-seeing eye (X_RAY) [[toc](#contents)]
 
 * **description**: See into the unexplored. But not everywhere...
 * **type**: ACTION_TYPE_UTILITY
@@ -13154,7 +13154,7 @@
 
 
 
-### <a id="Y_SHAPE"></a>![Formation - bifurcated](images/Y_SHAPE.png)Formation - bifurcated (Y_SHAPE)
+### <a id="Y_SHAPE"></a>![Formation - bifurcated](images/Y_SHAPE.png)Formation - bifurcated (Y_SHAPE) [[toc](#contents)]
 
 * **description**: Casts 2 spells in a bifurcated pattern
 * **type**: ACTION_TYPE_DRAW_MANY
@@ -13182,7 +13182,7 @@
 
 
 
-### <a id="ZETA"></a>![Zeta](images/ZETA.png)Zeta (ZETA)
+### <a id="ZETA"></a>![Zeta](images/ZETA.png)Zeta (ZETA) [[toc](#contents)]
 
 * **description**: Copies a random spell in another wand you're holding
 * **type**: ACTION_TYPE_OTHER
