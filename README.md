@@ -4,7 +4,7 @@
 * [by category](README_cat.md)
 * [by spell id](README_id.md)
 
-<a id="contents"></a>## contents
+## <a id="contents"></a>contents
 
 * <a id="FUNKY_SPELL_CONTENTS"></a>[???](#FUNKY_SPELL)
 * <a id="ACCELERATING_SHOT_CONTENTS"></a>[Accelerating shot](#ACCELERATING_SHOT)

@@ -4,9 +4,9 @@
 * [by category](README_cat.md)
 * [by spell id](README_id.md)
 
-<a id="contents"></a># spell categories
+# <a id="contents"></a>spell categories
 
-##<a id="ACTION_TYPE_PROJECTILE_CONTENTS"></a> [projectile](#ACTION_TYPE_PROJECTILE)
+## <a id="ACTION_TYPE_PROJECTILE_CONTENTS"></a>[projectile](#ACTION_TYPE_PROJECTILE)
 
 * <a id="FUNKY_SPELL_CONTENTS"></a>[???](#FUNKY_SPELL)
 * <a id="ACIDSHOT_CONTENTS"></a>[Acid ball](#ACIDSHOT)
@@ -126,7 +126,7 @@
 * <a id="WORM_SHOT_CONTENTS"></a>[Worm Launcher](#WORM_SHOT)
 * <a id="MIST_ALCOHOL_CONTENTS"></a>[mist of spirits](#MIST_ALCOHOL)
 
-##<a id="ACTION_TYPE_STATIC_PROJECTILE_CONTENTS"></a> [static projectile](#ACTION_TYPE_STATIC_PROJECTILE)
+## <a id="ACTION_TYPE_STATIC_PROJECTILE_CONTENTS"></a>[static projectile](#ACTION_TYPE_STATIC_PROJECTILE)
 
 * <a id="CLOUD_ACID_CONTENTS"></a>[Acid cloud](#CLOUD_ACID)
 * <a id="CLOUD_BLOOD_CONTENTS"></a>[Blood cloud](#CLOUD_BLOOD)
@@ -171,7 +171,7 @@
 * <a id="VACUUM_ENTITIES_CONTENTS"></a>[Vacuum Field](#VACUUM_ENTITIES)
 * <a id="WALL_VERTICAL_CONTENTS"></a>[Vertical barrier](#WALL_VERTICAL)
 
-##<a id="ACTION_TYPE_MATERIAL_CONTENTS"></a> [material](#ACTION_TYPE_MATERIAL)
+## <a id="ACTION_TYPE_MATERIAL_CONTENTS"></a>[material](#ACTION_TYPE_MATERIAL)
 
 * <a id="MATERIAL_ACID_CONTENTS"></a>[Acid](#MATERIAL_ACID)
 * <a id="MATERIAL_BLOOD_CONTENTS"></a>[Blood](#MATERIAL_BLOOD)
@@ -196,7 +196,7 @@
 * <a id="TOUCH_WATER_CONTENTS"></a>[Touch of Water](#TOUCH_WATER)
 * <a id="MATERIAL_WATER_CONTENTS"></a>[Water](#MATERIAL_WATER)
 
-##<a id="ACTION_TYPE_UTILITY_CONTENTS"></a> [utility](#ACTION_TYPE_UTILITY)
+## <a id="ACTION_TYPE_UTILITY_CONTENTS"></a>[utility](#ACTION_TYPE_UTILITY)
 
 * <a id="X_RAY_CONTENTS"></a>[All-seeing eye](#X_RAY)
 * <a id="BLOOD_MAGIC_CONTENTS"></a>[Blood magic](#BLOOD_MAGIC)
@@ -216,7 +216,7 @@
 * <a id="RESET_CONTENTS"></a>[Wand Refresh](#RESET)
 * <a id="SUPER_TELEPORT_CAST_CONTENTS"></a>[Warp cast](#SUPER_TELEPORT_CAST)
 
-##<a id="ACTION_TYPE_DRAW_MANY_CONTENTS"></a> [multicast](#ACTION_TYPE_DRAW_MANY)
+## <a id="ACTION_TYPE_DRAW_MANY_CONTENTS"></a>[multicast](#ACTION_TYPE_DRAW_MANY)
 
 * <a id="SCATTER_2_CONTENTS"></a>[Double scatter spell](#SCATTER_2)
 * <a id="BURST_2_CONTENTS"></a>[Double spell](#BURST_2)
@@ -233,7 +233,7 @@
 * <a id="SCATTER_3_CONTENTS"></a>[Triple scatter spell](#SCATTER_3)
 * <a id="BURST_3_CONTENTS"></a>[Triple spell](#BURST_3)
 
-##<a id="ACTION_TYPE_MODIFIER_CONTENTS"></a> [modifier](#ACTION_TYPE_MODIFIER)
+## <a id="ACTION_TYPE_MODIFIER_CONTENTS"></a>[modifier](#ACTION_TYPE_MODIFIER)
 
 * <a id="ACCELERATING_SHOT_CONTENTS"></a>[Accelerating shot](#ACCELERATING_SHOT)
 * <a id="HOMING_ACCELERATING_CONTENTS"></a>[Accelerative Homing](#HOMING_ACCELERATING)
@@ -371,7 +371,7 @@
 * <a id="CURSE_WITHER_PROJECTILE_CONTENTS"></a>[Weakening Curse - Projectiles](#CURSE_WITHER_PROJECTILE)
 * <a id="COLOUR_YELLOW_CONTENTS"></a>[Yellow Glimmer](#COLOUR_YELLOW)
 
-##<a id="ACTION_TYPE_OTHER_CONTENTS"></a> [other](#ACTION_TYPE_OTHER)
+## <a id="ACTION_TYPE_OTHER_CONTENTS"></a>[other](#ACTION_TYPE_OTHER)
 
 * <a id="ADD_DEATH_TRIGGER_CONTENTS"></a>[Add expiration trigger](#ADD_DEATH_TRIGGER)
 * <a id="ADD_TIMER_CONTENTS"></a>[Add timer](#ADD_TIMER)
@@ -415,7 +415,7 @@
 * <a id="ALL_SPELLS_CONTENTS"></a>[The end of everything](#ALL_SPELLS)
 * <a id="ZETA_CONTENTS"></a>[Zeta](#ZETA)
 
-##<a id="ACTION_TYPE_PASSIVE_CONTENTS"></a> [passive](#ACTION_TYPE_PASSIVE)
+## <a id="ACTION_TYPE_PASSIVE_CONTENTS"></a>[passive](#ACTION_TYPE_PASSIVE)
 
 * <a id="TORCH_ELECTRIC_CONTENTS"></a>[Electric Torch](#TORCH_ELECTRIC)
 * <a id="ENERGY_SHIELD_CONTENTS"></a>[Energy shield](#ENERGY_SHIELD)
